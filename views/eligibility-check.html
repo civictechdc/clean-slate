@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-12">
+      
+      <h1>Eligibility Checker</h1> 
+      
+      <div ng-show="step_in_process == 0">
+        <p>Do you have a case pending?</p>
+        <div class="btn btn-default" ng-click="getToStep(1)">no</div>
+        <div class="btn btn-default" ng-click="ineligible()">yes</div>
+      </div>
+
+      <div ng-show="step_in_process == 1">
+        <p>Are you sealing a conviction or a non-conviction?</p>
+        <div class="btn btn-default" ng-click="getToStep(2)">non-conviction</div>
+        <div class="btn btn-default" ng-click="getToStep(3)">conviction</div>        
+      </div>
+
+      <div ng-show="step_in_process == 2">
+        <p>Is this an eligible misdemeanor/felony or an ineligible misdemeanor/felony?</p>
+        <p>info on eligibility</p>
+        <div class="btn btn-default" ng-click="getToStep(3)">ineligible</div>
+        <div class="btn btn-default" ng-click="ineligible()">eligible</div>        
+      </div>
+
+      <div ng-show="step_in_process == 3">
+        <p>Have you subsequently been convicted of another crime in any jurisdiction?</p>
+        <div class="btn btn-default" ng-click="getToStep(4)">no</div>        
+        <div class="btn btn-default" ng-click="ineligible()">yes</div>
+      </div>
+
+      <div ng-show="step_in_process == 4">
+        <p>Has it been 8 years since your were off papers?</p>
+        <div class="btn btn-default" ng-click="ineligible(4)">no</div>        
+        <div class="btn btn-default" ng-click="eligible()">yes</div>
+      </div>
+
+      <div ng-show="step_in_process == 5">
+        <p>Is your non-conviction the result of a Deferred Sentencing Agreement?</p>
+        <div class="btn btn-default" ng-click="getToStep(6)">no</div>        
+        <div class="btn btn-default" ng-click="getToStep(7)">yes</div>
+      </div>
+
+
+    </div><!-- /.col-md-12 -->
+</div><!-- /.row -->
