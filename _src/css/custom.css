@@ -1,0 +1,75 @@
+/*
+Table of Contents:
+> Foundation overwrites
+> Custom
+*/
+
+/* Full-height sidebar */
+body,html{
+    height:100%;
+    width:100%;
+}
+/* Foundation overwrites */
+.off-canvas-wrap,.inner-wrap{
+    height:100%;   
+}
+
+.row {
+    max-width: 100em;    
+}
+.reveal-modal {
+    bottom: 6.25rem;
+    overflow-y: auto;
+}
+
+
+/* Custom  */
+.body-preview {
+    padding: 5px 0 0 20px;
+    color: #666;
+    font-size: .8em;
+}
+.article-list-header {
+    background-color: #333;
+    color: #eee;
+    text-align: center;
+    padding: 10px 5px 0;
+}
+.draggable {
+    padding: 5px 10px 10px;
+
+    cursor: move;
+    /* Prevent the text contents of draggable elements from being selectable. */
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Required to make elements draggable in old WebKit */
+    -khtml-user-drag: element;
+    -webkit-user-drag: element;
+}
+.row.draggable:nth-child(odd) {
+   background-color: #eee;
+}
+.not-on-deck {
+    border: 1px #fff solid;
+    word-wrap: break-word;
+}
+.on-deck {
+    margin-left: 0;
+    border: 1px #ddd dashed;    
+}
+.on-drag-enter {
+
+}
+.on-drag-hover {
+    border: 1px #aaa solid;    
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+}
+i.medium {
+    font-size: 1.6em;
+}
