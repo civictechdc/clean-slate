@@ -1,298 +1,298 @@
 [
 	{
-		"Offense" : "Interpersonal violence",
-		"Legal reference" : [
+		"offense" : "Interpersonal violence",
+		"legal_reference" : [
 			"D.C. Code 16-1001(6)(B) only"
 		],
-		"Legal description" : "Any criminal offense committed or threatened to be committed against someone who is or was married, in a domestic partnership with, divorced or separated from, or in a  romantic, dating, or sexual relationship with the defendant.",
-		"Simple description" : ""
+		"legal_description" : "Any criminal offense committed or threatened to be committed against someone who is or was married, in a domestic partnership with, divorced or separated from, or in a  romantic, dating, or sexual relationship with the defendant.",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Intimate partner violence",
-		"Legal reference" : [
+		"offense" : "Intimate partner violence",
+		"legal_reference" : [
 		],
-		"Legal description" : "Any criminal offense committed or threatened to be committed against a current or former spouse or against a current or former domestic partner or against a current or former person with whom you were in a romantic, dating, or sexual relationship.",
-		"Simple description" : ""
+		"legal_description" : "Any criminal offense committed or threatened to be committed against a current or former spouse or against a current or former domestic partner or against a current or former person with whom you were in a romantic, dating, or sexual relationship.",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Intrafamily violence",
-		"Legal reference" : [
+		"offense" : "Intrafamily violence",
+		"legal_reference" : [
 		],
-		"Legal description" : "Any criminal offense conmmitted or threatened to be committed against a person related to you by blood, adoption, legal custody, marriage or domestic partnership, or with whom you have a child in common.",
-		"Simple description" : ""
+		"legal_description" : "Any criminal offense conmmitted or threatened to be committed against a person related to you by blood, adoption, legal custody, marriage or domestic partnership, or with whom you have a child in common.",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Driving while intoxicated or under the influence and/or operating while impaired.",
-		"Legal reference" : [
+		"offense" : "Driving while intoxicated or under the influence and/or operating while impaired.",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "A misdemeanor offense that required you to register as a sex offender",
-		"Legal reference" : [
+		"offense" : "A misdemeanor offense that required you to register as a sex offender",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Criminal abuse of a vulnerable adult",
-		"Legal reference" : [
+		"offense" : "Criminal abuse of a vulnerable adult",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Interfering with access to a medical facility",
-		"Legal reference" : [
+		"offense" : "Interfering with access to a medical facility",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Possession of a pistol by a convicted felon",
-		"Legal reference" : [
+		"offense" : "Possession of a pistol by a convicted felon",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Failure to report child abuse",
-		"Legal reference" : [
+		"offense" : "Failure to report child abuse",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Refusal or neglect of guardian to provide for child under 14 years of age",
-		"Legal reference" : [
+		"offense" : "Refusal or neglect of guardian to provide for child under 14 years of age",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Disorderly conduct (peeping tom)",
-		"Legal reference" : [
+		"offense" : "Disorderly conduct (peeping tom)",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Misdemeanor sexual abuse",
-		"Legal reference" : [
+		"offense" : "Misdemeanor sexual abuse",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Violating the Sex Offender Registration Act",
-		"Legal reference" : [
+		"offense" : "Violating the Sex Offender Registration Act",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Violating child labor laws",
-		"Legal reference" : [
+		"offense" : "Violating child labor laws",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Election/petition fraud",
-		"Legal reference" : [
+		"offense" : "Election/petition fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Public assistance fraud",
-		"Legal reference" : [
+		"offense" : "Public assistance fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Trademark counterfeiting",
-		"Legal reference" : [
+		"offense" : "Trademark counterfeiting",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Attempted trademark counterfeiting",
-		"Legal reference" : [
+		"offense" : "Attempted trademark counterfeiting",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Fraud in the second degree",
-		"Legal reference" : [
+		"offense" : "Fraud in the second degree",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Attempted fraud",
-		"Legal reference" : [
+		"offense" : "Attempted fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Credit card fraud",
-		"Legal reference" : [
+		"offense" : "Credit card fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Attempted credit card fraud",
-		"Legal reference" : [
+		"offense" : "Attempted credit card fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Misdemeanor insurance fraud",
-		"Legal reference" : [
+		"offense" : "Misdemeanor insurance fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Attempted insurance fraud",
-		"Legal reference" : [
+		"offense" : "Attempted insurance fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Telephone fraud",
-		"Legal reference" : [
+		"offense" : "Telephone fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Attempted telephone fraud",
-		"Legal reference" : [
+		"offense" : "Attempted telephone fraud",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Identity theft, second degree",
-		"Legal reference" : [
+		"offense" : "Identity theft, second degree",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Attempted identity theft",
-		"Legal reference" : [
+		"offense" : "Attempted identity theft",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Fraudulent statements or failure to make statements to employee",
-		"Legal reference" : [
+		"offense" : "Fraudulent statements or failure to make statements to employee",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Fraudulent withholding information or failure to supply information to employer",
-		"Legal reference" : [
+		"offense" : "Fraudulent withholding information or failure to supply information to employer",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Fraud and false statements",
-		"Legal reference" : [
+		"offense" : "Fraud and false statements",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "False statement/dealer certificate",
-		"Legal reference" : [
+		"offense" : "False statement/dealer certificate",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "False information/registration",
-		"Legal reference" : [
+		"offense" : "False information/registration",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "No school bus driver's license",
-		"Legal reference" : [
+		"offense" : "No school bus driver's license",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "False statement on DMV document",
-		"Legal reference" : [
+		"offense" : "False statement on DMV document",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "No permit - 2nd or greater offense",
-		"Legal reference" : [
+		"offense" : "No permit - 2nd or greater offense",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Altered title",
-		"Legal reference" : [
+		"offense" : "Altered title",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Altered registration",
-		"Legal reference" : [
+		"offense" : "Altered registration",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "No commercial driver's license",
-		"Legal reference" : [
+		"offense" : "No commercial driver's license",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "A violation of building and housing code regulations",
-		"Legal reference" : [
+		"offense" : "A violation of building and housing code regulations",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "A violation of the Public Utility Commission regulations",
-		"Legal reference" : [
+		"offense" : "A violation of the Public Utility Commission regulations",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	},
 	{
-		"Offense" : "Attempt or conspiracy to committ any of the above offenses",
-		"Legal reference" : [
+		"offense" : "Attempt or conspiracy to committ any of the above offenses",
+		"legal_reference" : [
 		],
-		"Legal description" : "",
-		"Simple description" : ""
+		"legal_description" : "",
+		"simple_description" : ""
 	}
 
 ]
