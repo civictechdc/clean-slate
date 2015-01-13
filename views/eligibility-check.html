@@ -40,6 +40,21 @@
         <div class="btn btn-default" ng-click="getToStep(7)">yes</div>
       </div>
 
+      <div ng-show="step_in_process == 6">
+        <p>Do you also have an ineligible conviction on your record?</p>
+        
+        <p>Ineligible misdemeanors</p>
+        <ul> 
+          <li ng-repeat="misdemeanor in ineligibleMisdemeanors">{{misdemeanor.offense}}</li>
+        </ul>
+        <div class="btn btn-default" ng-click="getToStep(7)">no</div>        
+        <div class="btn btn-default" ng-click="getToStep(8)">yes</div>
+      </div>
 
     </div><!-- /.col-md-12 -->
 </div><!-- /.row -->
+
+
+<div style="position: fixed; bottom: 0; right: 0;">
+  skip to step # <input type="text" ng-model="step_in_process">
+</div>

@@ -73,10 +73,15 @@ myApp.controller('homeController',
 ]);
 
 myApp.controller('eligibilityController',
-    ['$scope', '$routeParams', '$location',
-        function ($scope, $routeParams, $location) {
+    ['$scope', '$http', '$routeParams', '$location',
+        function ($scope, $http, $routeParams, $location) {
         
         $scope.step_in_process = 0;
+
+        $http.get('/ineligible-misdemeanors.json')
+        .success(function(data, status, headers, config) {
+            $scope.ineligibleMisdemeanors  = data;
+        });
         
         $scope.getToStep = function (step) {
           console.log('Going to step: ', step);
