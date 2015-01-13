@@ -23,3 +23,4 @@ Additional resources:
 
 To Do:
 - Add Ineligible Felonies to Step #6 of the wizard
+- Add eligible misdemeanor or an ineligible misdemeanor/felony #8

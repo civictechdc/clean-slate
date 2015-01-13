@@ -47,10 +47,21 @@
         <ul> 
           <li ng-repeat="misdemeanor in ineligibleMisdemeanors">{{misdemeanor.offense}}</li>
         </ul>
-        <div class="btn btn-default" ng-click="getToStep(7)">no</div>        
-        <div class="btn btn-default" ng-click="getToStep(8)">yes</div>
+        <div class="btn btn-default" ng-click="getToStep(8)">no</div>        
+        <div class="btn btn-default" ng-click="getToStep()">yes</div>
       </div>
 
+      <div ng-show="step_in_process == 7">
+        <p>Do you also have an ineligible conviction on your record?</p>
+        <div class="btn btn-default" ng-click="getToStep(8)">no</div>        
+        <div class="btn btn-default" ng-click="ineligible()">yes</div>
+      </div>
+
+      <div ng-show="step_in_process == 8">
+        <p>Is the non-conviction for an eligible misdemeanor or an ineligible misdemeanor/felony?</p>
+        <div class="btn btn-default" ng-click="getToStep()">ineligible misdemeanor/felony</div>        
+        <div class="btn btn-default" ng-click="getToStep()">eligible misdemeanor/felony</div>
+      </div>
     </div><!-- /.col-md-12 -->
 </div><!-- /.row -->
 
