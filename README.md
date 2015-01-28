@@ -47,7 +47,9 @@ OSX / Linux:
 - Move into the folder
 	- ```$ cd expungement-dc```
 - Install packages
-	- ```$ npm install```
+	- ```$ npm install grunt-contrib-concat -save-dev```
+	- ```$ npm install grunt-contrib-uglify -save-dev```
+	- ```$ npm install grunt-contrib-watch -save-dev```
 - Start grunt build and watch
 	- ```$ grunt```
 - Build away!
