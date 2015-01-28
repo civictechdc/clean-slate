@@ -23,37 +23,13 @@ Additional resources:
 
 **Developement guide**
 
-OSX / Linux:
-
-**Global installs** (if you don't already have these)
-
-- Node.JS
-	- Check to see if you have Node.JS already
-		- ```$ node -v```
-	- If not, Download and install it
-		- [Download Node](http://nodejs.org/download/)	
-- Grunt
-	- ```$ grunt -v```
-	- ```$ sudo npm install -g grunt-cli```
-- Sass
-	- ```$ sass -v```
-	- <http://sass-lang.com/install>
-	- ```$ gem install sass```
-
-**Project installs**
-
 - Clone the repo
 	- ```$ git clone <https://github.com/RyanGladstone/expungement-dc.git>```  
 - Move into the folder
 	- ```$ cd expungement-dc```
-- Install packages
-	- ```$ npm install grunt-contrib-concat -save-dev```
-	- ```$ npm install grunt-contrib-uglify -save-dev```
-	- ```$ npm install grunt-contrib-watch -save-dev```
-- Start grunt build and watch
-	- ```$ grunt```
 - Build away!
-- 
+
+
 ---
 
 To Do:
