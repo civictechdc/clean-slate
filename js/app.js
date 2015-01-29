@@ -47,7 +47,7 @@ myApp.controller('eligibilityController',
         
         $scope.step_in_process = 0;
 
-        $http.get('/ineligible-misdemeanors.json')
+        $http.get('ineligible-misdemeanors.json')
         .success(function(data, status, headers, config) {
             $scope.ineligibleMisdemeanors  = data;
         });
