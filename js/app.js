@@ -8,12 +8,8 @@ var myApp = angular.module('myApp', [
     ]);
 
 // Route definition 
-myApp.config(['$routeProvider', '$locationProvider', 
-    function ($routeProvider, $locationProvider) {
-        
-        //$locationProvider.html5Mode(true);
-        
-        var test;
+myApp.config(['$routeProvider',
+    function ($routeProvider) {
         
         $routeProvider
             .when('/', {
@@ -33,26 +29,14 @@ myApp.config(['$routeProvider', '$locationProvider',
                 controller: 'eligibilityController'
             })
             .otherwise({
-				redirectTo: '/'
-			});
+                redirectTo: '/'
+			      });
 }]);
 
 
 myApp.controller('homeController',
     ['$scope', '$routeParams',
         function ($scope, $routeParams) {
-
-            /*
-            $scope.modal = {
-              "title": "Modal title goes here",
-              "content": "Modal content goes here!"
-            };
-
-            // Sample Directive data
-            $scope.customer = {
-                name: 'Tom'
-            };
-            */
             
         }
 ]);
@@ -88,7 +72,6 @@ myApp.controller('eligibilityIneligibleController',
     ['$scope', '$routeParams',
         function ($scope, $routeParams) {
         
-        
            
         }
 ]);
@@ -96,7 +79,6 @@ myApp.controller('eligibilityIneligibleController',
 myApp.controller('eligibilityEligibleController',
     ['$scope', '$routeParams',
         function ($scope, $routeParams) {
-        
         
            
         }
