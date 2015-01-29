@@ -73,3 +73,22 @@ body,html{
 i.medium {
     font-size: 1.6em;
 }
+
+
+
+
+
+.misdemeanors_group {
+  padding-left: 0;
+}
+.misdemeanors {
+  margin: 15px 0;
+  padding: 10px 0;
+  border-top: 1px #eee solid;
+  border-bottom: 1px #eee solid;
+  list-style-type: none;
+}
+
+.misdemeanors p {
+  padding: 15px;
+}
