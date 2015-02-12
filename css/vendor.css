@@ -1,4 +1,452 @@
+/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+
+
+/**
+ * angular-motion
+ * @version v0.3.3 - 2014-06-23
+ * @link https://github.com/mgcrea/angular-motion
+ * @author Olivier Louvignes <olivier@mg-crea.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+.am-fade-and-scale{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-fade-and-scale.ng-enter,.am-fade-and-scale.am-fade-and-scale-add,.am-fade-and-scale.ng-hide-remove,.am-fade-and-scale.ng-move{-webkit-animation-name:fadeAndScaleIn;animation-name:fadeAndScaleIn}.am-fade-and-scale.ng-leave,.am-fade-and-scale.am-fade-and-scale-remove,.am-fade-and-scale.ng-hide{-webkit-animation-name:fadeAndScaleOut;animation-name:fadeAndScaleOut}.am-fade-and-scale.ng-enter{visibility:hidden;-webkit-animation-name:fadeAndScaleIn;animation-name:fadeAndScaleIn;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-scale.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-scale.ng-leave{-webkit-animation-name:fadeAndScaleOut;animation-name:fadeAndScaleOut;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-scale.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes fadeAndScaleIn{from{opacity:0;-webkit-transform:scale(0.7);transform:scale(0.7)}to{opacity:1}}@keyframes fadeAndScaleIn{from{opacity:0;-webkit-transform:scale(0.7);transform:scale(0.7)}to{opacity:1}}@-webkit-keyframes fadeAndScaleOut{from{opacity:1}to{opacity:0;-webkit-transform:scale(0.7);transform:scale(0.7)}}@keyframes fadeAndScaleOut{from{opacity:1}to{opacity:0;-webkit-transform:scale(0.7);transform:scale(0.7)}}.am-fade-and-slide-top{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-fade-and-slide-top.am-fade-and-slide-top-add,.am-fade-and-slide-top.ng-hide-remove,.am-fade-and-slide-top.ng-move{-webkit-animation-name:fadeAndSlideFromTop;animation-name:fadeAndSlideFromTop}.am-fade-and-slide-top.am-fade-and-slide-top-remove,.am-fade-and-slide-top.ng-hide{-webkit-animation-name:fadeAndSlideToTop;animation-name:fadeAndSlideToTop}.am-fade-and-slide-top.ng-enter{visibility:hidden;-webkit-animation-name:fadeAndSlideFromTop;animation-name:fadeAndSlideFromTop;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-top.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-slide-top.ng-leave{-webkit-animation-name:fadeAndSlideToTop;animation-name:fadeAndSlideToTop;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-top.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-slide-right{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-fade-and-slide-right.am-fade-and-slide-right-add,.am-fade-and-slide-right.ng-hide-remove,.am-fade-and-slide-right.ng-move{-webkit-animation-name:fadeAndSlideFromRight;animation-name:fadeAndSlideFromRight}.am-fade-and-slide-right.am-fade-and-slide-right-remove,.am-fade-and-slide-right.ng-hide{-webkit-animation-name:fadeAndSlideToRight;animation-name:fadeAndSlideToRight}.am-fade-and-slide-right.ng-enter{visibility:hidden;-webkit-animation-name:fadeAndSlideFromRight;animation-name:fadeAndSlideFromRight;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-right.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-slide-right.ng-leave{-webkit-animation-name:fadeAndSlideToRight;animation-name:fadeAndSlideToRight;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-right.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-slide-bottom{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-fade-and-slide-bottom.am-fade-and-slide-bottom-add,.am-fade-and-slide-bottom.ng-hide-remove,.am-fade-and-slide-bottom.ng-move{-webkit-animation-name:fadeAndSlideFromBottom;animation-name:fadeAndSlideFromBottom}.am-fade-and-slide-bottom.am-fade-and-slide-bottom-remove,.am-fade-and-slide-bottom.ng-hide{-webkit-animation-name:fadeAndSlideToBottom;animation-name:fadeAndSlideToBottom}.am-fade-and-slide-bottom.ng-enter{visibility:hidden;-webkit-animation-name:fadeAndSlideFromBottom;animation-name:fadeAndSlideFromBottom;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-bottom.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-slide-bottom.ng-leave{-webkit-animation-name:fadeAndSlideToBottom;animation-name:fadeAndSlideToBottom;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-bottom.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-slide-left{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-fade-and-slide-left.am-fade-and-slide-left-add,.am-fade-and-slide-left.ng-hide-remove,.am-fade-and-slide-left.ng-move{-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards;-webkit-animation-name:fadeAndSlideFromLeft;animation-name:fadeAndSlideFromLeft}.am-fade-and-slide-left.am-fade-and-slide-left-remove,.am-fade-and-slide-left.ng-hide{-webkit-animation-name:fadeAndSlideToLeft;animation-name:fadeAndSlideToLeft}.am-fade-and-slide-left.ng-enter{visibility:hidden;-webkit-animation-name:fadeAndSlideFromLeft;animation-name:fadeAndSlideFromLeft;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-left.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-fade-and-slide-left.ng-leave{-webkit-animation-name:fadeAndSlideToLeft;animation-name:fadeAndSlideToLeft;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade-and-slide-left.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes fadeAndSlideFromTop{from{opacity:0;-webkit-transform:translateY(-20%);transform:translateY(-20%)}to{opacity:1}}@keyframes fadeAndSlideFromTop{from{opacity:0;-webkit-transform:translateY(-20%);transform:translateY(-20%)}to{opacity:1}}@-webkit-keyframes fadeAndSlideToTop{from{opacity:1}to{opacity:0;-webkit-transform:translateY(-20%);transform:translateY(-20%)}}@keyframes fadeAndSlideToTop{from{opacity:1}to{opacity:0;-webkit-transform:translateY(-20%);transform:translateY(-20%)}}@-webkit-keyframes fadeAndSlideFromRight{from{opacity:0;-webkit-transform:translateX(20%);transform:translateX(20%)}to{opacity:1}}@keyframes fadeAndSlideFromRight{from{opacity:0;-webkit-transform:translateX(20%);transform:translateX(20%)}to{opacity:1}}@-webkit-keyframes fadeAndSlideToRight{from{opacity:1}to{opacity:0;-webkit-transform:translateX(20%);transform:translateX(20%)}}@keyframes fadeAndSlideToRight{from{opacity:1}to{opacity:0;-webkit-transform:translateX(20%);transform:translateX(20%)}}@-webkit-keyframes fadeAndSlideFromBottom{from{opacity:0;-webkit-transform:translateY(20%);transform:translateY(20%)}to{opacity:1}}@keyframes fadeAndSlideFromBottom{from{opacity:0;-webkit-transform:translateY(20%);transform:translateY(20%)}to{opacity:1}}@-webkit-keyframes fadeAndSlideToBottom{from{opacity:1}to{opacity:0;-webkit-transform:translateY(20%);transform:translateY(20%)}}@keyframes fadeAndSlideToBottom{from{opacity:1}to{opacity:0;-webkit-transform:translateY(20%);transform:translateY(20%)}}@-webkit-keyframes fadeAndSlideFromLeft{from{opacity:0;-webkit-transform:translateX(-20%);transform:translateX(-20%)}to{opacity:1}}@keyframes fadeAndSlideFromLeft{from{opacity:0;-webkit-transform:translateX(-20%);transform:translateX(-20%)}to{opacity:1}}@-webkit-keyframes fadeAndSlideToLeft{from{opacity:1}to{opacity:0;-webkit-transform:translateX(-20%);transform:translateX(-20%)}}@keyframes fadeAndSlideToLeft{from{opacity:1}to{opacity:0;-webkit-transform:translateX(-20%);transform:translateX(-20%)}}.am-fade{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards;opacity:1}.am-fade.am-fade-add,.am-fade.ng-hide-remove,.am-fade.ng-move{-webkit-animation-name:fadeIn;animation-name:fadeIn}.am-fade.am-fade-remove,.am-fade.ng-hide{-webkit-animation-name:fadeOut;animation-name:fadeOut}.am-fade.ng-enter{visibility:hidden;-webkit-animation-name:fadeIn;animation-name:fadeIn;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-fade.ng-leave{-webkit-animation-name:fadeOut;animation-name:fadeOut;-webkit-animation-play-state:paused;animation-play-state:paused}.am-fade.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@-webkit-keyframes fadeOut{from{opacity:1}to{opacity:0}}@keyframes fadeOut{from{opacity:1}to{opacity:0}}.modal-backdrop.am-fade,.aside-backdrop.am-fade{background:rgba(0,0,0,.5);-webkit-animation-duration:.15s;animation-duration:.15s}.modal-backdrop.am-fade.ng-leave,.aside-backdrop.am-fade.ng-leave{-webkit-animation-delay:.3s;animation-delay:.3s}.am-flip-x{-webkit-animation-duration:.4s;animation-duration:.4s;-webkit-animation-timing-function:ease;animation-timing-function:ease;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-flip-x.am-flip-x-add,.am-flip-x.ng-hide-remove,.am-flip-x.ng-move{-webkit-animation-name:flipInXBounce;animation-name:flipInXBounce}.am-flip-x.am-flip-x-remove,.am-flip-x.ng-hide{-webkit-animation-name:flipOutX;animation-name:flipOutX}.am-flip-x.ng-enter{visibility:hidden;-webkit-animation-name:flipInXBounce;animation-name:flipInXBounce;-webkit-animation-play-state:paused;animation-play-state:paused}.am-flip-x.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-flip-x.ng-leave{-webkit-animation-name:flipOutX;animation-name:flipOutX;-webkit-animation-play-state:paused;animation-play-state:paused}.am-flip-x.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}.am-flip-x-linear{-webkit-animation-duration:.4s;animation-duration:.4s;-webkit-animation-timing-function:ease;animation-timing-function:ease;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-flip-x-linear.am-flip-x-add,.am-flip-x-linear.ng-hide-remove,.am-flip-x-linear.ng-move{-webkit-animation-name:flipInX;animation-name:flipInX}.am-flip-x-linear.am-flip-x-remove,.am-flip-x-linear.ng-hide{-webkit-animation-name:flipOutX;animation-name:flipOutX}.am-flip-x-linear.ng-enter{visibility:hidden;-webkit-animation-name:flipInX;animation-name:flipInX;-webkit-animation-play-state:paused;animation-play-state:paused}.am-flip-x-linear.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-flip-x-linear.ng-leave{-webkit-animation-name:flipOutX;animation-name:flipOutX;-webkit-animation-play-state:paused;animation-play-state:paused}.am-flip-x-linear.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes flipInX{from{opacity:0;-webkit-transform:perspective(400px) rotateX(90deg);transform:perspective(400px) rotateX(90deg)}to{opacity:1;-webkit-transform:perspective(400px) rotateX(0deg);transform:perspective(400px) rotateX(0deg)}}@keyframes flipInX{from{opacity:0;-webkit-transform:perspective(400px) rotateX(90deg);transform:perspective(400px) rotateX(90deg)}to{opacity:1;-webkit-transform:perspective(400px) rotateX(0deg);transform:perspective(400px) rotateX(0deg)}}@-webkit-keyframes flipInXBounce{from{opacity:0;-webkit-transform:perspective(400px) rotateX(90deg);transform:perspective(400px) rotateX(90deg)}40%{-webkit-transform:perspective(400px) rotateX(-10deg);transform:perspective(400px) rotateX(-10deg)}70%{-webkit-transform:perspective(400px) rotateX(10deg);transform:perspective(400px) rotateX(10deg)}to{opacity:1;-webkit-transform:perspective(400px) rotateX(0deg);transform:perspective(400px) rotateX(0deg)}}@keyframes flipInXBounce{from{opacity:0;-webkit-transform:perspective(400px) rotateX(90deg);transform:perspective(400px) rotateX(90deg)}40%{-webkit-transform:perspective(400px) rotateX(-10deg);transform:perspective(400px) rotateX(-10deg)}70%{-webkit-transform:perspective(400px) rotateX(10deg);transform:perspective(400px) rotateX(10deg)}to{opacity:1;-webkit-transform:perspective(400px) rotateX(0deg);transform:perspective(400px) rotateX(0deg)}}@-webkit-keyframes flipOutX{from{opacity:1;-webkit-transform:perspective(400px) rotateX(0deg);transform:perspective(400px) rotateX(0deg)}to{opacity:0;-webkit-transform:perspective(400px) rotateX(90deg);transform:perspective(400px) rotateX(90deg)}}@keyframes flipOutX{from{opacity:1;-webkit-transform:perspective(400px) rotateX(0deg);transform:perspective(400px) rotateX(0deg)}to{opacity:0;-webkit-transform:perspective(400px) rotateX(90deg);transform:perspective(400px) rotateX(90deg)}}.am-slide-top{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-slide-top.am-slide-top-add,.am-slide-top.ng-hide-remove,.am-slide-top.ng-move{-webkit-animation-name:slideFromTop;animation-name:slideFromTop}.am-slide-top.am-slide-top-remove,.am-slide-top.ng-hide{-webkit-animation-name:slideToTop;animation-name:slideToTop}.am-slide-top.ng-enter{visibility:hidden;-webkit-animation-name:slideFromTop;animation-name:slideFromTop;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-top.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-slide-top.ng-leave{-webkit-animation-name:slideToTop;animation-name:slideToTop;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-top.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}.am-slide-right{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-slide-right.am-slide-right-add,.am-slide-right.ng-hide-remove,.am-slide-right.ng-move{-webkit-animation-name:slideFromRight;animation-name:slideFromRight}.am-slide-right.am-slide-right-remove,.am-slide-right.ng-hide{-webkit-animation-name:slideToRight;animation-name:slideToRight}.am-slide-right.ng-enter{visibility:hidden;-webkit-animation-name:slideFromRight;animation-name:slideFromRight;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-right.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-slide-right.ng-leave{-webkit-animation-name:slideToRight;animation-name:slideToRight;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-right.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}.am-slide-bottom{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-slide-bottom.am-slide-bottom-add,.am-slide-bottom.ng-hide-remove,.am-slide-bottom.ng-move{-webkit-animation-name:slideFromBottom;animation-name:slideFromBottom}.am-slide-bottom.am-slide-bottom-remove,.am-slide-bottom.ng-hide{-webkit-animation-name:slideToBottom;animation-name:slideToBottom}.am-slide-bottom.ng-enter{visibility:hidden;-webkit-animation-name:slideFromBottom;animation-name:slideFromBottom;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-bottom.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-slide-bottom.ng-leave{-webkit-animation-name:slideToBottom;animation-name:slideToBottom;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-bottom.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}.am-slide-left{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}.am-slide-left.am-slide-left-add,.am-slide-left.ng-hide-remove,.am-slide-left.ng-move{-webkit-animation-name:slideFromLeft;animation-name:slideFromLeft}.am-slide-left.am-slide-left-remove,.am-slide-left.ng-hide{-webkit-animation-name:slideToLeft;animation-name:slideToLeft}.am-slide-left.ng-enter{visibility:hidden;-webkit-animation-name:slideFromLeft;animation-name:slideFromLeft;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-left.ng-enter.ng-enter-active{visibility:visible;-webkit-animation-play-state:running;animation-play-state:running}.am-slide-left.ng-leave{-webkit-animation-name:slideToLeft;animation-name:slideToLeft;-webkit-animation-play-state:paused;animation-play-state:paused}.am-slide-left.ng-leave.ng-leave-active{-webkit-animation-play-state:running;animation-play-state:running}@-webkit-keyframes slideFromTop{from{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@keyframes slideFromTop{from{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@-webkit-keyframes slideToTop{to{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@keyframes slideToTop{to{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@-webkit-keyframes slideFromRight{from{-webkit-transform:translateX(100%);transform:translateX(100%)}}@keyframes slideFromRight{from{-webkit-transform:translateX(100%);transform:translateX(100%)}}@-webkit-keyframes slideToRight{to{-webkit-transform:translateX(100%);transform:translateX(100%)}}@keyframes slideToRight{to{-webkit-transform:translateX(100%);transform:translateX(100%)}}@-webkit-keyframes slideFromBottom{from{-webkit-transform:translateY(100%);transform:translateY(100%)}}@keyframes slideFromBottom{from{-webkit-transform:translateY(100%);transform:translateY(100%)}}@-webkit-keyframes slideToBottom{to{-webkit-transform:translateY(100%);transform:translateY(100%)}}@keyframes slideToBottom{to{-webkit-transform:translateY(100%);transform:translateY(100%)}}@-webkit-keyframes slideFromLeft{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}@keyframes slideFromLeft{from{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}@-webkit-keyframes slideToLeft{to{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}@keyframes slideToLeft{to{-webkit-transform:translateX(-100%);transform:translateX(-100%)}}
+
+
+
 /*!
+ * Bootstrap v3.2.0 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */.btn-default,.btn-primary,.btn-success,.btn-info,.btn-warning,.btn-danger{text-shadow:0 -1px 0 rgba(0,0,0,.2);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075)}.btn-default:active,.btn-primary:active,.btn-success:active,.btn-info:active,.btn-warning:active,.btn-danger:active,.btn-default.active,.btn-primary.active,.btn-success.active,.btn-info.active,.btn-warning.active,.btn-danger.active{-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn:active,.btn.active{background-image:none}.btn-default{text-shadow:0 1px 0 #fff;background-image:-webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);background-image:-o-linear-gradient(top,#fff 0,#e0e0e0 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));background-image:linear-gradient(to bottom,#fff 0,#e0e0e0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;border-color:#dbdbdb;border-color:#ccc}.btn-default:hover,.btn-default:focus{background-color:#e0e0e0;background-position:0 -15px}.btn-default:active,.btn-default.active{background-color:#e0e0e0;border-color:#dbdbdb}.btn-default:disabled,.btn-default[disabled]{background-color:#e0e0e0;background-image:none}.btn-primary{background-image:-webkit-linear-gradient(top,#428bca 0,#2d6ca2 100%);background-image:-o-linear-gradient(top,#428bca 0,#2d6ca2 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#428bca),to(#2d6ca2));background-image:linear-gradient(to bottom,#428bca 0,#2d6ca2 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;border-color:#2b669a}.btn-primary:hover,.btn-primary:focus{background-color:#2d6ca2;background-position:0 -15px}.btn-primary:active,.btn-primary.active{background-color:#2d6ca2;border-color:#2b669a}.btn-primary:disabled,.btn-primary[disabled]{background-color:#2d6ca2;background-image:none}.btn-success{background-image:-webkit-linear-gradient(top,#5cb85c 0,#419641 100%);background-image:-o-linear-gradient(top,#5cb85c 0,#419641 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#5cb85c),to(#419641));background-image:linear-gradient(to bottom,#5cb85c 0,#419641 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;border-color:#3e8f3e}.btn-success:hover,.btn-success:focus{background-color:#419641;background-position:0 -15px}.btn-success:active,.btn-success.active{background-color:#419641;border-color:#3e8f3e}.btn-success:disabled,.btn-success[disabled]{background-color:#419641;background-image:none}.btn-info{background-image:-webkit-linear-gradient(top,#5bc0de 0,#2aabd2 100%);background-image:-o-linear-gradient(top,#5bc0de 0,#2aabd2 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#5bc0de),to(#2aabd2));background-image:linear-gradient(to bottom,#5bc0de 0,#2aabd2 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2aabd2', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;border-color:#28a4c9}.btn-info:hover,.btn-info:focus{background-color:#2aabd2;background-position:0 -15px}.btn-info:active,.btn-info.active{background-color:#2aabd2;border-color:#28a4c9}.btn-info:disabled,.btn-info[disabled]{background-color:#2aabd2;background-image:none}.btn-warning{background-image:-webkit-linear-gradient(top,#f0ad4e 0,#eb9316 100%);background-image:-o-linear-gradient(top,#f0ad4e 0,#eb9316 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#f0ad4e),to(#eb9316));background-image:linear-gradient(to bottom,#f0ad4e 0,#eb9316 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffeb9316', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;border-color:#e38d13}.btn-warning:hover,.btn-warning:focus{background-color:#eb9316;background-position:0 -15px}.btn-warning:active,.btn-warning.active{background-color:#eb9316;border-color:#e38d13}.btn-warning:disabled,.btn-warning[disabled]{background-color:#eb9316;background-image:none}.btn-danger{background-image:-webkit-linear-gradient(top,#d9534f 0,#c12e2a 100%);background-image:-o-linear-gradient(top,#d9534f 0,#c12e2a 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#d9534f),to(#c12e2a));background-image:linear-gradient(to bottom,#d9534f 0,#c12e2a 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;border-color:#b92c28}.btn-danger:hover,.btn-danger:focus{background-color:#c12e2a;background-position:0 -15px}.btn-danger:active,.btn-danger.active{background-color:#c12e2a;border-color:#b92c28}.btn-danger:disabled,.btn-danger[disabled]{background-color:#c12e2a;background-image:none}.thumbnail,.img-thumbnail{-webkit-box-shadow:0 1px 2px rgba(0,0,0,.075);box-shadow:0 1px 2px rgba(0,0,0,.075)}.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus{background-color:#e8e8e8;background-image:-webkit-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);background-image:-o-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#e8e8e8));background-image:linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);background-repeat:repeat-x}.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{background-color:#357ebd;background-image:-webkit-linear-gradient(top,#428bca 0,#357ebd 100%);background-image:-o-linear-gradient(top,#428bca 0,#357ebd 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#428bca),to(#357ebd));background-image:linear-gradient(to bottom,#428bca 0,#357ebd 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);background-repeat:repeat-x}.navbar-default{background-image:-webkit-linear-gradient(top,#fff 0,#f8f8f8 100%);background-image:-o-linear-gradient(top,#fff 0,#f8f8f8 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#f8f8f8));background-image:linear-gradient(to bottom,#fff 0,#f8f8f8 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff8f8f8', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x;border-radius:4px;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,.075);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,.075)}.navbar-default .navbar-nav>.active>a{background-image:-webkit-linear-gradient(top,#ebebeb 0,#f3f3f3 100%);background-image:-o-linear-gradient(top,#ebebeb 0,#f3f3f3 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#ebebeb),to(#f3f3f3));background-image:linear-gradient(to bottom,#ebebeb 0,#f3f3f3 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff3f3f3', GradientType=0);background-repeat:repeat-x;-webkit-box-shadow:inset 0 3px 9px rgba(0,0,0,.075);box-shadow:inset 0 3px 9px rgba(0,0,0,.075)}.navbar-brand,.navbar-nav>li>a{text-shadow:0 1px 0 rgba(255,255,255,.25)}.navbar-inverse{background-image:-webkit-linear-gradient(top,#3c3c3c 0,#222 100%);background-image:-o-linear-gradient(top,#3c3c3c 0,#222 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#3c3c3c),to(#222));background-image:linear-gradient(to bottom,#3c3c3c 0,#222 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);background-repeat:repeat-x}.navbar-inverse .navbar-nav>.active>a{background-image:-webkit-linear-gradient(top,#222 0,#282828 100%);background-image:-o-linear-gradient(top,#222 0,#282828 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#222),to(#282828));background-image:linear-gradient(to bottom,#222 0,#282828 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff282828', GradientType=0);background-repeat:repeat-x;-webkit-box-shadow:inset 0 3px 9px rgba(0,0,0,.25);box-shadow:inset 0 3px 9px rgba(0,0,0,.25)}.navbar-inverse .navbar-brand,.navbar-inverse .navbar-nav>li>a{text-shadow:0 -1px 0 rgba(0,0,0,.25)}.navbar-static-top,.navbar-fixed-top,.navbar-fixed-bottom{border-radius:0}.alert{text-shadow:0 1px 0 rgba(255,255,255,.2);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 1px 2px rgba(0,0,0,.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 1px 2px rgba(0,0,0,.05)}.alert-success{background-image:-webkit-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);background-image:-o-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#dff0d8),to(#c8e5bc));background-image:linear-gradient(to bottom,#dff0d8 0,#c8e5bc 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);background-repeat:repeat-x;border-color:#b2dba1}.alert-info{background-image:-webkit-linear-gradient(top,#d9edf7 0,#b9def0 100%);background-image:-o-linear-gradient(top,#d9edf7 0,#b9def0 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#d9edf7),to(#b9def0));background-image:linear-gradient(to bottom,#d9edf7 0,#b9def0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);background-repeat:repeat-x;border-color:#9acfea}.alert-warning{background-image:-webkit-linear-gradient(top,#fcf8e3 0,#f8efc0 100%);background-image:-o-linear-gradient(top,#fcf8e3 0,#f8efc0 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#fcf8e3),to(#f8efc0));background-image:linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fff8efc0', GradientType=0);background-repeat:repeat-x;border-color:#f5e79e}.alert-danger{background-image:-webkit-linear-gradient(top,#f2dede 0,#e7c3c3 100%);background-image:-o-linear-gradient(top,#f2dede 0,#e7c3c3 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#f2dede),to(#e7c3c3));background-image:linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);background-repeat:repeat-x;border-color:#dca7a7}.progress{background-image:-webkit-linear-gradient(top,#ebebeb 0,#f5f5f5 100%);background-image:-o-linear-gradient(top,#ebebeb 0,#f5f5f5 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#ebebeb),to(#f5f5f5));background-image:linear-gradient(to bottom,#ebebeb 0,#f5f5f5 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);background-repeat:repeat-x}.progress-bar{background-image:-webkit-linear-gradient(top,#428bca 0,#3071a9 100%);background-image:-o-linear-gradient(top,#428bca 0,#3071a9 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#428bca),to(#3071a9));background-image:linear-gradient(to bottom,#428bca 0,#3071a9 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3071a9', GradientType=0);background-repeat:repeat-x}.progress-bar-success{background-image:-webkit-linear-gradient(top,#5cb85c 0,#449d44 100%);background-image:-o-linear-gradient(top,#5cb85c 0,#449d44 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#5cb85c),to(#449d44));background-image:linear-gradient(to bottom,#5cb85c 0,#449d44 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff449d44', GradientType=0);background-repeat:repeat-x}.progress-bar-info{background-image:-webkit-linear-gradient(top,#5bc0de 0,#31b0d5 100%);background-image:-o-linear-gradient(top,#5bc0de 0,#31b0d5 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#5bc0de),to(#31b0d5));background-image:linear-gradient(to bottom,#5bc0de 0,#31b0d5 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff31b0d5', GradientType=0);background-repeat:repeat-x}.progress-bar-warning{background-image:-webkit-linear-gradient(top,#f0ad4e 0,#ec971f 100%);background-image:-o-linear-gradient(top,#f0ad4e 0,#ec971f 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#f0ad4e),to(#ec971f));background-image:linear-gradient(to bottom,#f0ad4e 0,#ec971f 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e', endColorstr='#ffec971f', GradientType=0);background-repeat:repeat-x}.progress-bar-danger{background-image:-webkit-linear-gradient(top,#d9534f 0,#c9302c 100%);background-image:-o-linear-gradient(top,#d9534f 0,#c9302c 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#d9534f),to(#c9302c));background-image:linear-gradient(to bottom,#d9534f 0,#c9302c 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc9302c', GradientType=0);background-repeat:repeat-x}.progress-bar-striped{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.list-group{border-radius:4px;-webkit-box-shadow:0 1px 2px rgba(0,0,0,.075);box-shadow:0 1px 2px rgba(0,0,0,.075)}.list-group-item.active,.list-group-item.active:hover,.list-group-item.active:focus{text-shadow:0 -1px 0 #3071a9;background-image:-webkit-linear-gradient(top,#428bca 0,#3278b3 100%);background-image:-o-linear-gradient(top,#428bca 0,#3278b3 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#428bca),to(#3278b3));background-image:linear-gradient(to bottom,#428bca 0,#3278b3 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff3278b3', GradientType=0);background-repeat:repeat-x;border-color:#3278b3}.panel{-webkit-box-shadow:0 1px 2px rgba(0,0,0,.05);box-shadow:0 1px 2px rgba(0,0,0,.05)}.panel-default>.panel-heading{background-image:-webkit-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);background-image:-o-linear-gradient(top,#f5f5f5 0,#e8e8e8 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#e8e8e8));background-image:linear-gradient(to bottom,#f5f5f5 0,#e8e8e8 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);background-repeat:repeat-x}.panel-primary>.panel-heading{background-image:-webkit-linear-gradient(top,#428bca 0,#357ebd 100%);background-image:-o-linear-gradient(top,#428bca 0,#357ebd 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#428bca),to(#357ebd));background-image:linear-gradient(to bottom,#428bca 0,#357ebd 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff357ebd', GradientType=0);background-repeat:repeat-x}.panel-success>.panel-heading{background-image:-webkit-linear-gradient(top,#dff0d8 0,#d0e9c6 100%);background-image:-o-linear-gradient(top,#dff0d8 0,#d0e9c6 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#dff0d8),to(#d0e9c6));background-image:linear-gradient(to bottom,#dff0d8 0,#d0e9c6 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffd0e9c6', GradientType=0);background-repeat:repeat-x}.panel-info>.panel-heading{background-image:-webkit-linear-gradient(top,#d9edf7 0,#c4e3f3 100%);background-image:-o-linear-gradient(top,#d9edf7 0,#c4e3f3 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#d9edf7),to(#c4e3f3));background-image:linear-gradient(to bottom,#d9edf7 0,#c4e3f3 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffc4e3f3', GradientType=0);background-repeat:repeat-x}.panel-warning>.panel-heading{background-image:-webkit-linear-gradient(top,#fcf8e3 0,#faf2cc 100%);background-image:-o-linear-gradient(top,#fcf8e3 0,#faf2cc 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#fcf8e3),to(#faf2cc));background-image:linear-gradient(to bottom,#fcf8e3 0,#faf2cc 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fffaf2cc', GradientType=0);background-repeat:repeat-x}.panel-danger>.panel-heading{background-image:-webkit-linear-gradient(top,#f2dede 0,#ebcccc 100%);background-image:-o-linear-gradient(top,#f2dede 0,#ebcccc 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#f2dede),to(#ebcccc));background-image:linear-gradient(to bottom,#f2dede 0,#ebcccc 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffebcccc', GradientType=0);background-repeat:repeat-x}.well{background-image:-webkit-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);background-image:-o-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);background-image:-webkit-gradient(linear,left top,left bottom,from(#e8e8e8),to(#f5f5f5));background-image:linear-gradient(to bottom,#e8e8e8 0,#f5f5f5 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);background-repeat:repeat-x;border-color:#dcdcdc;-webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1)}
+ 
+ 
+ 
+ 
+ /*!
  * Bootstrap v3.2.0 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)

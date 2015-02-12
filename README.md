@@ -12,3 +12,26 @@ A simple website for people trying to navigate the process of having records sea
 
 * As an attorney, I want to look up whether an offense is eligible for sealing in DC.
 * As an attorney, I want to be able to help a returning citizen breakdown the timeline for sealing eligibility using a chart
+
+---
+Additional resources:
+
+- [Flowchart](docs/flowchart.jpeg)
+- Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
+
+---
+
+**Developement guide**
+
+- Clone the repo
+	- ```$ git clone <https://github.com/RyanGladstone/expungement-dc.git>```  
+- Move into the folder
+	- ```$ cd expungement-dc```
+- Build away!
+
+
+---
+
+To Do:
+- Add Ineligible Felonies to Step #6 of the wizard
+- Add eligible misdemeanor or an ineligible misdemeanor/felony #8
