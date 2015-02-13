@@ -1,4 +1,4 @@
-# expungement-dc
+# [expungement-dc](http://codefordc.github.io/expungement-dc/#/)
 A simple website for people trying to navigate the process of having records sealed in DC
 
 * As a returning citizen I want to easily and quickly find out if my records are eligible for sealing.
@@ -18,17 +18,6 @@ Additional resources:
 
 - [Flowchart](docs/flowchart.jpeg)
 - Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
-
----
-
-**Developement guide**
-
-- Clone the repo
-	- ```$ git clone <https://github.com/RyanGladstone/expungement-dc.git>```  
-- Move into the folder
-	- ```$ cd expungement-dc```
-- Build away!
-
 
 ---
 
