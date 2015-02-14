@@ -20,7 +20,17 @@ Additional resources:
 - Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
 
 ---
+Developement guide:
 
+    First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer. Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
+
+    git clone git@github.com:[YOUR GITHUB NAME]/expungement-dc.git
+
+	You can work on the `master` branch (which is the default), but it's preferable to set up a new branch if you're working on a specific feature:
+
+    git checkout -b [NEW BRANCH NAME]
+
+---
 To Do:
 - Add Ineligible Felonies to Step #6 of the wizard
 - Add eligible misdemeanor or an ineligible misdemeanor/felony #8
