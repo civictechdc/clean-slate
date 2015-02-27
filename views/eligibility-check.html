@@ -5,14 +5,14 @@
       
       <div ng-show="step_in_process == 0">
         <p>Do you have a case pending?</p>
-        <div class="btn btn-default" ng-click="getToStep(1)">no</div>
-        <div class="btn btn-default" ng-click="ineligible()">yes</div>
+        <md-button ng-click="getToStep(1)" class="md-raised md-primary md-button md-default-theme">no</md-button>
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 1">
         <p>Are you sealing a conviction or a non-conviction?</p>
-        <div class="btn btn-default" ng-click="getToStep(2)">non-conviction</div>
-        <div class="btn btn-default" ng-click="getToStep(3)">conviction</div>        
+        <md-button ng-click="getToStep(2)" class="md-raised md-primary md-button md-default-theme">non-conviction</md-button>
+        <md-button ng-click="getToStep(3)" class="md-raised md-primary md-button md-default-theme">conviction</md-button>        
       </div>
 
       <div ng-show="step_in_process == 2">
@@ -23,7 +23,6 @@
           "Ineligible felony" means any felony other than a failure to appear 
           (§ 16-1327) [<a href="http://dccode.org/simple/sections/23-1327.html">§ 23‑1327</a>].
         </p>
-
 
         <ul class="misdemeanors_group">
           <h3>Ineligible misdemeanor</h3>
@@ -41,26 +40,26 @@
           </li>
         </ul>
 
-        <div class="btn btn-default" ng-click="getToStep(3)">ineligible</div>
-        <div class="btn btn-default" ng-click="eligible()">eligible</div>        
+        <md-button ng-click="getToStep(3)" class="md-raised md-primary md-button md-default-theme">ineligible</md-button>
+        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">eligible</md-button>        
       </div>
 
       <div ng-show="step_in_process == 3">
         <p>Have you subsequently been convicted of another crime in any jurisdiction?</p>
-        <div class="btn btn-default" ng-click="getToStep(4)">no</div>        
-        <div class="btn btn-default" ng-click="ineligible()">yes</div>
+        <md-button ng-click="getToStep(4)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 4">
         <p>Has it been 8 years since your were off papers?</p>
-        <div class="btn btn-default" ng-click="ineligible(4)">no</div>        
-        <div class="btn btn-default" ng-click="eligible()">yes</div>
+        <md-button ng-click="ineligible(4)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 5">
         <p>Is your non-conviction the result of a Deferred Sentencing Agreement?</p>
-        <div class="btn btn-default" ng-click="getToStep(6)">no</div>        
-        <div class="btn btn-default" ng-click="getToStep(7)">yes</div>
+        <md-button ng-click="getToStep(6)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="getToStep(7)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 6">
@@ -70,64 +69,63 @@
         <ul> 
           <li ng-repeat="misdemeanor in ineligibleMisdemeanors">{{misdemeanor.offense}}</li>
         </ul>
-        <div class="btn btn-default" ng-click="getToStep(8)">no</div>        
-        <div class="btn btn-default" ng-click="getToStep()">yes</div>
+        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 7">
         <p>Do you also have an ineligible conviction on your record?</p>
-        <div class="btn btn-default" ng-click="getToStep(8)">no</div>        
-        <div class="btn btn-default" ng-click="ineligible()">yes</div>
+        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 8">
         <p>Is the non-conviction for an eligible misdemeanor or an ineligible misdemeanor/felony?</p>
-        <div class="btn btn-default" ng-click="getToStep(9)">ineligible misdemeanor/felony</div>        
-        <div class="btn btn-default" ng-click="getToStep()">eligible misdemeanor/felony</div>
+        <md-button ng-click="getToStep(9)" class="md-raised md-primary md-button md-default-theme">ineligible misdemeanor/felony</md-button>        
+        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">eligible misdemeanor/felony</md-button>
       </div>
 
       <div ng-show="step_in_process == 9">
         <p>Was the case terminated before charging by the prosecution (no papered)?</p>
-        <div class="btn btn-default" ng-click="getToStep(10)">no</div>        
-        <div class="btn btn-default" ng-click="getToStep(11)">yes</div>
+        <md-button ng-click="getToStep(10)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="getToStep(11)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 10">
         <p>Has it been 4 years since you were "off papers" for the felony non-conviction?</p>
-        <div class="btn btn-default" ng-click="ineligible()">no</div>        
-        <div class="btn btn-default" ng-click="eligible()">yes</div>
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 11">
         <p>Has it been 3 years since you were "off papers" for the felony non-conviction?</p>
-        <div class="btn btn-default" ng-click="ineligible()">no</div>        
-        <div class="btn btn-default" ng-click="eligible()">yes</div>
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
       
       <div ng-show="step_in_process == 12">
         <p>Has it been two years since you were "off papers" for the misdemeanor non-conviction?</p>
-        <div class="btn btn-default" ng-click="ineligible()">no</div>        
-        <div class="btn btn-default" ng-click="eligible()">yes</div>
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 13">
         <p>Is the ineligible conviction for a felony or misdemeanor?</p>
-        <div class="btn btn-default" ng-click="getToStep()">misdemeanor</div>        
-        <div class="btn btn-default" ng-click="getToStep()">felony</div>
+        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">misdemeanor</md-button>        
+        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">felony</md-button>
       </div>
 
       <div ng-show="step_in_process == 14">
         <p>Has it been 10 years since you were "off papers" for the felony conviction?</p>
-        <div class="btn btn-default" ng-click="ineligible()">no</div>        
-        <div class="btn btn-default" ng-click="getToStep(8)">yes</div>
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
 
       <div ng-show="step_in_process == 15">
         <p>Has it been 5 years since you were "off papers" for the misdemeanor conviction?</p>
-        <div class="btn btn-default" ng-click="ineligible()">no</div>        
-        <div class="btn btn-default" ng-click="getToStep(8)">yes</div>
+        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
+        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
       </div>
-
       
     </div><!-- /.col-md-12 -->
 </div><!-- /.row -->
