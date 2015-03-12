@@ -83,3 +83,10 @@ Table of Contents:
 .misdemeanors p {
   padding: 15px;
 }
+
+.container .md-button {
+  margin: 2em 3em 2em 0;
+  padding: .7em 1.4em;
+  display: inline-block;
+}
+
