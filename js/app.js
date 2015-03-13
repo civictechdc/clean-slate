@@ -33,6 +33,16 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/eligibility-check.html',
                 controller: 'eligibilityController'
             })
+            // FAQs
+            .when('/questions', {
+                templateUrl: 'views/questions.html',
+                controller: 'questionsController'
+            })
+            // FAQs
+            .when('/legal-aid', {
+                templateUrl: 'views/legal-aid.html',
+                controller: 'legalAidController'
+            })
             // If the user attempts to visit a route that doesn't match any of the patterns above, re-direct them to the homepage
             .otherwise({
                 redirectTo: '/'
@@ -48,6 +58,25 @@ myApp.controller('homeController',
 
         }
 ]);
+
+// FAQs controller
+myApp.controller('questionsController',
+    ['$scope', 
+        function ($scope) {
+            
+
+        }
+]);
+
+// Legal Aid controller
+myApp.controller('legalAidController',
+    ['$scope', 
+        function ($scope) {
+            
+
+        }
+]);
+
 
 // Eligibility Checker Controller -- AKA The Wizard
 myApp.controller('eligibilityController',
