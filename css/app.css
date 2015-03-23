@@ -43,14 +43,26 @@ Table of Contents:
 .pagetitle {
     display: inline-block;
 }
-.main-menu {
-    padding: 60px 20px 60px 0;
-}
 .menu {
     position: absolute;
     right: 10px;
     top: 15px;
 }
+.menu-mobile {
+    padding: 60px 20px 60px 0;
+}
+.menu-mobile .md-button {
+  display: block;
+  margin-bottom: 10px;
+  padding: 1em;
+}
+.menu-desktop {
+  padding-top: 8px;
+}
+.menu-desktop .md-button {
+  margin-left: 30px;
+}
+
 .menu .md-button {
     color: rgba(255, 255, 255, 1);
 }
@@ -83,3 +95,11 @@ Table of Contents:
 .misdemeanors p {
   padding: 15px;
 }
+
+.container .md-button {
+  margin: 2em 3em 2em 0;
+  padding: .7em 1.4em;
+  display: inline-block;
+}
+
+
