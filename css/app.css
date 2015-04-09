@@ -19,3 +19,57 @@ Table of Contents:
 .misdemeanors p {
   padding: 15px;
 }
+
+
+/* Callouts */
+
+
+
+.callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px
+}
+
+.callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px
+}
+
+.callout p:last-child {
+    margin-bottom: 0
+}
+
+.callout code {
+    border-radius: 3px
+}
+
+.callout+.callout {
+    margin-top: -5px
+}
+
+.callout-danger {
+    border-left-color: #ce4844
+}
+
+.callout-danger h4 {
+    color: #ce4844
+}
+
+.callout-warning {
+    border-left-color: #aa6708
+}
+
+.callout-warning h4 {
+    color: #aa6708
+}
+
+.callout-info {
+    border-left-color: #1b809e
+}
+
+.callout-info h4 {
+    color: #1b809e
+}
