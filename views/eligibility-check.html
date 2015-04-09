@@ -1,22 +1,33 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 text-center">
       
-      <h1>Eligibility Checker</h1> 
-      
+      <div class="page-header">
+        <h1>Eligibility Checker</h1> 
+      </div>
+
       <div ng-show="step_in_process == 0">
-        <p>Do you have a case pending?</p>
-        <md-button ng-click="getToStep(1)" class="md-raised md-primary md-button md-default-theme">no</md-button>
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Do you have a case pending?</p>
+        <button ng-click="getToStep(1)" class="btn btn-primary">My case is resolved</button>
+        <button ng-click="ineligible()" class="btn btn-primary">My case is still pending</button>
+
+        <div class="callout text-left">
+          "Pending" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending.
+        </div>
+
       </div>
 
       <div ng-show="step_in_process == 1">
-        <p>Are you sealing a conviction or a non-conviction?</p>
-        <md-button ng-click="getToStep(2)" class="md-raised md-primary md-button md-default-theme">non-conviction</md-button>
-        <md-button ng-click="getToStep(3)" class="md-raised md-primary md-button md-default-theme">conviction</md-button>        
+        <p class="lead">Are you sealing a conviction or non-conviction?</p>
+        <button ng-click="getToStep(5)" class="btn btn-primary">A non-conviction</button>
+        <button ng-click="getToStep(2)" class="btn btn-primary">A conviction</button>        
+
+        <div class="callout text-left">
+          "Convicted" refers to the judgment (sentence) on a verdict or a finding of guilty, a plea of guilty or a plea of nolo contendere, or a plea or verdict of not guilty by reason of insanity.
+        </div>
       </div>
 
       <div ng-show="step_in_process == 2">
-        <p>Is this an eligible misdemeanor/felony or an ineligible misdemeanor/felony?</p>
+        <p class="lead">Is this an eligible misdemeanor/felony or an ineligible misdemeanor/felony?</p>
 
         <h3>Ineligible felony</h3>
         <p>
@@ -40,91 +51,124 @@
           </li>
         </ul>
 
-        <md-button ng-click="getToStep(3)" class="md-raised md-primary md-button md-default-theme">ineligible</md-button>
-        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">eligible</md-button>        
+        <button ng-click="ineligible()" class="btn btn-primary">Ineligible Felony or Misdemeanor</button>
+        <button ng-click="getToStep(3)" class="btn btn-primary">Eligible Felony or Misdemeanor</button>        
       </div>
 
       <div ng-show="step_in_process == 3">
-        <p>Have you subsequently been convicted of another crime in any jurisdiction?</p>
-        <md-button ng-click="getToStep(4)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Have you subsequently been convicted of another crime in any jurisdiction?</p>
+        <button ng-click="getToStep(4)" class="btn btn-primary">No</button>        
+        <button ng-click="ineligible()" class="btn btn-primary">Yes</button>
       </div>
 
       <div ng-show="step_in_process == 4">
-        <p>Has it been 8 years since your were off papers?</p>
-        <md-button ng-click="ineligible(4)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
-      </div>
+        <p class="lead">Has it been 8 years since your were "off papers?"</p>
+        <button ng-click="ineligible(4)" class="btn btn-primary">No</button>        
+        <button ng-click="eligible()" class="btn btn-primary">Yes</button>
 
+        <div class="callout text-left">
+          "Off papers" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest.
+        </div>
+
+      </div>
+      
+ 
       <div ng-show="step_in_process == 5">
-        <p>Is your non-conviction the result of a Deferred Sentencing Agreement?</p>
-        <md-button ng-click="getToStep(6)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="getToStep(7)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Is your non-conviction the result of a Deferred Sentencing Agreement?</p>
+        <button ng-click="getToStep(7)" class="btn btn-primary">No</button>        
+        <button ng-click="getToStep(6)" class="btn btn-primary">Yes</button>
+        <div class="callout text-left">
+          "Deferred Sentencing Agreement" means ...
+        </div>
       </div>
 
       <div ng-show="step_in_process == 6">
-        <p>Do you also have an ineligible conviction on your record?</p>
+        <p class="lead">Do you also have an ineligible conviction on your record?</p>
         
         <p>Ineligible misdemeanors</p>
         <ul> 
           <li ng-repeat="misdemeanor in ineligibleMisdemeanors">{{misdemeanor.offense}}</li>
         </ul>
-        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <button ng-click="getToStep(8)" class="btn btn-primary">No</button>        
+        <button ng-click="inelegible()" class="btn btn-primary">Yes</button>
       </div>
 
       <div ng-show="step_in_process == 7">
-        <p>Do you also have an ineligible conviction on your record?</p>
-        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Do you also have an ineligible conviction on your record?</p>
+        <button ng-click="getToStep(8)" class="btn btn-primary">No</button>        
+        <button ng-click="getToStep(13)" class="btn btn-primary">Yes</button>
       </div>
 
       <div ng-show="step_in_process == 8">
-        <p>Is the non-conviction for an eligible misdemeanor or an ineligible misdemeanor/felony?</p>
-        <md-button ng-click="getToStep(9)" class="md-raised md-primary md-button md-default-theme">ineligible misdemeanor/felony</md-button>        
-        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">eligible misdemeanor/felony</md-button>
+        <p class="lead">Is the non-conviction for an eligible misdemeanor or an ineligible misdemeanor/felony?</p>
+        <button ng-click="getToStep(9)" class="btn btn-primary">Ineligible misdemeanor/felony</button>        
+        <button ng-click="getToStep(12)" class="btn btn-primary">Eligible misdemeanor/felony</button>
       </div>
 
       <div ng-show="step_in_process == 9">
-        <p>Was the case terminated before charging by the prosecution (no papered)?</p>
-        <md-button ng-click="getToStep(10)" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="getToStep(11)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Was the case terminated before charging by the prosecution (no papered)?</p>
+        <button ng-click="getToStep(10)" class="btn btn-primary">No</button>        
+        <button ng-click="getToStep(11)" class="btn btn-primary">Yes</button>
+
       </div>
 
       <div ng-show="step_in_process == 10">
-        <p>Has it been 4 years since you were "off papers" for the felony non-conviction?</p>
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Has it been 4 years since you were "off papers" for the felony non-conviction?</p>
+        <button ng-click="ineligible()" class="btn btn-primary">No</button>        
+        <button ng-click="eligible()" class="btn btn-primary">Yes</button>
+        <div class="callout text-left">
+          "Off papers" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest.
+        </div>
+
       </div>
 
       <div ng-show="step_in_process == 11">
-        <p>Has it been 3 years since you were "off papers" for the felony non-conviction?</p>
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Has it been 3 years since you were "off papers" for the felony non-conviction?</p>
+        <button ng-click="ineligible()" class="btn btn-primary">No</button>        
+        <button ng-click="eligible()" class="btn btn-primary">Yes</button>
+        
+        <div class="callout text-left">
+          "Off papers" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest.
+        </div>
+
       </div>
       
       <div ng-show="step_in_process == 12">
-        <p>Has it been two years since you were "off papers" for the misdemeanor non-conviction?</p>
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="eligible()" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Has it been two years since you were "off papers" for the misdemeanor non-conviction?</p>
+        <button ng-click="ineligible()" class="btn btn-primary">No</button>        
+        <button ng-click="eligible()" class="btn btn-primary">Yes</button>
+
+        <div class="callout text-left">
+          "Off papers" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest.
+        </div>
+
       </div>
 
       <div ng-show="step_in_process == 13">
-        <p>Is the ineligible conviction for a felony or misdemeanor?</p>
-        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">misdemeanor</md-button>        
-        <md-button ng-click="getToStep()" class="md-raised md-primary md-button md-default-theme">felony</md-button>
+        <p class="lead">Is the ineligible conviction for a felony or misdemeanor?</p>
+        <button ng-click="getToStep(15)" class="btn btn-primary">Misdemeanor</button>        
+        <button ng-click="getToStep(14)" class="btn btn-primary">Felony</button>
       </div>
 
       <div ng-show="step_in_process == 14">
-        <p>Has it been 10 years since you were "off papers" for the felony conviction?</p>
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Has it been 10 years since you were "off papers" for the felony conviction?</p>
+        <button ng-click="ineligible()" class="btn btn-primary">No</button>        
+        <button ng-click="getToStep(8)" class="btn btn-primary">Yes</button>
+        
+        <div class="callout text-left">
+          "Off papers" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest.
+        </div>
       </div>
 
       <div ng-show="step_in_process == 15">
-        <p>Has it been 5 years since you were "off papers" for the misdemeanor conviction?</p>
-        <md-button ng-click="ineligible()" class="md-raised md-primary md-button md-default-theme">no</md-button>        
-        <md-button ng-click="getToStep(8)" class="md-raised md-primary md-button md-default-theme">yes</md-button>
+        <p class="lead">Has it been 5 years since you were "off papers" for the misdemeanor conviction?</p>
+        <button ng-click="ineligible()" class="btn btn-primary">No</button>        
+        <button ng-click="getToStep(8)" class="btn btn-primary">Yes</button>
+
+        <div class="callout text-left">
+          "Off papers" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest.
+        </div>
+
       </div>
       
     </div><!-- /.col-md-12 -->
