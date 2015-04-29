@@ -1,12 +1,13 @@
 'use strict';
 
-
+// text to be used to let user know their eligibility status
 var ELIGIBILITY_STATES = {
         16: "ineligible",
         17: "ineligible at this time",
         18: "eligible"
 };
 
+// questions text and links to the next question
 var ELIGIBILITY_FLOW = [
     {   // Question 0
         question: "Do you have a case pending?",
