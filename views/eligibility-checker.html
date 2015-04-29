@@ -1,0 +1,28 @@
+<!-- ng-controller = "EligibilityWizardController as eligibilityCtrl" -->
+
+<div class="row">
+    <div class="col-md-12">
+      
+      <h1>Eligibility Checker</h1> 
+      
+      <div ng-show="!eligibilityCtrl.eligibilityKnown()">
+        <p>{{eligibilityCtrl.currentQuestion()}}</p>
+        <md-button ng-click="eligibilityCtrl.submitYes()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
+        <md-button ng-click="eligibilityCtrl.submitNo()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
+      </div>
+
+      <div ng-show="eligibilityCtrl.eligibilityKnown()">
+        <h3>This offense is {{eligibilityCtrl.eligibility}} for expungement.</h3>
+
+        <div ng-repeat="record in eligibilityCtrl.history">
+            <p>{{record.question}}</p>
+            <p><b>{{record.answer}}</b></p>
+      </div>
+
+    </div><!-- /.col-md-12 -->
+</div><!-- /.row -->
+
+<!-- I assume this is only for testing??? -->
+<div style="position: fixed; bottom: 0; right: 0;">
+  skip to step # <input type="text" ng-model="eligibilityCtrl.currentStep">
+</div>
