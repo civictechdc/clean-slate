@@ -216,7 +216,7 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/eligibility-check-eligible.html',
                 controller: 'eligibilityEligibleController'
             })
-            // The wizard!!!
+            // The wizard!
             .when('/eligibility-check', {
                 templateUrl: 'views/eligibility-checker.html',
                 controller: 'EligibilityWizardController as eligibilityCtrl'
@@ -269,10 +269,10 @@ myApp.controller('legalAidController',
 myApp.controller('EligibilityWizardController', function() {
     // current step the user is on. Default to first step.
     this.currentStep = 0;
-    // history holds the users answers to previous questions (to be compiled at the end)
+    // history holds the user's answers to previous questions to be returned when eligibility is known
     this.history = [];
-    // text to be displayed to user when eligibility is known
-    this.eligibility = "unkown";
+    // text to be displayed to user when eligibility is known. Default to blank.
+    this.eligibility = "";
 
     this.eligibilityKnown = function() {
         //states 16, 17, 18
