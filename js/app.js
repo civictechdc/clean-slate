@@ -313,7 +313,7 @@ myApp.controller('EligibilityWizardController', function() {
         console.log("you pressed: " + this.noText())
         var record = {};
         record.question = this.currentQuestion();
-        record.answer = this.yesText();
+        record.answer = this.noText();
         this.history.push(record);
         this.currentStep = ELIGIBILITY_FLOW[this.currentStep].no.next;
         if (this.eligibilityKnown())
