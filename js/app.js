@@ -214,16 +214,6 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/home.html',
                 controller: 'homeController'
             })
-            // Information on an misdemeanor or felony being ineligible for expungement, either temporarily or permanently 
-            .when('/eligibility-check/ineligible/:reason?', {
-                templateUrl: 'views/eligibility-check-ineligible.html',
-                controller: 'eligibilityIneligibleController'
-            })
-            // Information on an misdemeanor or felony being eligible for expungement, including next steps
-            .when('/eligibility-check/eligible', {
-                templateUrl: 'views/eligibility-check-eligible.html',
-                controller: 'eligibilityEligibleController'
-            })
             // The wizard!
             .when('/eligibility-check', {
                 templateUrl: 'views/eligibility-checker.html',
@@ -350,28 +340,6 @@ myApp.controller('EligibilityWizardController', function($http) {
         self.currentStep = ELIGIBILITY_FLOW[self.currentStep].no.next;
     };
 });
-
-
-// This controller controls the ineligible page. 
-// There is currently just static content on this page
-myApp.controller('eligibilityIneligibleController',
-    ['$scope', 
-        function ($scope) {
-        
-           
-        }
-]);
-
-// This controller controls the eligible page. 
-// There is currently just static content on this page
-myApp.controller('eligibilityEligibleController',
-    ['$scope', 
-        function ($scope) {
-        
-           
-        }
-]);
-
 
 // Partial 
 myApp.controller('titlebarController',
