@@ -12,7 +12,7 @@
       </div>
 
       <div ng-show="eligibilityCtrl.eligibilityKnown()">
-        <h3>This offense is {{eligibilityCtrl.eligibility}} for expungement.</h3>
+        <h3>This offense is {{eligibilityCtrl.currentStep}} for expungement.</h3>
 
         <div ng-repeat="record in eligibilityCtrl.history">
             <p>{{record.question}}</p>

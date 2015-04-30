@@ -1,19 +1,12 @@
 'use strict';
 
-// text to be used to let user know their eligibility status
-var ELIGIBILITY_STATES = {
-        16: "ineligible",
-        17: "ineligible at this time",
-        18: "eligible"
-};
-
-// questions text and links to the next question
+// questions text and links to the next question or eligibility state
 var ELIGIBILITY_FLOW = [
     {   // Question 0
         question: "Do you have a case pending?",
         yes: {
             text: "Yes",
-            next: 17 // ineligable at this time
+            next: "ineligible at this time"
         },
         no: {
             text: "No",
@@ -34,19 +27,19 @@ var ELIGIBILITY_FLOW = [
     {   // Question 2
         question: "Is this an eligible misdemeanor/felony or an ineligible misdemeanor/felony?",
         yes: {
-            text: "Eligible",
+            text: "Eligible misdemeanor or felony",
             next: 3
         }, 
         no: {
-            text: "Ineligible",
-            next: 16 // ineligable
+            text: "Ineligible misdemeanor or felony",
+            next: "ineligible"
         }
     },
     {   // Question 3
         question: "Have you subsequently been convicted of another crime in any jurisdiction?",
         yes: {
             text: "Yes",
-            next: 16 // ineligable
+            next: "ineligible"
         },
         no: {
             text: "No",
@@ -57,11 +50,11 @@ var ELIGIBILITY_FLOW = [
         question: "Has it been 8 years since you were off papers?",
         yes: {
             text: "Yes",
-            next: 18 // eligable
+            next: "eligable"
         },
         no: {
             text: "No",
-            next: 17 // ineligable at this time
+            next: "ineligible at this time"
         }
     },
     {   // Question 5
@@ -90,7 +83,7 @@ var ELIGIBILITY_FLOW = [
         question: "Do you also have an ineligible conviction on your record?",
         yes: {
             text: "Yes",
-            next: 16 // ineligable
+            next: "ineligible"
         },
         no: {
             text: "No",
@@ -123,33 +116,33 @@ var ELIGIBILITY_FLOW = [
         question: "Has it been 4 years since you were \"off papers\" for the felony non-conviction?",
         yes: {
             text: "Yes",
-            next: 18 // eligable
+            next: "eligable"
         },
         no: {
             text: "No",
-            next: 17 // ineligible at this time
+            next: "ineligible at this time"
         }
     },
     {   // Question 11
         question: "Has it been 3 years since you were \"off papers\" for the felony non-conviction?",
         yes: {
             text: "Yes",
-            next: 18 // eligable
+            next: "eligable"
         },
         no: {
             text: "No",
-            next: 17 // ineligible at this time
+            next: "ineligible at this time" 
         }
     },
     {   // Question 12
         question: "Has it been two years since you were \"off papers\" for the misdemeanor non-conviction?",
         yes: {
             text: "Yes",
-            next: 18 // eligable
+            next: "eligable"
         },
         no: {
             text: "No",
-            next: 17 // ineligible at this time
+            next: "ineligible at this time" 
         }
     },
     {   // Question 13
@@ -171,7 +164,7 @@ var ELIGIBILITY_FLOW = [
         },
         no: {
             text: "No",
-            next: 17 // ineligible at this time
+            next: "ineligible at this time" 
         }
     },
     {   // Question 15
@@ -182,7 +175,7 @@ var ELIGIBILITY_FLOW = [
         },
         no: {
             text: "No",
-            next: 17 // ineligible at this time
+            next: "ineligible at this time"
         }
     },
 ];
@@ -267,57 +260,68 @@ myApp.controller('legalAidController',
 
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function() {
-    // current step the user is on. Default to first step.
+    // a number indicating the current step the user is on -- until they reach an eligibility state.
+    // Once eligibility state is reached, currentStep will hold a string indicating the eligiblity.
     this.currentStep = 0;
     // history holds the user's answers to previous questions to be returned when eligibility is known
     this.history = [];
-    // text to be displayed to user when eligibility is known. Default to blank.
-    this.eligibility = "";
 
     this.eligibilityKnown = function() {
-        //states 16, 17, 18
-        return this.currentStep > 15; 
+        // if current step is a number we are still on questions
+        // if current step is a string (ie "eligible" or "ineligible"), the eligiblity state is known
+        return (typeof this.currentStep === "string") ; 
     }
 
     this.currentQuestion = function() {
-        if (this.currentStep >= ELIGIBILITY_FLOW.length)
+        // send back an empty string if currentQuestion is called and eligibility is known
+        if (this.eligibilityKnown())
             return "";
-        return ELIGIBILITY_FLOW[this.currentStep].question;
+        if (this.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[this.currentStep].question;
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + this.currentStep);
     }
 
     this.yesText = function() {
-        if (this.currentStep >= ELIGIBILITY_FLOW.length)
+        // send back an empty string if yesText is called and eligibility is known
+        if (this.eligibilityKnown())
             return "";
-        return ELIGIBILITY_FLOW[this.currentStep].yes.text;
+        if (this.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[this.currentStep].yes.text;
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + this.currentStep);
     }
 
     this.noText = function() {
-        if (this.currentStep >= ELIGIBILITY_FLOW.length)
+        // send back an empty string if noText is called and eligibility is known
+        if (this.eligibilityKnown())
             return "";
-        return ELIGIBILITY_FLOW[this.currentStep].no.text;
+        if (this.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[this.currentStep].no.text;
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + this.currentStep);
     }
 
     this.submitYes = function() { 
-        console.log("you pressed: " + this.yesText())
+        // record this question and answer in record and add to history
         var record = {};
         record.question = this.currentQuestion();
         record.answer = this.yesText();
         this.history.push(record);
+
+        // update currentStep by following the yes path
         this.currentStep = ELIGIBILITY_FLOW[this.currentStep].yes.next;
-        // check for eligiblity 
-        if (this.eligibilityKnown())
-            this.eligibility = ELIGIBILITY_STATES[this.currentStep];
     };
 
     this.submitNo = function() { 
-        console.log("you pressed: " + this.noText())
+        // record this question and answer in record and add to history
         var record = {};
         record.question = this.currentQuestion();
         record.answer = this.noText();
         this.history.push(record);
+
+        // update currentStep by following the no path
         this.currentStep = ELIGIBILITY_FLOW[this.currentStep].no.next;
-        if (this.eligibilityKnown())
-            this.eligibility = ELIGIBILITY_STATES[this.currentStep];
     };
 })
 
