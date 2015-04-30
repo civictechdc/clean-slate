@@ -5,15 +5,18 @@
       
       <h1>Eligibility Checker</h1> 
       
+      <!-- This section only shows if the user has not reached an eligibilty state -->
       <div ng-show="!eligibilityCtrl.eligibilityKnown()">
         <p>{{eligibilityCtrl.currentQuestion()}}</p>
         <md-button ng-click="eligibilityCtrl.submitYes()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
         <md-button ng-click="eligibilityCtrl.submitNo()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
       </div>
 
+      <!-- This section only shows if the user has reached an eligibilty state -->
       <div ng-show="eligibilityCtrl.eligibilityKnown()">
         <h3>This offense is {{eligibilityCtrl.currentStep}} for expungement.</h3>
 
+        <!-- This section shows a history of all of the questions and answers -->
         <div ng-repeat="record in eligibilityCtrl.history">
             <p>{{record.question}}</p>
             <p><b>{{record.answer}}</b></p>
