@@ -1,6 +1,21 @@
 'use strict';
+/*
+ELIGIBILITY_FLOW contains questions text and links to the next question or eligibility state
 
-// questions text and links to the next question or eligibility state
+ELIGIBILITY_FLOW FORMAT EXAMPLE
+questions are numbered by their position in the array, currently from 0-15 for a total of 16 questions
+{   // Question # 
+    question: "this text will be displayed as the question",
+    yes: {
+        text: "This text will be displayed on the 'yes' button",
+        next: # or eligibility (if clicked, this answer leads to this question # or eligibility)
+    },
+    no: {
+        text: "This text will be displayed on the 'no' button",
+        next: # or eligibility (if clicked, this answer leads to this question # or eligibility)
+    }
+}
+*/
 var ELIGIBILITY_FLOW = [
     {   // Question 0
         question: "Do you have a case pending?",
