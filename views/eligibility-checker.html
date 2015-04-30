@@ -5,7 +5,7 @@
       
       <h1>Eligibility Checker</h1> 
       
-      <!-- This section only shows if the user has not reached an eligibilty state -->
+      <!-- Questions. This section only shows if the user has not reached an eligibilty state -->
       <div ng-show="!eligibilityCtrl.eligibilityKnown()">
         <p>{{eligibilityCtrl.currentQuestion()}}</p>
 
@@ -18,7 +18,7 @@
             </p>
 
             <ul class="misdemeanors_group">
-              <h3>Ineligible misdemeanor</h3>
+              <h3>Ineligible misdemeanors</h3>
               <form class="form-inline">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Search misdemeanors: </label>
@@ -32,11 +32,12 @@
                 </span>
               </li>
             </ul> 
-        </div> 
+        </div> <!-- end of list of ineligible misdemeanors -->
+
 
         <md-button ng-click="eligibilityCtrl.submitYes()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
         <md-button ng-click="eligibilityCtrl.submitNo()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
-      </div>
+      </div> <!-- end of question section -->
 
       <!-- This section only shows if the user has reached an eligibilty state -->
       <div ng-show="eligibilityCtrl.eligibilityKnown()">
@@ -46,7 +47,7 @@
         <div ng-repeat="record in eligibilityCtrl.history">
             <p>{{record.question}}</p>
             <p><b>{{record.answer}}</b></p>
-      </div>
+      </div> <!-- end of eligibility section -->
 
     </div><!-- /.col-md-12 -->
 </div><!-- /.row -->
