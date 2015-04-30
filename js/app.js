@@ -274,71 +274,82 @@ myApp.controller('legalAidController',
 ]);
 
 // refactored version of Eligibility Checker Controller --AKA The Wizard
-myApp.controller('EligibilityWizardController', function() {
+myApp.controller('EligibilityWizardController', function($http) {
+
+    var self = this; // self is equivalent to $scope
     // a number indicating the current step the user is on -- until they reach an eligibility state.
     // Once eligibility state is reached, currentStep will hold a string indicating the eligiblity.
-    this.currentStep = 0;
+    self.currentStep = 0;
     // history holds the user's answers to previous questions to be returned when eligibility is known
-    this.history = [];
+    self.history = [];
 
-    this.eligibilityKnown = function() {
+    // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
+    $http.get('ineligible-misdemeanors.json')
+    .success(function(data, status, headers, config) {
+        // if the app successfully gets misdemeanor data from the JSON file, assign it to self.ineligibleMisdemeanors for use in the wizard
+        self.ineligibleMisdemeanors = data;
+        console.log(self.ineligibleMisdemeanors);
+    });
+
+
+    self.eligibilityKnown = function() {
         // if current step is a number we are still on questions
         // if current step is a string (ie "eligible" or "ineligible"), the eligiblity state is known
-        return (typeof this.currentStep === "string") ; 
+        return (typeof self.currentStep === "string") ; 
     }
 
-    this.currentQuestion = function() {
+    self.currentQuestion = function() {
         // send back an empty string if currentQuestion is called and eligibility is known
-        if (this.eligibilityKnown())
+        if (self.eligibilityKnown())
             return "";
-        if (this.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[this.currentStep].question;
+        if (self.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[self.currentStep].question;
         // else if there is no question cooresponding to currentStep
-        throw new Error("There is no question number " + this.currentStep);
+        throw new Error("There is no question number " + self.currentStep);
     }
 
-    this.yesText = function() {
+    self.yesText = function() {
         // send back an empty string if yesText is called and eligibility is known
-        if (this.eligibilityKnown())
+        if (self.eligibilityKnown())
             return "";
-        if (this.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[this.currentStep].yes.text;
+        if (self.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[self.currentStep].yes.text;
         // else if there is no question cooresponding to currentStep
-        throw new Error("There is no question number " + this.currentStep);
+        throw new Error("There is no question number " + self.currentStep);
     }
 
-    this.noText = function() {
+    self.noText = function() {
         // send back an empty string if noText is called and eligibility is known
-        if (this.eligibilityKnown())
+        if (self.eligibilityKnown())
             return "";
-        if (this.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[this.currentStep].no.text;
+        if (self.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[self.currentStep].no.text;
         // else if there is no question cooresponding to currentStep
-        throw new Error("There is no question number " + this.currentStep);
+        throw new Error("There is no question number " + self.currentStep);
     }
 
-    this.submitYes = function() { 
+    self.submitYes = function() { 
         // record this question and answer in record and add to history
         var record = {};
-        record.question = this.currentQuestion();
-        record.answer = this.yesText();
-        this.history.push(record);
+        record.question = self.currentQuestion();
+        record.answer = self.yesText();
+        self.history.push(record);
 
         // update currentStep by following the yes path
-        this.currentStep = ELIGIBILITY_FLOW[this.currentStep].yes.next;
+        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].yes.next;
     };
 
-    this.submitNo = function() { 
+    self.submitNo = function() { 
         // record this question and answer in record and add to history
         var record = {};
-        record.question = this.currentQuestion();
-        record.answer = this.noText();
-        this.history.push(record);
+        record.question = self.currentQuestion();
+        record.answer = self.noText();
+        self.history.push(record);
 
         // update currentStep by following the no path
-        this.currentStep = ELIGIBILITY_FLOW[this.currentStep].no.next;
+        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].no.next;
     };
-})
+});
 
 
 // This controller controls the ineligible page. 
