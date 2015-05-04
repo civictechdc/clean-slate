@@ -1,4 +1,200 @@
 'use strict';
+/*
+ELIGIBILITY_FLOW contains questions text and links to the next question or eligibility state
+
+ELIGIBILITY_FLOW FORMAT EXAMPLE
+questions are numbered by their position in the array, currently from 0-15 for a total of 16 questions
+{   // Question # 
+    question: "this text will be displayed as the question",
+    yes: {
+        text: "This text will be displayed on the 'yes' button",
+        next: # or eligibility (if clicked, this answer leads to this question # or eligibility)
+    },
+    no: {
+        text: "This text will be displayed on the 'no' button",
+        next: # or eligibility (if clicked, this answer leads to this question # or eligibility)
+    }
+}
+*/
+var ELIGIBILITY_FLOW = [
+    {   // Question 0
+        question: "Do you have a case pending?",
+        yes: {
+            text: "Yes",
+            next: "ineligible at this time"
+        },
+        no: {
+            text: "No",
+            next: 1
+        }
+    },
+    {   // Question 1
+        question: "Are you sealing a conviction or a non-conviction?",
+        yes: {
+            text: "Conviction",
+            next: 2
+        },
+        no: {
+            text: "Non-conviction",
+            next: 5
+        }
+    },
+    {   // Question 2
+        question: "Is this an eligible misdemeanor/felony or an ineligible misdemeanor/felony?",
+        yes: {
+            text: "Eligible misdemeanor or felony",
+            next: 3
+        }, 
+        no: {
+            text: "Ineligible misdemeanor or felony",
+            next: "ineligible"
+        }
+    },
+    {   // Question 3
+        question: "Have you subsequently been convicted of another crime in any jurisdiction?",
+        yes: {
+            text: "Yes",
+            next: "ineligible"
+        },
+        no: {
+            text: "No",
+            next: 4
+        }
+    },
+    {   // Question 4
+        question: "Has it been 8 years since you were off papers?",
+        yes: {
+            text: "Yes",
+            next: "eligable"
+        },
+        no: {
+            text: "No",
+            next: "ineligible at this time"
+        }
+    },
+    {   // Question 5
+        question: "Is your non-conviction the result of a Deferred Sentencing Agreement?",
+        yes: {
+            text: "Yes",
+            next: 7
+        },
+        no: {
+            text: "No",
+            next: 6
+        }
+    },
+    {   // Question 6
+        question: "Do you also have an ineligible conviction on your record?",
+        yes: {
+            text: "Yes",
+            next: 13
+        },
+        no: {
+            text: "No",
+            next: 8
+        }
+    },
+    {   // Question 7
+        question: "Do you also have an ineligible conviction on your record?",
+        yes: {
+            text: "Yes",
+            next: "ineligible"
+        },
+        no: {
+            text: "No",
+            next: 8
+        }
+    },
+    {   // Question 8
+        question: "Is the non-conviction for an eligible misdemeanor or an ineligible misdemeanor/felony?",
+        yes: {
+            text: "Eligible misdemeanor/felony",
+            next: 12 
+        },
+        no: {
+            text: "Ineligible misdemeanor/felony",
+            next: 9
+        }
+    },
+    {   // Question 9
+        question: "Was the case terminated before charging by the prosectution (no papered)?",
+        yes: {
+            text: "Yes",
+            next: 11
+        },
+        no: {
+            text: "No",
+            next: 10
+        }
+    },
+    {   // Question 10
+        question: "Has it been 4 years since you were \"off papers\" for the felony non-conviction?",
+        yes: {
+            text: "Yes",
+            next: "eligable"
+        },
+        no: {
+            text: "No",
+            next: "ineligible at this time"
+        }
+    },
+    {   // Question 11
+        question: "Has it been 3 years since you were \"off papers\" for the felony non-conviction?",
+        yes: {
+            text: "Yes",
+            next: "eligable"
+        },
+        no: {
+            text: "No",
+            next: "ineligible at this time" 
+        }
+    },
+    {   // Question 12
+        question: "Has it been two years since you were \"off papers\" for the misdemeanor non-conviction?",
+        yes: {
+            text: "Yes",
+            next: "eligable"
+        },
+        no: {
+            text: "No",
+            next: "ineligible at this time" 
+        }
+    },
+    {   // Question 13
+        question: "Is the ineligible conviction for a felony or misdemeanor?",
+        yes: {
+            text: "Felony",
+            next: 14 
+        },
+        no: {
+            text: "Misdemeanor",
+            next: 15
+        }
+    },
+    {   // Question 14
+        question: "Has it been 10 years since you were \"off papers\" for the misdemeanor conviction?",
+        yes: {
+            text: "Yes",
+            next: 8
+        },
+        no: {
+            text: "No",
+            next: "ineligible at this time" 
+        }
+    },
+    {   // Question 15
+        question: "Has it been 5 years since you were \"off papers\" for the misdemeanor conviction?",
+        yes: {
+            text: "Yes",
+            next: 8 
+        },
+        no: {
+            text: "No",
+            next: "ineligible at this time"
+        }
+    },
+];
+
 
 // App definition + dependencies
 var myApp = angular.module('myApp', [
@@ -18,20 +214,10 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/home.html',
                 controller: 'homeController'
             })
-            // Information on an misdemeanor or felony being ineligible for expungement, either temporarily or permanently 
-            .when('/eligibility-check/ineligible/:reason?', {
-                templateUrl: 'views/eligibility-check-ineligible.html',
-                controller: 'eligibilityIneligibleController'
-            })
-            // Information on an misdemeanor or felony being eligible for expungement, including next steps
-            .when('/eligibility-check/eligible', {
-                templateUrl: 'views/eligibility-check-eligible.html',
-                controller: 'eligibilityEligibleController'
-            })
             // The wizard!
             .when('/eligibility-check', {
-                templateUrl: 'views/eligibility-check.html',
-                controller: 'eligibilityController'
+                templateUrl: 'views/eligibility-checker.html',
+                controller: 'EligibilityWizardController as eligibilityCtrl'
             })
             // FAQs
             .when('/questions', {
@@ -77,61 +263,83 @@ myApp.controller('legalAidController',
         }
 ]);
 
+// refactored version of Eligibility Checker Controller --AKA The Wizard
+myApp.controller('EligibilityWizardController', function($http) {
 
-// Eligibility Checker Controller -- AKA The Wizard
-myApp.controller('eligibilityController',
-    ['$scope', '$http', '$location',
-        function ($scope, $http, $location) {
-        
-        // step_in_process controls which question the user sees
-        // default to the first step, 0
-        $scope.step_in_process = 0;
+    var self = this; // self is equivalent to $scope
+    // a number indicating the current step the user is on -- until they reach an eligibility state.
+    // Once eligibility state is reached, currentStep will hold a string indicating the eligiblity.
+    self.currentStep = 0;
+    // history holds the user's answers to previous questions to be returned when eligibility is known
+    self.history = [];
 
-        // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
-        $http.get('ineligible-misdemeanors.json')
-        .success(function(data, status, headers, config) {
-            // if the app successfully gets misdemeanor data from the JSON file, assign it to $scope.ineligibleMisdemeanors for use in the wizard
-            $scope.ineligibleMisdemeanors  = data;
-        });
-        
-        // This function is used to advance the user through the wizard
-        $scope.getToStep = function (step) {
-          $scope.step_in_process = step;
-        }
-         
-        // This function redirects the user to the ineligible page
-        $scope.ineligible = function(reason) {
-          $location.path('eligibility-check/ineligible/reason');
-        };
-        
-        // This function redirects the user to the eligible page
-        $scope.eligible = function() {
-          $location.path('eligibility-check/eligible');
-        }
-           
-        }
-]);
+    // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
+    $http.get('ineligible-misdemeanors.json')
+    .success(function(data, status, headers, config) {
+        // if the app successfully gets misdemeanor data from the JSON file, assign it to self.ineligibleMisdemeanors for use in the wizard
+        self.ineligibleMisdemeanors = data;
+        console.log(self.ineligibleMisdemeanors);
+    });
 
-// This controller controls the ineligible page. 
-// There is currently just static content on this page
-myApp.controller('eligibilityIneligibleController',
-    ['$scope', 
-        function ($scope) {
-        
-           
-        }
-]);
 
-// This controller controls the eligible page. 
-// There is currently just static content on this page
-myApp.controller('eligibilityEligibleController',
-    ['$scope', 
-        function ($scope) {
-        
-           
-        }
-]);
+    self.eligibilityKnown = function() {
+        // if current step is a number we are still on questions
+        // if current step is a string (ie "eligible" or "ineligible"), the eligiblity state is known
+        return (typeof self.currentStep === "string") ; 
+    }
 
+    self.currentQuestion = function() {
+        // send back an empty string if currentQuestion is called and eligibility is known
+        if (self.eligibilityKnown())
+            return "";
+        if (self.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[self.currentStep].question;
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + self.currentStep);
+    }
+
+    self.yesText = function() {
+        // send back an empty string if yesText is called and eligibility is known
+        if (self.eligibilityKnown())
+            return "";
+        if (self.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[self.currentStep].yes.text;
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + self.currentStep);
+    }
+
+    self.noText = function() {
+        // send back an empty string if noText is called and eligibility is known
+        if (self.eligibilityKnown())
+            return "";
+        if (self.currentStep < ELIGIBILITY_FLOW.length);
+            return ELIGIBILITY_FLOW[self.currentStep].no.text;
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + self.currentStep);
+    }
+
+    self.submitYes = function() { 
+        // record this question and answer in record and add to history
+        var record = {};
+        record.question = self.currentQuestion();
+        record.answer = self.yesText();
+        self.history.push(record);
+
+        // update currentStep by following the yes path
+        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].yes.next;
+    };
+
+    self.submitNo = function() { 
+        // record this question and answer in record and add to history
+        var record = {};
+        record.question = self.currentQuestion();
+        record.answer = self.noText();
+        self.history.push(record);
+
+        // update currentStep by following the no path
+        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].no.next;
+    };
+});
 
 // Partial 
 myApp.controller('titlebarController',
