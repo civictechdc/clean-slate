@@ -1,8 +1,8 @@
 'use strict';
 /*
-ELIGIBILITY_FLOW contains questions text and links to the next question or eligibility state
+elegibilityFlow contains questions text and links to the next question or eligibility state
 
-ELIGIBILITY_FLOW FORMAT EXAMPLE
+elegibilityFlow FORMAT EXAMPLE
 questions are numbered by their position in the array, currently from 0-15 for a total of 16 questions
 {   // Question # 
     question: "this text will be displayed as the question",
@@ -16,7 +16,7 @@ questions are numbered by their position in the array, currently from 0-15 for a
     }
 }
 */
-var ELIGIBILITY_FLOW = [
+var elegibilityFlow = [
     {   // Question 0
         question: "Do you have a case pending?",
         yes: {
@@ -292,8 +292,8 @@ myApp.controller('EligibilityWizardController', function($http) {
         // send back an empty string if currentQuestion is called and eligibility is known
         if (self.eligibilityKnown())
             return "";
-        if (self.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[self.currentStep].question;
+        if (self.currentStep < elegibilityFlow.length);
+            return elegibilityFlow[self.currentStep].question;
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
     }
@@ -302,8 +302,8 @@ myApp.controller('EligibilityWizardController', function($http) {
         // send back an empty string if yesText is called and eligibility is known
         if (self.eligibilityKnown())
             return "";
-        if (self.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[self.currentStep].yes.text;
+        if (self.currentStep < elegibilityFlow.length);
+            return elegibilityFlow[self.currentStep].yes.text;
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
     }
@@ -312,8 +312,8 @@ myApp.controller('EligibilityWizardController', function($http) {
         // send back an empty string if noText is called and eligibility is known
         if (self.eligibilityKnown())
             return "";
-        if (self.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[self.currentStep].no.text;
+        if (self.currentStep < elegibilityFlow.length);
+            return elegibilityFlow[self.currentStep].no.text;
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
     }
@@ -326,7 +326,7 @@ myApp.controller('EligibilityWizardController', function($http) {
         self.history.push(record);
 
         // update currentStep by following the yes path
-        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].yes.next;
+        self.currentStep = elegibilityFlow[self.currentStep].yes.next;
     };
 
     self.submitNo = function() { 
@@ -337,7 +337,7 @@ myApp.controller('EligibilityWizardController', function($http) {
         self.history.push(record);
 
         // update currentStep by following the no path
-        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].no.next;
+        self.currentStep = elegibilityFlow[self.currentStep].no.next;
     };
 });
 
