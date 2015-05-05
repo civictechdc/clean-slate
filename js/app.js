@@ -319,7 +319,12 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         throw new Error("There is no question number " + self.currentStep);
     };
     self.progressBar = function() {
-        var progressPercent = (self.currentStep/eligibilityFlow.length) * 100;
+        var progressPercent = '';
+        if(isNaN(self.currentStep) && (self.currentStep === 'eligible' || self.currentStep === 'ineligible')){
+            progressPercent = 100;
+        } else {
+            progressPercent = (self.currentStep/eligibilityFlow.length) * 100;
+        }
         console.log(progressPercent);
         return progressPercent;
     };

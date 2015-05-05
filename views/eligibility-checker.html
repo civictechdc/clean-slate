@@ -6,15 +6,15 @@
       <h1 class="text-center">Eligibility Checker</h1> 
       
       <!-- Questions. This section only shows if the user has not reached an eligibilty state -->
-      <div ng-show="!eligibilityCtrl.eligibilityKnown()">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%;">
-            <span class="sr-only">60% Complete</span>
-          </div>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%;">
+          <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
         </div>
+      </div>
+      <div ng-show="!eligibilityCtrl.eligibilityKnown()">
         <div class="text-center panel panel-default">
           <div class="panel-body">
-            <p>{{eligibilityCtrl.currentQuestion()}}</p>
+            <p class="question-text">{{eligibilityCtrl.currentQuestion()}}</p>
 
             <!-- Show ineligible misdemeanors on step 2 & 8-->
             <div ng-show="eligibilityCtrl.currentStep == 2 || eligibilityCtrl.currentStep == 8 ">
