@@ -6,11 +6,11 @@
       <h1>Eligibility Checker</h1> 
       
       <!-- Questions. This section only shows if the user has not reached an eligibilty state -->
-      <div ng-show="!eligibilityCtrl.eligibilityKnown()">
-        <p>{{eligibilityCtrl.currentQuestion()}}</p>
+      <div ng-show="!eligibilityCtrl.eligibilityKnown">
+        <p>{{eligibilityCtrl.currentQuestion.questionText}}</p>
 
-        <!-- Show ineligible misdemeanors on step 2 & 8-->
-        <div ng-show="eligibilityCtrl.currentStep == 2 || eligibilityCtrl.currentStep == 8 ">
+        <!-- Show ineligible misdemeanors on steps with special property "showIneligibleMisdemeanors"-->
+        <div ng-show="eligibilityCtrl.currentQuestion.showIneligibleMisdemeanors == true">
             <h3>Ineligible felony</h3>
             <p>
               "Ineligible felony" means any felony other than a failure to appear 

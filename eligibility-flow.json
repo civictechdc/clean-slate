@@ -55,7 +55,8 @@
       ],
       "helperText":[  
 
-      ]
+      ],
+      "showIneligibleMisdemeanors":"true"
    },
 
    "question3":{  
@@ -157,7 +158,8 @@
       ],
       "helperText":[  
 
-      ]
+      ],
+      "showIneligibleMisdemeanors":"true"
    },
 
    "question9":{  
