@@ -1,5 +1,15 @@
 'use strict';
 
+// Grab the eligibility flow from a static JSON file stored at the root of the project
+var ELIGIBILITY_FLOW;
+
+var req = new XMLHttpRequest();
+req.open("GET", "eligibility-flow.json", true);
+req.addEventListener("load", function() {
+    ELIGIBILITY_FLOW = JSON.parse(req.responseText);
+});
+req.send(null);
+
 // App definition + dependencies
 var myApp = angular.module('myApp', [
     // necessary for matching the URL to an available resource
@@ -76,14 +86,6 @@ myApp.controller('EligibilityWizardController', function($http) {
     self.currentStep = 0;
     // history holds the user's answers to previous questions to be returned when eligibility is known
     self.history = [];
-
-    // Grab the eligibility flow from a static JSON file stored at the root of the project
-    // This is synchronous because it is needed to display the initial question to the user
-    // if it is made asynchronous, strange values flash on the screen before initial values are shown
-    var req = new XMLHttpRequest();
-    req.open("GET", "eligibility-flow.json", false);
-    req.send(null);
-    var ELIGIBILITY_FLOW = JSON.parse(req.responseText);
 
     // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
     $http.get('ineligible-misdemeanors.json')
