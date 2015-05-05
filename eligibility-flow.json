@@ -1,4 +1,12 @@
 {  
+   "start":"question0",
+
+   "endStates":[
+      "eligible",
+      "ineligible",
+      "ineligible at this time"
+   ],
+
    "question0":{  
       "questionText":"Do you have a case pending?",
       "answers":[  
