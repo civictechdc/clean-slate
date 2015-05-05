@@ -34,14 +34,17 @@
             </ul> 
         </div> <!-- end of list of ineligible misdemeanors -->
 
-
-        <md-button ng-click="eligibilityCtrl.submitYes()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
-        <md-button ng-click="eligibilityCtrl.submitNo()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
+        <!-- Show buttons for all possible answers to this question -->
+        <span ng-repeat="answer in eligibilityCtrl.currentQuestion.answers">
+            <md-button ng-click="eligibilityCtrl.submitAnswer($index)" class="md-raised md-primary md-button md-default-theme" >
+                {{answer.answerText}}</md-button>
+        </span> <!-- end of answer section -->
+        
       </div> <!-- end of question section -->
 
       <!-- This section only shows if the user has reached an eligibilty state -->
-      <div ng-show="eligibilityCtrl.eligibilityKnown()">
-        <h3>This offense is {{eligibilityCtrl.currentStep}} for expungement.</h3>
+      <div ng-show="eligibilityCtrl.eligibilityKnown">
+        <h3>This offense is {{eligibilityCtrl.eligibility}} for expungement.</h3>
 
         <!-- This section shows a history of all of the questions and answers -->
         <div ng-repeat="record in eligibilityCtrl.history">

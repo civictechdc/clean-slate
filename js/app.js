@@ -81,9 +81,17 @@ myApp.controller('legalAidController',
 myApp.controller('EligibilityWizardController', function($http) {
 
     var self = this; // self is equivalent to $scope
-    // a number indicating the current step the user is on -- until they reach an eligibility state.
-    // Once eligibility state is reached, currentStep will hold a string indicating the eligiblity.
-    self.currentStep = 0;
+
+    // an object representing the current question and answer choices
+    // initialize this to be the first question using 'start' property on ELIGIBILITY_FLOW
+    self.currentQuestion = ELIGIBILITY_FLOW[ELIGIBILITY_FLOW.start];
+
+    // boolean indicating whether final state is known
+    self.eligibilityKnown = false;
+
+    // once eligibility is known, this will hold the final eligibility state
+    self.eligibility = null;
+
     // history holds the user's answers to previous questions to be returned when eligibility is known
     self.history = [];
 
@@ -94,63 +102,30 @@ myApp.controller('EligibilityWizardController', function($http) {
         self.ineligibleMisdemeanors = data;
     });
 
-
-    self.eligibilityKnown = function() {
-        // if current step is a number we are still on questions
-        // if current step is a string (ie "eligible" or "ineligible"), the eligiblity state is known
-        return (typeof self.currentStep === "string") ; 
-    }
-
-    self.currentQuestion = function() {
-        // send back an empty string if currentQuestion is called and eligibility is known
-        if (self.eligibilityKnown())
-            return "";
-        if (self.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[self.currentStep].question;
-        // else if there is no question cooresponding to currentStep
-        throw new Error("There is no question number " + self.currentStep);
-    }
-
-    self.yesText = function() {
-        // send back an empty string if yesText is called and eligibility is known
-        if (self.eligibilityKnown())
-            return "";
-        if (self.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[self.currentStep].yes.text;
-        // else if there is no question cooresponding to currentStep
-        throw new Error("There is no question number " + self.currentStep);
-    }
-
-    self.noText = function() {
-        // send back an empty string if noText is called and eligibility is known
-        if (self.eligibilityKnown())
-            return "";
-        if (self.currentStep < ELIGIBILITY_FLOW.length);
-            return ELIGIBILITY_FLOW[self.currentStep].no.text;
-        // else if there is no question cooresponding to currentStep
-        throw new Error("There is no question number " + self.currentStep);
-    }
-
-    self.submitYes = function() { 
+    self.submitAnswer = function(answerIndex) {
         // record this question and answer in record and add to history
         var record = {};
-        record.question = self.currentQuestion();
-        record.answer = self.yesText();
+        record.question = self.currentQuestion.questionText;
+        record.answer = self.currentQuestion.answers[answerIndex].answerText;
         self.history.push(record);
 
-        // update currentStep by following the yes path
-        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].yes.next;
-    };
+        var next = self.currentQuestion.answers[answerIndex].next;
 
-    self.submitNo = function() { 
-        // record this question and answer in record and add to history
-        var record = {};
-        record.question = self.currentQuestion();
-        record.answer = self.noText();
-        self.history.push(record);
+        // check if this answer leads to an eligibility state
+        if (ELIGIBILITY_FLOW.endStates.indexOf(next) != -1) {
+            self.eligibility = next;
+            self.eligibilityKnown = true;
+            return;
+        }
 
-        // update currentStep by following the no path
-        self.currentStep = ELIGIBILITY_FLOW[self.currentStep].no.next;
+        // update currentQuestion if eligibitliy still not known and next question is valid
+        if (next in ELIGIBILITY_FLOW) {
+            self.currentQuestion = ELIGIBILITY_FLOW[next];
+            return;
+        }
+
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question \'" + next + "\' in ELIGIBILITY_FLOW.");
     };
 });
 
