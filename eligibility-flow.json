@@ -20,7 +20,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
       ]
    },
 
@@ -37,7 +37,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Convicted\" refers to the judgment (sentence) on a verdict or a finding of guilty, a plea of guilty or a plea of nolo contendere, or a plea or verdict of not guilty by reason of insanity."
       ]
    },
 
@@ -89,7 +89,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
    },
 
@@ -106,7 +106,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Deferred Sentencing Agreement\" means ..."
       ]
    },
 
@@ -192,7 +192,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
    },
 
@@ -209,7 +209,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
    },
 
@@ -226,7 +226,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
    },
 
@@ -260,7 +260,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
    },
    
@@ -277,7 +277,7 @@
          }
       ],
       "helperText":[  
-
+         "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
    }
 }
