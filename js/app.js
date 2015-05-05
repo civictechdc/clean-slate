@@ -270,6 +270,8 @@ myApp.controller('legalAidController',
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
     var self = this; // self is equivalent to $scope
+    self.userInput = [];
+    console.log('ran')
     self.params = $routeParams;
     self.questionNumber = Number(self.params.questionNumber);
     if(self.questionNumber > eligibilityFlow.length) {
@@ -289,8 +291,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         // set currentStep to questionNumber parameter in url 
         self.currentStep = self.questionNumber;    
     }
-    // history holds the user's answers to previous questions to be returned when eligibility is known
-    self.history = [];
+    // userInput holds the user's answers to previous questions to be returned when eligibility is known
 
     // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
     $http.get('ineligible-misdemeanors.json')
@@ -298,7 +299,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         // if the app successfully gets misdemeanor data from the JSON file, assign it to self.ineligibleMisdemeanors for use in the wizard
         self.ineligibleMisdemeanors = data;
     });
-
 
     self.eligibilityKnown = function() {
         // if current step is a number we are still on questions
@@ -373,19 +373,21 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         throw new Error("There is no question number " + self.currentStep);
     }
     self.submitYes = function() { 
-        // record this question and answer in record and add to history
+        // record this question and answer in record and add to userInput
+        console.log(self.userInput);
         var record = {};
         record.question = self.currentQuestion();
         record.answer = self.yesText();
-        self.history.push(record);
+        self.userInput.push(record);
     };
 
     self.submitNo = function() {
-        // record this question and answer in record and add to history
+        // record this question and answer in record and add to userInput
+        console.log(self.userInput);
         var record = {};
         record.question = self.currentQuestion();
         record.answer = self.noText();
-        self.history.push(record);
+        self.userInput.push(record);
     };
 });
 
