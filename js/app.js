@@ -271,7 +271,9 @@ myApp.controller('legalAidController',
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
     var self = this; // self is equivalent to $scope
     self.userInput = [];
-    console.log('ran')
+    // userInput holds the user's answers to previous questions to be returned when eligibility is known
+    console.log('ran');
+    
     self.params = $routeParams;
     self.questionNumber = Number(self.params.questionNumber);
     if(self.questionNumber > eligibilityFlow.length) {
@@ -291,7 +293,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         // set currentStep to questionNumber parameter in url 
         self.currentStep = self.questionNumber;    
     }
-    // userInput holds the user's answers to previous questions to be returned when eligibility is known
 
     // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
     $http.get('ineligible-misdemeanors.json')
