@@ -39,6 +39,11 @@
             <md-button ng-click="eligibilityCtrl.submitAnswer($index)" class="md-raised md-primary md-button md-default-theme" >
                 {{answer.answerText}}</md-button>
         </span> <!-- end of answer section -->
+
+        <!-- If there is helper text for the question, show it here (ie explanations of legalese) -->
+        <div ng-show="eligibilityCtrl.currentQuestion.helperText.length > 0" ng-repeat="text in eligibilityCtrl.currentQuestion.helperText">
+            <p>{{text}}</p>
+        </div> <!-- end of helper text section -->
         
       </div> <!-- end of question section -->
 
