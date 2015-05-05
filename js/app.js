@@ -305,7 +305,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         // if current step is a number we are still on questions
         // if current step is a string (ie "eligible" or "ineligible"), the eligiblity state is known
         return (typeof self.currentStep === "string") ; 
-    }
+    };
 
     self.currentQuestion = function() {
         // send back an empty string if currentQuestion is called and eligibility is known
@@ -317,8 +317,12 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         }
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
-    }
-
+    };
+    self.progressBar = function() {
+        var progressPercent = (self.currentStep/eligibilityFlow.length) * 100;
+        console.log(progressPercent);
+        return progressPercent;
+    };
     self.yesText = function() {
         // send back an empty string if yesText is called and eligibility is known
         if (self.eligibilityKnown()){
@@ -329,7 +333,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         }
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
-    }
+    };
     self.noText = function() {
         // send back an empty string if noText is called and eligibility is known
         if (self.eligibilityKnown()){
@@ -340,7 +344,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         }
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
-    }
+    };
     self.yesHref = function() {
         if (self.eligibilityKnown()){
             return "";
@@ -356,7 +360,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         };
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
-    }
+    };
     self.noHref = function() {
         if (self.eligibilityKnown()){
             return "";
@@ -372,7 +376,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         }
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
-    }
+    };
     self.submitYes = function() { 
         // record this question and answer in record and add to userInput
         console.log(self.userInput);

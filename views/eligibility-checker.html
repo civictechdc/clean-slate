@@ -3,41 +3,51 @@
 <div class="row">
     <div class="col-md-12">
       
-      <h1>Eligibility Checker</h1> 
+      <h1 class="text-center">Eligibility Checker</h1> 
       
       <!-- Questions. This section only shows if the user has not reached an eligibilty state -->
       <div ng-show="!eligibilityCtrl.eligibilityKnown()">
-        <p>{{eligibilityCtrl.currentQuestion()}}</p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%;">
+            <span class="sr-only">60% Complete</span>
+          </div>
+        </div>
+        <div class="text-center panel panel-default">
+          <div class="panel-body">
+            <p>{{eligibilityCtrl.currentQuestion()}}</p>
 
-        <!-- Show ineligible misdemeanors on step 2 & 8-->
-        <div ng-show="eligibilityCtrl.currentStep == 2 || eligibilityCtrl.currentStep == 8 ">
-            <h3>Ineligible felony</h3>
-            <p>
-              "Ineligible felony" means any felony other than a failure to appear 
-              (§ 16-1327) [<a href="http://dccode.org/simple/sections/23-1327.html">§ 23‑1327</a>].
-            </p>
+            <!-- Show ineligible misdemeanors on step 2 & 8-->
+            <div ng-show="eligibilityCtrl.currentStep == 2 || eligibilityCtrl.currentStep == 8 ">
+                <h3>Ineligible felony</h3>
+                <p>
+                  "Ineligible felony" means any felony other than a failure to appear 
+                  (§ 16-1327) [<a href="http://dccode.org/simple/sections/23-1327.html">§ 23‑1327</a>].
+                </p>
 
-            <ul class="misdemeanors_group">
-              <h3>Ineligible misdemeanors</h3>
-              <form class="form-inline">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Search misdemeanors: </label>
-                  <input type="type" class="form-control" ng-model="term">
-                </div>
-              </form>
-              <li ng-repeat="misd in eligibilityCtrl.ineligibleMisdemeanors | filter: term" class="misdemeanors">
-                {{ misd.offense }} <a href="" ng-click="isCollapsed = !isCollapsed" ng-show="misd.legal_description">+</a><br />
-                <span ng-show="isCollapsed">
-                  <p>{{ misd.legal_description }}</p>
-                </span>
-              </li>
-            </ul> 
-        </div> <!-- end of list of ineligible misdemeanors -->
+                <ul class="misdemeanors_group">
+                  <h3>Ineligible misdemeanors</h3>
+                  <form class="form-inline">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Search misdemeanors: </label>
+                      <input type="type" class="form-control" ng-model="term">
+                    </div>
+                  </form>
+                  <li ng-repeat="misd in eligibilityCtrl.ineligibleMisdemeanors | filter: term" class="misdemeanors">
+                    {{ misd.offense }} <a href="" ng-click="isCollapsed = !isCollapsed" ng-show="misd.legal_description">+</a><br />
+                    <span ng-show="isCollapsed">
+                      <p>{{ misd.legal_description }}</p>
+                    </span>
+                  </li>
+                </ul> 
+            </div> <!-- end of list of ineligible misdemeanors -->
 
-
-        <md-button ng-click="eligibilityCtrl.submitYes()" ng-href="/#/eligibility-check/q/{{eligibilityCtrl.yesHref()}}" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
-        <md-button ng-click="eligibilityCtrl.submitNo()" ng-href="/#/eligibility-check/q/{{eligibilityCtrl.noHref()}}" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
-      </div> <!-- end of question section -->
+          </div>
+          <div class="panel-footer">
+            <md-button ng-click="eligibilityCtrl.submitYes()" ng-href="/#/eligibility-check/q/{{eligibilityCtrl.yesHref()}}" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
+            <md-button ng-click="eligibilityCtrl.submitNo()" ng-href="/#/eligibility-check/q/{{eligibilityCtrl.noHref()}}" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
+          </div>
+        </div> <!-- end of question section -->
+      </div>
 
       <!-- This section only shows if the user has reached an eligibilty state -->
       <div ng-show="eligibilityCtrl.eligibilityKnown()">
