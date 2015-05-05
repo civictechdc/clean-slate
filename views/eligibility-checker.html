@@ -6,11 +6,11 @@
       <h1>Eligibility Checker</h1> 
       
       <!-- Questions. This section only shows if the user has not reached an eligibilty state -->
-      <div ng-show="!eligibilityCtrl.eligibilityKnown()">
-        <p>{{eligibilityCtrl.currentQuestion()}}</p>
+      <div ng-show="!eligibilityCtrl.eligibilityKnown">
+        <p>{{eligibilityCtrl.currentQuestion.questionText}}</p>
 
-        <!-- Show ineligible misdemeanors on step 2 & 8-->
-        <div ng-show="eligibilityCtrl.currentStep == 2 || eligibilityCtrl.currentStep == 8 ">
+        <!-- Show ineligible misdemeanors on steps with special property "showIneligibleMisdemeanors"-->
+        <div ng-show="eligibilityCtrl.currentQuestion.showIneligibleMisdemeanors == true">
             <h3>Ineligible felony</h3>
             <p>
               "Ineligible felony" means any felony other than a failure to appear 
@@ -34,14 +34,22 @@
             </ul> 
         </div> <!-- end of list of ineligible misdemeanors -->
 
+        <!-- Show buttons for all possible answers to this question -->
+        <span ng-repeat="answer in eligibilityCtrl.currentQuestion.answers">
+            <md-button ng-click="eligibilityCtrl.submitAnswer($index)" class="md-raised md-primary md-button md-default-theme" >
+                {{answer.answerText}}</md-button>
+        </span> <!-- end of answer section -->
 
-        <md-button ng-click="eligibilityCtrl.submitYes()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
-        <md-button ng-click="eligibilityCtrl.submitNo()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
+        <!-- If there is helper text for the question, show it here (ie explanations of legalese) -->
+        <div ng-show="eligibilityCtrl.currentQuestion.helperText.length > 0" ng-repeat="text in eligibilityCtrl.currentQuestion.helperText">
+            <p>{{text}}</p>
+        </div> <!-- end of helper text section -->
+        
       </div> <!-- end of question section -->
 
       <!-- This section only shows if the user has reached an eligibilty state -->
-      <div ng-show="eligibilityCtrl.eligibilityKnown()">
-        <h3>This offense is {{eligibilityCtrl.currentStep}} for expungement.</h3>
+      <div ng-show="eligibilityCtrl.eligibilityKnown">
+        <h3>This offense is {{eligibilityCtrl.eligibility}} for expungement.</h3>
 
         <!-- This section shows a history of all of the questions and answers -->
         <div ng-repeat="record in eligibilityCtrl.history">

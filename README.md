@@ -20,6 +20,49 @@ Additional resources:
 - Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
 
 ---
+####Format Example for [eligibility-flow.json](eligibility-flow.json)
+
+The file starts with two special properties:
+
+1. `"start":"question0"`
+start indicates what the initial question should be
+
+2. `"endStates":["eligible", "ineligible", "ineligible at this time"]`
+endStates is an array of the possible end states in the flow chart
+
+
+The remainder of the file is made up of the individual 'question' objects:
+```
+"question0":{
+      "questionText":"Do you have a case pending?",
+      "answers":[
+         {
+            "answerText":"Yes",
+            "next":"ineligible at this time"
+         },
+         {
+            "answerText":"No",
+            "next":"question1"
+         }
+      ],
+      "helperText":[
+         "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
+      ]
+   }
+```
+
+
+questionText = question that will be displayed for the user 
+
+answerText = words that will be displayed on the buttons
+
+next = which should the user see next if they click this answer? must be the name of a question OR one of the options defined in endStates (see 2. above)
+
+helperText = definitions or explanations of legalese (this can be an empty) `"helperText":[]`
+
+note: If you need to use parentheses, this character must be 'escaped' with a backslash.  For example, "Pending" becomes `\"Pending\"`
+
+---
 Developement guide:
 
     First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer. Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
