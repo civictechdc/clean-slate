@@ -1,8 +1,8 @@
 'use strict';
 /*
-elegibilityFlow contains questions text and links to the next question or eligibility state
+eligibilityFlow contains questions text and links to the next question or eligibility state
 
-elegibilityFlow FORMAT EXAMPLE
+eligibilityFlow FORMAT EXAMPLE
 questions are numbered by their position in the array, currently from 0-15 for a total of 16 questions
 {   // Question # 
     question: "this text will be displayed as the question",
@@ -16,7 +16,7 @@ questions are numbered by their position in the array, currently from 0-15 for a
     }
 }
 */
-var elegibilityFlow = [
+var eligibilityFlow = [
     {   // Question 0
         question: "Do you have a case pending?",
         yes: {
@@ -65,7 +65,7 @@ var elegibilityFlow = [
         question: "Has it been 8 years since you were off papers?",
         yes: {
             text: "Yes",
-            next: "eligable"
+            next: "eligible"
         },
         no: {
             text: "No",
@@ -131,7 +131,7 @@ var elegibilityFlow = [
         question: "Has it been 4 years since you were \"off papers\" for the felony non-conviction?",
         yes: {
             text: "Yes",
-            next: "eligable"
+            next: "eligible"
         },
         no: {
             text: "No",
@@ -142,7 +142,7 @@ var elegibilityFlow = [
         question: "Has it been 3 years since you were \"off papers\" for the felony non-conviction?",
         yes: {
             text: "Yes",
-            next: "eligable"
+            next: "eligible"
         },
         no: {
             text: "No",
@@ -153,7 +153,7 @@ var elegibilityFlow = [
         question: "Has it been two years since you were \"off papers\" for the misdemeanor non-conviction?",
         yes: {
             text: "Yes",
-            next: "eligable"
+            next: "eligible"
         },
         no: {
             text: "No",
@@ -206,8 +206,7 @@ var myApp = angular.module('myApp', [
 
 // Route definition 
 myApp.config(['$routeProvider',
-    function ($routeProvider) {
-        
+    function ($routeProvider) { 
         $routeProvider
             // Homepage includes Expunge D.C. overview and link to the wizard
             .when('/', {
@@ -216,6 +215,11 @@ myApp.config(['$routeProvider',
             })
             // The wizard!
             .when('/eligibility-check', {
+                redirectTo: function(routeParams, path, search) {
+                    return '/eligibility-check/q/0'
+                }
+            })
+            .when('/eligibility-check/q/:questionNumber', {
                 templateUrl: 'views/eligibility-checker.html',
                 controller: 'EligibilityWizardController as eligibilityCtrl'
             })
@@ -224,7 +228,7 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/questions.html',
                 controller: 'questionsController'
             })
-            // FAQs
+            // Legal Aid Page
             .when('/legal-aid', {
                 templateUrl: 'views/legal-aid.html',
                 controller: 'legalAidController'
@@ -264,12 +268,27 @@ myApp.controller('legalAidController',
 ]);
 
 // refactored version of Eligibility Checker Controller --AKA The Wizard
-myApp.controller('EligibilityWizardController', function($http) {
-
+myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
     var self = this; // self is equivalent to $scope
-    // a number indicating the current step the user is on -- until they reach an eligibility state.
-    // Once eligibility state is reached, currentStep will hold a string indicating the eligiblity.
-    self.currentStep = 0;
+    self.params = $routeParams;
+    self.questionNumber = Number(self.params.questionNumber);
+    if(self.questionNumber > eligibilityFlow.length) {
+        // if a step outside of the list is entered in the url, default to 0
+        $location.path('/eligibility-check/q/0');
+        self.currentStep = 0;
+    } else if (isNaN(self.questionNumber)) {
+        if(self.params.questionNumber === 'eligible' || self.params.questionNumber === 'ineligible') {
+            $location.path('/eligibility-check/q/' + self.params.questionNumber);
+            self.currentStep = self.params.questionNumber;
+        } else {
+            // if no step is specified, default to 0
+            $location.path('/eligibility-check/q/0');
+            self.currentStep = 0;
+        }
+    } else {
+        // set currentStep to questionNumber parameter in url 
+        self.currentStep = self.questionNumber;    
+    }
     // history holds the user's answers to previous questions to be returned when eligibility is known
     self.history = [];
 
@@ -278,7 +297,6 @@ myApp.controller('EligibilityWizardController', function($http) {
     .success(function(data, status, headers, config) {
         // if the app successfully gets misdemeanor data from the JSON file, assign it to self.ineligibleMisdemeanors for use in the wizard
         self.ineligibleMisdemeanors = data;
-        console.log(self.ineligibleMisdemeanors);
     });
 
 
@@ -290,54 +308,84 @@ myApp.controller('EligibilityWizardController', function($http) {
 
     self.currentQuestion = function() {
         // send back an empty string if currentQuestion is called and eligibility is known
-        if (self.eligibilityKnown())
+        if (self.eligibilityKnown()){
             return "";
-        if (self.currentStep < elegibilityFlow.length);
-            return elegibilityFlow[self.currentStep].question;
+        }
+        if (self.currentStep < eligibilityFlow.length){
+            return eligibilityFlow[self.currentStep].question;
+        }
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
     }
 
     self.yesText = function() {
         // send back an empty string if yesText is called and eligibility is known
-        if (self.eligibilityKnown())
+        if (self.eligibilityKnown()){
             return "";
-        if (self.currentStep < elegibilityFlow.length);
-            return elegibilityFlow[self.currentStep].yes.text;
+        }
+        if (self.currentStep < eligibilityFlow.length){
+            return eligibilityFlow[self.currentStep].yes.text;
+        }
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
     }
-
     self.noText = function() {
         // send back an empty string if noText is called and eligibility is known
-        if (self.eligibilityKnown())
+        if (self.eligibilityKnown()){
             return "";
-        if (self.currentStep < elegibilityFlow.length);
-            return elegibilityFlow[self.currentStep].no.text;
+        }
+        if (self.currentStep < eligibilityFlow.length){
+            return eligibilityFlow[self.currentStep].no.text;            
+        }
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question number " + self.currentStep);
     }
-
+    self.yesHref = function() {
+        if (self.eligibilityKnown()){
+            return "";
+        }
+        if (eligibilityFlow[self.currentStep].yes.next === "ineligible at this time"){
+            return "ineligible";
+        }
+        if (eligibilityFlow[self.currentStep].yes.next === "eligible"){
+            return "eligible";
+        }
+        if (self.currentStep < eligibilityFlow.length){
+            return eligibilityFlow[self.currentStep].yes.next;
+        };
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + self.currentStep);
+    }
+    self.noHref = function() {
+        if (self.eligibilityKnown()){
+            return "";
+        }
+        if (eligibilityFlow[self.currentStep].no.next === "ineligible at this time"){
+            return "ineligible";
+        }
+        if (eligibilityFlow[self.currentStep].no.next === "eligible"){
+            return "eligible";
+        }
+        if (self.currentStep < eligibilityFlow.length){
+            return eligibilityFlow[self.currentStep].no.next;
+        }
+        // else if there is no question cooresponding to currentStep
+        throw new Error("There is no question number " + self.currentStep);
+    }
     self.submitYes = function() { 
         // record this question and answer in record and add to history
         var record = {};
         record.question = self.currentQuestion();
         record.answer = self.yesText();
         self.history.push(record);
-
-        // update currentStep by following the yes path
-        self.currentStep = elegibilityFlow[self.currentStep].yes.next;
     };
 
-    self.submitNo = function() { 
+    self.submitNo = function() {
         // record this question and answer in record and add to history
         var record = {};
         record.question = self.currentQuestion();
         record.answer = self.noText();
         self.history.push(record);
-
-        // update currentStep by following the no path
-        self.currentStep = elegibilityFlow[self.currentStep].no.next;
     };
 });
 

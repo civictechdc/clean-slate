@@ -35,8 +35,8 @@
         </div> <!-- end of list of ineligible misdemeanors -->
 
 
-        <md-button ng-click="eligibilityCtrl.submitYes()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
-        <md-button ng-click="eligibilityCtrl.submitNo()" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
+        <md-button ng-click="eligibilityCtrl.submitYes()" ng-href="/#/eligibility-check/q/{{eligibilityCtrl.yesHref()}}" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.yesText()}}</md-button>
+        <md-button ng-click="eligibilityCtrl.submitNo()" ng-href="/#/eligibility-check/q/{{eligibilityCtrl.noHref()}}" class="md-raised md-primary md-button md-default-theme">{{eligibilityCtrl.noText()}}</md-button>
       </div> <!-- end of question section -->
 
       <!-- This section only shows if the user has reached an eligibilty state -->
