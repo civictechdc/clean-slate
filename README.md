@@ -20,30 +20,32 @@ Additional resources:
 - Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
 
 ---
-Format Example for [eligibility-flow.json](eligibility-flow.json)
+####Format Example for [eligibility-flow.json](eligibility-flow.json)
 
 The file starts with two special properties:
-1. `"start":"question0"` 
+
+1. `"start":"question0"`
 start indicates what the initial question should be
+
 2. `"endStates":["eligible", "ineligible", "ineligible at this time"]`
 endStates is an array of the possible end states in the flow chart
 
 
 The remainder of the file is made up of the individual 'question' objects:
 ```
-"question0":{  
+"question0":{
       "questionText":"Do you have a case pending?",
-      "answers":[  
-         {  
+      "answers":[
+         {
             "answerText":"Yes",
             "next":"ineligible at this time"
          },
-         {  
+         {
             "answerText":"No",
             "next":"question1"
          }
       ],
-      "helperText":[  
+      "helperText":[
          "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
       ]
    }
