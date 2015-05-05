@@ -18,6 +18,7 @@ Additional resources:
 
 - [Flowchart](docs/flowchart.jpeg)
 - Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
+
 ---
 Format Example for [eligibility-flow.json](eligibility-flow.json)
 
