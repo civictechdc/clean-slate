@@ -31,7 +31,8 @@ start indicates what the initial question should be
 endStates is an array of the possible end states in the flow chart
 
 
-The remainder of the file is made up of the individual 'question' objects:
+The remainder of the file is made up of the individual 'question' objects.
+
 ```
 "question0":{
       "questionText":"Do you have a case pending?",
@@ -52,13 +53,16 @@ The remainder of the file is made up of the individual 'question' objects:
 ```
 
 
+
 questionText = question that will be displayed for the user 
+
+answers = an array of answer objects.  Each answer object should have `"answerText"` and `"next"`. This example has two possible answers to the question, but there can be as many as needed. 
 
 answerText = words that will be displayed on the buttons
 
 next = which should the user see next if they click this answer? must be the name of a question OR one of the options defined in endStates (see 2. above)
 
-helperText = definitions or explanations of legalese (this can be an empty) `"helperText":[]`
+helperText = definitions or explanations of legalese (this can be an empty: `"helperText":[]`)
 
 note: If you need to use quotation marks, this character must be 'escaped' with a backslash.  For example, "Pending" becomes `\"Pending\"`
 
