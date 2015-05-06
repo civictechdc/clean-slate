@@ -10,6 +10,10 @@ body {
   background-color: #F9F9F9;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: rgb(63,81,181);
 }
@@ -54,6 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .pagetitle {
     display: inline-block;
+    line-height: 2em;
 }
 .menu {
     position: absolute;
@@ -97,10 +102,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 0;
 }
 .misdemeanors {
-  margin: 15px 0;
+  margin: 0px 0px 0px 0px;
   padding: 10px 0;
   border-top: 1px #eee solid;
-  border-bottom: 1px #eee solid;
   list-style-type: none;
 }
 
@@ -115,4 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 p.question-text {
   font-size: 2em;
+}
+.progress-bar {
+  background-color: rgb(63,81,181);
 }

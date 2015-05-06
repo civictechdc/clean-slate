@@ -323,7 +323,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         if(isNaN(self.currentStep) && (self.currentStep === 'eligible' || self.currentStep === 'ineligible')){
             progressPercent = 100;
         } else {
-            progressPercent = (self.currentStep/eligibilityFlow.length) * 100;
+            progressPercent = Math.round((self.currentStep/eligibilityFlow.length) * 100);
         }
         console.log(progressPercent);
         return progressPercent;
