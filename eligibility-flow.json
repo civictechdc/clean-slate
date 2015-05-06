@@ -279,5 +279,429 @@
       "helperText":[  
          "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
+   },
+
+   "questionA1":{  
+      "questionText":"Were you arrested in DC because you had a warrant in another jurisdiction (i.e. another state)?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionA2"
+         },
+         {  
+            "answerText":"No",
+            "next":"Ineligible at this time"
+         }
+      ],
+      "helperText":[  
+          ]
+   },
+   
+   "questionA2":{  
+      "questionText":"Have you appeared before the proper authority in the jurisdiction that issued the warrant?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionA3"
+         },
+         {  
+            "answerText":"No",
+            "next":"Ineligible at this time"
+         }
+      ],
+      "helperText":[  
+       ]
+   },
+
+   "questionA3":{  
+      "questionText":"Can you prove that you appeared before the proper authority in the jurisdiction that issued the warrant?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"ineligible at this time"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionB1":{  
+      "questionText":"Does your criminal record incorrectly identify you as having a case or arrest that you did not have?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionB2"
+         },
+         {  
+            "answerText":"No",
+            "next":"Ineligible at this time"
+         }
+      ],
+      "helperText":[ 
+          "(For example – Someone used your name when they were arrested or a data entry error has linked your name or other identifying information to a case that is not yours)"
+          ]
+   },
+   
+   "questionB2":{  
+      "questionText":"Have you checked with the United States Attorney’s Office to see if fingerprints are on file for the individual at was actually arrested?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionB3"
+         },
+         {  
+            "answerText":"No",
+            "next":"Ineligible at this time"
+         }
+      ],
+      "helperText":[  
+       ]
+   },
+
+   "questionB3":{  
+      "questionText":" Are the individual’s fingerprints available?" ,
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"ineligible at this time"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionC1":{  
+      "questionText":"Were you arrested for or charged with crime but \"not convicted\" of that crime as defined below?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionC2"
+         },
+         {  
+            "answerText":"No",
+            "next":"Ineligible at this time"
+         }
+      ],
+      "helperText":[ 
+          " \"Not convicted\" means (a) the prosecutor did not paper or did not charge the case; OR (b) the prosecutor dropped the charges against the you before trial; OR  (c) the court dismissed the charges against the you; OR (d) you were acquitted (found “not guilty”) of the crime after a trial. "
+          ]
+   },
+   
+   "questionC2":{  
+      "questionText":"Are you willing to swear under oath that you are actually innocent of the crime for which you were arrested or charged?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionC3"
+         },
+         {  
+            "answerText":"No",
+            "next":"Ineligible at this time"
+         }
+      ],
+      "helperText":[  
+         " Please Note: False swearing can be prosecuted as a crime."
+       ]
+   },
+
+   "questionC3":{  
+      "questionText":"Can you prove that the offense for which you were arrested or charged did not occur?" ,
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionC4a"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionC4b"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionC4a":{  
+      "questionText":"Can you prove that you did not commit the offense for which you were arrested or charged?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"eligible"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+     
+   "questionC4b":{  
+      "questionText":"Can you prove that you did not commit the offense for which you were arrested or charged?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionD1"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionC5":{  
+      "questionText":"Based on your responses, you may not be able to file for sealing under Actual Innocence.  Please see the \"Non-Conviction, Eligible Misdemeanor (16- 803(a))\" tab on the home page for an additional option",
+      "answers":[  
+         {  
+            "answerText":"Continue under Non-Conviction, Eligible Misdemeanor",
+            "next":"questionD2"
+         },
+         {  
+            "answerText":"No",
+            "next":"Ineligible"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+
+   "questionD1":{  
+      "questionText":"Were you arrested for or charged with crime but \"not convicted\" of that crime as defined below?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionD2"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionF1"
+         }
+      ],
+      "helperText":[ 
+          " \"Not convicted\" means (a) the prosecutor did not paper or did not charge the case; OR (b) the prosecutor dropped the charges against the you before trial; OR  (c) the court dismissed the charges against the you; OR (d) you were acquitted (found “not guilty”) of the crime after a trial. "
+          ]
+   },
+   
+   "questionD2":{  
+      "questionText":"Was the crime one of the misdemeanors listed below?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionE1"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionD3"
+         }
+      ],
+      "helperText":[  
+         " Please Note: False swearing can be prosecuted as a crime."
+       ]
+   },
+
+   "questionD3":{  
+      "questionText":"Do you have other arrests or charges for additional crimes that you are trying to seal and/or a conviction for a felony?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"eligible"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionE1":{  
+      "questionText":"Were you arrested for or charged with crime but \"not convicted\" of that crime as defined below?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionE2"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionF1"
+         }
+      ],
+      "helperText":[ 
+          " \"Not convicted\" means (a) the prosecutor did not paper or did not charge the case; OR (b) the prosecutor dropped the charges against the you before trial; OR  (c) the court dismissed the charges against the you; OR (d) you were acquitted (found “not guilty”) of the crime after a trial. "
+          ]
+   },
+   
+   "questionE2":{  
+      "questionText":"Is the offense that you were arrested or charged with a felony OR listed below?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionE3"
+         },
+         {  
+            "answerText":"No",
+            "next":" "
+         }
+      ],
+      "helperText":[  
+       ]
+   },
+
+   "questionE3":{  
+      "questionText":"Were you arrested and charged with the crime?",
+      "answers":[  
+         {  
+            "answerText":"I was only arrested (case was \"not papered\")",
+            "next":"questionE4"
+         },
+         {  
+            "answerText":"I was arrested and charged with the crime (case was \"papered\")",
+            "next":"questionE4"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionE4":{  
+      "questionText":"Do you have other arrests or charges for additional crimes that you are trying to seal and/or a conviction for a felony?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"eligible"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionF1":{  
+      "questionText":"Were you convicted of a crime as defined above?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionF2"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionF2"
+         }
+      ],
+      "helperText":[ 
+          " Generally, \"convicted\" means that you were found guilty after a trial, pled guilty, or pled nolo contendere (\"no contest\") to the charges. A Youth Act sentence that was not \"set aside\" IS a conviction also.  It is also a conviction if you were found not guilty by reason of insanity." 
+          ]
+   },
+   
+   "questionF2":{  
+      "questionText":"Is the crime for which you were convicted listed below?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"ineligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionF3"
+         }
+      ],
+      "helperText":[  
+       ]
+   },
+
+   "questionF3":{  
+      "questionText":"Were you convicted of a felony?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"questionF4"
+         },
+         {  
+            "answerText":"No",
+            "next":"ineligible at this time"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionF4":{  
+      "questionText":"Was the felony charge for your failure to appear in court (Felony BRA)?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"eligible"
+         }
+      ],
+      "helperText":[  
+      ]
+   }, 
+      
+   "questionF5":{  
+      "questionText":"Was the felony charge for your failure to appear in court (Felony BRA)?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"eligible"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionF6":{  
+      "questionText":"Is this your only conviction on your criminal record?",
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"eligible"
+         },
+         {  
+            "answerText":"No",
+            "next":"questionF7"
+         }
+      ],
+      "helperText":[  
+      ]
+   },
+   
+   "questionF7":{  
+      "questionText":"Do you have other arrests or charges for additional crimes that you are trying to seal and/or a conviction for a felony?",  
+      "answers":[  
+         {  
+            "answerText":"Yes",
+            "next":"start"
+         },
+         {  
+            "answerText":"No",
+            "next":"eligible"
+         }
+      ],
+      "helperText":[  
+      ]
    }
-}
+   
+   }
