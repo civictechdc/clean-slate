@@ -60,11 +60,11 @@ answers = an array of answer objects.  Each answer object should have `"answerTe
 
 answerText = words that will be displayed on the buttons
 
-next = which should the user see next if they click this answer? must be the name of a question OR one of the options defined in endStates (see 2. above)
+next = what should the user see next if they click this answer? must be the name of a question OR one of the options defined in endStates (see 2. above)
 
 helperText = definitions or explanations of legalese (this can be an empty: `"helperText":[]`)
 
-note: If you need to use quotation marks, this character must be 'escaped' with a backslash.  For example, "Pending" becomes `\"Pending\"`
+note: If you need to use quotation marks, the character must be 'escaped' with a backslash.  For example, the quotation marks around "Pending" in `helperText` are escaped like this: `\"Pending\"`
 
 ---
 Developement guide:
