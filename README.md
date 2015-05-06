@@ -20,7 +20,10 @@ Additional resources:
 - Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
 
 ---
-####Format Example for [eligibility-flow.json](eligibility-flow.json)
+####[eligibility-flow.json](eligibility-flow.json)
+[eligibility-flow.json](eligibility-flow.json) contains the questions, answers, and flow logic 
+for the wizard which guides users through an eligibility check. 
+
 
 The file starts with two special properties:
 
