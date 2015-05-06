@@ -60,7 +60,7 @@ next = which should the user see next if they click this answer? must be the nam
 
 helperText = definitions or explanations of legalese (this can be an empty) `"helperText":[]`
 
-note: If you need to use parentheses, this character must be 'escaped' with a backslash.  For example, "Pending" becomes `\"Pending\"`
+note: If you need to use quotation marks, this character must be 'escaped' with a backslash.  For example, "Pending" becomes `\"Pending\"`
 
 ---
 Developement guide:
