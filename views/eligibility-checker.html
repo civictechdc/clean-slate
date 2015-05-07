@@ -12,7 +12,7 @@
           <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
         </div>
       </div>
-      <div ng-show="!eligibilityCtrl.eligibilityKnown()">
+      <div ng-show="!eligibilityCtrl.eligibilityKnown">
         <div class="text-center panel panel-default">
           <div class="panel-body">
             <p class="question-text">{{eligibilityCtrl.currentQuestion.questionText}}</p>
@@ -43,33 +43,35 @@
                   </div>
                 </ul> 
             </div> <!-- end of list of ineligible misdemeanors -->
-        <!-- Show buttons for all possible answers to this question -->
 
-        <!-- If there is helper text for the question, show it here (ie explanations of legalese) -->
+            <!-- If there is helper text for the question, show it here (ie explanations of legalese) -->
             <div ng-show="eligibilityCtrl.currentQuestion.helperText.length > 0" ng-repeat="text in eligibilityCtrl.currentQuestion.helperText">
                 <hr>
+                <h1><span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span></h1>
                 <p>{{text}}</p>
             </div> <!-- end of helper text section -->
-        
-      </div> <!-- end of question section -->
+          </div> <!-- end of question section -->
   
           <div class="panel-footer">
+            <!-- Show buttons for all possible answers to this question -->
             <span ng-repeat="answer in eligibilityCtrl.currentQuestion.answers">
-              <md-button ng-click="" ng-href="/#/eligibility-check/q/0" class="md-raised md-primary md-button md-default-theme">{{answer.answerText}}</md-button>
+              <md-button ng-click="eligibilityCtrl.submitAnswer($index)" ng-href="/#/eligibility-check/q/{{answer.next}}" class="md-raised md-primary md-button md-default-theme">{{answer.answerText}}</md-button>
             </span> <!-- end of answer section -->
           </div>
           </div>
         </div> <!-- end of question section -->
-
       <!-- This section only shows if the user has reached an eligibilty state -->
       <div ng-show="eligibilityCtrl.eligibilityKnown">
         <div class="panel panel-default">
           <div class="panel-body text-center">
             <h1>
-              <span ng-show="eligibilityCtrl.currentStep === 'eligible'"class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-              <span ng-show="eligibilityCtrl.currentStep === 'ineligible'"class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+              <span ng-show="eligibilityCtrl.currentQuestion === 'eligible'"class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+              <span ng-show="eligibilityCtrl.currentQuestion === 'ineligible-at-this-time'"class="glyphicon glyphicon-time" aria-hidden="true"></span>
+              <span ng-show="eligibilityCtrl.currentQuestion === 'ineligible'"class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
             </h1>
-            <h2>This offense is {{eligibilityCtrl.eligibility}} for expungement.</h2>                      
+            <h2>
+              This offense is {{eligibilityCtrl.eligibilityStatus}} for expungement.
+            </h2>                      
           </div>
         </div>
         <div class="panel panel-default">

@@ -79,34 +79,53 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
     // once eligibility is known, this will hold the final eligibility state
     self.eligibility = null;
 
-    self.userInput = [];
     // userInput holds the user's answers to previous questions to be returned when eligibility is known
+    self.userInput = [];
 
     // boolean indicating whether final state is known
     var executeController = function(data) {
+        //Set self.eligibilityFlow to the data returned by the http request
         self.eligibilityFlow = data;
+        //Get the length of the eligibilityFlow object (if it were an array this would be easier)
         self.eligibilityFlowLength = Object.keys(self.eligibilityFlow.questions).length;
-        
+        //Get the URL q parameter (the question number) from $routeParams
         self.params = $routeParams;
-        self.questionNumber = Number(self.params.questionNumber);
-        if(self.questionNumber > self.eligibilityFlowLength) {
+        self.questionNumber = self.params.questionNumber;
+        if(Number(self.questionNumber) > self.eligibilityFlowLength) {
             // if a step outside of the list is entered in the url, default to 0
             $location.path('/eligibility-check/q/0');
-            self.currentQuestion = self.eligibilityFlow.questions['question' + 0];
+            self.currentQuestion = self.eligibilityFlow.questions[eligibilityFlow.start];
+        //If the url parameter does not contain a number, it may be an end state
         } else if (isNaN(self.questionNumber)) {
-            if(self.params.questionNumber === 'eligible' || self.params.questionNumber === 'ineligible') {
-                $location.path('/eligibility-check/q/' + self.params.questionNumber);
-                self.currentQuestion = 'question' + self.params.questionNumber;
-            } else {
-                // if no step is specified, default to 0
-                $location.path('/eligibility-check/q/0');
-                self.currentQuestion = self.eligibilityFlow.questions['question' + 0];
+            //check to see if the param matches an eligibility state
+            switch(self.questionNumber) {
+                case 'eligible':
+                    $location.path('/eligibility-check/q/' + self.params.questionNumber);
+                    self.currentQuestion = self.params.questionNumber;
+                    self.eligibilityKnown = true;
+                    self.eligibilityStatus = self.params.questionNumber;
+                    break;
+                case 'ineligible':
+                    self.currentQuestion = self.params.questionNumber;
+                    self.eligibilityKnown = true;
+                    self.eligibilityStatus = self.params.questionNumber;
+                    break;
+                case 'ineligible-at-this-time':
+                    self.currentQuestion = self.params.questionNumber;
+                    self.eligibilityKnown = true;
+                    self.eligibilityStatus = 'ineligible at this time';
+                    break;
+                default:
+                    //If a URL parameter that's a string is entered but doesn't match an elegibility state, return to beginning
+                    $location.path('/eligibility-check/q/0');
+                    self.currentQuestion = self.eligibilityFlow.questions[0];
+                    self.eligibilityKnown = false;
+                    break;
             }
         } else {
             // set currentQuestion to questionNumber parameter in url 
-            self.currentQuestion = self.eligibilityFlow.questions['question' + self.questionNumber];
+            self.currentQuestion = self.eligibilityFlow.questions[self.questionNumber];
         }
-
         // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
         $http.get('ineligible-misdemeanors.json')
         .success(function(data, status, headers, config) {
@@ -131,95 +150,27 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             }
 
             // update currentQuestion if eligibitliy still not known and next question is valid
-            if (next in self.eligibilityFlow) {
-                self.currentQuestion = self.eligibilityFlow[next];
+            if (next in self.eligibilityFlow.questions) {
+                self.currentQuestion = self.eligibilityFlow.questions[next];
                 return;
             }
 
             // else if there is no question cooresponding to currentQuestion
             throw new Error("There is no question \'" + next + "\' in self.eligibilityFlow.");
         };
-
-        self.eligibilityKnown = function() {
-            // if current step is a number we are still on questions
-            // if current step is a string (ie "eligible" or "ineligible"), the eligiblity state is known
-            return (typeof self.currentQuestion === "string") ; 
-        };
-        console.log(self.currentQuestion.answers)
-        /*self.currentQuestion = function() {
-            // send back an empty string if currentQuestion is called and eligibility is known
-            if (self.eligibilityKnown()){
-                return "";
-            }
-            if (self.currentQuestion < self.eligibilityFlow.length){
-                return self.eligibilityFlow[self.currentQuestion].question;
-            }
-            // else if there is no question cooresponding to currentQuestion
-            throw new Error("There is no question number " + self.currentQuestion);
-        };*/
+        
         self.progressBar = function() {
             var progressPercent = '';
-            if(isNaN(self.currentQuestion) && (self.currentQuestion === 'eligible' || self.currentQuestion === 'ineligible')){
+            //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
+            if(isNaN(self.currentQuestion) && self.eligibilityFlow.endStates.indexOf(self.currentQuestion) != -1){
                 progressPercent = 100;
             } else {
+                //Otherwise, divide the current question number by the total number of question, multiply by 100, and round to get a nice percent
                 progressPercent = Math.round((self.questionNumber/self.eligibilityFlowLength) * 100);
             }
             return progressPercent;
         };
-        /*self.yesText = function() {
-            // send back an empty string if yesText is called and eligibility is known
-            if (self.eligibilityKnown()){
-                return "";
-            }
-            if (self.currentQuestion < self.eligibilityFlow.length){
-                return self.eligibilityFlow[self.currentQuestion].yes.text;
-            }
-            // else if there is no question cooresponding to currentQuestion
-            throw new Error("There is no question number " + self.currentQuestion);
-        };
-        self.noText = function() {
-            // send back an empty string if noText is called and eligibility is known
-            if (self.eligibilityKnown()){
-                return "";
-            }
-            if (self.currentQuestion < self.eligibilityFlow.length){
-                return self.eligibilityFlow[self.currentQuestion].no.text;            
-            }
-            // else if there is no question cooresponding to currentQuestion
-            throw new Error("There is no question number " + self.currentQuestion);
-        };
-        self.yesHref = function() {
-            if (self.eligibilityKnown()){
-                return "";
-            }
-            if (self.eligibilityFlow[self.currentQuestion].yes.next === "ineligible at this time"){
-                return "ineligible";
-            }
-            if (self.eligibilityFlow[self.currentQuestion].yes.next === "eligible"){
-                return "eligible";
-            }
-            if (self.currentQuestion < self.eligibilityFlow.length){
-                return self.eligibilityFlow[self.currentQuestion].yes.next;
-            };
-            // else if there is no question cooresponding to currentQuestion
-            throw new Error("There is no question number " + self.currentQuestion);
-        };
-        self.noHref = function() {
-            if (self.eligibilityKnown()){
-                return "";
-            }
-            if (self.eligibilityFlow[self.currentQuestion].no.next === "ineligible at this time"){
-                return "ineligible";
-            }
-            if (self.eligibilityFlow[self.currentQuestion].no.next === "eligible"){
-                return "eligible";
-            }
-            if (self.currentQuestion < self.eligibilityFlow.length){
-                return self.eligibilityFlow[self.currentQuestion].no.next;
-            }
-            // else if there is no question cooresponding to currentQuestion
-            throw new Error("There is no question number " + self.currentQuestion);
-        };*/
+        
         self.submitYes = function() { 
             // record this question and answer in record and add to userInput
             var record = {};
@@ -240,7 +191,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
     $http.get('eligibility-flow.json')
     .success(function(data, status, headers, config) {
-        // Get the elegibility-flow json blob
+        // Get the eligibility-flow json blob
         executeController(data);
     });
 
