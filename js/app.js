@@ -36,7 +36,7 @@ myApp.config(['$routeProvider',
              // Display results of eligibility check
             .when('/eligibility-results', {
                 templateUrl: 'views/eligibility-results.html',
-                controller: 'ResultsController'
+                controller: 'ResultsController as resultsCtrl'
             })
             // FAQs
             .when('/questions', {
