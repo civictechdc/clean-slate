@@ -31,24 +31,26 @@ start indicates what the initial question should be
 endStates is an array of the possible end states in the flow chart
 
 
-The remainder of the file is made up of the individual 'question' objects:
+The remainder of the file is made up of the individual numbered objects contained inside of a parent questions object:
 ```
-"question0":{
-      "questionText":"Do you have a case pending?",
-      "answers":[
-         {
-            "answerText":"Yes",
-            "next":"ineligible at this time"
-         },
-         {
-            "answerText":"No",
-            "next":"question1"
-         }
-      ],
-      "helperText":[
-         "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
-      ]
-   }
+questions: {
+  "0":{
+        "questionText":"Do you have a case pending?",
+        "answers":[
+           {
+              "answerText":"Yes",
+              "next":"ineligible at this time"
+           },
+           {
+              "answerText":"No",
+              "next":"question1"
+           }
+        ],
+        "helperText":[
+           "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
+        ]
+     }
+}
 ```
 
 
