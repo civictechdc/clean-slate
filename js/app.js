@@ -33,6 +33,11 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/eligibility-checker.html',
                 controller: 'EligibilityWizardController as eligibilityCtrl'
             })
+             // Display results of eligibility check
+            .when('/eligibility-results', {
+                templateUrl: 'views/eligibility-results.html',
+                controller: 'ResultsController'
+            })
             // FAQs
             .when('/questions', {
                 templateUrl: 'views/questions.html',
@@ -53,9 +58,7 @@ myApp.config(['$routeProvider',
 // Homepage controller
 myApp.controller('homeController',
     ['$scope', 
-        function ($scope) {
-            
-
+        function ($scope) { 
         }
 ]);
 
@@ -77,7 +80,7 @@ myApp.controller('legalAidController',
         }
 ]);
 
-// refactored version of Eligibility Checker Controller --AKA The Wizard
+// Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http) {
 
     var self = this; // self is equivalent to $scope
@@ -127,6 +130,11 @@ myApp.controller('EligibilityWizardController', function($http) {
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question \'" + next + "\' in ELIGIBILITY_FLOW.");
     };
+});
+
+// Results Controller
+myApp.controller('ResultsController', function() {
+
 });
 
 // Partial 
