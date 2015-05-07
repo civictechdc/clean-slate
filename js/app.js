@@ -81,7 +81,7 @@ myApp.controller('legalAidController',
 ]);
 
 // Eligibility Checker Controller --AKA The Wizard
-myApp.controller('EligibilityWizardController', function($http) {
+myApp.controller('EligibilityWizardController', function($http, $location) {
 
     var self = this; // self is equivalent to $scope
 
@@ -118,6 +118,7 @@ myApp.controller('EligibilityWizardController', function($http) {
         if (ELIGIBILITY_FLOW.endStates.indexOf(next) != -1) {
             self.eligibility = next;
             self.eligibilityKnown = true;
+            $location.path('/eligibility-results');
             return;
         }
 
