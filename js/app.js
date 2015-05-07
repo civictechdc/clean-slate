@@ -71,6 +71,7 @@ myApp.controller('legalAidController',
         }
 ]);
 
+var userInput = [];
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
     var self = this; // self is equivalent to $scope
@@ -80,7 +81,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
     self.eligibility = null;
 
     // userInput holds the user's answers to previous questions to be returned when eligibility is known
-    self.userInput = [];
+    console.log(userInput);
 
     // boolean indicating whether final state is known
     var executeController = function(data) {
@@ -104,16 +105,19 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                     self.currentQuestion = self.params.questionNumber;
                     self.eligibilityKnown = true;
                     self.eligibilityStatus = self.params.questionNumber;
+                    self.userInput = userInput;
                     break;
                 case 'ineligible':
                     self.currentQuestion = self.params.questionNumber;
                     self.eligibilityKnown = true;
                     self.eligibilityStatus = self.params.questionNumber;
+                    self.userInput = userInput;
                     break;
                 case 'ineligible-at-this-time':
                     self.currentQuestion = self.params.questionNumber;
                     self.eligibilityKnown = true;
                     self.eligibilityStatus = 'ineligible at this time';
+                    self.userInput = userInput;
                     break;
                 default:
                     //If a URL parameter that's a string is entered but doesn't match an elegibility state, return to beginning
@@ -138,7 +142,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             var record = {};
             record.question = self.currentQuestion.questionText;
             record.answer = self.currentQuestion.answers[answerIndex].answerText;
-            self.userInput.push(record);
+            userInput.push(record);
 
             var next = self.currentQuestion.answers[answerIndex].next;
 
@@ -169,22 +173,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 progressPercent = Math.round((self.questionNumber/self.eligibilityFlowLength) * 100);
             }
             return progressPercent;
-        };
-        
-        self.submitYes = function() { 
-            // record this question and answer in record and add to userInput
-            var record = {};
-            record.question = self.currentQuestion();
-            record.answer = self.yesText();
-            self.userInput.push(record);
-        };
-
-        self.submitNo = function() {
-            // record this question and answer in record and add to userInput
-            var record = {};
-            record.question = self.currentQuestion();
-            record.answer = self.noText();
-            self.userInput.push(record);
         };
     }
 
