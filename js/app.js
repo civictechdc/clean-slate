@@ -71,6 +71,7 @@ myApp.controller('legalAidController',
         }
 ]);
 
+//Keep userInput outside controller scope so that it isn't reset when $location changes
 var userInput = [];
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
@@ -79,9 +80,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
     // once eligibility is known, this will hold the final eligibility state
     self.eligibility = null;
-
-    // userInput holds the user's answers to previous questions to be returned when eligibility is known
-    console.log(userInput);
 
     // boolean indicating whether final state is known
     var executeController = function(data) {
