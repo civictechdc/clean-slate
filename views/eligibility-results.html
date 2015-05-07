@@ -1,0 +1,37 @@
+<!-- ng-controller = "ResultsController as resultsCtrl" -->
+
+<div class="row">
+    <div class="col-md-12">
+      
+      <h1>Determination:</h1> 
+      
+      <div>
+        <h2>You are likely {{resultsCtrl.eligibilityResult | uppercase}} for expungement.</h2>
+
+        <!-- This table shows a history of all of the questions and answers -->
+        <table class="questionHistory">
+            <tr>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+            <tr ng-repeat="record in resultsCtrl.questionHistory">
+                <td>{{record.question}}</td>
+                <td>{{record.answer}}</td>
+            </tr>
+        </table>
+      </div>
+      <div>
+        <md-button onClick="window.print()" class="md-raised md-primary md-button md-default-theme">Print Results</md-button>
+        <md-button class="md-raised md-primary md-button md-default-theme">E-mail Results</md-button>
+      </div>
+
+      <div>
+        <p>If you'd like, you can start over and check to see if another offense is elibible for expungement. 
+        </p>
+            <md-button href="#/eligibility-check" class="md-raised md-primary md-button md-default-theme">Start Over</md-button>
+      </div>
+
+
+
+    </div><!-- /.col-md-12 -->
+</div><!-- /.row -->

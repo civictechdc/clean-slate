@@ -10,6 +10,11 @@ req.addEventListener("load", function() {
 });
 req.send(null);
 
+// holds the eligibility result when known
+var eligibilityResult = "unknown";
+// holds history of questions and answers
+var questionHistory = [];
+
 // App definition + dependencies
 var myApp = angular.module('myApp', [
     // necessary for matching the URL to an available resource
@@ -33,6 +38,11 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/eligibility-checker.html',
                 controller: 'EligibilityWizardController as eligibilityCtrl'
             })
+             // Display results of eligibility check
+            .when('/eligibility-results', {
+                templateUrl: 'views/eligibility-results.html',
+                controller: 'ResultsController as resultsCtrl'
+            })
             // FAQs
             .when('/questions', {
                 templateUrl: 'views/questions.html',
@@ -53,9 +63,7 @@ myApp.config(['$routeProvider',
 // Homepage controller
 myApp.controller('homeController',
     ['$scope', 
-        function ($scope) {
-            
-
+        function ($scope) { 
         }
 ]);
 
@@ -77,10 +85,14 @@ myApp.controller('legalAidController',
         }
 ]);
 
-// refactored version of Eligibility Checker Controller --AKA The Wizard
-myApp.controller('EligibilityWizardController', function($http) {
+// Eligibility Checker Controller --AKA The Wizard
+myApp.controller('EligibilityWizardController', function($http, $location) {
 
     var self = this; // self is equivalent to $scope
+
+    // reset global variables for question history and eligibility result
+    questionHistory = []; 
+    eligibilityResult = "unknown";
 
     // an object representing the current question and answer choices
     // initialize this to be the first question using 'start' property on ELIGIBILITY_FLOW
@@ -88,12 +100,6 @@ myApp.controller('EligibilityWizardController', function($http) {
 
     // boolean indicating whether final state is known
     self.eligibilityKnown = false;
-
-    // once eligibility is known, this will hold the final eligibility state
-    self.eligibility = null;
-
-    // history holds the user's answers to previous questions to be returned when eligibility is known
-    self.history = [];
 
     // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
     $http.get('ineligible-misdemeanors.json')
@@ -107,14 +113,17 @@ myApp.controller('EligibilityWizardController', function($http) {
         var record = {};
         record.question = self.currentQuestion.questionText;
         record.answer = self.currentQuestion.answers[answerIndex].answerText;
-        self.history.push(record);
+        questionHistory.push(record);
+
 
         var next = self.currentQuestion.answers[answerIndex].next;
 
         // check if this answer leads to an eligibility state
         if (ELIGIBILITY_FLOW.endStates.indexOf(next) != -1) {
-            self.eligibility = next;
+            // set global variable eligibilityResult to this eligiblity 
+            eligibilityResult = next;
             self.eligibilityKnown = true;
+            $location.path('/eligibility-results');
             return;
         }
 
@@ -127,6 +136,19 @@ myApp.controller('EligibilityWizardController', function($http) {
         // else if there is no question cooresponding to currentStep
         throw new Error("There is no question \'" + next + "\' in ELIGIBILITY_FLOW.");
     };
+});
+
+// Results Controller
+myApp.controller('ResultsController', function($location) {
+    // if user got to results page without doing the wizard somehow, send them to the quiz
+    if (questionHistory.length === 0 || eligibilityResult === "unknown")
+        $location.path('/eligibility-check');
+
+    var self = this; // self is equivalent to $scope
+    console.log(questionHistory);
+    // copy history and eligibilty result from global variables
+    self.questionHistory = questionHistory;
+    self.eligibilityResult = eligibilityResult;
 });
 
 // Partial 
