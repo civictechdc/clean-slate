@@ -6,13 +6,13 @@
       <h1>Determination:</h1> 
       
       <div>
-        <h2>You are likely {{eligibilityCtrl.eligibility | uppercase}} for expungement.</h2>
+        <h2>You are likely {{resultsCtrl.eligibilityResult | uppercase}} for expungement.</h2>
 
         <!-- This section shows a history of all of the questions and answers -->
-        <div ng-repeat="record in eligibilityCtrl.history">
+        <div ng-repeat="record in resultsCtrl.questionHistory">
             <p>{{record.question}}</p>
             <p><b>{{record.answer}}</b></p>
-      </div> <!-- end of eligibility section -->
+      </div> 
 
     </div><!-- /.col-md-12 -->
 </div><!-- /.row -->
