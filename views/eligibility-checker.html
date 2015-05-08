@@ -56,7 +56,7 @@
           <div class="panel-footer">
             <!-- Show buttons for all possible answers to this question -->
             <span ng-repeat="answer in eligibilityCtrl.currentQuestion.answers">
-              <md-button ng-click="eligibilityCtrl.submitAnswer($index)" ng-href="/#/eligibility-check/q/{{answer.next}}" class="md-raised md-primary md-button md-default-theme">{{answer.answerText}}</md-button>
+              <md-button ng-click="eligibilityCtrl.submitAnswer($index)" ng-href="#/eligibility-check/q/{{answer.next}}" class="md-raised md-primary md-button md-default-theme">{{answer.answerText}}</md-button>
             </span> <!-- end of answer section -->
           </div>
           </div>
