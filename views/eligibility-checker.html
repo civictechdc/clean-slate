@@ -6,12 +6,13 @@
       <h1 class="text-center">Eligibility Checker</h1>
       <hr>
       
-      <!-- Questions. This section only shows if the user has not reached an eligibilty state -->
+      <!-- Progress bar -->
       <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%; min-width: 2em;">
           <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
         </div>
       </div>
+      <!-- Questions: this section only shows if the user has not reached an eligibilty state -->
       <div ng-show="!eligibilityCtrl.eligibilityKnown">
         <div class="text-center panel panel-default">
           <div class="panel-body">
@@ -65,6 +66,7 @@
         <div class="panel panel-default">
           <div class="panel-body text-center">
             <h1>
+              <!-- Icons for different eligibility states -->
               <span ng-show="eligibilityCtrl.currentQuestion === 'eligible'"class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
               <span ng-show="eligibilityCtrl.currentQuestion === 'ineligible-at-this-time'"class="glyphicon glyphicon-time" aria-hidden="true"></span>
               <span ng-show="eligibilityCtrl.currentQuestion === 'ineligible'"class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
@@ -74,6 +76,7 @@
             </h2>                      
           </div>
         </div>
+        <!-- User responses panel -->
         <div class="panel panel-default">
           <div class="panel-heading">
             <div class="row">
@@ -81,12 +84,14 @@
                 <h3>Your responses:</h3>
               </div>
               <div class="col-xs-3">
+                <!-- Print button -->
                 <form>
                   <md-button class="md-raised md-primary md-button md-default-theme pull-right" onClick="window.print()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</md-button>
                 </form>
               </div>
             </div>
           </div>
+          <!-- User responses list -->
           <div class="panel-body">
             <div ng-repeat="record in eligibilityCtrl.userInput">
                 <h4></span><i>{{record.question}}</i></h4>

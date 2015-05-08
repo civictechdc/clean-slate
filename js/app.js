@@ -114,6 +114,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 case 'ineligible-at-this-time':
                     self.currentQuestion = self.params.questionNumber;
                     self.eligibilityKnown = true;
+                    //Convert url-friendly currrentQuestion into readable string
                     self.eligibilityStatus = 'ineligible at this time';
                     self.userInput = userInput;
                     break;
