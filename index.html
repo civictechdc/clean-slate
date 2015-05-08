@@ -3,21 +3,20 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Expungement D.C.</title>
+        <title>Clean Slate</title>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.css">
-
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/app.css" />
     </head>
     <body ng-app="myApp">
 
       <div layout="row" ng-controller="titlebarController">
-
       <div class="titlebar-wrapper">
           <div class="titlebar-band">
             <div class="titlebar-content">
                 <div layout="row">
                     <div>
-                        <h3 class="pagetitle"><a href="#/">Expungement D.C.</a></h3> 
+                        <h3 class="pagetitle"><a href="#/">Clean Slate</a></h3> 
                     </div>
                      <div class="menu">
                        
@@ -52,7 +51,7 @@
       </div>
 
       <div class="container">
-          <div ng-view=""></div>
+          <div ng-view="" class="col-md-10 col-md-offset-1"></div>
       </div><!-- /.container -->
 
     <!-- Angular Material Dependencies -->
