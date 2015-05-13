@@ -73,6 +73,8 @@ myApp.controller('legalAidController',
 
 //Keep userInput outside controller scope so that it isn't reset when $location changes
 var userInput = [];
+// questions in the order they were answered
+// used to check if userInput needs to be cleaned up because user used the back button
 var answeredQuestions = [];
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
