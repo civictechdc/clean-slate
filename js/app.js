@@ -8,9 +8,9 @@ var myApp = angular.module('myApp', [
     'ngMaterial'
     ]);
 
-// Route definition 
+// Route definition
 myApp.config(['$routeProvider',
-    function ($routeProvider) { 
+    function ($routeProvider) {
         $routeProvider
             // Homepage includes Expunge D.C. overview and link to the wizard
             .when('/', {
@@ -46,33 +46,34 @@ myApp.config(['$routeProvider',
 
 // Homepage controller
 myApp.controller('homeController',
-    ['$scope', 
+    ['$scope',
         function ($scope) {
-            
+
 
         }
 ]);
 
 // FAQs controller
 myApp.controller('questionsController',
-    ['$scope', 
+    ['$scope',
         function ($scope) {
-            
+
 
         }
 ]);
 
 // Legal Aid controller
 myApp.controller('legalAidController',
-    ['$scope', 
+    ['$scope',
         function ($scope) {
-            
+
 
         }
 ]);
 
 //Keep userInput outside controller scope so that it isn't reset when $location changes
 var userInput = [];
+var answeredQuestions = [];
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
     var self = this; // self is equivalent to $scope
@@ -126,7 +127,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                     break;
             }
         } else {
-            // set currentQuestion to questionNumber parameter in url 
+            // set currentQuestion to questionNumber parameter in url
             self.currentQuestion = self.eligibilityFlow.questions[self.questionNumber];
         }
         // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
@@ -137,11 +138,20 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         });
 
         self.submitAnswer = function(answerIndex) {
+
+            // if this question was already answered, cleanup userInput before adding this answer to history
+            if (answeredQuestions.indexOf(self.questionNumber) > -1) {
+                var startDuplication = answeredQuestions.indexOf(self.questionNumber);
+                userInput.splice(startDuplication, userInput.length - startDuplication);
+                answeredQuestions.splice(startDuplication, answeredQuestions.length - startDuplication);
+            }
+
             // record this question and answer in record and add to userInput
             var record = {};
             record.question = self.currentQuestion.questionText;
             record.answer = self.currentQuestion.answers[answerIndex].answerText;
             userInput.push(record);
+            answeredQuestions.push(self.questionNumber);
 
             var next = self.currentQuestion.answers[answerIndex].next;
 
@@ -161,7 +171,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             // else if there is no question cooresponding to currentQuestion
             throw new Error("There is no question \'" + next + "\' in self.eligibilityFlow.");
         };
-        
+
         self.progressBar = function() {
             var progressPercent = '';
             //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
@@ -184,17 +194,17 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
 });
 
-// Partial 
+// Partial
 myApp.controller('titlebarController',
     ['$scope', '$mdSidenav',
         function ($scope, $mdSidenav) {
             $scope.openLeftMenu = function() {
                 $mdSidenav('left').toggle();
             };
-            
+
             $scope.close = function() {
               $mdSidenav('left').toggle();
             }
-           
+
         }
 ]);
