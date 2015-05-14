@@ -48,7 +48,7 @@ for the wizard which guides users through an eligibility check.
 
 The file is made up of three special categories: `"start"`, `"endStates"`, and `"questions"`:
 
-1. `"start":"question0"`: string indicating what the initial question should be (must match a question name)
+1. `"start":"0"`: string indicating what the initial question should be (must match a question name)
 
 2. `"endStates":`: endStates is a dictionary of endState objects
 
