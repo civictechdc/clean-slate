@@ -1,0 +1,77 @@
+{  
+   "start":"0",
+
+   "endStates":[
+      "eligible",
+      "ineligible",
+      "ineligible-at-this-time"
+   ],
+
+   "questions":{
+      "0":{  
+         "questionText":"Were you arrested for or charged with crime but “not convicted” of that crime as defined above?",
+         "answers":[  
+            {  
+               "answerText":"Yes",
+               "next":"1"
+            },
+            {  
+               "answerText":"No",
+               "next":"ineligible"
+
+               //Convictions are not eligible for sealing under actual innocence but you may still be eligible to seal under a different statute.  Please tab on the home page.  Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction under DC Code § 22-4135 (A person convicted of a criminal offense in the Superior Court of the District of Columbia may move the court to vacate the conviction or to grant a new trial on grounds of actual innocence based on new evidence.)
+            }
+            ],
+         "helperText":[  
+         		"I was arrested for or charged with a crime in D.C., BUT I was NOT convicted of it, AND I can PROVE to the Court that I am actually innocent.
+				 \"Not convicted\" means
+				(a) the prosecutor did not paper or did not charge the case; OR
+				(b) the prosecutor dropped the charges against you before trial; OR 
+				(c) the court dismissed the charges against you; OR
+				(d) you were acquitted (found \"not guilty\") of the crime after a trial."
+         ]
+     	 },
+     	
+		"1":{
+	 		"questionText":"Can you prove that the offense for which you were arrested or charged did not occur?",
+	 		"answers":[
+	 		{
+	 			"answerText":"Yes",
+	 			"next":"2"
+
+	 			//You may be eligible for sealing with no waiting period.
+
+	 		},
+	 		{
+	 			"answerText":"No",
+	 			"next":"2"
+	 			
+	 		}
+	 		],
+         "helperText":[  
+
+         ]
+	 	 },
+
+	 	"2":{
+	 		"questionText":"Can you prove that you did not commit the offense for which you were arrested or charged?",
+	 		"answers":[
+	 		{
+	 			"answerText":"Yes",
+	 			"next":"eligible"
+
+	 			//You may be eligible for sealing with no waiting period. However, if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence.
+
+	 		},
+	 		{
+	 			"answerText":"No",
+	 			"next":"eligible"
+	 			//Based on your responses, you may not be able to file for sealing under Actual Innocence.  Please see the “Initial Eligibility” tab on the home page for an additional option.
+	 		}
+	 		],
+         "helperText":[  
+
+         ]
+	  }
+	}
+}

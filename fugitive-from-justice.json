@@ -1,0 +1,64 @@
+{  
+   "start":"0",
+
+   "endStates":[
+      "eligible",
+      "ineligible",
+      "ineligible-at-this-time",
+   ],
+
+   "questions":{
+      "0":{  
+         "questionText":"Were you arrested in DC because you had a warrant in another jurisdiction (i.e. another state)?",
+         "answers":[  
+            {  
+               "answerText":"Yes",
+               "next":"1"
+            },
+            {  
+               "answerText":"No",
+               "next":"ineligible"
+            }
+            ],
+         "helperText":[  
+
+         ]
+     	 },
+     	
+		"1":{
+	 		"questionText":"Have you appeared before the proper authority for the warrant in the jurisdiction that issued the warrant?",
+	 		"answers":[
+	 		{
+	 			"answerText":"Yes",
+	 			"next":"2"
+	 		},
+	 		{
+	 			"answerText":"No",
+	 			"next":"eligible"
+	 			//You may be eligible after your appear before the proper authority in the jurisdiction that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")
+	 		}
+	 		],
+         "helperText":[  
+
+         ]
+	 	 },
+
+	 	"2":{
+	 		"questionText":"Can you prove that you appeared before the proper authority in the jurisdiction that issued the warrant?",
+	 		"answers":[
+	 		{
+	 			"answerText":"Yes",
+	 			"next":"eligible"
+	 		},
+	 		{
+	 			"answerText":"No",
+	 			"next":"eligible"
+	 			//You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding jurisdiction. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")
+	 		}
+	 		],
+         "helperText":[  "NOTE: IF the judge grants your motion to seal your record, the only things that are sealed by the court’s order are records related to your fugitive arrest in DC.  The DC Court’s order does not seal any record you may have in the jurisdiction that issued the warrant. You should check in that jurisdiction to see whether the law will allow you to get that record sealed." 
+
+         ]
+	  }
+	}
+}

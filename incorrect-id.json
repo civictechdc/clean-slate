@@ -1,0 +1,64 @@
+{  
+   "start":"0",
+
+   "endStates":[
+      "eligible",
+      "ineligible",
+      "ineligible-at-this-time"
+   ],
+
+   "questions":{
+      "0":{  
+         "questionText":"Does your criminal record incorrectly identify you as having a case or arrest that you did not have?",
+         "answers":[  
+            {  
+               "answerText":"Yes",
+               "next":"1"
+            },
+            {  
+               "answerText":"No",
+               "next":"ineligible"
+            }
+            ],
+         "helperText":[  
+         		"(For example – Someone used your name when they were arrested or a data entry error has linked your name or other identifying information to a case that is not yours)"
+         ]
+     	 },
+     	
+		"1":{
+	 		"questionText":"Was the person who was actually arrested for the offense fingerprinted at the time of the arrest?",
+	 		"answers":[
+	 		{
+	 			"answerText":"Yes",
+	 			"next":"2"
+	 		},
+	 		{
+	 			"answerText":"No",
+	 			"next":"eligible"
+	 			//You may be eligible after your appear before the proper authority in the jurisdiction that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")
+	 		}
+	 		],
+         "helperText":[  
+
+         ]
+	 	 },
+
+	 	"2":{
+	 		"questionText":"Can you swear under oath that the record is not yours?",
+	 		"answers":[
+	 		{
+	 			"answerText":"Yes",
+	 			"next":"eligible"
+	 		},
+	 		{
+	 			"answerText":"No",
+	 			"next":"eligible"
+	 			//If you are unsure whether the record is yours, contact Community Defender Division of the Public Defender Service for information on getting a fingerprint comparison.
+	 		}
+	 		],
+         "helperText":[  "NOTE: IF the judge grants your motion to seal your record, the only things that are sealed by the court’s order are records related to your fugitive arrest in DC.  The DC Court’s order does not seal any record you may have in the jurisdiction that issued the warrant. You should check in that jurisdiction to see whether the law will allow you to get that record sealed." 
+
+         ]
+	  }
+	}
+}
