@@ -73,11 +73,11 @@ This is a question object:
     "answers":[
        {
           "answerText":"Yes",
-          "next":"ineligible at this time"
+          "next":"ineligible-at-this-time"
        },
        {
           "answerText":"No",
-          "next":"question1"
+          "next":"1"
        }
     ],
     "helperText":[
