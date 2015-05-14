@@ -172,7 +172,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 return;
             }
 
-            // else if there is no question cooresponding to currentQuestion
+            // else if there is no question corresponding to currentQuestion
             throw new Error("There is no question or endState \'" + next + "\' in self.eligibilityFlow.");
         };
 
