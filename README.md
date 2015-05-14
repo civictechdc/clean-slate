@@ -46,35 +46,44 @@ $ git checkout -b [NEW BRANCH NAME]
 for the wizard which guides users through an eligibility check.
 
 
-The file starts with two special properties:
+The file is made up of three special categories: `"start"`, `"endStates"`, and `"questions"`:
 
-1. `"start":"question0"`: start indicates what the initial question should be
-2. `"endStates":["eligible", "ineligible", "ineligible at this time"]`: endStates is an array of the possible end states in the flow chart
+1. `"start":"question0"`: string indicating what the initial question should be (must match a question name)
 
-The remainder of the file is made up of the individual numbered objects contained inside of a parent questions object:
+2. `"endStates":`: endStates is a dictionary of endState objects
 
+This is an endState object:
 ```
-questions: {
-  "0":{
-        "questionText":"Do you have a case pending?",
-        "answers":[
-           {
-              "answerText":"Yes",
-              "next":"ineligible at this time"
-           },
-           {
-              "answerText":"No",
-              "next":"question1"
-           }
-        ],
-        "helperText":[
-           "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
-        ]
-     }
-}
+"eligible":{
+        "eligiblityText":"This offense is likely eligible for expungement.",
+        "helperText":"...this is what you should do next in this case..."
+        }
 ```
+`"eligiblityText"` = text that will be displayed for the user as a header when they reach this state
+`"helperText"` = extra text with suggestions for what to do next
 
 
+3. `"questions":` questions is a dictionary of question objects
+
+This is a question object:
+```
+"0":{
+    "questionText":"Do you have a case pending?",
+    "answers":[
+       {
+          "answerText":"Yes",
+          "next":"ineligible at this time"
+       },
+       {
+          "answerText":"No",
+          "next":"question1"
+       }
+    ],
+    "helperText":[
+       "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
+    ]
+ }
+```
 
 `"questionText"` = question that will be displayed for the user
 
@@ -82,7 +91,7 @@ questions: {
 
 `"answerText"` = words that will be displayed on the buttons
 
-`"next"` = what should the user see next if they click this answer? must be the name of a question OR one of the options defined in endStates (see 2. above)
+`"next"` = what should the user see next if they click this answer? must be the name of a question OR the name of an endState object (see 2. above)
 
 `"helperText"` = definitions or explanations of legalese (this can be an empty: `"helperText":[]`)
 
