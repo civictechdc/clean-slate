@@ -2,10 +2,32 @@
 
 <div class="row">
     <div class="col-md-12">
-      
-      <h1 class="text-center">Eligibility Checker</h1>
+
+        <!-- Header Row with nav buttons and title -->
+        <div class="row">
+            <div class="col-md-3 pull-left">
+            <h1>
+              <div class="btn-group" role="group" aria-label="nav buttons">
+                <button type="button" class="btn btn-default tooltips" tooltip-text="Previous Question">
+                    <span ng-click="eligibilityCtrl.goBackOneQuestion()" class="glyphicon glyphicon glyphicon-chevron-left" ></span>
+                </button>
+                <button type="button" class="btn btn-default tooltips" tooltip-text="Start Over">
+                    <span ng-click="eligibilityCtrl.restart()" class="glyphicon glyphicon glyphicon-repeat" ></span>
+                </button>
+              </div>
+            </div>
+            </h1>
+            <div class="col-md-6">
+                <h1 class="text-center">Eligibility Checker</h1>
+            </div>
+        </div>
+
+
+      <div class="button-"
+      <span ng-click="eligibilityCtrl.goBack()" class="glyphicon glyphicon glyphicon-chevron-left back-button" ></span>
+
       <hr>
-      
+
       <!-- Progress bar -->
       <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%; min-width: 2em;">
@@ -22,7 +44,7 @@
             <div ng-show="eligibilityCtrl.currentQuestion.showIneligibleMisdemeanors == true">
                 <h3>Ineligible felony</h3>
                 <p>
-                  "Ineligible felony" means any felony other than a failure to appear 
+                  "Ineligible felony" means any felony other than a failure to appear
                   (§ 16-1327) [<a href="http://dccode.org/simple/sections/23-1327.html">§ 23‑1327</a>].
                 </p>
 
@@ -42,7 +64,7 @@
                       </span>
                     </li>
                   </div>
-                </ul> 
+                </ul>
             </div> <!-- end of list of ineligible misdemeanors -->
 
             <!-- If there is helper text for the question, show it here (ie explanations of legalese) -->
@@ -52,7 +74,7 @@
                 <p>{{text}}</p>
             </div> <!-- end of helper text section -->
           </div> <!-- end of question section -->
-  
+
           <div class="panel-footer">
             <!-- Show buttons for all possible answers to this question -->
             <span ng-repeat="answer in eligibilityCtrl.currentQuestion.answers">
@@ -73,7 +95,7 @@
             </h1>
             <h2>
               This offense is {{eligibilityCtrl.eligibilityStatus}} for expungement.
-            </h2>                      
+            </h2>
           </div>
         </div>
         <!-- User responses panel -->

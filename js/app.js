@@ -117,7 +117,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 case 'ineligible-at-this-time':
                     self.currentQuestion = self.params.questionNumber;
                     self.eligibilityKnown = true;
-                    //Convert url-friendly currrentQuestion into readable string
+                    //Convert url-friendly currentQuestion into readable string
                     self.eligibilityStatus = 'ineligible at this time';
                     self.userInput = userInput;
                     break;
@@ -138,6 +138,31 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             // if the app successfully gets misdemeanor data from the JSON file, assign it to self.ineligibleMisdemeanors for use in the wizard
             self.ineligibleMisdemeanors = data;
         });
+
+        // go back one question
+        self.goBackOneQuestion = function() {
+            // if user is on the first question, simulate hitting the browser back button
+            console.log("currentQuestion = " + self.questionNumber);
+            if (self.questionNumber == self.eligibilityFlow.start) {
+                window.history.back()
+                return;
+            }
+
+            // remove last entry from userInput and previous question
+            userInput.pop();
+            var previousQuestion = answeredQuestions.pop();
+            console.log("going back to " + previousQuestion)
+            // go back to the previous question
+            $location.path('/eligibility-check/q/' + previousQuestion);
+        };
+
+        self.restart = function() {
+            // clear userInput and answeredQuestions
+            userInput = [];
+            answeredQuestions = [];
+            // jump back to the start of this flow
+            $location.path('/eligibility-check/q/' + self.eligibilityFlow.start);
+        };
 
         self.submitAnswer = function(answerIndex) {
 
@@ -185,6 +210,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             }
             return progressPercent;
         };
+
     }
 
 
