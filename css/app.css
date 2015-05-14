@@ -129,7 +129,7 @@ button[tooltip-text]:hover::after {
   display: inline;
   left: 50%;
   top: 100%;
-  min-width: 140px;
+  min-width: 50px;
   border-top: 8px solid #000000;
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
@@ -139,7 +139,7 @@ button[tooltip-text]:hover::after {
   margin-left: -8px;
   z-index: 999;
   opacity: 0.8;
-  margin-left: -76px;
+  margin-left: -25px;
   margin-top: 3px;
 }
 
