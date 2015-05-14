@@ -23,7 +23,7 @@ myApp.config(['$routeProvider',
                     return '/eligibility-check/q/0'
                 }
             })
-            .when('/eligibility-check/q/:questionNumber', {
+            .when('/eligibility-check/q/:stateName', {
                 templateUrl: 'views/eligibility-checker.html',
                 controller: 'EligibilityWizardController as eligibilityCtrl'
             })
@@ -88,50 +88,23 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
     var executeController = function(data) {
         //Set self.eligibilityFlow to the data returned by the http request
         self.eligibilityFlow = data;
-        //Get the length of the eligibilityFlow object (if it were an array this would be easier)
-        self.eligibilityFlowLength = Object.keys(self.eligibilityFlow.questions).length;
-        //Get the URL q parameter (the question number) from $routeParams
+        //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
-        self.questionNumber = self.params.questionNumber;
-        if(Number(self.questionNumber) > self.eligibilityFlowLength) {
-            // if a step outside of the list is entered in the url, default to 0
-            $location.path('/eligibility-check/q/0');
-            self.currentQuestion = self.eligibilityFlow.questions[eligibilityFlow.start];
-        //If the url parameter does not contain a number, it may be an end state
-        } else if (isNaN(self.questionNumber)) {
-            //check to see if the param matches an eligibility state
-            switch(self.questionNumber) {
-                case 'eligible':
-                    $location.path('/eligibility-check/q/' + self.params.questionNumber);
-                    self.currentQuestion = self.params.questionNumber;
-                    self.eligibilityKnown = true;
-                    self.eligibilityStatus = self.params.questionNumber;
-                    self.userInput = userInput;
-                    break;
-                case 'ineligible':
-                    self.currentQuestion = self.params.questionNumber;
-                    self.eligibilityKnown = true;
-                    self.eligibilityStatus = self.params.questionNumber;
-                    self.userInput = userInput;
-                    break;
-                case 'ineligible-at-this-time':
-                    self.currentQuestion = self.params.questionNumber;
-                    self.eligibilityKnown = true;
-                    //Convert url-friendly currentQuestion into readable string
-                    self.eligibilityStatus = 'ineligible at this time';
-                    self.userInput = userInput;
-                    break;
-                default:
-                    //If a URL parameter that's a string is entered but doesn't match an elegibility state, return to beginning
-                    $location.path('/eligibility-check/q/0');
-                    self.currentQuestion = self.eligibilityFlow.questions[0];
-                    self.eligibilityKnown = false;
-                    break;
-            }
-        } else {
-            // set currentQuestion to questionNumber parameter in url
-            self.currentQuestion = self.eligibilityFlow.questions[self.questionNumber];
+        var stateName = self.params.stateName;
+
+        // determine if this is a question or end state
+        // is this is an end state?
+        if (stateName in self.eligibilityFlow.endStates) {
+            self.eligibilityKnown = true;
+            self.currentState = self.eligibilityFlow.endStates[stateName];
+            self.userInput = userInput;
+        } else if (stateName in self.eligibilityFlow.questions) {
+            self.currentState = self.eligibilityFlow.questions[stateName];
+        } else { // if this state name does match an endState or question name, default to start
+            $location.path('/eligibility-check/q/' + self.eligibilityFlow.start);
+            self.currentState = self.eligibilityFlow.questions[self.eligibilityFlow.start];
         }
+
         // Grab the ineligible misdemeanors from a static JSON file stored at the root of the project
         $http.get('ineligible-misdemeanors.json')
         .success(function(data, status, headers, config) {
@@ -142,7 +115,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         // go back one question
         self.goBackOneQuestion = function() {
             // if user is on the first question, simulate hitting the browser back button
-            console.log("currentQuestion = " + self.questionNumber);
             if (self.questionNumber == self.eligibilityFlow.start) {
                 window.history.back()
                 return;
@@ -151,9 +123,9 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             // remove last entry from userInput and previous question
             userInput.pop();
             var previousQuestion = answeredQuestions.pop();
-            console.log("going back to " + previousQuestion)
             // go back to the previous question
             $location.path('/eligibility-check/q/' + previousQuestion);
+            self.currentState = self.eligibilityFlow.questions[previousQuestion];
         };
 
         self.restart = function() {
@@ -162,43 +134,51 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             answeredQuestions = [];
             // jump back to the start of this flow
             $location.path('/eligibility-check/q/' + self.eligibilityFlow.start);
+            self.currentState = self.eligibilityFlow.questions[self.eligibilityFlow.start];
         };
 
         self.submitAnswer = function(answerIndex) {
 
             // if this question was already answered, cleanup userInput before adding this answer to history
-            if (answeredQuestions.indexOf(self.questionNumber) > -1) {
-                var startDuplication = answeredQuestions.indexOf(self.questionNumber);
+            if (answeredQuestions.indexOf(stateName) > -1) {
+                console.log("Could not find indexOf " + stateName + "Cleaning up question/answer history!")
+                var startDuplication = answeredQuestions.indexOf(stateName);
                 userInput.splice(startDuplication, userInput.length - startDuplication);
                 answeredQuestions.splice(startDuplication, answeredQuestions.length - startDuplication);
             }
 
             // record this question and answer in record and add to userInput
             var record = {};
-            record.question = self.currentQuestion.questionText;
-            record.answer = self.currentQuestion.answers[answerIndex].answerText;
+            record.question = self.currentState.questionText;
+            record.answer = self.currentState.answers[answerIndex].answerText;
             userInput.push(record);
-            answeredQuestions.push(self.questionNumber);
+            answeredQuestions.push(stateName);
 
-            var next = self.currentQuestion.answers[answerIndex].next;
+            var next = self.currentState.answers[answerIndex].next;
 
             // check if this answer leads to an eligibility state
-            if (self.eligibilityFlow.endStates.indexOf(next) != -1) {
-                self.eligibility = next;
+            if (next in self.eligibilityFlow.endStates) {
                 self.eligibilityKnown = true;
+                stateName = next;
+                self.currentState = self.eligibilityFlow.endStates[next];
+                self.userInput = userInput;
                 return;
             }
 
             // update currentQuestion if eligibitliy still not known and next question is valid
             if (next in self.eligibilityFlow.questions) {
-                self.currentQuestion = self.eligibilityFlow.questions[next];
+                stateName = next;
+                self.currentState = self.eligibilityFlow.questions[next];
                 return;
             }
 
             // else if there is no question cooresponding to currentQuestion
-            throw new Error("There is no question \'" + next + "\' in self.eligibilityFlow.");
+            throw new Error("There is no question or endState \'" + next + "\' in self.eligibilityFlow.");
         };
 
+        // progressBar depended on the fact that question names were numbers so this doesn't work at the moment
+        // I will fix it soon. -- JL
+        /*
         self.progressBar = function() {
             var progressPercent = '';
             //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
@@ -210,6 +190,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             }
             return progressPercent;
         };
+        */
 
     }
 
