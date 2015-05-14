@@ -52,6 +52,8 @@ The file is made up of three special categories: `"start"`, `"endStates"`, and `
 
 2. `"endStates":`: endStates is a dictionary of endState objects
 
+3. `"questions":` questions is a dictionary of question objects
+
 This is an endState object:
 ```
 "eligible":{
@@ -63,7 +65,6 @@ This is an endState object:
 `"helperText"` = extra text with suggestions for what to do next
 
 
-3. `"questions":` questions is a dictionary of question objects
 
 This is a question object:
 ```
