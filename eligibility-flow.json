@@ -4,14 +4,17 @@
    "endStates":{
       "eligible":{
         "eligiblityText":"This offense is likely eligible for expungement.",
+        "icon":"glyphicon glyphicon-ok-circle",
         "helperText":"...this is what you should do next in this case..."
         },
       "ineligible":{
         "eligiblityText":"This offense is ineligible for expungement.",
+        "icon":"glyphicon glyphicon-remove-circle",
         "helperText":"...this is what you should do next in this case..."
         },
       "ineligible-at-this-time":{
         "eligiblityText":"This offense is ineligible at this time for expungement.",
+        "icon":"glyphicon glyphicon-time",
         "helperText":"...this is what you should do next in this case..."
       }
    },
