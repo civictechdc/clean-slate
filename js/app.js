@@ -87,6 +87,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         self.eligibilityFlow = data;
         //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
+
         //Get the length of the eligibilityFlow object (this is only needed for progress bar estimation)
         self.eligibilityFlowLength = Object.keys(self.eligibilityFlow.questions).length;
 
@@ -169,7 +170,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 return;
             }
 
-            // update currentQuestion if eligibitliy still not known and next question is valid
+            // update currentQuestion if eligibility still not known and next question is valid
             if (next in self.eligibilityFlow.questions) {
                 stateName = next;
                 self.currentState = self.eligibilityFlow.questions[next];
@@ -178,6 +179,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
             // else if there is no question corresponding to currentQuestion
             throw new Error("There is no question or endState \'" + next + "\' in self.eligibilityFlow.");
+
         };
 
         // progressBar calculation
