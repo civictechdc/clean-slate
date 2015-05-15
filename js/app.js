@@ -90,6 +90,8 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         self.eligibilityFlow = data;
         //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
+        //Get the length of the eligibilityFlow object (this is only needed for progress bar estimation)
+        self.eligibilityFlowLength = Object.keys(self.eligibilityFlow.questions).length;
 
         // stateName is the name of the endState object or question object
         // (note: self.currentState points to the actual object)
@@ -118,7 +120,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         // go back one question
         self.goBackOneQuestion = function() {
             // if user is on the first question, simulate hitting the browser back button
-            if (self.questionNumber == self.eligibilityFlow.start) {
+            if (self.stateName == self.eligibilityFlow.start) {
                 window.history.back()
                 return;
             }
@@ -179,21 +181,20 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             throw new Error("There is no question or endState \'" + next + "\' in self.eligibilityFlow.");
         };
 
-        // progressBar depended on the fact that question names were numbers so this doesn't work at the moment
-        // I will fix it soon. -- JL
-        /*
+        // progressBar calculation
+        // TODO make this work even if the question names are not numbers
         self.progressBar = function() {
             var progressPercent = '';
             //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
-            if(isNaN(self.currentQuestion) && self.eligibilityFlow.endStates.indexOf(self.currentQuestion) != -1){
+            if(isNaN(self.currentQuestion) && stateName in self.eligibilityFlow.endStates){
                 progressPercent = 100;
             } else {
                 //Otherwise, divide the current question number by the total number of question, multiply by 100, and round to get a nice percent
-                progressPercent = Math.round((self.questionNumber/self.eligibilityFlowLength) * 100);
+                progressPercent = Math.round((Number(stateName)/self.eligibilityFlowLength) * 100);
             }
             return progressPercent;
         };
-        */
+
 
     }
 

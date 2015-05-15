@@ -28,13 +28,13 @@
 
       <hr>
 
-      <!-- Progress bar
+      <!-- Progress bar -->
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar}}%; min-width: 2em;">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%; min-width: 2em;">
           <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
         </div>
       </div>
-  -->
+
 
       <!-- Questions: this section only shows if the user has not reached an eligibilty state -->
       <div ng-show="!eligibilityCtrl.eligibilityKnown">
