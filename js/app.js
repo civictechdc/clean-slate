@@ -121,9 +121,9 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 window.history.back()
                 return;
             }
-
-            // if user is already on the results page
-            if ()
+            // if user is already on the results page and wants to go back
+            if (self.eligibilityKnown)
+                self.eligibilityKnown = false;
             // remove last entry from userInput and previous question
             userInput.pop();
             var previousQuestion = answeredQuestions.pop();
