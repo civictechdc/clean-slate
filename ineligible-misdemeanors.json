@@ -18,7 +18,7 @@
 		"offense" : "Intrafamily violence",
 		"legal_reference" : [
 		],
-		"legal_description" : "Any criminal offense conmmitted or threatened to be committed against a person related to you by blood, adoption, legal custody, marriage or domestic partnership, or with whom you have a child in common.",
+		"legal_description" : "Any criminal offense committed or threatened to be committed against a person related to you by blood, adoption, legal custody, marriage or domestic partnership, or with whom you have a child in common.",
 		"simple_description" : ""
 	},
 	{
@@ -288,7 +288,7 @@
 		"simple_description" : ""
 	},
 	{
-		"offense" : "Attempt or conspiracy to committ any of the above offenses",
+		"offense" : "Attempt or conspiracy to commit any of the above offenses",
 		"legal_reference" : [
 		],
 		"legal_description" : "",

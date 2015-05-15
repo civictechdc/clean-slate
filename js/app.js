@@ -122,7 +122,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                     self.userInput = userInput;
                     break;
                 default:
-                    //If a URL parameter that's a string is entered but doesn't match an elegibility state, return to beginning
+                    //If a URL parameter that's a string is entered but doesn't match an eligibility state, return to beginning
                     $location.path('/eligibility-check/q/0');
                     self.currentQuestion = self.eligibilityFlow.questions[0];
                     self.eligibilityKnown = false;
@@ -164,19 +164,19 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 return;
             }
 
-            // update currentQuestion if eligibitliy still not known and next question is valid
+            // update currentQuestion if eligibility still not known and next question is valid
             if (next in self.eligibilityFlow.questions) {
                 self.currentQuestion = self.eligibilityFlow.questions[next];
                 return;
             }
 
-            // else if there is no question cooresponding to currentQuestion
+            // else if there is no question corresponding to currentQuestion
             throw new Error("There is no question \'" + next + "\' in self.eligibilityFlow.");
         };
 
         self.progressBar = function() {
             var progressPercent = '';
-            //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
+            //If the current question isn't a number and is listed in the endStates array, then set the progress bar to 100
             if(isNaN(self.currentQuestion) && self.eligibilityFlow.endStates.indexOf(self.currentQuestion) != -1){
                 progressPercent = 100;
             } else {
