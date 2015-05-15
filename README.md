@@ -58,10 +58,12 @@ This is an endState object:
 ```
 "eligible":{
         "eligiblityText":"This offense is likely eligible for expungement.",
+        "icon":"glyphicon glyphicon-ok-circle",
         "helperText":"...this is what you should do next in this case..."
         }
 ```
 `"eligiblityText"` = text that will be displayed for the user as a header when they reach this state
+`"icon"` = name of a [Bootstrap glyphicon](http://getbootstrap.com/components/#glyphicons) to be displayed on results page
 `"helperText"` = extra text with suggestions for what to do next
 
 

@@ -90,7 +90,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         self.eligibilityFlow = data;
         //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
-        // the name of the current state (used to lookup question or endState object in eligibilityFlow)
         var stateName = self.params.stateName;
 
         // determine if this is a question or end state
@@ -179,7 +178,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
         // progressBar depended on the fact that question names were numbers so this doesn't work at the moment
         // I will fix it soon. -- JL
-
+        /*
         self.progressBar = function() {
             var progressPercent = '';
             //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
@@ -191,7 +190,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             }
             return progressPercent;
         };
-
+        */
 
     }
 
