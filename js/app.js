@@ -90,6 +90,9 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         self.eligibilityFlow = data;
         //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
+
+        // stateName is the name of the endState object or question object
+        // (note: self.currentState points to the actual object)
         var stateName = self.params.stateName;
 
         // determine if this is a question or end state
@@ -141,7 +144,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
             // if this question was already answered, cleanup userInput before adding this answer to history
             if (answeredQuestions.indexOf(stateName) > -1) {
-                console.log("Could not find indexOf " + stateName + "Cleaning up question/answer history!")
+                console.log("Could not find indexOf " + stateName + " so Cleaning up question/answer history.")
                 var startDuplication = answeredQuestions.indexOf(stateName);
                 userInput.splice(startDuplication, userInput.length - startDuplication);
                 answeredQuestions.splice(startDuplication, answeredQuestions.length - startDuplication);

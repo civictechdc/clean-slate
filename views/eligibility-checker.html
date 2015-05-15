@@ -30,11 +30,12 @@
 
       <!-- Progress bar
       <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%; min-width: 2em;">
+        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar}}%; min-width: 2em;">
           <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
         </div>
       </div>
-        -->
+  -->
+
       <!-- Questions: this section only shows if the user has not reached an eligibilty state -->
       <div ng-show="!eligibilityCtrl.eligibilityKnown">
         <div class="text-center panel panel-default">
@@ -90,13 +91,10 @@
         <div class="panel panel-default">
           <div class="panel-body text-center">
 
-            <!-- Icons for different eligibility states
-            <h1>
-              <span ng-show="eligibilityCtrl.currentQuestion === 'eligible'"class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-              <span ng-show="eligibilityCtrl.currentQuestion === 'ineligible-at-this-time'"class="glyphicon glyphicon-time" aria-hidden="true"></span>
-              <span ng-show="eligibilityCtrl.currentQuestion === 'ineligible'"class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+            <!-- Icons for eligibility state if present -->
+            <h1 ng-show="eligibilityCtrl.currentState.icon">
+              <span ng-class="eligibilityCtrl.currentState.icon" aria-hidden="true"></span>
             </h1>
-             -->
 
             <h2>
               {{eligibilityCtrl.currentState.eligiblityText}}
