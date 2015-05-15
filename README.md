@@ -54,7 +54,7 @@ The file is made up of three special categories: `"start"`, `"endStates"`, and `
 
 3. `"questions":{}` questions is a dictionary of question objects
 
-This is an endState object:
+This is an **endState object**:
 ```
 "eligible":{
         "eligiblityText":"This offense is likely eligible for expungement.",
@@ -68,9 +68,7 @@ This is an endState object:
 
 `"helperText"` = extra text with suggestions for what to do next
 
-
-
-This is a question object:
+This is a **question object**:
 ```
 "0":{
     "questionText":"Do you have a case pending?",
