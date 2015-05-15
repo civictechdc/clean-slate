@@ -81,9 +81,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
     var self = this; // self is equivalent to $scope
     self.eligibilityKnown = false;
 
-    // once eligibility is known, this will hold the final eligibility state
-    self.eligibility = null;
-
     // boolean indicating whether final state is known
     var executeController = function(data) {
         //Set self.eligibilityFlow to the data returned by the http request
@@ -125,6 +122,8 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
                 return;
             }
 
+            // if user is already on the results page
+            if ()
             // remove last entry from userInput and previous question
             userInput.pop();
             var previousQuestion = answeredQuestions.pop();
