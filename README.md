@@ -63,7 +63,7 @@ This is an endState object:
         }
 ```
 `"eligiblityText"` = text that will be displayed for the user as a header when they reach this state
-`"icon"` = name of a [Bootstrap glyphicon](http://getbootstrap.com/components/#glyphicons) to be displayed on results page
+`"icon"` = name of a [Bootstrap glyphicon](http://getbootstrap.com/components/#glyphicons) to be displayed on results page.  If no icon is desired, this can be an empty string `"icon":"",`.
 `"helperText"` = extra text with suggestions for what to do next
 
 
