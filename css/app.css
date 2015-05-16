@@ -128,7 +128,7 @@ button[tooltip-text]:hover::after {
   position: absolute;
   display: inline;
   left: 50%;
-  top: 100%;
+  bottom: 108%;
   min-width: 50px;
   border-top: 8px solid #000000;
   border-right: 8px solid transparent;
@@ -141,6 +141,7 @@ button[tooltip-text]:hover::after {
   opacity: 0.8;
   margin-left: -25px;
   margin-top: 3px;
+  font-size: 1.1em;
 }
 
 /* end of tooltip */
