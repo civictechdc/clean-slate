@@ -1,0 +1,82 @@
+{   
+    "start":"0",
+
+   "endStates":{
+
+      "IneligibleSkip":{
+        "eligiblityText":"This section does not apply to your offense.",
+"icon":"glyphicon glyphicon-remove-circle",
+        "helperText":"Please hit start and choose another option."
+      },       
+        "ineligibleFJ":{  
+          "eligiblityText":"You are not eligible at this time. ",
+           "icon":"glyphicon glyphicon-remove-circle",
+          "helperText":"You may be eligible after you appear before the proper authority in jurisdiction that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\") "
+          },
+          
+          
+        "eligibleFJ":{  
+            "eligiblityText":"This fugitive from justice arrest may be eligible for sealing.",
+            "icon":"glyphicon glyphicon-ok-circle",
+            "helperText": "(Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")"
+         },
+         
+        "eligibleFJ2":{  
+            "eligiblityText":"You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding jurisdiction.",
+            "icon":"glyphicon glyphicon-ok-circle",
+            "helperText": "(Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")"
+         }
+
+        
+   },
+   
+   "questions":{
+       
+      "0":{  
+    "questionText":"Were you arrested in DC because you had a warrant in another jurisdiction (i.e. another state)?",
+    "answers":[  
+       {  
+          "answerText":"Yes",
+          "next":"1"
+       },
+       {  
+          "answerText":"No",
+          "next":"IneligibleSkip"
+       }
+    ],
+    "helperText":[  
+        ]
+ },
+        "1":{  
+            "questionText":"Have you appeared before the proper authority in the jurisdiction that issued the warrant?",
+            "answers":[  
+               {  
+                  "answerText":"Yes",
+                  "next":"2"
+               },
+               {  
+                  "answerText":"No",
+                  "next":"IneligibleFJ"
+               }
+            ],
+            "helperText":[ "The proper authority is the court that issued the warrant."  
+             ]
+         },
+         "2":{  
+            "questionText":"Can you prove that you appeared before the proper authority in the jurisdiction that issued the warrant?",
+            "answers":[  
+               {  
+                  "answerText":"Yes",
+                  "next":"eligibleFJ"
+               },
+               {  
+                  "answerText":"No",
+                  "next":"eligibleFJ2"
+               }
+            ],
+            "helperText":[  
+            ]
+         }
+   }
+ 
+}
