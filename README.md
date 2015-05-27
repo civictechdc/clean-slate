@@ -45,6 +45,28 @@ $ git checkout -b [NEW BRANCH NAME]
 [eligibility-flow.json](eligibility-flow.json) contains the questions, answers, and flow logic
 for the wizard which guides users through an eligibility check.
 
+=======
+
+First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer.
+Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
+
+```sh
+$ git clone git@github.com:[YOUR GITHUB NAME]/expungement-dc.git
+```
+
+You can work on the `master` branch (which is the default), but it's preferable
+to set up a new branch if you're working on a specific feature:
+
+```sh
+$ git checkout -b [NEW BRANCH NAME]
+```
+
+---
+
+### eligibility-flow.json
+
+[eligibility-flow.json](eligibility-flow.json) contains the questions, answers, and flow logic
+for the wizard which guides users through an eligibility check.
 
 The file is made up of three special categories: `"start"`, `"endStates"`, and `"questions"`:
 
