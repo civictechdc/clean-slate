@@ -1,0 +1,297 @@
+{
+   "start":"0",
+
+   "endStates":{
+      "eligible":{
+        "eligiblityText":"This offense is likely eligible for expungement.",
+        "icon":"glyphicon glyphicon-ok-circle",
+        "helperText":"...this is what you should do next in this case..."
+        },
+      "ineligible":{
+        "eligiblityText":"This offense is ineligible for expungement.",
+        "icon":"glyphicon glyphicon-remove-circle",
+        "helperText":"...this is what you should do next in this case..."
+        },
+      "ineligible-at-this-time":{
+        "eligiblityText":"This offense is ineligible at this time for expungement.",
+        "icon":"glyphicon glyphicon-time",
+        "helperText":"...this is what you should do next in this case..."
+      }
+   },
+
+   "questions":{
+      "0":{
+         "questionText":"Do you have a case pending?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"ineligible-at-this-time"
+            },
+            {
+               "answerText":"No",
+               "next":"1"
+            }
+         ],
+         "helperText":[
+            "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
+         ]
+      },
+
+      "1":{
+         "questionText":"Are you sealing a conviction or a non-conviction?",
+         "answers":[
+            {
+               "answerText":"Conviction",
+               "next":"2"
+            },
+            {
+               "answerText":"Non-conviction",
+               "next":"5"
+            }
+         ],
+         "helperText":[
+            "\"Convicted\" refers to the judgment (sentence) on a verdict or a finding of guilty, a plea of guilty or a plea of nolo contendere, or a plea or verdict of not guilty by reason of insanity."
+         ]
+      },
+
+      "2":{
+         "questionText":"Is this an eligible misdemeanor/felony or an ineligible misdemeanor/felony?",
+         "answers":[
+            {
+               "answerText":"Eligible misdemeanor or felony",
+               "next":"3"
+            },
+            {
+               "answerText":"Ineligible misdemeanor or felony",
+               "next":"ineligible"
+            }
+         ],
+         "helperText":[
+
+         ],
+         "showIneligibleMisdemeanors":true
+      },
+
+      "3":{
+         "questionText":"Have you subsequently been convicted of another crime in any jurisdiction?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"ineligible"
+            },
+            {
+               "answerText":"No",
+               "next":"4"
+            }
+         ],
+         "helperText":[
+
+         ]
+      },
+
+      "4":{
+         "questionText":"Has it been 8 years since you were off papers?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"eligible"
+            },
+            {
+               "answerText":"No",
+               "next":"ineligible-at-this-time"
+            }
+         ],
+         "helperText":[
+            "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+         ]
+      },
+
+      "5":{
+         "questionText":"Is your non-conviction the result of a Deferred Sentencing Agreement?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"7"
+            },
+            {
+               "answerText":"No",
+               "next":"6"
+            }
+         ],
+         "helperText":[
+            "\"Deferred Sentencing Agreement\" means ..."
+         ]
+      },
+
+      "6":{
+         "questionText":"Do you also have an ineligible conviction on your record?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"13"
+            },
+            {
+               "answerText":"No",
+               "next":"8"
+            }
+         ],
+         "helperText":[
+
+         ]
+      },
+
+      "7":{
+         "questionText":"Do you also have an ineligible conviction on your record?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"ineligible"
+            },
+            {
+               "answerText":"No",
+               "next":"8"
+            }
+         ],
+         "helperText":[
+
+         ]
+      },
+
+      "8":{
+         "questionText":"Is the non-conviction for an eligible misdemeanor or an ineligible misdemeanor/felony?",
+         "answers":[
+            {
+               "answerText":"Eligible misdemeanor/felony",
+               "next":"12"
+            },
+            {
+               "answerText":"Ineligible misdemeanor/felony",
+               "next":"9"
+            }
+         ],
+         "helperText":[
+
+         ],
+         "showIneligibleMisdemeanors":true
+      },
+
+      "9":{
+         "questionText":"Was the case terminated before charging by the prosectution (no papered)?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"11"
+            },
+            {
+               "answerText":"No",
+               "next":"10"
+            }
+         ],
+         "helperText":[
+
+         ]
+      },
+
+      "10":{
+         "questionText":"Has it been 4 years since you were \"off papers\" for the felony non-conviction?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"eligible"
+            },
+            {
+               "answerText":"No",
+               "next":"ineligible-at-this-time"
+            }
+         ],
+         "helperText":[
+            "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+         ]
+      },
+
+      "11":{
+         "questionText":"Has it been 3 years since you were \"off papers\" for the felony non-conviction?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"eligible"
+            },
+            {
+               "answerText":"No",
+               "next":"ineligible-at-this-time"
+            }
+         ],
+         "helperText":[
+            "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+         ]
+      },
+
+      "12":{
+         "questionText":"Has it been two years since you were \"off papers\" for the misdemeanor non-conviction?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"eligible"
+            },
+            {
+               "answerText":"No",
+               "next":"ineligible-at-this-time"
+            }
+         ],
+         "helperText":[
+            "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+         ]
+      },
+
+      "13":{
+         "questionText":"Is the ineligible conviction for a felony or misdemeanor?",
+         "answers":[
+            {
+               "answerText":"Felony",
+               "next":"14"
+            },
+            {
+               "answerText":"Misdemeanor",
+               "next":"15"
+            }
+         ],
+         "helperText":[
+
+         ]
+      },
+
+      "14":{
+         "questionText":"Has it been 10 years since you were \"off papers\" for the misdemeanor conviction?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"8"
+            },
+            {
+               "answerText":"No",
+               "next":"ineligible-at-this-time"
+            }
+         ],
+         "helperText":[
+            "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+         ]
+      },
+
+      "15":{
+         "questionText":"Has it been 5 years since you were \"off papers\" for the misdemeanor conviction?",
+         "answers":[
+            {
+               "answerText":"Yes",
+               "next":"8"
+            },
+            {
+               "answerText":"No",
+               "next":"ineligible-at-this-time"
+            }
+         ],
+         "helperText":[
+            "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+         ]
+      }
+   }
+}

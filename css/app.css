@@ -6,13 +6,29 @@ Table of Contents:
 
 
 /******* Vendor overrides */
+body {
+  background-color: #F9F9F9;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(63,81,181);
+}
+
 .container {
-    padding-top: 100px;   
+    padding-top: 100px;
     max-width: 1100px;
     margin: 0 auto;
     padding: 50px 15px;
 }
 
+.panel {
+  border-radius: 0px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
 
 /******* Custom  */
 .titlebar-wrapper {
@@ -21,16 +37,8 @@ Table of Contents:
     top: -5px;
     left: 0;
     right: 0;
-    z-index: 99;    
+    z-index: 99;
     height: 60px;
-    /* Slight gradient to create a seperation between content and titlebar */
-    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 85%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(85%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 85%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(255,255,255,1) 85%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 85%,rgba(255,255,255,0) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(255,255,255,1) 85%,rgba(255,255,255,0) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
 .titlebar-band {
     background-color: rgb(63,81,181);
@@ -42,6 +50,7 @@ Table of Contents:
 }
 .pagetitle {
     display: inline-block;
+    line-height: 2em;
 }
 .menu {
     position: absolute;
@@ -76,19 +85,18 @@ Table of Contents:
 }
 .titlebar-content {
     display: block;
-    max-width: 1100px; 
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 15px; 
+    padding: 0 15px;
 }
 
 .misdemeanors_group {
   padding-left: 0;
 }
 .misdemeanors {
-  margin: 15px 0;
+  margin: 0px 0px 0px 0px;
   padding: 10px 0;
   border-top: 1px #eee solid;
-  border-bottom: 1px #eee solid;
   list-style-type: none;
 }
 
@@ -97,9 +105,49 @@ Table of Contents:
 }
 
 .container .md-button {
-  margin: 2em 3em 2em 0;
+  margin: 0em 2em 1em 2em;
   padding: .7em 1.4em;
   display: inline-block;
 }
+p.question-text {
+  font-size: 2em;
+}
+.progress-bar {
+  background-color: rgb(63,81,181);
+}
+
+.btn{
+    white-space:normal !important;
+    max-width:500px;
+    margin-bottom: 10px;
+}
 
 
+/* Tooltip using only CSS */
+
+button.tooltips {
+  cursor: pointer;
+}
+
+button[tooltip-text]:hover::after {
+  content: attr(tooltip-text);
+  position: absolute;
+  display: inline;
+  left: 50%;
+  bottom: 108%;
+  min-width: 50px;
+  border-top: 8px solid #000000;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-radius: 6px;
+  background-color: #000000;
+  color: #FFFFFF;
+  margin-left: -8px;
+  z-index: 999;
+  opacity: 0.8;
+  margin-left: -25px;
+  margin-top: 3px;
+  font-size: 1.1em;
+}
+
+/* end of tooltip */
