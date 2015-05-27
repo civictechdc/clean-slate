@@ -200,7 +200,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
     }
 
 
-    $http.get('eligibility-flow.json')
+    $http.get('combined-flow.json')
     .success(function(data, status, headers, config) {
         // Get the eligibility-flow json blob
         executeController(data);
