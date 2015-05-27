@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container .md-button {
-  margin: 0em 2em 0em 2em;
+  margin: 0em 2em 1em 2em;
   padding: .7em 1.4em;
   display: inline-block;
 }
@@ -114,6 +114,12 @@ p.question-text {
 }
 .progress-bar {
   background-color: rgb(63,81,181);
+}
+
+.btn{
+    white-space:normal !important;
+    max-width:500px;
+    margin-bottom: 10px;
 }
 
 

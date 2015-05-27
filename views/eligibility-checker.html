@@ -28,12 +28,13 @@
 
       <hr>
 
-      <!-- Progress bar -->
+      <!-- PROGRESS BAR REMOVED FOR NOW, DOES NOT WORK WITH COMBINED JSON -->
+      <!-- Progress bar
       <div class="progress">
         <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%; min-width: 2em;">
           <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
         </div>
-      </div>
+      </div> -->
 
 
       <!-- Questions: this section only shows if the user has not reached an eligibilty state -->
@@ -80,7 +81,7 @@
           <div class="panel-footer">
             <!-- Show buttons for all possible answers to this question -->
             <span ng-repeat="answer in eligibilityCtrl.currentState.answers">
-              <md-button ng-click="eligibilityCtrl.submitAnswer($index)" ng-href="#/eligibility-check/q/{{answer.next}}" class="md-raised md-primary md-button md-default-theme">{{answer.answerText}}</md-button>
+              <md-button ng-click="eligibilityCtrl.submitAnswer($index)" ng-href="#/eligibility-check/q/{{answer.next}}" class="md-raised md-primary md-button md-default-theme btn">{{answer.answerText}}</md-button>
             </span> <!-- end of answer section -->
           </div>
           </div>
