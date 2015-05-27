@@ -1,6 +1,7 @@
 #How to Contribute
 
 To get started contributing to clean-slate you only need two things:
+
 1. A github account
 2. Some free time
 
