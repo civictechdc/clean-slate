@@ -3,13 +3,13 @@
 
    "endStates":{
       "comment0":"*****************START OF LEGAL AID END STATES *********************",
-      "LegalAid":{
+      "legalAid":{
          "eligiblityText":"This section does not apply to your offense.",
          "icon":"glyphicon glyphicon-remove-circle",
          "helperText":"Please hit start and choose another option."
       },
       "comment100":"*****************START OF FUGUITVE JUSTICE END STATES *********************",
-      "IneligibleSkip":{
+      "ineligibleSkip":{
          "eligiblityText":"This section does not apply to your offense.",
          "icon":"glyphicon glyphicon-remove-circle",
          "helperText":"Please hit start and choose another option."
@@ -90,7 +90,7 @@
             },
             {
                "answerText":"No",
-               "next":"LegalAid"
+               "next":"legalAid"
             }
          ],
          "helperText":[
@@ -99,6 +99,30 @@
       },
       "50":{
          "questionText":"Which one applies to you?",
+         "answers":[
+            {
+               "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
+               "next":"100"
+            },
+            {
+               "answerText":"My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
+               "next":"200"
+            },
+            {
+               "answerText":"I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.",
+               "next":"300"
+            },
+            {
+               "answerText":"I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
+               "next":"400"
+            }
+         ],
+         "helperText":[
+
+         ]
+      },
+      "50_HOLDER_FOR_LATER":{
+         "questionText":"___________",
          "answers":[
             {
                "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
@@ -131,7 +155,7 @@
             },
             {
                "answerText":"No",
-               "next":"IneligibleSkip"
+               "next":"ineligibleSkip"
             }
          ],
          "helperText":[
@@ -180,7 +204,7 @@
             },
             {
                "answerText":"No",
-               "next":"IneligibleSkip"
+               "next":"ineligibleSkip"
             }
          ],
          "helperText":[
@@ -262,7 +286,7 @@
             },
             {
                "answerText":"No",
-               "next":"IneligibleSkip"
+               "next":"ineligibleSkip"
             }
          ],
          "helperText":[
@@ -274,11 +298,11 @@
          "answers":[
             {
                "answerText":"Yes",
-               "next":"EligibleDOa"
+               "next":"eligibleDOa"
             },
             {
                "answerText":"No",
-               "next":"EligibleDOb"
+               "next":"eligibleDOb"
             }
          ],
          "helperText":[
