@@ -1,4 +1,4 @@
-# [expungement-dc](http://codefordc.github.io/expungement-dc/#/)
+#[clean-slate](http://codefordc.github.io/clean-slate/)
 
 A simple website for people trying to navigate [the process of having records sealed](https://en.wikipedia.org/wiki/Expungement)
 in DC.
@@ -21,7 +21,7 @@ First, make sure that you have [`git`](http://git-scm.com/downloads) on your com
 Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
 
 ```sh
-$ git clone git@github.com:[YOUR GITHUB NAME]/expungement-dc.git
+$ git clone git@github.com:[YOUR GITHUB NAME]/clean-slate.git
 ```
 
 You can work on the `master` branch (which is the default), but it's preferable
