@@ -2,6 +2,12 @@
    "start":"0",
 
    "endStates":{
+      "comment0":"*****************START OF LEGAL AID END STATES *********************",
+      "LegalAid":{
+         "eligiblityText":"This section does not apply to your offense.",
+         "icon":"glyphicon glyphicon-remove-circle",
+         "helperText":"Please hit start and choose another option."
+      },
       "comment100":"*****************START OF FUGUITVE JUSTICE END STATES *********************",
       "IneligibleSkip":{
          "eligiblityText":"This section does not apply to your offense.",
@@ -73,12 +79,29 @@
          "helperText":"  PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
       }
    },
+   "comment":"*****************START OF QUESTIONS *********************",
    "questions":{
-      "0":{
+      "0": { 
+         "questionText": "Do you have access to your complete criminal record right now?",
+         "answers": [
+            {
+               "answerText":"Yes",
+               "next":"50"
+            },
+            {
+               "answerText":"No",
+               "next":"LegalAid"
+            }
+         ],
+         "helperText":[
+
+         ]
+      },
+      "50":{
          "questionText":"Which one applies to you?",
          "answers":[
             {
-               "answerText":" I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
+               "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
                "next":"100"
             },
             {
