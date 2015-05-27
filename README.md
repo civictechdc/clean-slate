@@ -17,6 +17,7 @@ in DC.
 
 ## Development
 
+Contribution instructions are being (slowly) moved to [this page](CONTRIBUTION.MD)
 First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer.
 Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
 
