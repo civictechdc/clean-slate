@@ -160,7 +160,7 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             answeredQuestions.push(stateName);
 
             var next = self.currentState.answers[answerIndex].next;
-
+            
             // check if this answer leads to an eligibility state
             if (next in self.eligibilityFlow.endStates) {
                 self.eligibilityKnown = true;
