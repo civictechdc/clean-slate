@@ -15,13 +15,6 @@ in DC.
 
 ---
 
-Additional resources:
-
-- [Flowchart](docs/flowchart.jpeg)
-- Requirements ([1](docs/requirements_1.jpeg) & [2](docs/requirements_1.jpeg))
-
----
-
 ## Development
 
 First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer.
@@ -40,32 +33,9 @@ $ git checkout -b [NEW BRANCH NAME]
 
 ---
 
-### eligibility-flow.json
+### combined-flow.json
 
-[eligibility-flow.json](eligibility-flow.json) contains the questions, answers, and flow logic
-for the wizard which guides users through an eligibility check.
-
-=======
-
-First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer.
-Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
-
-```sh
-$ git clone git@github.com:[YOUR GITHUB NAME]/expungement-dc.git
-```
-
-You can work on the `master` branch (which is the default), but it's preferable
-to set up a new branch if you're working on a specific feature:
-
-```sh
-$ git checkout -b [NEW BRANCH NAME]
-```
-
----
-
-### eligibility-flow.json
-
-[eligibility-flow.json](eligibility-flow.json) contains the questions, answers, and flow logic
+[combined-flow.json](combined-flow.json) contains the questions, answers, and flow logic
 for the wizard which guides users through an eligibility check.
 
 The file is made up of three special categories: `"start"`, `"endStates"`, and `"questions"`:
@@ -121,11 +91,3 @@ This is a **question object**:
 `"helperText"` = definitions or explanations of legalese (this can be an empty: `"helperText":[]`)
 
 note: If you need to use quotation marks, the character must be 'escaped' with a backslash.  For example, the quotation marks around "Pending" in `helperText` are escaped like this: `\"Pending\"`
-
----
-
-To Do:
-
-- Add Ineligible Felonies to Step #6 of the wizard
-- Add eligible misdemeanor or an ineligible misdemeanor/felony #8
-- Adding in additional steps that have not been completed based on the chart.
