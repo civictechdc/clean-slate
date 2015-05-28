@@ -101,7 +101,6 @@ function findTreeHeight(flow, state) {
     });
 
     // after recursive call, assign treeHeight to this state
-    var maxHeight = 0;
     q.treeHeight = 1 + q.answers.reduce(function(maxHeight, answer) {
         // if answer.next is is an end state, height = 2
         if (answer.next in flow.endStates) {
