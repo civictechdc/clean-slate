@@ -105,8 +105,8 @@ function findTreeHeight(flow, state) {
     q.treeHeight = 1 + q.answers.reduce(function(maxHeight, answer) {
         // if answer.next is is an end state, height = 2
         if (answer.next in flow.endStates) {
-            if (maxHeight < 2)
-                return 2;
+            if (maxHeight < 1)
+                return 1;
             return maxHeight;
         }
         var nextHeight = flow.questions[answer.next].treeHeight;
@@ -127,9 +127,6 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
         self.eligibilityFlow = data;
         //Calculate height for each state
         findTreeHeight(self.eligibilityFlow, self.eligibilityFlow.start);
-        console.log("Found tree height!");
-        console.log(self.eligibilityFlow);
-
 
         //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
@@ -237,7 +234,8 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
             } else {
                 // Otherwise, divide the number of questions answered by the tree height at this state
                 // multiply by 100, and round
-                progressPercent = Math.round((userInput.length/self.currentState.treeHeight) * 100);
+                var answered = answeredQuestions.length;
+                progressPercent = Math.round((answered/(answered + self.currentState.treeHeight - 1)) * 100);
             }
             return progressPercent;
         };
