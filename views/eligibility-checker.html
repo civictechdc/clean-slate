@@ -25,13 +25,16 @@
 
       <hr>
 
-      <!-- PROGRESS BAR REMOVED FOR NOW, DOES NOT WORK WITH COMBINED JSON -->
-      <!-- Progress bar
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%; min-width: 2em;">
-          <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
-        </div>
-      </div> -->
+      <div class="row">
+            <div class="col-md-12 ">
+                <!-- Progress bar -->
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{eligibilityCtrl.progressBar()}}%; min-width: 2em;">
+                    <span>{{eligibilityCtrl.progressBar()}}% Complete</span>
+                  </div>
+                </div> 
+          </div>
+      </div>
 
 
       <!-- Questions: this section only shows if the user has not reached an eligibilty state -->

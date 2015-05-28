@@ -171,7 +171,7 @@
             },
             {
                "answerText":"No",
-               "next":"IneligibleFJ"
+               "next":"ineligibleFJ"
             }
          ],
          "helperText":[
@@ -253,7 +253,7 @@
             },
             {
                "answerText":"No",
-               "next":"IneligibleAI"
+               "next":"ineligibleAI"
             }
          ],
          "helperText":[

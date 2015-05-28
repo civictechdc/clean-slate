@@ -71,11 +71,50 @@ myApp.controller('legalAidController',
         }
 ]);
 
+
+/***************************************************************
+VARIABLES AND FUNCTIONS USED IN EligibilityWizardController
+***************************************************************/
+
 //Keep userInput outside controller scope so that it isn't reset when $location changes
 var userInput = [];
 // questions in the order they were answered
 // used to check if userInput needs to be cleaned up because user used the back button
 var answeredQuestions = [];
+
+// function that assigns state.treeHeight to each state
+// bottom of the tree (end states) have a height of 1
+function findTreeHeight(flow, state) {
+
+    // if this is an end state
+    if (state in flow.endStates) {
+        flow.endStates[state].treeHeight = 1;
+        return;
+    }
+
+    // for convenience, assign this question object to q
+    var q = flow.questions[state];
+
+    // recursively call findTreeHeight for each answer
+    q.answers.forEach(function(answer) {
+        findTreeHeight(flow, answer.next);
+    });
+
+    // after recursive call, assign treeHeight to this state
+    q.treeHeight = 1 + q.answers.reduce(function(maxHeight, answer) {
+        // if answer.next is is an end state, height = 2
+        if (answer.next in flow.endStates) {
+            if (maxHeight < 1)
+                return 1;
+            return maxHeight;
+        }
+        var nextHeight = flow.questions[answer.next].treeHeight;
+        if (nextHeight > maxHeight)
+            return nextHeight;
+        return maxHeight;
+    }, 0); // 0 is the initial value for maxHeight
+}
+
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
     var self = this; // self is equivalent to $scope
@@ -85,6 +124,9 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
     var executeController = function(data) {
         //Set self.eligibilityFlow to the data returned by the http request
         self.eligibilityFlow = data;
+        //Calculate height for each state
+        findTreeHeight(self.eligibilityFlow, self.eligibilityFlow.start);
+
         //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
 
@@ -182,16 +224,17 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
         };
 
-        // progressBar calculation
-        // TODO make this work even if the question names are not numbers
+        // progressBar calculation using treeHeight
         self.progressBar = function() {
             var progressPercent = '';
-            //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
-            if(isNaN(self.currentQuestion) && stateName in self.eligibilityFlow.endStates){
+            //If the current question is an EndState, then set the progess bar to 100
+            if(stateName in self.eligibilityFlow.endStates){
                 progressPercent = 100;
             } else {
-                //Otherwise, divide the current question number by the total number of question, multiply by 100, and round to get a nice percent
-                progressPercent = Math.round((Number(stateName)/self.eligibilityFlowLength) * 100);
+                // Otherwise, divide the number of questions answered by the tree height at this state
+                // multiply by 100, and round
+                var answered = answeredQuestions.length;
+                progressPercent = Math.round((answered/(answered + self.currentState.treeHeight - 1)) * 100);
             }
             return progressPercent;
         };
