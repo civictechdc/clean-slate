@@ -76,6 +76,41 @@ var userInput = [];
 // questions in the order they were answered
 // used to check if userInput needs to be cleaned up because user used the back button
 var answeredQuestions = [];
+
+// function that assigns state.treeHeight to each state
+// bottom of the tree (end states) have a height of 1
+function findTreeHeight(flow, state) {
+    console.log("state = " + state);
+    // if this is an end state
+    if (state in flow.endStates) {
+        flow.endStates[state].treeHeight = 1;
+        return;
+    }
+
+    // for convenience, assign this question object to q
+    var q = flow.questions[state];
+
+    // recursively call findTreeHeight for each answer
+    q.answers.forEach(function(answer) {
+        findTreeHeight(flow, answer.next);
+    });
+
+    // after recursive call, assign treeHeight to this state
+    var maxHeight = 0;
+    q.treeHeight = 1 + q.answers.reduce(function(maxHeight, answer) {
+        // if answer.next is is an end state, height = 2
+        if (answer.next in flow.endStates) {
+            if (maxHeight < 2)
+                return 2;
+            return maxHeight;
+        }
+        var nextHeight = flow.questions[answer.next].treeHeight;
+        if (nextHeight > maxHeight)
+            return nextHeight;
+        return maxHeight;
+    }, 0); // 0 is the initial value for maxHeight
+}
+
 // refactored version of Eligibility Checker Controller --AKA The Wizard
 myApp.controller('EligibilityWizardController', function($http, $routeParams, $location) {
     var self = this; // self is equivalent to $scope
@@ -85,6 +120,12 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
     var executeController = function(data) {
         //Set self.eligibilityFlow to the data returned by the http request
         self.eligibilityFlow = data;
+        //Calculate height for each state
+        findTreeHeight(self.eligibilityFlow, self.eligibilityFlow.start);
+        console.log("Found tree height!");
+        console.log(self.eligibilityFlow);
+
+
         //Get the URL q parameter (the question name) from $routeParams
         self.params = $routeParams;
 
