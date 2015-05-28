@@ -71,6 +71,11 @@ myApp.controller('legalAidController',
         }
 ]);
 
+
+/***************************************************************
+VARIABLES AND FUNCTIONS USED IN EligibilityWizardController
+***************************************************************/
+
 //Keep userInput outside controller scope so that it isn't reset when $location changes
 var userInput = [];
 // questions in the order they were answered
@@ -80,7 +85,7 @@ var answeredQuestions = [];
 // function that assigns state.treeHeight to each state
 // bottom of the tree (end states) have a height of 1
 function findTreeHeight(flow, state) {
-    console.log("state = " + state);
+
     // if this is an end state
     if (state in flow.endStates) {
         flow.endStates[state].treeHeight = 1;
@@ -223,16 +228,16 @@ myApp.controller('EligibilityWizardController', function($http, $routeParams, $l
 
         };
 
-        // progressBar calculation
-        // TODO make this work even if the question names are not numbers
+        // progressBar calculation using treeHeight
         self.progressBar = function() {
             var progressPercent = '';
-            //If the current question isn't a number and is listed in the endStates array, then set the progess bar to 100
-            if(isNaN(self.currentQuestion) && stateName in self.eligibilityFlow.endStates){
+            //If the current question is an EndState, then set the progess bar to 100
+            if(stateName in self.eligibilityFlow.endStates){
                 progressPercent = 100;
             } else {
-                //Otherwise, divide the current question number by the total number of question, multiply by 100, and round to get a nice percent
-                progressPercent = Math.round((Number(stateName)/self.eligibilityFlowLength) * 100);
+                // Otherwise, divide the number of questions answered by the tree height at this state
+                // multiply by 100, and round
+                progressPercent = Math.round((userInput.length/self.currentState.treeHeight) * 100);
             }
             return progressPercent;
         };
