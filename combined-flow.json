@@ -70,7 +70,7 @@
          "helperText":"PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized"
       },
       "eligibleDOb":{
-         "eligiblityText":"If in this particular arrest, you were only arrested for a marijuana-related offense and only charged with a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.   PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized.",
+         "eligiblityText":"If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.   PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized.",
          "icon":"glyphicon glyphicon-ok-circle",
          "helperText":"  PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
       }
