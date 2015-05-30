@@ -98,7 +98,7 @@
          ]
       },
       "50":{
-         "questionText":"Your offense may be eligible for sealing under one of the following options. Please select a choice that applies to your D.C. Criminal Record.",
+         "questionText":"Your offense may be eligible for sealing under one of the following categories. Please select an option that applies to your D.C. Criminal Record.",
          "answers":[
             {
                "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
