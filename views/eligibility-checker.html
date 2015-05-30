@@ -71,10 +71,12 @@
             </div> <!-- end of list of ineligible misdemeanors -->
 
             <!-- If there is helper text for the question, show it here (ie explanations of legalese) -->
-            <div ng-show="eligibilityCtrl.currentState.helperText.length > 0" ng-repeat="text in eligibilityCtrl.currentState.helperText track by $index">
-                <hr>
-                <h1><span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span></h1>
-                <p>{{text}}</p>
+            <div>
+              <hr>
+              <h1><span class="glyphicon glyphicon glyphicon-info-sign" aria-hidden="true"></span></h1>
+              <div ng-show="eligibilityCtrl.currentState.helperText.length > 0" ng-repeat="text in eligibilityCtrl.currentState.helperText track by $index">
+                  <p>{{text}}</p>
+              </div>
             </div> <!-- end of helper text section -->
           </div> <!-- end of question section -->
 
