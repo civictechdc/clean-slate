@@ -224,6 +224,10 @@
             {
                "answerText":"I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
                "next":"400"
+            },
+            {
+               "answerText":"I have a non-conviction and/or conviction I would like to seal.",
+               "next":"500"
             }
          ],
          "helperText":[
