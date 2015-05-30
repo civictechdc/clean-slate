@@ -54,18 +54,14 @@
          "helperText":"You may be eligible to seal under a different statute.  Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. Contact the Community Defender Division of the Public Defender Service for information."
       },
       "ineligibleAI2":{
-         "eligiblityText":"Based on your responses, you may not be able to file for sealing under Actual Innocence. ",
+         "eligiblityText":"You are likely not eligible.",
          "icon":"glyphicon glyphicon-remove-circle",
-         "helperText":[
-            "Please hit the \"start over\" button in the upper left hand corner to your eligibility under another option."
-         ]
+         "helperText": "Please hit the \"start over\" button in the upper left hand corner to check your eligibility under another option."
       },
       "eligibleAI":{
          "eligiblityText":"You may be eligible for sealing with no waiting period.",
          "icon":"glyphicon glyphicon-ok-circle",
-         "helperText":[
-            "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. "
-         ]
+         "helperText":"However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. "
       },
       "comment400":"*****************START OF DECRIMINALIZED OFFENSE END STATES *********************",
       "eligibleDOa":{
