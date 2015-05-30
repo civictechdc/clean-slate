@@ -6,17 +6,17 @@
       "legalAid":{
          "eligiblityText":"This section does not apply to your offense.",
          "icon":"glyphicon glyphicon-remove-circle",
-         "helperText":"Please hit start and choose another option."
+         "helperText":"Please hit the \"start over\" button in the upper left hand corner."
       },
       "comment100":"*****************START OF FUGUITVE JUSTICE END STATES *********************",
       "ineligibleSkip":{
          "eligiblityText":"This section does not apply to your offense.",
          "icon":"glyphicon glyphicon-remove-circle",
-         "helperText":"Please hit start and choose another option."
+         "helperText":"Please hit the \"start over\" button in the upper left hand corner."
       },
       "ineligibleFJ":{
-         "eligiblityText":"You are not eligible at this time. ",
-         "icon":"glyphicon glyphicon-remove-circle",
+         "eligiblityText":"You may be eligible, read below. ",
+         "icon":"glyphicon glyphicon-flag",
          "helperText":"You may be eligible after you appear before the proper authority in jurisdiction that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\") "
       },
       "eligibleFJ":{
@@ -31,7 +31,7 @@
       },
       "comment200":"*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
       "eligibleIC":{
-         "eligiblityText":"You may be eligible to file. ",
+         "eligiblityText":"You may be eligible to file. See directions below.",
          "icon":"glyphicon glyphicon-ok-circle",
          "helperText":[
             "Contact the Community Defender Division of the Public Defender Service for information on the process for completing a fingerprint comparison. "
@@ -54,18 +54,14 @@
          "helperText":"You may be eligible to seal under a different statute.  Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. Contact the Community Defender Division of the Public Defender Service for information."
       },
       "ineligibleAI2":{
-         "eligiblityText":"Based on your responses, you may not be able to file for sealing under Actual Innocence. ",
+         "eligiblityText":"You are likely not eligible.",
          "icon":"glyphicon glyphicon-remove-circle",
-         "helperText":[
-            "Please return to the homepage for an additional option."
-         ]
+         "helperText": "Please hit the \"start over\" button in the upper left hand corner to check your eligibility under another option."
       },
       "eligibleAI":{
          "eligiblityText":"You may be eligible for sealing with no waiting period.",
          "icon":"glyphicon glyphicon-ok-circle",
-         "helperText":[
-            "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. "
-         ]
+         "helperText":"However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. "
       },
       "comment400":"*****************START OF DECRIMINALIZED OFFENSE END STATES *********************",
       "eligibleDOa":{
@@ -74,7 +70,7 @@
          "helperText":"PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized"
       },
       "eligibleDOb":{
-         "eligiblityText":"If in this particular arrest, you were only arrested for a marijuana-related offense and only charged with a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.   PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized.",
+         "eligiblityText":"If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.   PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized.",
          "icon":"glyphicon glyphicon-ok-circle",
          "helperText":"  PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
       }
@@ -98,7 +94,7 @@
          ]
       },
       "50":{
-         "questionText":"Which one applies to you?",
+         "questionText":"Your offense may be eligible for sealing under one of the following categories. Please select an option that applies to your D.C. Criminal Record.",
          "answers":[
             {
                "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
@@ -118,7 +114,6 @@
             }
          ],
          "helperText":[
-
          ]
       },
       "50_HOLDER_FOR_LATER":{
@@ -273,7 +268,12 @@
             }
          ],
          "helperText":[
-
+            "You have the burden of proving to the Court that you are actually innocent through factual circumstances and/or relevant post offense occurrences that support a conclusion that you were innocent. The easiest way to prove actual innocence is by presenting facts that can be proven by reliable documents.",
+             "Example 1: You were found guilty of driving without a permit. You really did have a valid permit at the time but a computer glitch indicated that you did not have one when you were arrested. You can now provide information showing that you had a valid permit at the time of the offense.",
+             "Example 2: You were arrested for having a dog off leash but it is not your dog and you can show that it is not your dog.",  
+             "Example 3: You were arrested for theft but you have a receipt showing you actually own the property you were accused of stealing.",  
+             "Example 4: You have an assault-type charge but you acted in self-defense. You have to show the Judge you believed you were in imminent harm and acted in self-defense. You could provide affidavits from witnesses who saw the fight and who swear that the \"victim\" was really the initial aggressor and you, the arrestee, were just defending yourself. However, affidavits saying \"the other guy started it\" will not be enough to show actual innocence. The judge is still going to have to make credibility findings based on the evidence provided.",
+             "Note: Being found \"not guilty\" is NOT proof of your innocense."
          ]
       },
       "comment400":"*****************START OF DECRIMINALIZED OFFENSE QUESTIONS *********************",
