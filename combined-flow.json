@@ -6,13 +6,13 @@
       "legalAid":{
          "eligiblityText":"This section does not apply to your offense.",
          "icon":"glyphicon glyphicon-remove-circle",
-         "helperText":"Please hit start and choose another option."
+         "helperText":"Please hit the \"start over\" button in the upper left hand corner."
       },
       "comment100":"*****************START OF FUGUITVE JUSTICE END STATES *********************",
       "ineligibleSkip":{
          "eligiblityText":"This section does not apply to your offense.",
          "icon":"glyphicon glyphicon-remove-circle",
-         "helperText":"Please hit start and choose another option."
+         "helperText":"Please hit the \"start over\" button in the upper left hand corner."
       },
       "ineligibleFJ":{
          "eligiblityText":"You are not eligible at this time. ",
@@ -57,7 +57,7 @@
          "eligiblityText":"Based on your responses, you may not be able to file for sealing under Actual Innocence. ",
          "icon":"glyphicon glyphicon-remove-circle",
          "helperText":[
-            "Please return to the homepage for an additional option."
+            "Please hit the \"start over\" button in the upper left hand corner to your eligibility under another option."
          ]
       },
       "eligibleAI":{
