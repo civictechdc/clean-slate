@@ -31,7 +31,7 @@
       },
       "comment200":"*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
       "eligibleIC":{
-         "eligiblityText":"You may be eligible to file. ",
+         "eligiblityText":"You may be eligible to file. See directions below.",
          "icon":"glyphicon glyphicon-ok-circle",
          "helperText":[
             "Contact the Community Defender Division of the Public Defender Service for information on the process for completing a fingerprint comparison. "
