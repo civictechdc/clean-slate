@@ -92,6 +92,23 @@ function findTreeHeight(flow, state) {
         return;
     }
 
+    // if this state is not a question, the flow.json has an error
+    // assign the value of 1 and create a placeholder
+    if (!(state in flow.questions)) {
+        console.log(state, "could not be found in flow.endStates or in flow.questions. PLEASE FIX THIS SOON!");
+        // to prevent this orphan from breaking the whole App, assign it a stub in endSates
+        flow.endStates[state] = {eligiblityText: state + " IS NOT A VALID STATE NAME",
+                                icon:"glyphicon glyphicon-alert",
+                                helperText:"Something went wrong!  We will work on this error and try to fix it soon.",
+                                treeHeight: 1};
+        return;
+    }
+
+    // if this state already has treeHeight calculated, return
+    if (flow.questions[state].hasOwnProperty("treeHeight")) {
+        return;
+    }
+
     // for convenience, assign this question object to q
     var q = flow.questions[state];
 
