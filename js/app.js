@@ -12,7 +12,7 @@ var myApp = angular.module('myApp', [
 myApp.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider
-            // Homepage includes Expunge D.C. overview and link to the wizard
+            // Homepage includes Clean Slate D.C. overview and link to the wizard
             .when('/', {
                 templateUrl: 'views/home.html',
                 controller: 'homeController'
@@ -32,10 +32,10 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/questions.html',
                 controller: 'questionsController'
             })
-            // Legal Aid Page
-            .when('/legal-aid', {
-                templateUrl: 'views/legal-aid.html',
-                controller: 'legalAidController'
+            // Acquire your record page
+            .when('/acquire-your-record', {
+                templateUrl: 'views/acquire-your-record.html',
+                controller: 'acquireYourRecordController'
             })
             // If the user attempts to visit a route that doesn't match any of the patterns above, re-direct them to the homepage
             .otherwise({
@@ -63,7 +63,7 @@ myApp.controller('questionsController',
 ]);
 
 // Legal Aid controller
-myApp.controller('legalAidController',
+myApp.controller('acquireYourRecordController',
     ['$scope',
         function ($scope) {
 
