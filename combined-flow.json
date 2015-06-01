@@ -77,7 +77,7 @@
       
           "comment500":"*****************START OF Non-Convictions and Convictions END STATES *********************",
 
-      "IneligiblePC":{
+      "ineligiblePC":{
         "eligiblityText":"If you have a pending case, you must wait until the case is over. ",
          "icon":"glyphicon glyphicon-remove-circle",
          "helperText":"After your case is over, please return to check whether your records can be sealed."
@@ -489,7 +489,7 @@
          },
          {  
             "answerText":"No",
-            "next":"IneligibleSkip"
+            "next":"ineligibleSkip"
          }
       ],
       "helperText":[ ]
@@ -634,7 +634,7 @@
          },
             {  
             "answerText":"No",
-            "next":"GOTO??????"
+            "next":"544"
          }
       ],
       "helperText":[ "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
@@ -744,7 +744,7 @@
          },
             {  
             "answerText":"No",
-            "next":"GOTO??????"
+            "next":"581"
          }
       ],
       "helperText":[ "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
