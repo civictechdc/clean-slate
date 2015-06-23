@@ -70,7 +70,7 @@
          "helperText":"PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized"
       },
       "eligibleDOb":{
-         "eligiblityText":"If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.   PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized.",
+         "eligiblityText":"If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.",
          "icon":"glyphicon glyphicon-ok-circle",
          "helperText":"  PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
       },
@@ -199,7 +199,7 @@
             },
             {
                "answerText":"No",
-               "next":"legalAid"
+               "next":"acquire-your-record"
             }
          ],
          "helperText":[
@@ -634,7 +634,7 @@
          },
             {  
             "answerText":"No",
-            "next":"584"
+            "next":"554"
          }
       ],
       "helperText":[ "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
@@ -744,7 +744,7 @@
          },
             {  
             "answerText":"No",
-            "next":"581"
+            "next":"584"
          }
       ],
       "helperText":[ "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
