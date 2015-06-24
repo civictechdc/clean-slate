@@ -3,7 +3,7 @@
 
    "endStates":{
       "comment0":"*****************START OF LEGAL AID END STATES *********************",
-      "legalAid":{
+      "acquireYourRecord":{
          "eligiblityText":"This section does not apply to your offense.",
          "icon":"glyphicon glyphicon-remove-circle",
          "helperText":"Please hit the \"start over\" button in the upper left hand corner."
@@ -72,10 +72,10 @@
       "eligibleDOb":{
          "eligiblityText":"If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.",
          "icon":"glyphicon glyphicon-ok-circle",
-         "helperText":"  PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
+         "helperText":"PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
       },
       
-          "comment500":"*****************START OF Non-Convictions and Convictions END STATES *********************",
+      "comment500":"*****************START OF Non-Convictions and Convictions END STATES *********************",
 
       "ineligiblePC":{
         "eligiblityText":"If you have a pending case, you must wait until the case is over. ",
@@ -199,23 +199,11 @@
             },
             {
                "answerText":"No",
-               "next":"10"
+               "next":"acquireYourRecord"
             }
          ],
          "helperText":[
-      "10": { 
-         "questionText": "You can either access your criminal record online or visit the DC court to acqire your complete record. Which one would you like to do?",
-         "answers": [
-            {
-               "answerText":"Acquire online",
-               "next":"#/acquire-your-record""
-            },
-            {
-               "answerText":"Acquire in-person at the Court",
-               "next":"acquire-inperson"
-            }
-         ],
-         "helperText":[
+
          ]
       },
       "50":{
