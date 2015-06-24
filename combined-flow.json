@@ -4,9 +4,9 @@
    "endStates":{
       "comment0":"*****************START OF LEGAL AID END STATES *********************",
       "acquireYourRecord":{
-         "eligiblityText":"This section does not apply to your offense.",
+         "eligiblityText":"You can either access your criminal record online or visit the DC court in person to acqire your complete record.",
          "icon":"glyphicon glyphicon-remove-circle",
-         "helperText":"Please hit the \"start over\" button in the upper left hand corner."
+         "helperText":"...add text here about how to access criminal record..."
       },
       "comment100":"*****************START OF FUGUITVE JUSTICE END STATES *********************",
       "ineligibleSkip":{
