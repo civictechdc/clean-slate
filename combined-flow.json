@@ -199,11 +199,23 @@
             },
             {
                "answerText":"No",
-               "next":"acquire-your-record"
+               "next":"10"
             }
          ],
          "helperText":[
-
+      "10": { 
+         "questionText": "You can either access your criminal record online or visit the DC court to acqire your complete record. Which one would you like to do?",
+         "answers": [
+            {
+               "answerText":"Acquire online",
+               "next":"#/acquire-your-record""
+            },
+            {
+               "answerText":"Acquire in-person at the Court",
+               "next":"acquire-inperson"
+            }
+         ],
+         "helperText":[
          ]
       },
       "50":{
