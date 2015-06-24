@@ -190,7 +190,7 @@
    },
    "comment":"*****************START OF QUESTIONS *********************",
    "questions":{
-      "0": { 
+      "0":{ 
          "questionText": "Do you have access to your complete criminal record right now?",
          "answers": [
             {
@@ -203,16 +203,16 @@
             }
          ],
          "helperText":[
-      "10": { 
+      "10":{ 
          "questionText": "You can either access your criminal record online or visit the DC court to acqire your complete record. Which one would you like to do?",
          "answers": [
             {
                "answerText":"Acquire online",
-               "next":"#/acquire-your-record""
+               "next":"#/acquire-your-record"
             },
             {
                "answerText":"Acquire in-person at the Court",
-               "next":"acquire-inperson"
+               "next":"#/acquire-inperson"
             }
          ],
          "helperText":[
@@ -243,30 +243,6 @@
             }
          ],
          "helperText":[
-         ]
-      },
-      "50_HOLDER_FOR_LATER":{
-         "questionText":"___________",
-         "answers":[
-            {
-               "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
-               "next":"100"
-            },
-            {
-               "answerText":"My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
-               "next":"200"
-            },
-            {
-               "answerText":"I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.",
-               "next":"300"
-            },
-            {
-               "answerText":"I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
-               "next":"400"
-            }
-         ],
-         "helperText":[
-
          ]
       },
       "comment100":"*****************START OF FUGUITVE JUSTICE QUESTIONS *********************",
@@ -407,22 +383,6 @@
       },
       "comment400":"*****************START OF DECRIMINALIZED OFFENSE QUESTIONS *********************",
       "400":{
-         "questionText":"Were you arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
-         "answers":[
-            {
-               "answerText":"Yes",
-               "next":"401"
-            },
-            {
-               "answerText":"No",
-               "next":"ineligibleSkip"
-            }
-         ],
-         "helperText":[
-            " A marijuana-related offense involves marijuana and any of the following:  \n possession of a controlled substance, \n possession of drug paraphernalia, \n possession with the intent to distribute a controlled substance, \n distribution of a controlled substance, OR  \n an attempt or a conspiracy to commit any of the offenses any of the above."
-         ]
-      },
-      "401":{
          "questionText":"When you were arrested for, charged with or convicted of a marijuana-related offense, were you ALSO arrested for, charged with or convicted of violating any NON-marijuana related offense or violation of the D.C. Code, the D.C. Municipal Regulations, or the U.S. Code?",
          "answers":[
             {
