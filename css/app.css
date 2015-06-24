@@ -8,11 +8,7 @@ Table of Contents:
 /******* Vendor overrides */
 html,
 body {
- <!--background-image: url();
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #F9F9F9;-->
-}
+ 
 
 a:hover {
   text-decoration: none;

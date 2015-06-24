@@ -245,30 +245,6 @@
          "helperText":[
          ]
       },
-      <!--"50_HOLDER_FOR_LATER":{
-         "questionText":"___________",
-         "answers":[
-            {
-               "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
-               "next":"100"
-            },
-            {
-               "answerText":"My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
-               "next":"200"
-            },
-            {
-               "answerText":"I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.",
-               "next":"300"
-            },
-            {
-               "answerText":"I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
-               "next":"400"
-            }
-         ],
-         "helperText":[
-
-         ]
-      },-->
       "comment100":"*****************START OF FUGUITVE JUSTICE QUESTIONS *********************",
       "100":{
          "questionText":"Were you arrested in DC because you had a warrant in another jurisdiction (i.e. another state)?",
@@ -407,22 +383,6 @@
       },
       "comment400":"*****************START OF DECRIMINALIZED OFFENSE QUESTIONS *********************",
       "400":{
-         "questionText":"Were you arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
-         "answers":[
-            {
-               "answerText":"Yes",
-               "next":"401"
-            },
-            {
-               "answerText":"No",
-               "next":"ineligibleSkip"
-            }
-         ],
-         "helperText":[
-            " A marijuana-related offense involves marijuana and any of the following:  \n possession of a controlled substance, \n possession of drug paraphernalia, \n possession with the intent to distribute a controlled substance, \n distribution of a controlled substance, OR  \n an attempt or a conspiracy to commit any of the offenses any of the above."
-         ]
-      },
-      "401":{
          "questionText":"When you were arrested for, charged with or convicted of a marijuana-related offense, were you ALSO arrested for, charged with or convicted of violating any NON-marijuana related offense or violation of the D.C. Code, the D.C. Municipal Regulations, or the U.S. Code?",
          "answers":[
             {
