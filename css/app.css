@@ -8,7 +8,10 @@ Table of Contents:
 /******* Vendor overrides */
 html,
 body {
-  background-color: #F9F9F9;
+ <!--background-image: url();
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #F9F9F9;-->
 }
 
 a:hover {
