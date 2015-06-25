@@ -215,7 +215,7 @@
             },
             {
                "answerText":"My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
-               "next":"200"
+               "next":"201"
             },
             {
                "answerText":"I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.",
@@ -242,7 +242,7 @@
             },
             {
                "answerText":"My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
-               "next":"200"
+               "next":"201"
             },
             {
                "answerText":"I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.",
@@ -292,22 +292,6 @@
          ]
       },
       "comment200":"*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
-      "200":{
-         "questionText":"Does your criminal record incorrectly identify you as having a case or arrest that is NOT yours?",
-         "answers":[
-            {
-               "answerText":"Yes",
-               "next":"201"
-            },
-            {
-               "answerText":"No",
-               "next":"ineligibleSkip"
-            }
-         ],
-         "helperText":[
-            "(For example – Someone used your name when they were arrested or a data entry error has linked your name or other identifying information to a case that is not yours)"
-         ]
-      },
       "201":{
          "questionText":"Do you know if the person who was actually responsible for the offense was fingerprinted at the time of the arrest?",
          "answers":[
