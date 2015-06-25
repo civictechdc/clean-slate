@@ -211,7 +211,7 @@
          "answers":[
             {
                "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
-               "next":"100"
+               "next":"101"
             },
             {
                "answerText":"My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
@@ -238,7 +238,7 @@
          "answers":[
             {
                "answerText":"I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
-               "next":"100"
+               "next":"101"
             },
             {
                "answerText":"My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
@@ -258,22 +258,7 @@
          ]
       },
       "comment100":"*****************START OF FUGUITVE JUSTICE QUESTIONS *********************",
-      "100":{
-         "questionText":"Were you arrested in DC because you had a warrant in another jurisdiction (i.e. another state)?",
-         "answers":[
-            {
-               "answerText":"Yes",
-               "next":"101"
-            },
-            {
-               "answerText":"No",
-               "next":"ineligibleSkip"
-            }
-         ],
-         "helperText":[
 
-         ]
-      },
       "101":{
          "questionText":"Have you appeared before the proper authority in the jurisdiction that issued the warrant?",
          "answers":[
