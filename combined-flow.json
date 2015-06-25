@@ -6,7 +6,7 @@
       "acquireYourRecord":{
          "eligiblityText":"You can either access your criminal record online or visit the DC court in person to acqire your complete record.",
          "icon":"glyphicon glyphicon-flag",
-         "helperText":"In the menu above, please visit 'Acqire Your Record/Rap Sheet' for more instructions."
+         "helperText":"In the menu above, please visit 'Acquire Your Record/Rap Sheet' for more instructions."
       },
       "comment100":"*****************START OF FUGUITVE JUSTICE END STATES *********************",
       "ineligibleFJ":{
