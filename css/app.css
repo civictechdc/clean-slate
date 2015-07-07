@@ -8,6 +8,9 @@ Table of Contents:
 /******* Vendor overrides */
 html,
 body {
+  background-image: url("images/face.png"); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
  
 
 a:hover {
@@ -15,13 +18,8 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: rgb(255,165,0);
+  color: rgb(254, 73, 2);
 }
-.background-image: url("images/face.png"); {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 .container {
     padding-top: 100px;
     max-width: 1100px;
@@ -93,6 +91,12 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 15px;
+}
+.youtube {
+margin-right: auto;
+margin-left: auto;
+display:block;
+width:700px;
 }
 
 .misdemeanors_group {
