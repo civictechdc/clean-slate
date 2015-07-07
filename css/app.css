@@ -16,8 +16,8 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   color: rgb(255,165,0);
-}"
-.background-image: url("images/face.jpg"){
+}
+.background-image: url("images/face.png"); {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 60px;
 }
 .titlebar-band {
-    background-color: rgb(255,165,0);
+    background-color: rgb(254, 73, 2);
     padding: 10 0 10px;
     top: -5px;
     position: absolute;
@@ -118,7 +118,7 @@ p.question-text {
   font-size: 2em;
 }
 .progress-bar {
-  background-color: rgb(255,165,0);
+  background-color: rgb(254, 73, 2);
 }
 
 .btn{
@@ -146,7 +146,7 @@ button[tooltip-text]:hover::after {
   border-left: 8px solid transparent;
   border-radius: 6px;
   background-color: #000000;
-  color: #FFFFFF;
+  color: #FE4902;
   margin-left: -8px;
   z-index: 999;
   opacity: 0.8;
