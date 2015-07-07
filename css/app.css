@@ -1,6 +1,6 @@
 /*******
 Table of Contents:
-    > Vendor overrides
+    > Vendor overrides: removed blue color 63,81,181;
     > Custom Styles
 */
 
@@ -15,7 +15,11 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: rgb(63,81,181);
+  color: rgb(255,165,0);
+}"
+.background-image: url("images/face.jpg"){
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
@@ -42,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 60px;
 }
 .titlebar-band {
-    background-color: rgb(63,81,181);
+    background-color: rgb(255,165,0);
     padding: 10 0 10px;
     top: -5px;
     position: absolute;
@@ -114,7 +118,7 @@ p.question-text {
   font-size: 2em;
 }
 .progress-bar {
-  background-color: rgb(63,81,181);
+  background-color: rgb(255,165,0);
 }
 
 .btn{
