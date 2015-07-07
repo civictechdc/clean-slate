@@ -8,7 +8,7 @@ Table of Contents:
 /******* Vendor overrides */
 html,
 body {
-  background-image: url("images/face.png"); 
+  background-image: url("face.png"); 
   background-repeat: no-repeat;
   background-attachment: fixed;
  
