@@ -36,6 +36,12 @@ myApp.config(['$routeProvider',
             .when('/acquire-your-record', {
                 templateUrl: 'views/acquire-your-record.html',
                 controller: 'acquireYourRecordController'
+
+            })
+             // Definitions
+            .when('/definitions', {
+                templateUrl: 'views/definitions.html',
+                controller: 'definitionsController'
             })
             // If the user attempts to visit a route that doesn't match any of the patterns above, re-direct them to the homepage
             .otherwise({
@@ -64,6 +70,14 @@ myApp.controller('questionsController',
 
 // Legal Aid controller
 myApp.controller('acquireYourRecordController',
+    ['$scope',
+        function ($scope) {
+
+
+        }
+]);
+// Definitions
+myApp.controller('definitionsController',
     ['$scope',
         function ($scope) {
 

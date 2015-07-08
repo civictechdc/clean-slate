@@ -8,14 +8,24 @@ Table of Contents:
 /******* Vendor overrides */
 html,
 body {
- 
+ .background-image: url("hire.jpg"){
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 
 a:hover {
   text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: rgb(63,81,181);
+  color: rgb(105,105,105);
+}
+
+.youtube {
+margin-right: auto;
+margin-left: auto;
+display:block;
+width:700px;
 }
 
 .container {
@@ -42,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 60px;
 }
 .titlebar-band {
-    background-color: rgb(63,81,181);
+    background-color: rgb(105,105,105);
     padding: 10 0 10px;
     top: -5px;
     position: absolute;
@@ -114,7 +124,7 @@ p.question-text {
   font-size: 2em;
 }
 .progress-bar {
-  background-color: rgb(63,81,181);
+  background-color: rgb(105,105,105);
 }
 
 .btn{
