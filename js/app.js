@@ -37,6 +37,11 @@ myApp.config(['$routeProvider',
                 templateUrl: 'views/acquire-your-record.html',
                 controller: 'acquireYourRecordController'
             })
+            // Page for acquiring records in person
+            .when('/acquire-inperson', {
+                templateUrl: 'view/acquire-inperson.html',
+                controller: 'acquireInPersonController'
+            })
             // Definitions
             .when('/definitions', {
                 templateUrl: 'views/definitions.html',
@@ -69,6 +74,14 @@ myApp.controller('questionsController',
 
 // Legal Aid controller
 myApp.controller('acquireYourRecordController',
+    ['$scope',
+        function ($scope) {
+
+
+        }
+]);
+//In Person controller
+myApp.controller('acquireInPersonController',
     ['$scope',
         function ($scope) {
 
