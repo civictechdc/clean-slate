@@ -113,7 +113,7 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
             $scope.eligibilityKnown = true;
             $scope.stateName = next;
             $scope.currentState = $scope.eligibilityFlow.endStates[next];
-            $scope.userInput = userInput;
+            $scope.userInput = EligibilityService.userInput;
             return;
         }
 
