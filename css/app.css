@@ -2,10 +2,22 @@ body {
     padding-top: 70px;
 }
 
-.list-alpha {
+.list-alpha-upper {
     list-style-type: upper-alpha;
 }
 
-.list-roman {
+.list-alpha-lower {
+    list-style-type: upper-alpha;
+}
+
+.list-roman-upper {
     list-style-type: lower-roman;
+}
+
+.list-roman-lower {
+    list-style-type: lower-roman;
+}
+
+.text-italic {
+    font-style: italic;
 }
