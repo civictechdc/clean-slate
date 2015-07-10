@@ -1,5 +1,24 @@
 body {
-    padding-top: 70px;
+    padding-top: 88px;
+    /*background: url('../img/hire.png') fixed no-repeat center;*/
+    background-size: cover;
+}
+
+.navbar-header {
+    height: 64px;
+}
+
+.navbar-toggle {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.navbar-nav > li > a {
+    line-height: 44px;
+}
+
+.btn {
+    white-space: normal;
 }
 
 .list-alpha-upper {
