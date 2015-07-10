@@ -1,0 +1,78 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Clean Slate</title>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.7.0/angular-material.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/app.css" />
+    </head>
+    
+    <body ng-app="myApp">
+
+      <div layout="row" ng-controller="titlebarController">
+      <div class="titlebar-wrapper">
+          <div class="titlebar-band">
+            <div class="titlebar-content">
+                <div layout="row">
+                    <div>
+                        <h3 class="pagetitle">
+                          <a href="#/">CleanSlate</a>
+                        </h3>
+                    </div>
+                     <div class="menu">
+
+                       <md-button ng-click="openLeftMenu()" hide-gt-sm>
+                          <!-- menu link for mobile -->
+                          Menu
+                      </md-button>
+                      <div class="menu-desktop" hide-sm>
+                        <!-- menu for desktop -->
+                        <md-button href="#/">home</md-button>
+                        <!-- Commented out for space<md-button href="#/eligibility-check">eligibility checker</md-button>-->
+                        <md-button href="#/acquire-your-record">acquire your record/rap sheet</md-button>
+                        <md-button href="#/questions">faqs</md-button>
+                        <md-button href="#/definitions">definitions</md-button>
+                      </div>
+                    </div>
+                </div>
+            </div><!-- /.titlebar-content -->
+          </div><!-- /.titlebar-container -->
+        </div><!-- /.titlebar-wrapper -->
+
+        <md-sidenav md-component-id="left" class="md-sidenav-left menu-mobile">
+
+          <ul>
+            <md-button href="#/" class="md-raised md-primary md-button md-default-theme" ng-click="close()">Home</md-button>
+            <!--<md-button href="#/eligibility-check" class="md-raised md-primary md-button md-default-theme" ng-click="close()">Eligibility Checker</md-button>-->
+            <md-button href="#/acquire-your-record" class="md-raised md-primary md-button md-default-theme" ng-click="close()">Acquire your record/rap sheet</md-button>
+            <md-button href="#/questions" class="md-raised md-primary md-button md-default-theme" ng-click="close()">FAQs</md-button>
+             <md-button href="#/definitions" class="md-raised md-primary md-button md-default-theme" ng-click="close()">Definitions</md-button>
+          </ul>
+
+        </md-sidenav>
+
+      </div>
+
+      <div class="container">
+          <div ng-view="" class="col-md-10 col-md-offset-1"></div>
+      </div><!-- /.container -->
+
+    <!-- Angular Material Dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+
+    <!-- also -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular-resource.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+
+    <!--<script src="js/vendor.js"></script>-->
+    <script src="js/app.js"></script>
+    
+  </body>
+</html>
