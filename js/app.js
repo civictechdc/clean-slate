@@ -58,8 +58,6 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     $scope.stateName = "";
 
     $scope.goBackOneQuestion = function goBackOneQuestion() {
-        console.log("Go back one question called...");
-
         if ($scope.stateName === $scope.eligibilityFlow.start) {
             $window.history.back();
 
@@ -79,8 +77,6 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     };
 
     $scope.restart = function restart() {
-        console.log("Restart called...");
-
         EligibilityService.userInput = [];
         EligibilityService.answeredQuestions = [];
 
@@ -89,11 +85,8 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     };
 
     $scope.submitAnswer = function submitAnswer(answerIndex) {
-        console.log("Submit answer called...");
-
         // if this question was already answered, cleanup userInput before adding this answer to history
         if (EligibilityService.answeredQuestions.indexOf($scope.stateName) > -1) {
-            console.log("Could not find indexOf " + $scope.stateName + " so Cleaning up question/answer history.")
             var startDuplication = answeredQuestions.indexOf($scope.stateName);
             EligibilityService.userInput.splice(startDuplication, EligibilityService.userInput.length - startDuplication);
             EligibilityService.answeredQuestions.splice(startDuplication, EligibilityService.answeredQuestions.length - startDuplication);
@@ -129,8 +122,6 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     };
 
     $scope.progressBar = function progressBar() {
-        console.log("Progress bar called...");
-
         var progressPercent = '';
         //If the current question is an EndState, then set the progess bar to 100
         if($scope.stateName in $scope.eligibilityFlow.endStates){
