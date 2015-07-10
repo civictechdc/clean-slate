@@ -39,7 +39,7 @@ myApp.config(['$routeProvider',
             })
             // Page for acquiring records in person
             .when('/acquire-inperson', {
-                templateUrl: 'view/acquire-inperson.html',
+                templateUrl: 'views/acquire-inperson.html',
                 controller: 'acquireInPersonController'
             })
             // Definitions
