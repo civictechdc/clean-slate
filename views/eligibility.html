@@ -1,104 +1,110 @@
-<!-- Header -->
 <div class="row">
     <div class="col-lg-12">
-        <button class="btn btn-primary" type="button" ng-click="goBackOneQuestion()">Go back one question</button>
-        <button class="btn btn-primary" type="button" ng-click="restart()">Restart</button>
-        <h1>Eligibility Checker</h1>
-
-        <div class="progress">
-            <div class="progress-bar" ng-style="progressBarStyle()">
-                <span>{{ progressBar() }}% Complete</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Questions -->
-<div class="row" ng-if="!eligibilityKnown">
-    <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-body">
-                <p>{{ currentState.questionText }}</p>
-
-                <div ng-if="current.showIneligibleMisdemeanors">
-                    <h3>Ineligible Felony</h3>
-
-                    <p>
-                        "Ineligible felony" means any felony other than a failure to appear
-                        (&sect; 16-1327) [<a href="http://dccode.org/simple/sections/23-1327.html">&sect; 23‑1327</a>].
-                    </p>
-
-                    <ul>
-                        <h3>Ineligible Misdemeanors</h3>
-
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <input class="form-control" type="text" ng-model="term">
-                            </div>
-                        </form>
-                        <div class="row">
-                            <li ng-repeat="misdemeanor in ineligibleMisdemeanors | filter: term">
-                                {{ misdemeanor.offense }}
-                                <a href ng-click="isCollapsed = !isCollapsed" ng-show="misdemeanor.legal_description">+</a><br>
-                                <span ng-show="isCollapsed">
-                                    <p>{{ misdemeanor.legal_description }}</p>
-                                </span>
-                            </li>
-                        </div>
-                    </ul>
+            <!-- Header -->
+            <div class="panel-heading">
+                <h4 class="panel-title centered-title">Eligibility Checker</h4>
+                <div class="button-group panel-button-group">
+                    <button class="btn btn-primary btn-sm" type="button" ng-click="previousQuestion()">
+                        <i class="glyphicon glyphicon-chevron-left"></i> Previous question
+                    </button>
+                    <button class="btn btn-primary btn-sm" type="button" ng-click="restart()">
+                        <i class="glyphicon glyphicon-refresh"></i> Restart
+                    </button>
                 </div>
-                <div ng-if="currentState.helperText.length">
-                    <h1><span class="glyphicon glyphicon glyphicon-info-sign"></span></h1>
+            </div>
 
-                    <div ng-repeat="text in currentState.helperText track by $index">
-                        <p>{{ text }}</p>
+            <!-- Content -->
+            <div class="panel-body">
+                <!-- Progress bar -->
+                <div class="progress">
+                    <div class="progress-bar" ng-style="progressBarStyle()">
+                        <span>{{ progressBar() }}% Complete</span>
+                    </div>
+                </div>
+
+                <!-- Initial state -->
+                <div ng-if="!eligibilityKnown">
+                    <h4>{{ currentState.questionText }}</h4>
+
+                    <!-- TODO: Figure out where this is being implemented. -->
+                    <!--<div ng-if="current.showIneligibleMisdemeanors">
+                        <h5>Ineligible Felony</h5>
+                        <p>
+                            "Ineligible felony" means any felony other than a failure to appear
+                            (&sect; 16-1327) [<a href="http://dccode.org/simple/sections/23-1327.html">&sect; 23‑1327</a>].
+                        </p>
+
+                        <ul>
+                            <h5>Ineligible Misdemeanors</h5>
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" ng-model="term">
+                                </div>
+                            </form>
+                            <div class="row">
+                                <li ng-repeat="misdemeanor in ineligibleMisdemeanors | filter: term">
+                                    {{ misdemeanor.offense }}
+                                    <a href ng-click="isCollapsed = !isCollapsed" ng-show="misdemeanor.legal_description">+</a><br>
+                                    <span ng-show="isCollapsed">
+                                        <p>{{ misdemeanor.legal_description }}</p>
+                                    </span>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>-->
+
+                    <div class="alert alert-info"
+                         ng-if="currentState.helperText.length"
+                         ng-repeat="text in currentState.helperText track by $index">
+                        <i class="glyphicon glyphicon glyphicon-info-sign"></i> {{ text }}
+                    </div>
+                </div>
+
+                <!-- Unlocked state -->
+                <div ng-if="eligibilityKnown">
+                    <div class="alert alert-info">
+                        <i ng-class="currentState.icon" ng-show="currentState.icon"></i>
+                        {{ currentState.eligibilityText }}
+                    </div>
+                    <div class="alert alert-info" ng-show="currentState.helperText.length">
+                        <i class="glyphicon glyphicon-info-sign"></i> {{ currentState.helperText }}
                     </div>
                 </div>
             </div>
-            <div class="panel-footer">
-                <button class="btn btn-primary btn-block"
+
+            <!-- Response options -->
+            <div class="panel-footer" ng-if="currentState.answers.length">
+                <div class="button-group-vertical">
+                    <button class="btn btn-primary btn-block"
                         ui-sref="eligibility({questionId: answer.next})"
                         ng-click="submitAnswer($index)"
-                        ng-repeat="answer in currentState.answers">{{ answer.answerText }}
-                </button>
+                        ng-repeat="answer in currentState.answers">{{ answer.answerText }}</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Eligible -->
+<!-- Your responses -->
 <div class="row" ng-if="eligibilityKnown">
     <div class="col-lg-12">
         <div class="panel panel-default">
-            <div class="panel-body">
-                <h1 ng-show="currentState.icon">
-                    <span ng-class="currentState.icon"></span>
-                </h1>
-                <h2>{{ currentState.eligibilityText }}</h2>
-                <div ng-show="currentState.helperText.length">
-                    <h1>
-                        <span class="glyphicon glyphicon-info-sign"></span>
-                    </h1>
-                    <p>{{ currentState.helperText }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
             <div class="panel-heading">
-                <h4 class="panel-title">Your responses:</h4>
-                <button class="btn btn-primary" type="button" onclick="window.print()">
-                    <span class="glyphicon glyphicon-print"></span> Print
-                </button>
+                <h4 class="panel-title centered-title">Your Responses</h4>
+                <div class="button-group panel-button-group">
+                    <button class="btn btn-primary btn-sm" type="button" ng-click="print()">
+                        <i class="glyphicon glyphicon-print"></i> Print
+                    </button>
+                    <button class="btn btn-primary btn-sm" type="button" ng-click="email()" disabled>
+                        <i class="glyphicon glyphicon-envelope"></i> Email
+                    </button>
+                </div>
             </div>
             <div class="panel-body">
                 <div ng-repeat="record in EligibilityService.userInput">
-                    <h4>{{ record.question }}</h4>
-
-                    <p>
-                        <span class="glyphicon glyphicon-menu-right"></span>
-                        <strong>{{ record.answer }}</strong>
-                    </p>
+                    <h5>{{ record.question }}</h5>
+                    <p><i class="glyphicon glyphicon-menu-right"></i> <em>{{ record.answer }}</em></p>
                 </div>
             </div>
         </div>

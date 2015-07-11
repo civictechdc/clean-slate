@@ -21,6 +21,16 @@ body {
     white-space: normal;
 }
 
+.centered-title {
+    line-height: 30px;
+    text-align: center;
+}
+
+.panel-button-group {
+    margin-top: -30px;
+    float: left;
+}
+
 .list-alpha-upper {
     list-style-type: upper-alpha;
 }
@@ -35,6 +45,10 @@ body {
 
 .list-roman-lower {
     list-style-type: lower-roman;
+}
+
+.text-bold {
+    font-weight: bold;
 }
 
 .text-italic {

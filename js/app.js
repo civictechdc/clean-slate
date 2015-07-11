@@ -57,7 +57,7 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     $scope.ineligibleMisdemeanors = [];
     $scope.stateName = "";
 
-    $scope.goBackOneQuestion = function goBackOneQuestion() {
+    $scope.previousQuestion = function previousQuestion() {
         if ($scope.stateName === $scope.eligibilityFlow.start) {
             $window.history.back();
 
@@ -141,6 +141,13 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
             width: $scope.progressBar() + "%"
         };
     };
+
+    $scope.print = function print() {
+        $window.print();
+    };
+
+    // TODO: Implement e-mail functionality...
+    $scope.email = function email() {};
 
     function init() {
         $http.get("data/combined-flow.json").success(function(flow) {
