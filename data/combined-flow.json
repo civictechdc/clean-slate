@@ -3,12 +3,12 @@
   "endStates": {
     "comment0": "*****************START OF LEGAL AID END STATES *********************",
     "acquireYourRecord": {
-      "eligibilityText": "You can either access your criminal record online or visit the DC court in person to acqire your complete record.",
+      "eligibilityText": "You can either access your criminal record online or visit the DC court in person to acquire your complete record.",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
       "helperText": "In the menu above, please visit 'Acquire Your Record/Rap Sheet' for more instructions."
     },
-    "comment100": "*****************START OF FUGUITVE JUSTICE END STATES *********************",
+    "comment100": "*****************START OF FUGITIVE JUSTICE END STATES *********************",
     "ineligibleFJ": {
       "eligibilityText": "You may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
@@ -46,7 +46,7 @@
       "level": "success",
       "helperText": "If you are unsure whether the record is yours, contact Community Defender Division of the Public Defender Service for information on getting a fingerprint comparison."
     },
-    "comment300": "*****************START OF ACTUAL INNOCENSE END STATES *********************",
+    "comment300": "*****************START OF ACTUAL INNOCENCE END STATES *********************",
     "ineligibleAI": {
       "eligibilityText": "Convictions are not eligible for sealing under actual innocence.",
       "icon": "glyphicon glyphicon-remove-circle",
@@ -267,7 +267,7 @@
       "helperText": [
       ]
     },
-    "comment100": "*****************START OF FUGUITVE JUSTICE QUESTIONS *********************",
+    "comment100": "*****************START OF FUGITIVE JUSTICE QUESTIONS *********************",
     "101": {
       "questionText": "Have you appeared before the proper authority in the jurisdiction that issued the warrant?",
       "answers": [
@@ -332,7 +332,7 @@
         "Swearing under oath - you make a commitment to tell the truth (especially in a court of law); if you lie after swearing that you will tell the truth, you may become subject to prosecution perjury Perjury- The crime of willfully and knowingly making a false statement about a material fact after swearing to tell the truth"
       ]
     },
-    "comment300": "*****************START OF ACTUAL INNOCENSE QUESTIONS *********************",
+    "comment300": "*****************START OF ACTUAL INNOCENCE QUESTIONS *********************",
     "300": {
       "questionText": "Were you arrested for or charged with crime but \"not convicted\" of that crime as defined below?",
       "answers": [
@@ -367,7 +367,7 @@
         "Example 2: You were arrested for having a dog off leash but it is not your dog and you can show that it is not your dog.",
         "Example 3: You were arrested for theft but you have a receipt showing you actually own the property you were accused of stealing.",
         "Example 4: You have an assault-type charge but you acted in self-defense. You have to show the Judge you believed you were in imminent harm and acted in self-defense. You could provide affidavits from witnesses who saw the fight and who swear that the \"victim\" was really the initial aggressor and you, the arrestee, were just defending yourself. However, affidavits saying \"the other guy started it\" will not be enough to show actual innocence. The judge is still going to have to make credibility findings based on the evidence provided.",
-        "Note: Being found \"not guilty\" is NOT proof of your innocense."
+        "Note: Being found \"not guilty\" is NOT proof of your INNOCENCE."
       ]
     },
     "comment400": "*****************START OF DECRIMINALIZED OFFENSE QUESTIONS *********************",
@@ -386,7 +386,7 @@
       "helperText": [
       ]
     },
-    "comment500": "*****************START OF Conviction and Nonconviction QUESTIONS *********************",
+    "comment500": "*****************START OF Conviction and Non-conviction QUESTIONS *********************",
     "500": {
       "questionText": "Do you have a pending criminal case in ANY jurisdiction (i.e. D.C. or another state)?",
       "answers": [
