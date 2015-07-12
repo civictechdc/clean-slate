@@ -41,11 +41,15 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     $window,
     $state,
     $stateParams,
-    EligibilityService)
+    eligibilityService)
 {
     "use strict";
 
-    $scope.EligibilityService = EligibilityService;
+    var SUCCESS = "success";
+    var WARNING = "warning";
+    var DANGER = "danger";
+
+    $scope.eligibilityService = eligibilityService;
 
     $scope.eligibilityKnown = false;
     $scope.eligibilityFlow = {
@@ -56,6 +60,15 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     $scope.currentState = {};
     $scope.ineligibleMisdemeanors = [];
     $scope.stateName = "";
+
+    $scope.getLevelClass = function getLevelClass() {
+        switch ($scope.currentState.level) {
+            case SUCCESS: return "alert-success";
+            case WARNING: return "alert-warning";
+            case DANGER: return "alert-danger";
+            default: return "";
+        }
+    };
 
     $scope.previousQuestion = function previousQuestion() {
         if ($scope.stateName === $scope.eligibilityFlow.start) {
@@ -68,17 +81,17 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
             $scope.eligibilityKnown = false;
         }
 
-        EligibilityService.userInput.pop();
+        eligibilityService.userInput.pop();
 
-        var previousQuestion = EligibilityService.answeredQuestions.pop();
+        var previousQuestion = eligibilityService.answeredQuestions.pop();
 
         $state.go("eligibility", {questionId: previousQuestion});
         $scope.currentState = $scope.eligibilityFlow.questions[previousQuestion];
     };
 
     $scope.restart = function restart() {
-        EligibilityService.userInput = [];
-        EligibilityService.answeredQuestions = [];
+        eligibilityService.userInput = [];
+        eligibilityService.answeredQuestions = [];
 
         $state.go("eligibility", {questionId: $scope.eligibilityFlow.start});
         $scope.currentState = $scope.eligibilityFlow.questions[$scope.eligibilityFlow.start];
@@ -86,18 +99,18 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
 
     $scope.submitAnswer = function submitAnswer(answerIndex) {
         // if this question was already answered, cleanup userInput before adding this answer to history
-        if (EligibilityService.answeredQuestions.indexOf($scope.stateName) > -1) {
-            var startDuplication = answeredQuestions.indexOf($scope.stateName);
-            EligibilityService.userInput.splice(startDuplication, EligibilityService.userInput.length - startDuplication);
-            EligibilityService.answeredQuestions.splice(startDuplication, EligibilityService.answeredQuestions.length - startDuplication);
+        if (eligibilityService.answeredQuestions.indexOf($scope.stateName) > -1) {
+            var startDuplication = eligibilityService.answeredQuestions.indexOf($scope.stateName);
+            eligibilityService.userInput.splice(startDuplication, eligibilityService.userInput.length - startDuplication);
+            eligibilityService.answeredQuestions.splice(startDuplication, eligibilityService.answeredQuestions.length - startDuplication);
         }
 
         // record this question and answer in record and add to userInput
         var record = {};
         record.question = $scope.currentState.questionText;
         record.answer = $scope.currentState.answers[answerIndex].answerText;
-        EligibilityService.userInput.push(record);
-        EligibilityService.answeredQuestions.push($scope.stateName);
+        eligibilityService.userInput.push(record);
+        eligibilityService.answeredQuestions.push($scope.stateName);
 
         var next = $scope.currentState.answers[answerIndex].next;
 
@@ -106,7 +119,7 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
             $scope.eligibilityKnown = true;
             $scope.stateName = next;
             $scope.currentState = $scope.eligibilityFlow.endStates[next];
-            $scope.userInput = EligibilityService.userInput;
+            $scope.userInput = eligibilityService.userInput;
             return;
         }
 
@@ -129,7 +142,7 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
         } else {
             // Otherwise, divide the number of questions answered by the tree height at this state
             // multiply by 100, and round
-            var answered = EligibilityService.answeredQuestions.length;
+            var answered = eligibilityService.answeredQuestions.length;
             progressPercent = Math.round((answered/(answered + $scope.currentState.treeHeight - 1)) * 100);
         }
         return progressPercent;
@@ -153,7 +166,7 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
         $http.get("data/combined-flow.json").success(function(flow) {
             $scope.eligibilityFlow = flow;
 
-            EligibilityService.findTreeHeight($scope.eligibilityFlow, $scope.eligibilityFlow.start);
+            eligibilityService.findTreeHeight($scope.eligibilityFlow, $scope.eligibilityFlow.start);
 
             $scope.eligibilityFlowLength = _.size(_.keys($scope.eligibilityFlow.questions));
 
@@ -162,7 +175,7 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
             if (_.has($scope.eligibilityFlow.endStates, $scope.stateName)) {
                 $scope.eligibilityKnown = true;
                 $scope.currentState = $scope.eligibilityFlow.endStates[$scope.stateName];
-                $scope.userInput = EligibilityService.userInput;
+                $scope.userInput = eligibilityService.userInput;
             }
             else if (_.has($scope.eligibilityFlow.questions, $scope.stateName)) {
                 $scope.currentState = $scope.eligibilityFlow.questions[$scope.stateName];
@@ -179,7 +192,7 @@ angular.module("app", ["ui.router"]).config(function($stateProvider, $urlRouterP
     }
 
     init();
-}).service("EligibilityService", function EligibilityService() {
+}).service("eligibilityService", function eligibilityService() {
     "use strict";
 
     this.userInput = [];
