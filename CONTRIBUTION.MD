@@ -26,6 +26,9 @@ You can edit files either directly on github, or locally on your computer. The G
 
 ##Editing Locally on Your Computer
 
-This section to be completed
+1. Clone this repository on your machine.
+2. Make your changes locally
+3. Test your changes locally. -- `File://` protocol will break some parts of the site, so you are better off running a tiny local server to view the site. One way is to run `python -m SimpleHTTPServer` from the root directory of the project and then point your browser to [`localhost:8000`](http://localhost:8000)
+4. When you are satisfied with the result, push your changes to your github repository and [issue a pull request](https://guides.github.com/introduction/flow/)
 
 You can learn more at [guides.github.com](guides.github.com)
