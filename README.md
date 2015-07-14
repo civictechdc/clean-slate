@@ -1,4 +1,4 @@
-#[clean-slate](http://codefordc.github.io/clean-slate/)
+#[clean-slate](https://codefordc.github.io/clean-slate/)
 
 A simple website for people trying to navigate [the process of having records sealed](https://en.wikipedia.org/wiki/Expungement)
 in DC.
