@@ -1,182 +1,67 @@
-/*******
-Table of Contents:
-    > Vendor overrides: removed blue color 63,81,181;
-    > Custom Styles
-*/
-
-
-/******* Vendor overrides */
-html,
 body {
-
-
-}
-.background-image: url("hire.png"); {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+    padding-top: 88px;
+    /*background: url('../img/hire.png') fixed no-repeat center;*/
+    background-size: cover;
 }
 
-a:hover {
-  text-decoration: none;
+.navbar-header {
+    height: 64px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: rgb(104, 104, 104);
+.navbar-toggle {
+    margin-top: 14px;
+    margin-bottom: 14px;
 }
 
-.container {
-    padding-top: 100px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 15px;
+.navbar-nav > li > a {
+    line-height: 44px;
 }
 
-.panel {
-  border-radius: 0px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.25);
-  margin-top: 80px;
+.btn {
+    white-space: normal;
 }
 
-/******* Custom  */
-.titlebar-wrapper {
-    padding-bottom: 20px;
-    position: fixed;
-    top: -5px;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    height: 60px;
-}
-.titlebar-band {
-    background-color: rgb(104, 104, 104);
-    padding: 10 0 10px;
-    top: -5px;
-    position: absolute;
-    width: 100%;
-    height: 55px;
-}
-.pagetitle {
-    display: inline-block;
-    line-height: 2em;
-}
-.menu {
-    position: absolute;
-    right: 10px;
-    top: 15px;
-}
-.menu-mobile {
-    padding: 60px 20px 60px 0;
-}
-.menu-mobile .md-button {
-  display: block;
-  margin-bottom: 10px;
-  padding: 1em;
-}
-.menu-desktop {
-  padding-top: 8px;
-}
-.menu-desktop .md-button {
-  margin-left: 30px;
+.centered-title {
+    line-height: 30px;
+    text-align: center;
 }
 
-.menu .md-button {
-    color: rgba(255, 255, 255, 1);
-}
-.titlebar-band a {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 1);
-}
-.titlebar-band a:hover {
-    text-decoration: underline;
-    color: rgba(255, 255, 255, .9);
-}
-.titlebar-content {
-    display: block;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 15px;
+.panel-button-group {
+    margin-top: -30px;
+    float: left;
 }
 
-.misdemeanors_group {
-  padding-left: 0;
-}
-.misdemeanors {
-  margin: 0px 0px 0px 0px;
-  padding: 10px 0;
-  border-top: 1px #eee solid;
-  list-style-type: none;
+.list-alpha-upper {
+    list-style-type: upper-alpha;
 }
 
-.misdemeanors p {
-  padding: 15px;
+.list-alpha-lower {
+    list-style-type: upper-alpha;
 }
 
-.container .md-button {
-  margin: 0em 2em 1em 2em;
-  padding: .7em 1.4em;
-  display: inline-block;
-}
-p.question-text {
-  font-size: 2em;
-}
-.progress-bar {
-  background-color: rgb(104, 104, 104);
+.list-roman-upper {
+    list-style-type: lower-roman;
 }
 
-.btn{
-    white-space:normal !important;
-    max-width:500px;
+.list-roman-lower {
+    list-style-type: lower-roman;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.simple-list {
+    margin-top: 10px;
     margin-bottom: 10px;
+    padding-left: 0;
+    list-style: none;
 }
 
-
-/* Tooltip using only CSS */
-
-button.tooltips {
-  cursor: pointer;
+.simple-list > li:not(:first-child) {
+    margin-top: 5px;
 }
-
-button[tooltip-text]:hover::after {
-  content: attr(tooltip-text);
-  position: absolute;
-  display: inline;
-  left: 50%;
-  bottom: 108%;
-  min-width: 50px;
-  border-top: 8px solid #000000;
-  border-right: 8px solid transparent;
-  border-left: 8px solid transparent;
-  border-radius: 6px;
-  background-color: #000000;
-  color: #686868;
-  margin-left: -8px;
-  z-index: 999;
-  opacity: 0.8;
-  margin-left: -25px;
-  margin-top: 3px;
-  font-size: 1.1em;
-}
-
-/* end of tooltip */
-
-/* responsive iframe container for video */
-/* cribbed from http://embedresponsively.com/ */
-
-.responsive-iframe-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.responsive-iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* end responsive iframe container */
