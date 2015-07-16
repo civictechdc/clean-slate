@@ -237,8 +237,12 @@
           "next": "401"
         },
         {
-          "answerText": "I have a non-conviction and/or conviction I would like to seal.",
+          "answerText": "I have an arrest or charge that resulted in a non-conviction that I would like to seal that does not fit into any of the categories above.",
           "next": "500"
+        },
+        {
+          "answerText": " I have a conviction that I would like to seal that does not fit into any of the categories above.",
+          "next": "600"
         }
       ],
       "helperText": [
@@ -386,7 +390,7 @@
       "helperText": [
       ]
     },
-    "comment500": "*****************START OF Conviction and Non-conviction QUESTIONS *********************",
+    "comment500": "*****************START OF Non-Conviction QUESTIONS *********************",
     "500": {
       "questionText": "Do you have a pending criminal case in ANY jurisdiction (i.e. D.C. or another state)?",
       "answers": [
@@ -396,7 +400,7 @@
         },
         {
           "answerText": "No",
-          "next": "502"
+          "next": "531"
         }
       ],
       "helperText": [
@@ -408,7 +412,7 @@
       "answers": [
         {
           "answerText": "Yes",
-          "next": "502"
+          "next": "531"
         },
         {
           "answerText": "No",
@@ -419,117 +423,7 @@
         "Under DC's sealing statutes, a \"minor offense\" is a traffic offense, disorderly conduct, or an offense that is punishable by a fine only."
       ]
     },
-    "502": {
-      "questionText": "Select the button that applies to the arrest, charge or conviction you would like to seal on your record.",
-      "answers": [
-        {
-          "answerText": "I was convicted for a felony in D.C. ",
-          "next": "512"
-        },
-        {
-          "answerText": "I was convicted for a misdemeanor in D.C.",
-          "next": "521"
-        },
-        {
-          "answerText": "I was arrested or charged for a crime in D.C., but I was NOT convicted.",
-          "next": "531"
-        }
-      ],
-      "helperText": ["Please answer questions for only one arrest at a time."]
-    },
-    "512": {
-      "questionText": "Is your DC felony conviction for Felony BRA (failure to appear in court)?",
-      "answers": [
-        {
-          "answerText": "Yes",
-          "next": "513"
-        },
-        {
-          "answerText": "No",
-          "next": "IneligibleFC"
-        }
-      ],
-      "helperText": []
-    },
-    "513": {
-      "questionText": "Have you subsequently been convicted of another crime in ANY jurisdiction?",
-      "answers": [
-        {
-          "answerText": "Yes",
-          "next": "IneligibleFBRA"
-        },
-        {
-          "answerText": "No",
-          "next": "514"
-        }
-      ],
-      "helperText": [
-      ]
-    },
-    "514": {
-      "questionText": "Has it been 8 years since you were off papers?",
-      "answers": [
-        {
-          "answerText": "Yes",
-          "next": "EligibleFC8"
-        },
-        {
-          "answerText": "No",
-          "next": "IneligibleFC8"
-        }
-      ],
-      "helperText": [
-        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
-      ]
-    },
-    "521": {
-      "questionText": "Were you convicted in DC for a misdemeanor listed below?",
-      "answers": [
-        {
-          "answerText": "Yes",
-          "next": "IneligibleMC"
-        },
-        {
-          "answerText": "No",
-          "next": "522"
-        }
-      ],
-      "helperText": [
-        "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."
-      ],
-      "showIneligibleMisdemeanors": true
-    },
-    "522": {
-      "questionText": "Have you subsequently been convicted of another crime in ANY jurisdiction?",
-      "answers": [
-        {
-          "answerText": "Yes",
-          "next": "IneligibleEMC2"
-        },
-        {
-          "answerText": "No",
-          "next": "523"
-        }
-      ],
-      "helperText": [
-      ]
-    },
-    "523": {
-      "questionText": "Has it been 8 years since you were off papers?",
-      "answers": [
-        {
-          "answerText": "Yes",
-          "next": "EligibleMC8"
-        },
-        {
-          "answerText": "No",
-          "next": "IneligibleMC8"
-        }
-      ],
-      "helperText": [
-        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
-      ]
-    },
+    
     "531": {
       "questionText": "Were you arrested or charged with a misdemeanor listed below or a felony(other than Felony BRA--failure to appear in court)?",
       "answers": [
@@ -790,6 +684,150 @@
         }
       ],
       "helperText": []
+    },
+    
+        "comment600": "*****************START OF Conviction QUESTIONS *********************",
+
+    "600": {
+      "questionText": "Do you have a pending criminal case in ANY jurisdiction (i.e. D.C. or another state)?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "601"
+        },
+        {
+          "answerText": "No",
+          "next": "602"
+        }
+      ],
+      "helperText": [
+        "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
+      ]
+    },
+    "601": {
+      "questionText": "Is your pending case for a \"minor offense\"",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "602"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligiblePC"
+        }
+      ],
+      "helperText": [
+        "Under DC's sealing statutes, a \"minor offense\" is a traffic offense, disorderly conduct, or an offense that is punishable by a fine only."
+      ]
+    },
+    "602": {
+      "questionText": "Select the type of conviction you would like to seal on your D.C. record.",
+      "answers": [
+        {
+          "answerText": "Felony conviction",
+          "next": "612"
+        },
+        {
+          "answerText": "Misdemeanor conviction",
+          "next": "621"
+        }
+      ],
+      "helperText": ["Please answer questions for only one arrest at a time."]
+    },
+    "612": {
+      "questionText": "Is your DC felony conviction for Felony BRA (failure to appear in court)?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "613"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleFC"
+        }
+      ],
+      "helperText": []
+    },
+    "613": {
+      "questionText": "Have you subsequently been convicted of another crime in ANY jurisdiction?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleFBRA"
+        },
+        {
+          "answerText": "No",
+          "next": "614"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "614": {
+      "questionText": "Has it been 8 years since you were off papers?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "EligibleFC8"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleFC8"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
+    },
+    "621": {
+      "questionText": "Were you convicted in DC for a misdemeanor listed below?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleMC"
+        },
+        {
+          "answerText": "No",
+          "next": "622"
+        }
+      ],
+      "helperText": [
+        "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."
+      ],
+      "showIneligibleMisdemeanors": true
+    },
+    "622": {
+      "questionText": "Have you subsequently been convicted of another crime in ANY jurisdiction?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleEMC2"
+        },
+        {
+          "answerText": "No",
+          "next": "623"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "623": {
+      "questionText": "Has it been 8 years since you were off papers?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "EligibleMC8"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleMC8"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
     }
+    
+    
   }
 }
