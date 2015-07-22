@@ -36,7 +36,7 @@ $ git checkout -b [NEW BRANCH NAME]
 
 ### combined-flow.json
 
-[combined-flow.json](combined-flow.json) contains the questions, answers, and flow logic
+[combined-flow.json](data/combined-flow.json) contains the questions, answers, and flow logic
 for the wizard which guides users through an eligibility check.
 
 The file is made up of three special categories: `"start"`, `"endStates"`, and `"questions"`:
