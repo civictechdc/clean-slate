@@ -38,6 +38,11 @@ angular.module("app", ["ui.router"])
                 templateUrl: "views/definitions.html"
             });
     })
+    .run(function($rootScope, $location, Analytics) {
+      $rootScope.$on('$stateChangeSuccess', function() {
+        Analytics.recordPageview($location.url());
+      });
+    })
     //Controller
     .controller("EligibiltyController", function EligibilityController(
         $scope,
@@ -45,9 +50,6 @@ angular.module("app", ["ui.router"])
         $window,
         $state,
         $stateParams,
-        $rootScope,
-        $location,
-        Analytics,
         eligibilityService)
     {
         "use strict";
@@ -55,10 +57,6 @@ angular.module("app", ["ui.router"])
         var SUCCESS = "success";
         var WARNING = "warning";
         var DANGER = "danger";
-
-        $rootScope.$on('$stateChangeSuccess', function() {
-          Analytics.recordPageview($location.url());
-        });
 
         $scope.eligibilityService = eligibilityService;
 
