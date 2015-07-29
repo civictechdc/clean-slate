@@ -45,6 +45,9 @@ angular.module("app", ["ui.router"])
         $window,
         $state,
         $stateParams,
+        $rootScope,
+        $location,
+        Analytics,
         eligibilityService)
     {
         "use strict";
@@ -52,6 +55,10 @@ angular.module("app", ["ui.router"])
         var SUCCESS = "success";
         var WARNING = "warning";
         var DANGER = "danger";
+
+        $rootScope.$on('$stateChangeSuccess', function() {
+          Analytics.recordPageview($location.url());
+        });
 
         $scope.eligibilityService = eligibilityService;
 
@@ -268,4 +275,22 @@ angular.module("app", ["ui.router"])
         };
         console.log(def);
         return def;
-    }]);
+    }])
+    .factory('Analytics', function(Analytics) {
+      var service = {
+        // Record a pageview to Google Analytics
+        recordPageview: function(url) {
+          ga('set', 'page', $location.url());
+          ga('send', 'pageview');
+        },
+        // Record an event to Google Analytics
+        recordEvent: function (category, action, label, value) {
+          var args = Array.prototype.slice.call(arguments);
+          args.unshift('event');
+          args.unshift('send');
+          ga.apply(ga, args);
+        }
+      };
+
+      return service;
+    });
