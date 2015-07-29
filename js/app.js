@@ -276,21 +276,18 @@ angular.module("app", ["ui.router"])
         console.log(def);
         return def;
     }])
-    .factory('Analytics', function(Analytics) {
-      var service = {
-        // Record a pageview to Google Analytics
-        recordPageview: function(url) {
-          ga('set', 'page', $location.url());
-          ga('send', 'pageview');
-        },
-        // Record an event to Google Analytics
-        recordEvent: function (category, action, label, value) {
-          var args = Array.prototype.slice.call(arguments);
-          args.unshift('event');
-          args.unshift('send');
-          ga.apply(ga, args);
-        }
+    .service('Analytics', function() {
+
+      this.recordPageview = function(url) {
+        ga('set', 'page', url);
+        ga('send', 'pageview');
       };
 
-      return service;
+      this.recordEvent = function (category, action, label, value) {
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift('event');
+        args.unshift('send');
+        ga.apply(ga, args);
+      };
+
     });
