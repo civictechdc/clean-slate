@@ -1,4 +1,4 @@
-#[clean-slate](http://codefordc.github.io/clean-slate/)
+#[clean-slate](https://codefordc.github.io/clean-slate/)
 
 A simple website for people trying to navigate [the process of having records sealed](https://en.wikipedia.org/wiki/Expungement)
 in DC.
@@ -36,7 +36,7 @@ $ git checkout -b [NEW BRANCH NAME]
 
 ### combined-flow.json
 
-[combined-flow.json](combined-flow.json) contains the questions, answers, and flow logic
+[combined-flow.json](data/combined-flow.json) contains the questions, answers, and flow logic
 for the wizard which guides users through an eligibility check.
 
 The file is made up of three special categories: `"start"`, `"endStates"`, and `"questions"`:
@@ -87,8 +87,10 @@ This is a **question object**:
 
 `"answerText"` = words that will be displayed on the buttons
 
-`"next"` = what should the user see next if they click this answer? must be the name of a question OR the name of an endState object (see 2. above)
+`"next"` = what should the user see next if they click this answer? must EXACTLY match the name of a question OR the name of an endState object (see 2. above). **Capitalization matters!**
 
 `"helperText"` = definitions or explanations of legalese (this can be an empty: `"helperText":[]`)
 
 note: If you need to use quotation marks, the character must be 'escaped' with a backslash.  For example, the quotation marks around "Pending" in `helperText` are escaped like this: `\"Pending\"`
+
+If you edit `combined-flow.json`, please check for errors before submitting a pull request. If there is an error, it will be reported in the JavaScript Console in your browser. The most common mistake is using `"next"` to link to a question/endState that does not exist (always check that your capitalization is consistent). 
