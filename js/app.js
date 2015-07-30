@@ -177,7 +177,7 @@ angular.module("app", ["ui.router"])
         $scope.email = function email() {};
 
         function init() {
-            $http.get("data/combined-flow.json").success(function(flow) {
+            $http.get("data/combined-flow.json", {'cache':true}).success(function(flow) {
                 $scope.eligibilityFlow = flow;
 
                 eligibilityService.findTreeHeight($scope.eligibilityFlow, $scope.eligibilityFlow.start);
@@ -199,7 +199,7 @@ angular.module("app", ["ui.router"])
                     $scope.currentState = $scope.eligibilityFlow.questions[$scope.eligibilityFlow.start];
                 }
 
-                $http.get("data/ineligible-misdemeanors.json").success(function(data) {
+                $http.get("data/ineligible-misdemeanors.json", {'cache':true}).success(function(data) {
                     $scope.ineligibleMisdemeanors = data;
                 });
             });
