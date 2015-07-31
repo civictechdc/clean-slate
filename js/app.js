@@ -170,6 +170,7 @@ angular.module("app", ["ui.router"])
         };
 
         $scope.print = function print() {
+            ga('send', 'event', 'button', 'click', 'print');
             $window.print();
         };
 
