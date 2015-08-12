@@ -435,7 +435,9 @@
           "next": "531"
         }
       ],
-      "helperText": ["Please answer questions for only one arrest at a time."]
+      "helperText": [
+        "Please answer questions for only one arrest at a time."
+      ]
     },
     "512": {
       "questionText": "Is your DC felony conviction for Felony BRA (failure to appear in court)?",

@@ -1,67 +1,71 @@
 body {
-    padding-top: 88px;
-    /*background: url('../img/hire.png') fixed no-repeat center;*/
-    background-size: cover;
+  padding-top: 88px;
+  /*background: url('../img/hire.png') fixed no-repeat center;*/
+  background-size: cover;
 }
 
 .navbar-header {
-    height: 64px;
+  height: 64px;
 }
 
 .navbar-toggle {
-    margin-top: 14px;
-    margin-bottom: 14px;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 .navbar-nav > li > a {
-    line-height: 44px;
+  line-height: 44px;
 }
 
 .btn {
-    white-space: normal;
+  white-space: normal;
 }
 
 .centered-title {
-    line-height: 30px;
-    text-align: center;
+  line-height: 30px;
+  text-align: center;
 }
 
 .panel-button-group {
-    margin-top: -30px;
-    float: left;
+  margin-top: -30px;
+  float: left;
 }
 
 .list-alpha-upper {
-    list-style-type: upper-alpha;
+  list-style-type: upper-alpha;
 }
 
 .list-alpha-lower {
-    list-style-type: upper-alpha;
+  list-style-type: upper-alpha;
 }
 
 .list-roman-upper {
-    list-style-type: lower-roman;
+  list-style-type: lower-roman;
 }
 
 .list-roman-lower {
-    list-style-type: lower-roman;
+  list-style-type: lower-roman;
 }
 
 .text-bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .text-italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .simple-list {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 0;
-    list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .simple-list > li:not(:first-child) {
-    margin-top: 5px;
+  margin-top: 5px;
+}
+
+.collapsible {
+  cursor: pointer;
 }

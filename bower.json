@@ -1,0 +1,30 @@
+{
+  "name": "Clean Slate DC",
+  "version": "0.0.0",
+  "authors": [
+    "Code for DC"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "www.cleanslatedc.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-animate": "~1.4.3",
+    "angular-motion": "~0.4.2",
+    "angular-strap": "~2.3.1",
+    "bootstrap": "~3.3.5",
+    "bootstrap-additions": "~0.3.1",
+    "bootswatch": "~3.3.5+2",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1",
+    "ui-router": "~0.2.15",
+    "angular-sanitize": "~1.4.3"
+  }
+}

@@ -1,60 +1,88 @@
 <!DOCTYPE html>
 
 <html ng-app="app">
-    <head lang="en">
-        <meta charset="utf-8">
-        <meta name="viewport"
-              content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-        <title>Clean Slate DC</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <!--<link rel="stylesheet" href="css/bootstrap.min.css">
-        <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
-        <link rel="stylesheet" href="css/bootstrap-superhero.min.css">
-        <link rel="stylesheet" href="css/app.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-content">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" ui-sref="home">
-                        <img src="img/logo.jpg" alt="logo" width="200">
-                    </a>
-                </div>
-                <div id="navbar-content" class="collapse navbar-collapse">
-                    <div class="navbar-right">
-                        <ul class="nav navbar-nav">
-                            <li><a ui-sref="home" data-toggle="collapse" data-target="#navbar-content">Home</a></li>
-                            <li><a ui-sref="acquire" data-toggle="collapse" data-target="#navbar-content">Acquire Your Record/Rap Sheet</a></li>
-                            <li><a ui-sref="faqs" data-toggle="collapse" data-target="#navbar-content">FAQs</a></li>
-                            <li><a ui-sref="definitions" data-toggle="collapse" data-target="#navbar-content">Definitions</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <title>Clean Slate DC</title>
 
-        <div class="container">
-            <div ui-view></div>
-        </div>
+  <!-- Dependencies -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/superhero/bootstrap.min.css">
 
-        <!-- Dependencies -->
-        <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
-        <!--<script src="js/jquery-2.1.4.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/angular.min.js"></script>
-        <script src="js/angular-ui-router.min.js"></script>
-        <script src="js/lodash.min.js"></script>-->
+  <!-- TODO: Use Bower and Gulp for dependencies. Below is a list of CSS dependencies. -->
+  <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/bootswatch/superhero/bootstrap.min.css">
 
-        <!-- App -->
-        <script src="js/app.js"></script>
-    </body>
+  <!-- App -->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-content">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">
+        <img src="img/logo.jpg" alt="logo" width="200">
+      </a>
+    </div>
+    <div id="navbar-content" class="collapse navbar-collapse">
+      <!-- FIXME: This is a sloppy fix for this issue. -->
+      <div class="hidden-md hidden-lg navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="home" data-toggle="collapse" data-target="#navbar-content">Home</a></li>
+          <li><a ui-sref="acquire" data-toggle="collapse" data-target="#navbar-content">Acquire Your Record/Rap
+            Sheet</a></li>
+          <li><a ui-sref="faqs" data-toggle="collapse" data-target="#navbar-content">FAQs</a></li>
+          <li><a ui-sref="definitions" data-toggle="collapse" data-target="#navbar-content">Definitions</a></li>
+        </ul>
+      </div>
+
+      <!-- Phone/Tablet does not toggle dropdown. -->
+      <div class="hidden-xs hidden-sm navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="acquire">Acquire Your Record/Rap Sheet</a></li>
+          <li><a ui-sref="faqs">FAQs</a></li>
+          <li><a ui-sref="definitions">Definitions</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div ui-view></div>
+</div>
+
+<!-- Dependencies -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+<!-- TODO: Use Bower and Gulp for dependencies. Below is a list of needed dependencies. -->
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="bower_components/ui-router/release/angular-ui-router.min.js"></script>-->
+
+<!-- App -->
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/services.js"></script>
+</body>
 </html>
