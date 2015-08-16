@@ -74,13 +74,43 @@
             </div>
 
             <!-- Response options -->
-            <div class="panel-footer" ng-if="currentState.answers.length">
+            <div class="panel-footer">
+                <div ng-switch on="stateName == 50">
+                    <div ng-switch-when="true">
+                        <div class="panel-group" id="accordionEligibility" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default" ng-repeat="answer in currentState.answers">
+                                <div class="panel-heading btn btn-primary btn-block" role="tab" id="{{answer.labelledby}}">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordionEligibility" href="#{{answer.controls}}" aria-expanded="false" aria-controls="{{answer.controls}}" onclick="return false;">
+                                            {{answer.shortAnswerText}}
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="{{answer.controls}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{answer.labelledby}}">
+                                    <div class="panel-body">
+                                        <a ui-sref="eligibility({questionId: answer.next})" ng-click="submitAnswer($index)">
+                                            {{answer.answerText}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-group-vertical" ng-switch-when="false">
+                        <button class="btn btn-primary btn-block"
+                            ui-sref="eligibility({questionId: answer.next})"
+                            ng-click="submitAnswer($index)"
+                            ng-repeat="answer in currentState.answers">{{ answer.answerText }}</button>
+                    </div>
+                </div>
+
+            <!-- <div class="panel-footer" ng-if="currentState.answers.length">
                 <div class="button-group-vertical">
                     <button class="btn btn-primary btn-block"
                         ui-sref="eligibility({questionId: answer.next})"
                         ng-click="submitAnswer($index)"
                         ng-repeat="answer in currentState.answers">{{ answer.answerText }}</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

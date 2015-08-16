@@ -65,3 +65,20 @@ body {
 .simple-list > li:not(:first-child) {
     margin-top: 5px;
 }
+.panel-default .panel-group .btn-primary .panel-heading, .panel-group .btn-primary {
+    background-color: #df691a;
+}
+.panel-group .btn-primary {
+    color:#ffffff;
+    border-color:transparent;
+}
+.panel-group .btn-block {
+    text-align: left;
+}
+.btn > .panel-title {
+    font-size: 15px;
+}
+.panel-body > a{
+    color: #ffffff;
+    text-decoration: underline;
+}
