@@ -203,6 +203,24 @@
   "comment": "*****************START OF QUESTIONS *********************",
   "questions": {
     "0": {
+        "questionText": "Do you identify with any of these categories?",
+        "answers": [
+          {
+            "answerText": "I was previously incarcerated or arrested",
+            "next": "25"
+          },
+          {
+            "answerText": "I am a lawyer or law student",
+            "next": "25"
+          },
+          {
+            "answerText": "Other",
+            "next": "25"
+          }
+        ],
+        "helperText": []
+      },
+    "25": {
       "questionText": "Do you have access to your complete criminal record right now?",
       "answers": [
         {
