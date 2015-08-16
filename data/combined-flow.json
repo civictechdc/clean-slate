@@ -203,6 +203,24 @@
   "comment": "*****************START OF QUESTIONS *********************",
   "questions": {
     "0": {
+        "questionText": "Do you identify with any of these categories?",
+        "answers": [
+          {
+            "answerText": "I was previously incarcerated or arrested",
+            "next": "25"
+          },
+          {
+            "answerText": "I am a lawyer or law student",
+            "next": "25"
+          },
+          {
+            "answerText": "Other",
+            "next": "25"
+          }
+        ],
+        "helperText": []
+      },
+    "25": {
       "questionText": "Do you have access to your complete criminal record right now?",
       "answers": [
         {
@@ -221,26 +239,44 @@
       "questionText": "Your offense may be eligible for sealing under one of the following categories. Please select an option that applies to your D.C. Criminal Record.",
       "answers": [
         {
+          "controls":"collapseOne",
+          "labelledby":"headingOne",
+          "shortAnswerText": "Arrested; warrent in other jurisdiction...",
           "answerText": "I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
           "next": "101"
         },
         {
+          "controls":"collapseTwo",
+          "labelledby":"headingTwo",
+          "shortAnswerText": "Innocent of crime on my record...",
           "answerText": "My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
           "next": "201"
         },
         {
+          "controls":"collapseThree",
+          "labelledby":"headingThree",
+          "shortAnswerText": "Criminal record incorrect...",
           "answerText": "I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.",
           "next": "300"
         },
         {
+          "controls":"collapseFour",
+          "labelledby":"headingFour",
+          "shortAnswerText": "Marijuana-related arrests/charge or conviction...",
           "answerText": "I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
           "next": "401"
         },
         {
+          "controls":"collapseFive",
+          "labelledby":"headingFive",
+          "shortAnswerText": "Seal a conviction...",
           "answerText": "I have an arrest or charge that resulted in a non-conviction that I would like to seal that does not fit into any of the categories above.",
           "next": "500"
         },
         {
+          "controls":"collapseSix",
+          "labelledby":"headingSix",
+          "shortAnswerText": "Seal a non-conviction...",
           "answerText": " I have a conviction that I would like to seal that does not fit into any of the categories above.",
           "next": "600"
         }
