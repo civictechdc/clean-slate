@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "welcome": {
+      "header": "Bienvenido a Clean Slate DC",
+      "description": "Este es un recurso para ayudar a los usuarios a determinar si y cuando un arresto , cargos ni convictionon antecedentes penales DC puede ser elegible para el sellado o para la fijación de los errores en su registro. Más información sobre los beneficios de sellado o corregir su registro se puede encontrar al hacer clic en la sección de preguntas frecuentes.",
+      "disclaimerHeader": "Descargo de responsabilidad",
+      "disclaimer": "Este sitio no constituye un servicio legal y no está destinado a proporcionar asesoramiento jurídico . Si no está seguro acerca de cualquier pregunta , usted debe hablar con un abogado ( gratis! ) A través de la División de Defensa de la Comunidad del Servicio de Defensa Pública de DC.",
+      "agreement": "Mediante el uso de www.cleanslateDC.com usted está de acuerdo con la política de privacidad y condiciones de uso.",
+      "agreementUnderstood": "Ok, entiendo. Empecemos"
+    }
+  }
+}
