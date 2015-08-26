@@ -4,6 +4,16 @@ body {
     background-size: cover;
 }
 
+.language{
+	background-color:#2B3E50; 
+	text-align:right;
+	padding:5px 40px;
+}
+.language ul{
+	margin:0;
+	list-style-type:none;
+}
+
 .navbar-header {
     height: 64px;
 }
