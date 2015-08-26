@@ -1,14 +1,7 @@
-angular.module("app", ["ui.router", 'pascalprecht.translate'])
+angular.module("app", ["ui.router"])
     //Config
-    .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
         "use strict";
-
-        $translateProvider.useStaticFilesLoader({
-            prefix: 'locale-',
-            suffix: '.json'
-        });
-        $translateProvider.preferredLanguage('en');
-        $translateProvider.useSanitizeValueStrategy(null);
 
         // Default location...
         $urlRouterProvider.otherwise("/");
@@ -49,20 +42,6 @@ angular.module("app", ["ui.router", 'pascalprecht.translate'])
       $rootScope.$on('$stateChangeSuccess', function() {
         Analytics.recordPageview($location.url());
       });
-    })
-    // Nav Controller
-    .controller("navController", function navController($scope, $translate){
-      $scope.language = 'en';
-
-      $scope.useSpanish = function() {
-        $scope.language = 'es';
-        $translate.use('es');
-      }
-
-      $scope.useEnglish = function() {
-        $scope.language = 'en';
-        $translate.use('en');
-      }
     })
     //Controller
     .controller("EligibiltyController", function EligibilityController(

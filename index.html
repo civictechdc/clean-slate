@@ -27,7 +27,7 @@
         <!-- End Google Analytics -->
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="navController">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-content">
@@ -46,8 +46,6 @@
                             <li><a ui-sref="acquire" data-toggle="collapse" data-target="#navbar-content.in">Acquire Your Record/Rap Sheet</a></li>
                             <li><a ui-sref="faqs" data-toggle="collapse" data-target="#navbar-content.in">FAQs</a></li>
                             <li><a ui-sref="definitions" data-toggle="collapse" data-target="#navbar-content.in">Definitions</a></li>
-                            <li><a data-toggle="collapse" ng-show="language === 'en'" data-target="#navbar-content.in" href="#" ng-click="useSpanish()">Espanol</a></li>
-                            <li><a data-toggle="collapse" ng-hide="language === 'en'" data-target="#navbar-content.in" href="#" ng-click="useEnglish()">English</a></li>
                         </ul>
                     </div>
                 </div>
@@ -65,8 +63,6 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/bower-angular-translate/2.7.1/angular-translate.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-translate-loader-static-files/2.7.2/angular-translate-loader-static-files.js"></script>
 
         <!-- App -->
         <script src="js/app.js"></script>
