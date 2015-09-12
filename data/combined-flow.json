@@ -256,16 +256,16 @@
         {
           "controls":"collapseTwo",
           "labelledby":"headingTwo",
-          "shortAnswerText": "Innocent of crime on my record...",
-          "answerText": "I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent." "My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
-          "next": "300"
+          "shortAnswerText": "Criminal record incorrect...",
+          "answerText": "My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
+          "next": "201"
         },
         {
           "controls":"collapseThree",
           "labelledby":"headingThree",
-          "shortAnswerText": "Criminal record incorrect...",
-          "answerText": "My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
-          "next": "201"
+          "shortAnswerText": "Innocent of crime on my record...",
+          "answerText":"I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.", 
+          "next": "300"
         },
         {
           "controls":"collapseFour",
