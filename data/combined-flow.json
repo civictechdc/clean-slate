@@ -13,7 +13,7 @@
       "eligibilityText": "You may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "You may be eligible after you appear before the proper authority in jurisdiction that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\") "
+      "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\") "
     },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
@@ -22,7 +22,7 @@
       "helperText": "(Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")"
     },
     "eligibleFJ2": {
-      "eligibilityText": "You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding jurisdiction.",
+      "eligibilityText": "You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding state.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "(Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")"
@@ -212,21 +212,9 @@
           {
             "answerText": "I am a lawyer or law student",
             "next": "25"
-          },
-          {
-            "answerText": "Other",
-            "next": "1"
           }
         ],
         "helperText": []
-      },
-    "1": {
-        "questionText": "How would you identify yourself?",
-        "answers": [
-          {
-            "answerText": ""
-          }
-        ]
       },
     "25": {
       "questionText": "Do you have access to your complete criminal record right now?",
@@ -249,8 +237,8 @@
         {
           "controls":"collapseOne",
           "labelledby":"headingOne",
-          "shortAnswerText": "Arrested; warrant in other jurisdiction...",
-          "answerText": "I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
+          "shortAnswerText": "Arrested; warrant in other state...",
+          "answerText": "I was arrested in DC because I had a warrant in another state (i.e. another state).",
           "next": "101"
         },
         {
@@ -296,7 +284,7 @@
       "questionText": "___________",
       "answers": [
         {
-          "answerText": "I was arrested in DC because I had a warrant in another jurisdiction (i.e. another state).",
+          "answerText": "I was arrested in DC because I had a warrant in another state (i.e. another state).",
           "next": "101"
         },
         {
@@ -317,7 +305,7 @@
     },
     "comment100": "*****************START OF FUGITIVE JUSTICE QUESTIONS *********************",
     "101": {
-      "questionText": "Have you appeared before the proper authority in the jurisdiction that issued the warrant?",
+      "questionText": "Have you appeared before the proper authority in the state that issued the warrant?",
       "answers": [
         {
           "answerText": "Yes",
@@ -333,7 +321,7 @@
       ]
     },
     "102": {
-      "questionText": "Can you prove that you appeared before the proper authority in the jurisdiction that issued the warrant?",
+      "questionText": "Can you prove that you appeared before the proper authority in the state that issued the warrant?",
       "answers": [
         {
           "answerText": "Yes",
@@ -436,7 +424,7 @@
     },
     "comment500": "*****************START OF Non-Conviction QUESTIONS *********************",
     "500": {
-      "questionText": "Do you have a pending criminal case in ANY jurisdiction (i.e. D.C. or another state)?",
+      "questionText": "Do you have a pending criminal case in ANY state (i.e. D.C. or another state)?",
       "answers": [
         {
           "answerText": "Yes",
@@ -500,7 +488,7 @@
       "helperText": ""
     },
     "540": {
-      "questionText": "Does any of the following apply to your criminal record in DC and/or any other jurisdiction?",
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
       "answers": [
         {
           "answerText": "Yes",
@@ -516,7 +504,7 @@
       ]
     },
     "550": {
-      "questionText": "Does any of the following apply to your criminal record in DC and/or any other jurisdiction?",
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
       "answers": [
         {
           "answerText": "Yes",
@@ -609,7 +597,7 @@
       "helperText": ""
     },
     "570": {
-      "questionText": "Does any of the following apply to your criminal record in DC and/or any other jurisdiction?",
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
       "answers": [
         {
           "answerText": "Yes",
@@ -625,7 +613,7 @@
       ]
     },
     "580": {
-      "questionText": "Does any of the following apply to your criminal record in DC and/or any other jurisdiction?",
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
       "answers": [
         {
           "answerText": "Yes",
@@ -733,7 +721,7 @@
         "comment600": "*****************START OF Conviction QUESTIONS *********************",
 
     "600": {
-      "questionText": "Do you have a pending criminal case in ANY jurisdiction (i.e. D.C. or another state)?",
+      "questionText": "Do you have a pending criminal case in ANY state (i.e. D.C. or another state)?",
       "answers": [
         {
           "answerText": "Yes",
@@ -793,7 +781,7 @@
       "helperText": []
     },
     "613": {
-      "questionText": "Have you subsequently been convicted of another crime in ANY jurisdiction?",
+      "questionText": "Have you subsequently been convicted of another crime in ANY state?",
       "answers": [
         {
           "answerText": "Yes",
@@ -841,7 +829,7 @@
       "showIneligibleMisdemeanors": true
     },
     "622": {
-      "questionText": "Have you subsequently been convicted of another crime in ANY jurisdiction?",
+      "questionText": "Have you subsequently been convicted of another crime in ANY state?",
       "answers": [
         {
           "answerText": "Yes",
