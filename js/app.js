@@ -36,6 +36,10 @@ angular.module("app", ["ui.router"])
             .state("definitions", {
                 url: "/definitions",
                 templateUrl: "views/definitions.html"
+            })
+            .state("contact", {
+                url: "/contact",
+                templateUrl: "views/contact.html"
             });
     })
     .run(function($rootScope, $location, Analytics) {
