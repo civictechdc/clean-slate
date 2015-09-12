@@ -82,3 +82,6 @@ body {
     color: #ffffff;
     text-decoration: underline;
 }
+.oarc-word.hovered {
+    color:#666666!important;
+}
