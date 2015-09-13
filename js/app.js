@@ -172,12 +172,7 @@ angular.module("app", ["ui.router"])
                 width: $scope.progressBar() + "%"
             };
         };
-        
-        $scope.renderHtml = function(html_code)
-        {
-            return $sce.trustAsHtml(html_code);
-        };
-        
+
         $scope.print = function print() {
             ga('send', 'event', 'button', 'click', 'print');
             $window.print();
