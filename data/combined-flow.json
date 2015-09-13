@@ -115,7 +115,7 @@
       "helperText": "",
       "showAttorneyInfo": "true"
     },
-    "IneligibleFC8": 
+    "IneligibleFC8": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
