@@ -25,33 +25,37 @@
       "eligibilityText": "You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding state.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "(Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")"
+      "helperText": "",
+      "showAttorneyInfo": "true"
     },
     "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
     "eligibleIC": {
       "eligibilityText": "You may be eligible to file. See directions below.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "Contact the Community Defender Division of the Public Defender Service for information on the process for completing a fingerprint comparison."
+      "helperText": "",
+      "showAttorneyInfo": "true"
     },
     "eligibleIC2": {
       "eligibilityText": "You may be eligible to file. ",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "You may file a motion to seal if there are no fingerprints to compare and if you swear under penalty of perjury that the record you are trying to seal is not yours."
+      "helperText": "You may file a motion to seal if there are no fingerprints to compare and if you swear under penalty of perjury that the record you are trying to seal is not yours.",
+      "showAttorneyInfo": "true"
     },
     "eligibleIC3": {
       "eligibilityText": "You may be eligible to file. ",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "If you are unsure whether the record is yours, contact Community Defender Division of the Public Defender Service for information on getting a fingerprint comparison."
+      "helperText": "If you are unsure whether the record is yours you can be eligible for getting a fingerprint comparison.",
+      "showAttorneyInfo": "true"
     },
     "comment300": "*****************START OF ACTUAL INNOCENCE END STATES *********************",
     "ineligibleAI": {
       "eligibilityText": "Convictions are not eligible for sealing under actual innocence.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You may be eligible to seal under a different statute.  Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. Contact the Community Defender Division of the Public Defender Service for information."
+      "helperText": "You may be eligible to seal under a different statute.  Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. "
     },
     "ineligibleAI2": {
       "eligibilityText": "You are likely not eligible.",
@@ -63,20 +67,23 @@
       "eligibilityText": "You may be eligible for sealing with no waiting period.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. "
+      "helperText": "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. ",
+      "showAttorneyInfo": "true"
     },
     "comment400": "*****************START OF DECRIMINALIZED OFFENSE END STATES *********************",
     "eligibleDOa": {
       "eligibilityText": "You may be eligible to file to seal the records of this arrest and may be able to file at any time.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized"
+      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
+      "showAttorneyInfo": "true"
     },
     "eligibleDOb": {
       "eligibilityText": "If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "PDS or another lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
+      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
+    "showAttorneyInfo": "true"
     },
     "comment500": "*****************START OF Non-Convictions and Convictions END STATES *********************",
     "ineligiblePC": {
@@ -85,119 +92,160 @@
       "level": "danger",
       "helperText": "After your case is over, please return to check whether your records can be sealed."
     },
+    
     "IneligibleFC": {
       "eligibilityText": "Your felony conviction is not eligible for sealing. ",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You have been convicted of an ineligible felony and it is not eligible for sealing. Also, you can never seal any other conviction on your DC Criminal Record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested." 
+      "helperText": "You have been convicted of an ineligible felony and it is not eligible for sealing. Also, you can never seal any other conviction on your DC Criminal Record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "showBanTheBox": "true"
     },
     "IneligibleFBRA": {
       "eligibilityText": "This offense is not eligible for sealing.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You have a disqualifying  conviction. Your Felony BRA (failure to appear in court) conviction is not eligible for sealing. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested. "
+      "helperText": "You have a disqualifying conviction. Your Felony BRA (failure to appear in court) conviction is not eligible for sealing. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested. ",
+    "showBanTheBox": "true"
+      
     },
     "EligibleFC8": {
-      "eligibilityText": "This offense may be eligible.",
+      "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "...this is what you should do next in this case..."
+      "helperText": "",
+      "showAttorneyInfo": "true"
     },
-    "IneligibleFC8": {
+    "IneligibleFC8": 
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You will have to wait at least 8 years after you go \"off papers\" before filing the motion to seal your record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested."
-    },
+      "helperText": "You will have to wait at least 8 years after you go \"off papers\" before filing the motion to seal your record.",
+      "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+  },
     "IneligibleMC": {
       "eligibilityText": "This offense is not eligible for sealing.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You have been convicted of an ineligible misdemeanor and it is not eligible for sealing.  Also, you can NEVER seal any other conviction on your DC criminal record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested."
-    },
+      "helperText": "You have been convicted of an ineligible misdemeanor and it is not eligible for sealing.  Also, you can NEVER seal any other conviction on your DC criminal record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+  },
     "IneligibleEMC2": {
       "eligibilityText": "This offense is not eligible for sealing.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You have a disqualifying conviction. Your eligible misdemeanor conviction is not eligible for sealing. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested."
+      "helperText": "You have a disqualifying conviction. Your eligible misdemeanor conviction is not eligible for sealing. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "showBanTheBox": "true"
     },
     "EligibleMC8": {
       "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "If you have more than one eligible misdemeanor conviction, you can only seal your most recent eligible misdemeanor conviction after the 8 year waiting period."
+      "helperText": "If you have more than one eligible misdemeanor conviction, you can only seal your most recent eligible misdemeanor conviction after the 8 year waiting period.",
+      "showAttorneyInfo": "true"
     },
     "IneligibleMC8": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "This offense is ineligible at this time. You will have to wait at least 8 years after you go \"off papers\" before filing the motion to seal your record."
+      "helperText": "This offense is ineligible at this time. You will have to wait at least 8 years after you go \"off papers\" before filing the motion to seal your record.",
+      "showBanTheBox": "true"
     },
     "IneligiblePDNC": {
       "eligibilityText": "This offense is not eligible for sealing.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": " Your misdemeanor or felony non-conviction is permanently disqualified from being sealed. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested."
+      "helperText": " Your misdemeanor or felony non-conviction is permanently disqualified from being sealed. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "showBanTheBox": "true"
     },
     "IneligibleFC10": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed.  "
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed.  ",
+          "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "IneligibleMC5": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed."
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "IneligibleNC2": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after a 2 year waiting period has passed. "
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after a 2 year waiting period has passed. ",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "EligibleNC2": {
       "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "If you have any other arrests or charges for additional offenses that resulted in non-convictions on your D.C. Criminal Record that you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge. Contact the Community Defender Division of the Public Defender Service for information on filing a motion to seal your non conviction."
-    },
+      "helperText": "If you have any other arrests or charges for additional offenses that resulted in non-convictions on your D.C. Criminal Record that you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+        },
     "IneligibleFNC10": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed. "
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed. ",,
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "IneligibleMNC5": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed."
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",,
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "EligibleNCT3": {
       "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge"
+      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "IneligibleNCT3": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your is not eligible for sealing until after the 3 year waiting period after your case was terminated."
+      "helperText": "Your non-conviction is not eligible for sealing until after the 3 year waiting period after your case was terminated.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "EligibleNCT4": {
       "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge"
+      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",,
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
     },
     "IneligibleNCT4": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your is not eligible for sealing until after the 4 year waiting period after your case was terminated."
+      "helperText": "Your non-conviction is not eligible for sealing until after the 4 year waiting period after your case was terminated.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
     }
   },
   "comment": "*****************START OF QUESTIONS *********************",
