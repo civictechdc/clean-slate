@@ -290,3 +290,7 @@ angular.module("app", ["ui.router"])
       };
 
     });
+
+    $('h3').on("click", function(){
+      console.log("clicky click clicks")
+    });

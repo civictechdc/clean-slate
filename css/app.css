@@ -82,3 +82,109 @@ body {
     color: #ffffff;
     text-decoration: underline;
 }
+
+/*-------- Acquire-Page Styles ----------- */
+
+.acquire-box {
+  /*text-align: center;*/
+  /*color: #666 !important;*/
+  margin: 0 auto;
+  width: 100%;
+  /*background-color: white;*/
+  display: table;
+}
+
+.acquire-header {
+  width: 100%;
+  border: 1px #fff solid;
+  background-color: #ffffff;
+  color: #666;
+  padding: 38px;
+}
+
+.police-record, .court-record, .police-content, .court-content {
+  border: 1px #fff solid;
+  display: inline-block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.police-record, .court-record {
+  text-align: center;
+  background-color: #df691a;
+}
+
+.police-content, .court-content {
+  padding: 15px;
+  flex: 1;
+  clear: both;
+  min-height: 530px;
+}
+
+.police-record, .police-content {
+  float: left;
+}
+
+.acquire-alert {
+  display: block;
+  color: #df691a;
+}
+
+
+.needs {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.numCircle {
+  border-radius: 50%;
+  padding: 1em;
+  width: 2em;
+  height: 2em;
+  border: 2px solid #666;
+  text-align: center;
+  border-radius: 50%;
+  margin: 10px;
+  padding: 1em;
+  width: 2em;
+  height: 2em;
+  vertical-align: middle;
+  border: 2px solid #666;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  animation: pulse 2s infinite;
+}
+  /*Animation Style*/
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(221, 105, 40, 0.4);
+    box-shadow: 0 0 0 0 rgba(221, 105, 40, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(221, 105, 40, 0);
+    box-shadow: 0 0 0 30px rgba(221, 105, 40, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(221, 105, 40, 0);
+    box-shadow: 0 0 0 0 rgba(221, 105, 40, 0);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .police-content, .court-content {
+    min-height: 800px;
+  }
+}

@@ -467,7 +467,7 @@
         "Under DC's sealing statutes, a \"minor offense\" is a traffic offense, disorderly conduct, or an offense that is punishable by a fine only."
       ]
     },
-    
+
     "531": {
       "questionText": "Were you arrested or charged with a misdemeanor listed below or a felony(other than Felony BRA--failure to appear in court)?",
       "answers": [
@@ -729,7 +729,7 @@
       ],
       "helperText": []
     },
-    
+
         "comment600": "*****************START OF Conviction QUESTIONS *********************",
 
     "600": {
@@ -871,7 +871,7 @@
         "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
       ]
     }
-    
-    
+
+
   }
 }
