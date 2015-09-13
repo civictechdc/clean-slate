@@ -75,7 +75,7 @@
       "eligibilityText": "You may be eligible to file to seal the records of this arrest and may be able to file at any time.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
+      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ",
       "showAttorneyInfo": "true"
     },
     "eligibleDOb": {
