@@ -72,6 +72,13 @@
                         <p ng-bind-html="currentState.helperText"></p>
                         {{ currentState.helperText }}
                     </div>
+                    
+                    <div class="alert alert-info" ng-show="currentState.helperText.length">
+                        <i class="glyphicon glyphicon-info-sign"></i> 
+                        <p ng-bind-html="currentState.helperText"></p>
+                        {{ currentState.helperText }}
+                    </div>
+                    
                     <div class="alert alert-info" ng-show="true">
                         CONNECT WITH AN ATTORNEY ABOUT GETTING YOUR RECORD EXPUNGED.<br />
 No appointment needed. Intake EVERY MONDAY, from 12-7 PM <br />
