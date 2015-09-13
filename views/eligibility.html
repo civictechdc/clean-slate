@@ -68,7 +68,8 @@
                         {{ currentState.eligibilityText }}
                     </div>
                     <div class="alert alert-info" ng-show="currentState.helperText.length">
-                        <i class="glyphicon glyphicon-info-sign"></i> {{ currentState.helperText }}
+                        <i class="glyphicon glyphicon-info-sign"></i> 
+                        <div ng-bind-html-unsafe="currentState.helperText"></div>
                     </div>
                 </div>
             </div>
