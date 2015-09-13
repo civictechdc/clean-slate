@@ -69,6 +69,7 @@
                     </div>
                     <div class="alert alert-info" ng-show="currentState.helperText.length">
                         <i class="glyphicon glyphicon-info-sign"></i> 
+                        <p ng-bind-html="currentState.helperText"></p>
                         {{ currentState.helperText }}
                     </div>
                 </div>
