@@ -97,7 +97,7 @@
       "eligibilityText": "Your felony conviction is not eligible for sealing. ",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You have been convicted of an ineligible felony and it is not eligible for sealing. Also, you can never seal any other conviction on your DC Criminal Record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "helperText": "You have been convicted of an ineligible felony and it is not eligible for sealing.",
       "showBanTheBox": "true"
     },
     "IneligibleFBRA": {
