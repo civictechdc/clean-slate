@@ -860,7 +860,26 @@
       ]
     },
     "621": {
-      "questionText": "Were you convicted in DC for a misdemeanor listed below?",
+      "questionText": "This is a list of crimes that, if you have them, may result in a judge denying your request to seal your record. Were you convicted in DC for any of the crimes listed below?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleMC"
+        },
+        {
+          "answerText": "No",
+          "next": "621a"
+        }
+      ],
+      "helperText": [
+        "
+        If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."
+      ],
+      "showIneligibleMisdemeanors": true
+    },
+    
+        "621a": {
+      "questionText": "Were you arrested or charged with a misdemeanor of felony that involved assualting someone you know (i.e. a family member/spouse)?",
       "answers": [
         {
           "answerText": "Yes",
@@ -871,11 +890,9 @@
           "next": "622"
         }
       ],
-      "helperText": [
-        "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."
-      ],
-      "showIneligibleMisdemeanors": true
+      "helperText": ""
     },
+    
     "622": {
       "questionText": "Have you subsequently been convicted of another crime in ANY state?",
       "answers": [
