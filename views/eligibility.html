@@ -72,8 +72,29 @@
                         {{ currentState.helperText }}
                     </div>
                     
+                    <div ng-if="currentState.showBanTheBox">
                     
-                    <div class="alert alert-info" ng-show="true">
+                        <div class="alert alert-info" ng-show="true">
+                            <i class="glyphicon glyphicon-info-sign"></i> 
+                            <p>
+                                   Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers 
+                            (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from 
+                            asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you 
+                            to learn more about how to submite a complaint about violations of the law to the DC Office of Human Rights (OHR) at 
+                            <a href='http://ohr.dc.gov/page/returningcitizens' target='_blank'>here</a> . 
+                            Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before 
+                            making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a 
+                            crime or been arrested. 
+                            </p>
+                         
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <div ng-if="currentState.showAttorneyInfo">
+                        <div class="alert alert-info" ng-show="true">
                         CONNECT WITH AN ATTORNEY ABOUT GETTING YOUR RECORD EXPUNGED.<br />
 No appointment needed. Intake EVERY MONDAY, from 12-7 PM <br />
 510 4th Street, NW, Room 113, Building B (Landlord Tenant Court) <br />
@@ -82,9 +103,11 @@ IN COURT<br />
 Questions? Contact Lora Silberman<br />
 202.638.4798 ext. 215, or email here at lsilberman@dclawstudents.org<br />
                     </div>
+                    </div>
+                    
                 </div>
             </div>
-
+            
             <!-- Response options -->
             <div class="panel-footer">
                 <div ng-switch on="stateName == 50">
