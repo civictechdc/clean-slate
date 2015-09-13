@@ -198,7 +198,7 @@
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed. ",,
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed. ",
          "showBanTheBox": "true",
       "showAttorneyInfo": "true"
       
@@ -207,7 +207,7 @@
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",,
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",
          "showBanTheBox": "true",
       "showAttorneyInfo": "true"
       
