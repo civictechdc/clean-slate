@@ -234,7 +234,7 @@
       "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",,
+      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",
          "showBanTheBox": "true",
       "showAttorneyInfo": "true"
       
