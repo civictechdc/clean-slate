@@ -13,7 +13,8 @@
       "eligibilityText": "You may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\") "
+      "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
+      "showAttorneyInfo": "true"
     },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
