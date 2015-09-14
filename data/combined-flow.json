@@ -13,13 +13,15 @@
       "eligibilityText": "You may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant. (Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\") "
+      "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
+      "showAttorneyInfo": "true"
     },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "(Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")"
+      "helperText": "You may be eligible for sealing under \"Fugitive from justice arrest 16-803.01\")",
+      "showAttorneyInfo": "true"
     },
     "eligibleFJ2": {
       "eligibilityText": "You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding state.",
@@ -871,10 +873,7 @@
           "next": "621a"
         }
       ],
-      "helperText": [
-        "
-        If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."
-      ],
+      "helperText": "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list.",
       "showIneligibleMisdemeanors": true
     },
     
