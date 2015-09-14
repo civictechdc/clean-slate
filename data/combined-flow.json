@@ -20,7 +20,8 @@
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "(Please contact the Community Defender Division for information on sealing under \"Fugitive from justice arrest 16-803.01\")"
+      "helperText": "You may be eligible for sealing under \"Fugitive from justice arrest 16-803.01\")",
+      "showAttorneyInfo": "true"
     },
     "eligibleFJ2": {
       "eligibilityText": "You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding state.",
