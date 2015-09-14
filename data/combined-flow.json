@@ -871,9 +871,7 @@
           "next": "621a"
         }
       ],
-      "helperText": [
-        "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."
-      ],
+      "helperText": "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list.",
       "showIneligibleMisdemeanors": true
     },
     
