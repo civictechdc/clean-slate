@@ -339,22 +339,10 @@ angular.module("app", ["ngSanitize", "ui.router"])
         definition: "="
       },
       templateUrl: "views/definition_component.html",
-      controller: function ($scope) {
-        var definition = _.trunc($scope.definition.definition, 50);
-        var visible = false;
-
-        $scope.isVisible = function isVisible() {
-          return visible;
-        };
-
-        $scope.setVisible = function setVisible(value) {
-          visible = value;
-          definition = (visible) ? $scope.definition.definition : _.trunc($scope.definition.definition, 50);
-        };
-
-        $scope.getDefinition = function getDefinition() {
-          return definition;
-        };
-      }
+          link: function (scope, element) {
+              scope.toggleCollapse = function toggleCollapse() {
+                  $(element).find(".collapse").collapse("toggle");
+              }
+          }
     }
   }]);
