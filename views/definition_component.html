@@ -1,4 +1,6 @@
-<div class="component--definition">
-  <h4 class="collapsible" ng-click="setVisible(!isVisible())">{{ definition.term }}</h4>
-  <p ng-bind-html="getDefinition()"></p>
+<div class="panel-heading">
+  <h4 class="panel-title" ng-click="toggleCollapse()">{{ definition.term }}</h4>
+</div>
+<div class="panel-collapse collapse">
+  <div class="panel-body" ng-bind-html="definition.definition"></div>
 </div>
