@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+   <script type="text/javascript">
+       
+
+     $( document ).ready(function() {
+   
+      Parse.initialize("BbjrthNLZ49b6pQ1hvYCUc9RATqUleRw4on1uPwV", "WjBd5QzC1t5Q6JnEuI4uJU38tkL7h5PzUzZnhmxO");
+     
+     var GameScore = Parse.Object.extend("Question");
+    var query = new Parse.Query(GameScore);
+    query.find({
+      success: function(results) {
+        alert("Successfully retrieved " + results.length + " scores.");
+        // Do something with the returned Parse.Object values
+        for (var i = 0; i < results.length; i++) 
+        {
+          var object = results[i];
+
+            var tr="<tr>";
+            var td1="<td>"+object.get('questionID')+"</td>";
+            var td2="<td>"+object.get('questionText')+"</td>";
+            var td3="<td>"+object.get('helperText')+"</td></tr>";
+
+           $("#mytable").append(tr+td1+td2+td3); 
+
+        } 
+
+
+      },
+      error: function(error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
+     
+     
+     var obj=[
+        {
+            id : "001",
+            name : "apple",
+            category : "fruit",
+            color : "red"
+        },
+        {
+            id : "002",
+            name : "melon",
+            category : "fruit",
+            color : "green"
+        },
+        {
+            id : "003",
+            name : "banana",
+            category : "fruit",
+            color : "yellow"
+        }
+    ];
+    
+    var tbl=$("<table/>").attr("id","mytable");
+    $("#div1").append(tbl);
+      $("#mytable").append("<tr><td>Question ID</td><td>Question Text</td><td>Helper Text</td><td>Misdemeanors</td></tr>"); 
+              
+
+     
+});
+  </script>
+    </head>
+    <body>
+         
+        <div id="div1">
+            TODO write content
+        </div>
+     
+<h1 id="h01"></h1>
+
+
+</body>
+        
+</html>
