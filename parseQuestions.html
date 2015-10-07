@@ -21,8 +21,9 @@ and open the template in the editor.
    
       Parse.initialize("BbjrthNLZ49b6pQ1hvYCUc9RATqUleRw4on1uPwV", "WjBd5QzC1t5Q6JnEuI4uJU38tkL7h5PzUzZnhmxO");
      
-     var GameScore = Parse.Object.extend("Question");
-    var query = new Parse.Query(GameScore);
+     //var GameScore = Parse.Object.extend("Question");
+    var question = Parse.Object.extend("testquestions");
+    var query = new Parse.Query(question);
     query.find({
       success: function(results) {
         alert("Successfully retrieved " + results.length + " scores.");
