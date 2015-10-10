@@ -1,0 +1,66 @@
+<h3>{{ message }}</h3>
+<div>
+
+    <form>
+        <div class="form-group">
+            <label for="txtQuestionID">ID</label>
+            <input type="number" class="form-control" id="txtQuestionID" placeholder="Enter Question ID" data-ng-model="currentQuestion.questionID">
+        </div>
+        <div class="form-group">
+            <label for="txtQuestion">Question Text</label>
+            <textarea class="form-control" id="txtQuestion" placeholder="Enter Question text" data-ng-model="currentQuestion.questionText"
+                   rows="5"   ></textarea>
+</div>
+        <div class="form-group">
+            <label for="txtHelper">Helper Text</label>
+            <textarea class="form-control" id="txtHelper" placeholder="Enter helper text" data-ng-model="currentQuestion.helperText"
+                   rows="10"   ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="checkbox-inline" >
+                <input type="checkbox" ng-model="currentQuestion.showMisdemeanors" ng-true-value="true" ng-false-value="false">
+                Show Misdemeanors
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="lblAnswers">Answers:</label>
+
+            <table class="table table-striped table-hover" style="padding: 5px; border: 1px solid grey">
+                <thead>                     
+                <th>Answer Text</th>
+                <th>Next Question ID</th>
+
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in currentQuestion.answers">
+                        <td>
+                            <textarea class="form-control" data-ng-model="x.answerText" ></textarea>
+                       </td>
+                        <td>
+                            <textarea class="form-control" data-ng-model="x.next" ></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea class="form-control" id="txtNewAnswerText" placeholder="Enter text for new answer" data-ng-model="newAnswer.answerText" ></textarea>
+                        </td>
+                        <td>
+                            <textarea class="form-control" id="txtNewNextArea" placeholder="Enter questionID or state for next" data-ng-model="newAnswer.next" ></textarea>
+                            <button class="btn btn-success" data-ng-click="addAnswerToModel()"<span class='glyphicon glyphicon-pencil'></span> Add </button>
+                        </td>
+                    </tr>
+                </tbody>
+
+                </table>
+                
+</div>
+    <div class="form-group">
+        <button class="btn btn-success" data-ng-click="updateQuestion()"<span class='glyphicon glyphicon-pencil'></span> Update </button>
+    </div>
+</form>
+
+</div>
+
+
+</script>
+    
