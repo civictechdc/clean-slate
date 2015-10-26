@@ -1,0 +1,12 @@
+{
+  "strings": {
+    "home": {
+      "header": "Welcome to Clean Slate DC",
+      "description": "This is a resource to assist users in determining IF and WHEN an arrest, charge or convictionon a D.C. criminal record MAY be eligible for sealing or for fixing errors on your record.  Are you looking to expunge your record? Please note that the District of Columbia does not allow for expunging a record; the options that are available include 1) the ability to seal a record, 2) dispute an error on a record, 3) or prove that you are innocent of something that appears on your record and thus want it completely removed.  More information on the benefits of sealing or correcting your record can be found when you click on the FAQs section in the menu in the right hand upper corner of this site.",
+      "disclaimerHeader": "Disclaimer",
+      "disclaimer": "This site does not constitute a legal service and is not intended to provide legal advice. If you are unsure about any questions, you should speak with a lawyer (for free!) at the Expungment Clinic. The Expungement Clinic has an intake center EVERY MONDAY from 12-7 PM  at 510 4th Street, NW, Room 113, Building B (Landlord Tenant Court) You can also contact Lori Silberman at lsilberman@dclawstudents.org. Tel: 202.638.4798 ext. 215.",
+      "agreement": "By using www.cleanslateDC.com you agree to the privacy policy and terms of use.",
+      "agreementUnderstood": "Ok, I understand. Let's Get Started"
+    }
+  }
+}
