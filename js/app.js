@@ -9,6 +9,7 @@ angular.module("app", ["ngSanitize", "ui.router", "pascalprecht.translate"])
         });
         $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy(null);
+        $translateProvider.usePostCompiling(true);
 
 
 

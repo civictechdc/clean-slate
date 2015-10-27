@@ -7,6 +7,24 @@
       "disclaimer": "This site does not constitute a legal service and is not intended to provide legal advice. If you are unsure about any questions, you should speak with a lawyer (for free!) at the Expungment Clinic. The Expungement Clinic has an intake center EVERY MONDAY from 12-7 PM  at 510 4th Street, NW, Room 113, Building B (Landlord Tenant Court) You can also contact Lori Silberman at lsilberman@dclawstudents.org. Tel: 202.638.4798 ext. 215.",
       "agreement": "By using www.cleanslateDC.com you agree to the privacy policy and terms of use.",
       "agreementUnderstood": "Ok, I understand. Let's Get Started"
+    },
+    "faq": {
+      "header":"FAQs",
+      "haveRecordQuestion": "How do I know if I have a DC Criminal Record?",
+      "haveRecordAnswer": "If you have ever been arrested, charged, convicted or had a warrant out in DC for a suspected violation of the DC code, you have a DC criminal record. The best way to determine whether you have a DC Criminal Record is to obtain a copy of your COMPLETE record from the Metropolitan Police Department and the Superior Court of the District of Columbia.",
+      "needRecordQuestion": "Do I need my DC Criminal Record to use this site?",
+      "needRecordAnswer": "YES! You will need a copy of your COMPLETE DC criminal record in order to answer the questions through this site. A complete criminal record is made up of your arrest record that you can receive from the Police Department (MPD) AND your court record that you can receive from the DC Superior Court. You must have both records to continue as a judge will deny your request if you do not submit your complete cirminal record. Click <a ui-sref=\"acquire\">here</a> for information about how to acquire your criminal record. It is also helpful to have a copy of criminal records that you may have in other states.",
+      "getRecordQuestion": "How do I obtain a copy of my DC Criminal Record?",
+      "getRecordAnswer": "Click <a ui-sref=\"acquire\">here</a>",
+      "sealMeaningQuestion": "Since DC does not allow anyone to expunge their criminal record, What does it mean to seal a DC Criminal Record?",
+      "sealMeaningAnswer": "If a DC criminal record is sealed, the government deletes or limits access to it. A sealed record can generally not be used against you if are applying for a job, in other background checks or in certain legal proceedings. Even after your DC criminal record is sealed, there are certain agencies and employers that CAN still see your record.",
+      "findLawyerQuestion": "Where can I find a lawyer to assist me with my motion to seal my DC Criminal Record?",
+      "findLaywerAnswer1": "CONNECT WITH AN ATTORNEY ABOUT GETTING YOUR RECORD EXPUNGED.",
+      "findLaywerAnswer2": "No appointment needed. Intake EVERY MONDAY, from 12-7 PM",
+      "findLaywerAnswer3": "Contact Lora Silberman at lsilberman@dclawstudents.org",
+      "amIEligibleQuestion": "What do I do if I am not currently eligible for sealing my criminal record?",
+      "amIEligibleAnswer1": "Even though you are not eligible for sealing your criminal record, it is now against the law for an employer to ask you about your criminal record before they have provided you a conditional offer of employment. In 2014, The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made.",
+      "amIEligibleAnswer2": "If someone ask you about your criminal history (before giving you a conditional offer) or if there is a question on the job application about your criminal history, you should immediatly file a complaint with the DC Office of Human Rights (OHR) <a href=\"http://ohr.dc.gov/page/returningcitizens\">here</a> Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested."
     }
   }
 }
