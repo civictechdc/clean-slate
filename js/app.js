@@ -1,16 +1,7 @@
-angular.module("app", ["ngSanitize", "ui.router", "pascalprecht.translate"])
+angular.module("app", ["ngSanitize", "ui.router"])
     //Config
-    .config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
         "use strict";
-
-        $translateProvider.useStaticFilesLoader({
-            prefix: 'locale-',
-            suffix: '.json'
-        });
-        $translateProvider.preferredLanguage('en');
-        $translateProvider.useSanitizeValueStrategy(null);
-
-
 
         // Default location...
         $urlRouterProvider.otherwise("/");
@@ -58,19 +49,6 @@ angular.module("app", ["ngSanitize", "ui.router", "pascalprecht.translate"])
       });
     })
     //Controller
-    .controller("NavController", function NavController($scope, $translate){
-      $scope.language = 'en';
-
-      $scope.useSpanish = function() {
-        $scope.language = 'es';
-        $translate.use('es');
-      }
-
-      $scope.useEnglish = function() {
-        $scope.language = 'en';
-        $translate.use('en');
-      }
-    })
     .controller("EligibiltyController", function EligibilityController(
         $scope,
         $http,
@@ -195,12 +173,12 @@ angular.module("app", ["ngSanitize", "ui.router", "pascalprecht.translate"])
                 width: $scope.progressBar() + "%"
             };
         };
-
+        
         $scope.renderHtml = function(html_code)
         {
             return $sce.trustAsHtml(html_code);
         };
-
+        
         $scope.print = function print() {
             ga('send', 'event', 'button', 'click', 'print');
             $window.print();
