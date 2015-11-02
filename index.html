@@ -39,13 +39,15 @@
                         <img src="img/logo.jpg" alt="logo" width="200">
                     </a>
                 </div>
-                <div id="navbar-content" class="collapse navbar-collapse">
+                <div id="navbar-content" class="collapse navbar-collapse" ng-controller="NavController">
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
                             <li><a ui-sref="home" data-toggle="collapse" data-target="#navbar-content.in">Home</a></li>
-                            <li><a ui-sref="acquire" data-toggle="collapse" data-target="#navbar-content.in">Acquire Your Record/Rap Sheet</a></li>
+                            <li><a ui-sref="acquire" data-toggle="collapse" data-target="#navbar-content.in">How to acquire and read your criminal record</a></li>
                             <li><a ui-sref="faqs" data-toggle="collapse" data-target="#navbar-content.in">FAQs</a></li>
                             <li><a ui-sref="definitions" data-toggle="collapse" data-target="#navbar-content.in">Definitions</a></li>
+                            <li><a data-toggle="collapse" ng-show="language === 'en'" data-target="#navbar-content.in" href="#" ng-click="useSpanish()">Espanol</a></li>
+                            <li><a data-toggle="collapse" ng-hide="language === 'en'" data-target="#navbar-content.in" href="#" ng-click="useEnglish()">English</a></li>
                             <li><a ui-sref="contact" data-toggle="collapse" data-target="#navbar-content.in">Contact Us</a></li>
                         </ul>
                     </div>
@@ -62,9 +64,11 @@
         <script src="//writeclearly.openadvocate.org/oarc/oarc.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-sanitize.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.min.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.8.1/angular-translate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate-loader-static-files/2.8.1/angular-translate-loader-static-files.min.js"></script>
         <!-- App -->
         <script src="js/app.js"></script>
     </body>

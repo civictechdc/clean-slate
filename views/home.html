@@ -2,40 +2,35 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                <h1>Welcome to Clean Slate DC</h1>
-                <p>
-                    This is a resource to assist users in determining IF and WHEN an arrest, charge or conviction
-                    on a D.C. criminal record MAY be eligible for sealing or for fixing errors on your record.
-                    More information on the benefits of sealing or correcting your record can be found when you
-                    click on the FAQs section.
+                <h1 translate>strings.home.header</h1>
+                <p translate>
+                    strings.home.description
                 </p>
 
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Disclaimer
+                                <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" translate>
+                                    strings.home.disclaimerHeader
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <div class="panel-body">
-                                This site does not constitute a legal service and is not intended to provide legal
-                    advice. If you are unsure about any questions, you should speak with a lawyer (for free!) through
-                    the Community Defender Division of the Public Defender Service of DC.
+                            <div class="panel-body" translate>
+                                strings.home.disclaimer
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <p>
-                    By using www.cleanslateDC.com you agree to the privacy policy and terms of use.
+                <p translate>
+                    strings.home.agreement
                 </p>
             </div>
             <div class="panel-footer">
-                <a class="btn btn-primary btn-block" ui-sref="eligibility({questionId: '0'})">
-                    Ok, I understand. Let's Get Started
+                <a class="btn btn-primary btn-block" ui-sref="eligibility({questionId: '0'})" translate>
+                    strings.home.agreementUnderstood
                 </a>
             </div>
         </div>
