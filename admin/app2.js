@@ -1,46 +1,7 @@
 Parse.initialize("BbjrthNLZ49b6pQ1hvYCUc9RATqUleRw4on1uPwV", "WjBd5QzC1t5Q6JnEuI4uJU38tkL7h5PzUzZnhmxO");
 
 //Define an angular module for our app
-var sampleApp = angular.module('sampleApp', [])
-.run(['$rootScope', function($scope) {
-  $scope.currentUser = Parse.User.current();
- 
-  $scope.signUp = function(form) {
-    var user = new Parse.User();
-    user.set("email", form.email);
-    user.set("username", form.username);
-    user.set("password", form.password);
- 
-    user.signUp(null, {
-      success: function(user) {
-        $scope.currentUser = user;
-        $scope.$apply(); // Notify AngularJS to sync currentUser
-      },
-      error: function(user, error) {
-        alert("Unable to sign up:  " + error.code + " " + error.message);
-      }
-    });    
-  };
- 
-  $scope.logIn = function(form) {
-      
-  Parse.User.logIn(  form.username, form.password, {
-        success: function(user) {
-           $scope.currentUser = user;
-           $scope.$apply(); // Notify AngularJS to sync currentUser
-         },
-        error: function(user, error) {
-           alert("Unable to sign up:  " + error.code + " " + error.message);
-         }
-    });
-   
-  };
- 
-  $scope.logOut = function(form) {
-    Parse.User.logOut();
-    $scope.currentUser = null;
-  };
-}]);
+var sampleApp = angular.module('sampleApp', []);
 
 //Define Routing for app
 //Uri /AddNewOrder -> template AddOrder.html and Controller AddOrderController
@@ -48,41 +9,24 @@ var sampleApp = angular.module('sampleApp', [])
 sampleApp.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
-        when('/Home', {
-            templateUrl: 'views/loginView.html',
+        when('/New', {
+            templateUrl: 'templates/showQuestionForm.html',
             controller: 'AddOrderController'
         }).
-        when('/Reports', {
-            templateUrl: 'views/viewReports.html',
-            controller: 'ShowOrdersController'
-        }).
-        when('/Motions', {
-            templateUrl: 'views/helpMotions.html',
-            controller: 'showQuestionController'
-        }).               
-        when('/Partners', {
-            templateUrl: 'views/viewPartners.html',
-            controller: 'showQuestionController'
-        }).
-        when('/Feedback', {
-            templateUrl: 'views/viewFeedback.html',
-            controller: 'ShowOrdersController'
-        }).
-        when('/Definitions', {
-            templateUrl: 'views/editDefinitions.html',
+        when('/List', {
+            templateUrl: 'templates/QuestionsList.html',
             controller: 'ShowOrdersController'
         }).
         when('/Questions', {
-            templateUrl: 'views/viewQuestions.html',
+            templateUrl: 'templates/parseQuestions.html',
             controller: 'questionController'
         }).
         when('/Questions/:questionId', {
             templateUrl: 'templates/showQuestionForm.html',
             controller: 'showQuestionController'
         }).
-
         otherwise({
-            redirectTo: '/Home'
+            redirectTo: '/AddNewOrder'
         });
   }]);
 
@@ -421,3 +365,29 @@ sampleApp.controller('showQuestionController', function ($scope, $routeParams, s
 });
 
 
+angular.module('AuthApp', [])
+.run(['$rootScope', function($scope) {
+  $scope.currentUser = Parse.User.current();
+ 
+  $scope.signUp = function(form) {
+    var user = new Parse.User();
+    user.set("email", form.email);
+    user.set("username", form.username);
+    user.set("password", form.password);
+ 
+    user.signUp(null, {
+      success: function(user) {
+        $scope.currentUser = user;
+        $scope.$apply(); // Notify AngularJS to sync currentUser
+      },
+      error: function(user, error) {
+        alert("Unable to sign up:  " + error.code + " " + error.message);
+      }
+    });    
+  };
+ 
+  $scope.logOut = function(form) {
+    Parse.User.logOut();
+    $scope.currentUser = null;
+  };
+}]);

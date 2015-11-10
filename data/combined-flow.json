@@ -3,10 +3,10 @@
   "endStates": {
     "comment0": "*****************START OF LEGAL AID END STATES *********************",
     "acquireYourRecord": {
-      "eligibilityText": "YTo determine your eligibility for sealing, you will need your complete criminal record. Your complete criminal record is made two things: 1) your police record/record of arrests and 2) your court record/record of convictions",
+      "eligibilityText": "You can either access your criminal record online or visit the DC court in person to acquire your complete record.",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "In the menu above, please visit 'Acquire Your Record/Rap Sheet' for instructions on how to quickly acquire your complete criminal record."
+      "helperText": "In the menu above, please visit 'Acquire Your Record/Rap Sheet' for more instructions."
     },
     "comment100": "*****************START OF FUGITIVE JUSTICE END STATES *********************",
     "ineligibleFJ": {
@@ -20,7 +20,9 @@
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "You may be eligible for sealing under \"Fugitive from justice arrest 16-803.01\")",
+      "helperText": 
+          "You may be eligible for sealing under \"Fugitive from justice arrest 16-803.01\")" 
+          ,
       "showAttorneyInfo": "true"
     },
     "eligibleFJ2": {
@@ -267,7 +269,7 @@
         "helperText": []
       },
     "25": {
-      "questionText": "Do you have access to your complete criminal record right now? Your complete criminal record A complete criminal record is made up of your arrest record that you can receive from the Police Department (MPD) AND your court record that you can receive from the DC Court System. You must have both records to continue as a judge will deny your request if you do not submit your complete cirminal record. Have you already acquired your complete criminal record?",
+      "questionText": "Do you have access to your complete criminal record right now?",
       "answers": [
         {
           "answerText": "Yes",
@@ -846,7 +848,7 @@
       ]
     },
     "614": {
-      "questionText": "Has it been 8 years since you were off papers? You can also look at your criminal record and search for the charge disp date. If it has been 8 years since your charge disp date, then choose yes.",
+      "questionText": "Has it been 8 years since you were off papers?",
       "answers": [
         {
           "answerText": "Yes",

@@ -24,7 +24,7 @@ var sampleApp = angular.module('sampleApp', [])
  
   $scope.logIn = function(form) {
       
-  Parse.User.logIn(  form.username, form.password, {
+  Parse.User.logIn(form.username, form.password, {
         success: function(user) {
            $scope.currentUser = user;
            $scope.$apply(); // Notify AngularJS to sync currentUser
@@ -58,29 +58,25 @@ sampleApp.config(['$routeProvider',
         }).
         when('/Motions', {
             templateUrl: 'views/helpMotions.html',
-            controller: 'showQuestionController'
-        }).               
-        when('/Partners', {
-            templateUrl: 'views/viewPartners.html',
-            controller: 'showQuestionController'
+            controller: 'ShowOrdersController'
         }).
         when('/Feedback', {
-            templateUrl: 'views/viewFeedback.html',
-            controller: 'ShowOrdersController'
-        }).
-        when('/Definitions', {
-            templateUrl: 'views/editDefinitions.html',
-            controller: 'ShowOrdersController'
-        }).
-        when('/Questions', {
-            templateUrl: 'views/viewQuestions.html',
+            templateUrl: 'views/sendFeedback.html',
             controller: 'questionController'
         }).
-        when('/Questions/:questionId', {
-            templateUrl: 'templates/showQuestionForm.html',
+        when('/Clients', {
+            templateUrl: 'views/NewClient.html',
             controller: 'showQuestionController'
         }).
-
+        when('/Clients/:clientId', {
+            templateUrl: 'views/viewClientDetails.html',
+            controller: 'showQuestionController'
+        }).
+   
+        when('/Motions', {
+            templateUrl: 'views/helpMotions.html',
+            controller: 'showQuestionController'
+        }).
         otherwise({
             redirectTo: '/Home'
         });

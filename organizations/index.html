@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>   
 
     <head lang="en">
-        <title>Clean Slate Administration</title>
+        <title>Clean Slate - Organization </title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
         <script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
         <meta charset="utf-8">
@@ -33,18 +33,51 @@ and open the template in the editor.
         <!-- End Google Analytics -->
     </head>
 <body ng-app="sampleApp">
-       
-  <form ng-hide="currentUser">
-      
+   <form ng-hide="currentUser">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-content">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" ui-sref="home">
+                        <img src="img/logo.jpg" alt="logo" width="200">
+                    </a>
+                </div>
+                <div id="navbar-content" class="collapse navbar-collapse">
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/HTML5Application/index.html#home" >Home</a></li>
+                            <li><a href="/HTML5Application/index.html#/acquire" >Acquire Your Record/Rap Sheet</a></li>
+                            <li><a href="/HTML5Application/index.html#/faqs" >FAQs</a></li>
+                            <li><a href="/HTML5Application/index.html#/definitions" >Definitions</a></li>
+                            <li><a href="/HTML5Application/index.html#/contact" >Contact Us</a></li>
+                            <li><a href="admin" >Login</a></li>
+                       
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+  
     <div class="container">
-
-        <p> </p>
+    
+        <h1>Clean Slate Partners</h1>
         
-        <h2 >Sign In</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" ng-model="user.email" class="form-control" placeholder="Email address" required autofocus>
-        <br />
+        <p>
+            Clean Slate partners with a number of legal clinics in the DC area. 
+            These legal clinics have signed MOUs and are allowed to save profiles 
+            for clients, draft motions, and track the status of motions as well.
+        </p>  
+        <p>
+             If you are interested in becoming a Clean Slate partner, please email us!
+        </p>
         
+        <div style="max-width: 480px">
+            
+        <h2 >Sign In</h2>  
         <label for="inputEmail" class="sr-only">User Name</label>
         <input type="username" id="inputName" ng-model="user.username" class="form-control" placeholder="Username" required autofocus>
         <br />
@@ -57,13 +90,11 @@ and open the template in the editor.
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" ng-click="logIn(user)" >Sign Up</button>
  <br />
- <button class="btn btn-lg btn-primary btn-block" ng-click="signUp(user)" >Log In</button>
+ <button class="btn btn-lg btn-primary btn-block" ng-click="logIn(user)" >Log In</button>
  
-
+        </div>
 </div>
-        
   </form>      
       
   <div ng-show="currentUser">
@@ -82,12 +113,12 @@ and open the template in the editor.
                 <div id="navbar-content" class="collapse navbar-collapse">
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li><a ui-sref="home" data-toggle="collapse" data-target="#navbar-content.in">Home</a></li>
-                            <li><a ui-sref="Reports" data-toggle="collapse" data-target="#navbar-content.in">View Reports</a></li>
-                            <li><a ui-sref="Organizations" data-toggle="collapse" data-target="#navbar-content.in">Partners</a></li>
-                            <li><a ui-sref="Questions" data-toggle="collapse" data-target="#navbar-content.in">Update Questions</a></li>
-                            <li><a ui-sref="definitions" data-toggle="collapse" data-target="#navbar-content.in">Definitions</a></li>
-                            <li><a ui-sref="contact" data-toggle="collapse" data-target="#navbar-content.in">Contact Us</a></li>
+                            <li><a href="#/Home" >Home</a></li>
+                            <li><a href="#/Clients" >View Clients</a></li>
+                            <li><a href="#/Reports" >View Reports</a></li>
+                            <li><a href="#/Motions" >Filing Motions</a></li>
+                            <li><a href="#/contact" >Contact Us</a></li>
+         
                             <li><a ng-click="logOut()">Log out</a></li>
                         </ul>
                     </div>
@@ -95,8 +126,13 @@ and open the template in the editor.
             </div>
         </nav>
 
-   <div ng-view></div>    
-  </div>
+        <div class="container">
+   <h2>Logged in as: {{currentUser.get('username')}}</h2>
+        
+            <div ui-view></div>
+        </div>
+      
+   </div>
         <script src="app.js"></script>
 </body>
 </html>
