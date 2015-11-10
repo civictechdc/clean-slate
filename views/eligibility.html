@@ -53,29 +53,25 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div class="alert alert-info"
+                        ng-if="currentState.helperText.length"
+                        ng-repeat="text in currentState.helperText track by $index">
+                        <i class="glyphicon glyphicon glyphicon-info-sign"></i> {{ text }}
+                    </div>
                     
-                    <div class="alert alert-info"
-                        ng-if="currentState.helperText.length"
-                        ng-repeat="text in currentState.helperText track by $index">
-                        <i class="glyphicon glyphicon glyphicon-info-sign"></i> {{ text }}
-                    </div>
-
-
-                    <div class="alert alert-info"
-                        ng-if="currentState.helperText.length"
-                        ng-repeat="text in currentState.helperText track by $index">
-                        <i class="glyphicon glyphicon glyphicon-info-sign"></i> {{ text }}
-                    </div>
-
+                    
                 </div>
 
+              
+                
                 <!-- Unlocked state -->
                 <div ng-if="eligibilityKnown">
                     <div class="alert" ng-class="getLevelClass()">
                         <i ng-class="currentState.icon" ng-show="currentState.icon"></i>
                         {{ currentState.eligibilityText }}
                     </div>
-                    <div class="alert alert-info" ng-show="currentState.helperText.length">
+                    <div class="alert alert-info"  >
                         <i class="glyphicon glyphicon-info-sign"></i> 
                         {{ currentState.helperText }}
                     </div>

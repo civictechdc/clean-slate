@@ -59,7 +59,7 @@
       "eligibilityText": "Convictions are not eligible for sealing under actual innocence.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You may be eligible to seal under a different statute.  Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. "
+      "helperText": "You may be eligible to seal under a different statute.  Hit \"restart\" and try to seal the crime under another category (i.e. conviction or non-conviction).   Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. "
     },
     "ineligibleAI2": {
       "eligibilityText": "You are likely not eligible.",
@@ -848,7 +848,7 @@
       ]
     },
     "614": {
-      "questionText": "Has it been 8 years since you were off papers?",
+      "questionText": "You can also look at your criminal record and search for the charge disposition date. If it has been 8 years since your charge disposition date, then choose Yes.",
       "answers": [
         {
           "answerText": "Yes",
@@ -875,12 +875,12 @@
           "next": "621a"
         }
       ],
-      "helperText": "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list.",
+      "helperText": ["If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."],
       "showIneligibleMisdemeanors": "true"
     },
     
         "621a": {
-      "questionText": "Were you arrested or charged with a misdemeanor of felony that involved assualting someone you know (i.e. a family member/spouse)?",
+      "questionText": "Were you arrested or charged with a misdemeanor of felony that involved assualting someone you are related to by blood or marriage?",
       "answers": [
         {
           "answerText": "Yes",
@@ -891,7 +891,7 @@
           "next": "622"
         }
       ],
-      "helperText": ""
+      "helperText": ["Examples of someone related by blood or marriage are: wife/husband, daughter/son, nephew/neice, aunt/uncle, and an other step family members."]
     },
     
     "622": {
