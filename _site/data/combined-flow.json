@@ -1,0 +1,931 @@
+{
+  "start": "0",
+  "endStates": {
+    "comment0": "*****************START OF LEGAL AID END STATES *********************",
+    "acquireYourRecord": {
+      "eligibilityText": "You can either access your criminal record online or visit the DC court in person to acquire your complete record.",
+      "icon": "glyphicon glyphicon-flag",
+      "level": "warning",
+      "helperText": "In the menu above, please visit 'Acquire Your Record/Rap Sheet' for more instructions."
+    },
+    "comment100": "*****************START OF FUGITIVE JUSTICE END STATES *********************",
+    "ineligibleFJ": {
+      "eligibilityText": "You may be eligible, read below. ",
+      "icon": "glyphicon glyphicon-flag",
+      "level": "warning",
+      "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
+      "showAttorneyInfo": "true"
+    },
+    "eligibleFJ": {
+      "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": 
+          "You may be eligible for sealing under \"Fugitive from justice arrest 16-803.01\")" 
+          ,
+      "showAttorneyInfo": "true"
+    },
+    "eligibleFJ2": {
+      "eligibilityText": "You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding state.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "",
+      "showAttorneyInfo": "true"
+    },
+    "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
+    "eligibleIC": {
+      "eligibilityText": "You may be eligible to file. See directions below.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "",
+      "showAttorneyInfo": "true"
+    },
+    "eligibleIC2": {
+      "eligibilityText": "You may be eligible to file. ",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "You may file a motion to seal if there are no fingerprints to compare and if you swear under penalty of perjury that the record you are trying to seal is not yours.",
+      "showAttorneyInfo": "true"
+    },
+    "eligibleIC3": {
+      "eligibilityText": "You may be eligible to file. ",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "If you are unsure whether the record is yours you can be eligible for getting a fingerprint comparison.",
+      "showAttorneyInfo": "true"
+    },
+    "comment300": "*****************START OF ACTUAL INNOCENCE END STATES *********************",
+    "ineligibleAI": {
+      "eligibilityText": "Convictions are not eligible for sealing under actual innocence.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "You may be eligible to seal under a different statute.  Hit \"restart\" and try to seal the crime under another category (i.e. conviction or non-conviction).   Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. "
+    },
+    "ineligibleAI2": {
+      "eligibilityText": "You are likely not eligible.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Please hit the \"start over\" button in the upper left hand corner to check your eligibility under another option."
+    },
+    "eligibleAI": {
+      "eligibilityText": "You may be eligible for sealing with no waiting period.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. ",
+      "showAttorneyInfo": "true"
+    },
+    "comment400": "*****************START OF DECRIMINALIZED OFFENSE END STATES *********************",
+    "eligibleDOa": {
+      "eligibilityText": "You may be eligible to file to seal the records of this arrest and may be able to file at any time.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ",
+      "showAttorneyInfo": "true"
+    },
+    "eligibleDOb": {
+      "eligibilityText": "If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ",
+    "showAttorneyInfo": "true"
+    },
+    "comment500": "*****************START OF Non-Convictions and Convictions END STATES *********************",
+    "ineligiblePC": {
+      "eligibilityText": "If you have a pending case, you must wait until the case is over. ",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "After your case is over, please return to check whether your records can be sealed."
+    },
+    
+    "IneligibleFC": {
+      "eligibilityText": "Your felony conviction is not eligible for sealing. ",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "You have been convicted of an ineligible felony and it is not eligible for sealing.",
+      "showBanTheBox": "true"
+    },
+    "IneligibleFBRA": {
+      "eligibilityText": "This offense is not eligible for sealing.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "You have a disqualifying conviction. Your Felony BRA (failure to appear in court) conviction is not eligible for sealing. ",
+      "showBanTheBox": "true"
+      
+    },
+    "EligibleFC8": {
+      "eligibilityText": "This offense may be eligible for sealing.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "",
+      "showAttorneyInfo": "true"
+    },
+    "IneligibleFC8": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "You will have to wait at least 8 years after you go \"off papers\" before filing the motion to seal your record.",
+      "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+  },
+    "IneligibleMC": {
+      "eligibilityText": "This offense is not eligible for sealing.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "You have been convicted of an ineligible misdemeanor and it is not eligible for sealing.  Also, you can NEVER seal any other conviction on your DC criminal record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+  },
+    "IneligibleEMC2": {
+      "eligibilityText": "This offense is not eligible for sealing.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "You have a disqualifying conviction. Your eligible misdemeanor conviction is not eligible for sealing. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "showBanTheBox": "true"
+    },
+    "EligibleMC8": {
+      "eligibilityText": "This offense may be eligible for sealing.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "If you have more than one eligible misdemeanor conviction, you can only seal your most recent eligible misdemeanor conviction after the 8 year waiting period.",
+      "showAttorneyInfo": "true"
+    },
+    "IneligibleMC8": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "This offense is ineligible at this time. You will have to wait at least 8 years after you go \"off papers\" before filing the motion to seal your record.",
+      "showBanTheBox": "true"
+    },
+    "IneligiblePDNC": {
+      "eligibilityText": "This offense is not eligible for sealing.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": " Your misdemeanor or felony non-conviction is permanently disqualified from being sealed. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
+      "showBanTheBox": "true"
+    },
+    "IneligibleFC10": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed.  ",
+          "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "IneligibleMC5": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "IneligibleNC2": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after a 2 year waiting period has passed. ",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "EligibleNC2": {
+      "eligibilityText": "This offense may be eligible for sealing.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "If you have any other arrests or charges for additional offenses that resulted in non-convictions on your D.C. Criminal Record that you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+        },
+    "IneligibleFNC10": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed. ",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "IneligibleMNC5": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "EligibleNCT3": {
+      "eligibilityText": "This offense may be eligible for sealing.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "IneligibleNCT3": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Your non-conviction is not eligible for sealing until after the 3 year waiting period after your case was terminated.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "EligibleNCT4": {
+      "eligibilityText": "This offense may be eligible for sealing.",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+      
+    },
+    "IneligibleNCT4": {
+      "eligibilityText": "This offense is not eligible for sealing at this time.",
+      "icon": "glyphicon glyphicon-remove-circle",
+      "level": "danger",
+      "helperText": "Your non-conviction is not eligible for sealing until after the 4 year waiting period after your case was terminated.",
+         "showBanTheBox": "true",
+      "showAttorneyInfo": "true"
+    }
+  },
+  "comment": "*****************START OF QUESTIONS *********************",
+  "questions": {
+    "0": {
+        "questionText": "Do you identify with any of these categories?",
+        "answers": [
+          {
+            "answerText": "I was previously incarcerated, charged or arrested",
+            "next": "25"
+          },
+          {
+            "answerText": "I am a lawyer or law student",
+            "next": "25"
+          }
+        ],
+        "helperText": []
+      },
+    "25": {
+      "questionText": "Do you have access to your complete criminal record right now?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "50"
+        },
+        {
+          "answerText": "No",
+          "next": "acquireYourRecord"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "50": {
+      "questionText": "Your offense may be eligible for sealing under one of the following categories. Please select an option that applies to your D.C. Criminal Record.",
+      "answers": [
+        {
+          "controls":"collapseOne",
+          "labelledby":"headingOne",
+          "shortAnswerText": "Fugitive arrested; warrant in other state...",
+          "answerText": "I was arrested in DC because I had a warrant in another state (i.e. another state).",
+          "next": "101"
+        },
+        {
+          "controls":"collapseTwo",
+          "labelledby":"headingTwo",
+          "shortAnswerText": "Criminal record incorrect...",
+          "answerText": "My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
+          "next": "201"
+        },
+        {
+          "controls":"collapseThree",
+          "labelledby":"headingThree",
+          "shortAnswerText": "Innocent of crime on my record...",
+          "answerText":"I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.", 
+          "next": "300"
+        },
+        {
+          "controls":"collapseFour",
+          "labelledby":"headingFour",
+          "shortAnswerText": "Marijuana-related arrests/charge or conviction...",
+          "answerText": "I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
+          "next": "401"
+        },
+        {
+          "controls":"collapseFive",
+          "labelledby":"headingFive",
+          "shortAnswerText": "Seal a conviction...",
+          "answerText": " I have a conviction that I would like to seal that does not fit into any of the categories above.",
+          "next": "600"
+        },
+        {
+          "controls":"collapseSix",
+          "labelledby":"headingSix",
+          "shortAnswerText": "Seal a non-conviction...",
+          "answerText": "I have an arrest or charge that resulted in a non-conviction that I would like to seal that does not fit into any of the categories above.",
+          "next": "500"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "50_HOLDER_FOR_LATER": {
+      "questionText": "___________",
+      "answers": [
+        {
+          "answerText": "I was arrested in DC because I had a warrant in another state (i.e. another state).",
+          "next": "101"
+        },
+        {
+          "answerText": "My DC criminal record is INCORRECT. There are cases or arrests listed that are not mine.  Someone may have used my name or the information was entered incorrectly.",
+          "next": "201"
+        },
+        {
+          "answerText": "I was arrested for or charged with a crime in DC, BUT I was NOT convicted of it, AND I can prove to the Court that I was actually innocent.",
+          "next": "300"
+        },
+        {
+          "answerText": "I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
+          "next": "401"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "comment100": "*****************START OF FUGITIVE JUSTICE QUESTIONS *********************",
+    "101": {
+      "questionText": "Have you appeared before the proper authority in the state that issued the warrant?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "102"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligibleFJ"
+        }
+      ],
+      "helperText": [
+        "The proper authority is the court that issued the warrant."
+      ]
+    },
+    "102": {
+      "questionText": "Can you prove that you appeared before the proper authority in the state that issued the warrant?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "eligibleFJ"
+        },
+        {
+          "answerText": "No",
+          "next": "eligibleFJ2"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
+    "201": {
+      "questionText": "Do you know if the person who was actually responsible for the offense was fingerprinted at the time of the arrest?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "eligibleIC"
+        },
+        {
+          "answerText": "No",
+          "next": "202"
+        }
+      ],
+      "helperText": [
+        "(You may know the answer to this if you have submitted fingerprints to the Metropolitan Police Department (MPD) to prove that you were not the person arrested and MPD has told you that they do not have fingerprints on file for that arrest to compare to your prints.)"
+      ]
+    },
+    "202": {
+      "questionText": " Can you swear under oath that the record is not yours?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "eligibleIC2"
+        },
+        {
+          "answerText": "No",
+          "next": "eligibleIC3"
+        }
+      ],
+      "helperText": [
+        "Swearing under oath - you make a commitment to tell the truth (especially in a court of law); if you lie after swearing that you will tell the truth, you may become subject to prosecution perjury Perjury- The crime of willfully and knowingly making a false statement about a material fact after swearing to tell the truth"
+      ]
+    },
+    "comment300": "*****************START OF ACTUAL INNOCENCE QUESTIONS *********************",
+    "300": {
+      "questionText": "Were you arrested for or charged with crime but \"not convicted\" of that crime as defined below?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "301"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligibleAI"
+        }
+      ],
+      "helperText": [
+        " \"Not convicted\" means (a) the prosecutor did not paper or did not charge the case; OR (b) the prosecutor dropped the charges against the you before trial; OR  (c) the court dismissed the charges against the you; OR (d) you were acquitted (found “not guilty”) of the crime after a trial. "
+      ]
+    },
+    "301": {
+      "questionText": "Can you prove that the offense for which you were arrested or charged did not occur OR that you did not commit the offense for which you were arrested or charged?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "eligibleAI"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligibleAI2"
+        }
+      ],
+      "helperText": [
+        "You have the burden of proving to the Court that you are actually innocent through factual circumstances and/or relevant post offense occurrences that support a conclusion that you were innocent. The easiest way to prove actual innocence is by presenting facts that can be proven by reliable documents.",
+        "Example 1: You were found guilty of driving without a permit. You really did have a valid permit at the time but a computer glitch indicated that you did not have one when you were arrested. You can now provide information showing that you had a valid permit at the time of the offense.",
+        "Example 2: You were arrested for having a dog off leash but it is not your dog and you can show that it is not your dog.",
+        "Example 3: You were arrested for theft but you have a receipt showing you actually own the property you were accused of stealing.",
+        "Example 4: You have an assault-type charge but you acted in self-defense. You have to show the Judge you believed you were in imminent harm and acted in self-defense. You could provide affidavits from witnesses who saw the fight and who swear that the \"victim\" was really the initial aggressor and you, the arrestee, were just defending yourself. However, affidavits saying \"the other guy started it\" will not be enough to show actual innocence. The judge is still going to have to make credibility findings based on the evidence provided.",
+        "Note: Being found \"not guilty\" is NOT proof of your INNOCENCE."
+      ]
+    },
+    "comment400": "*****************START OF DECRIMINALIZED OFFENSE QUESTIONS *********************",
+    "401": {
+      "questionText": "When you were arrested for, charged with or convicted of a marijuana-related offense, were you ALSO arrested for, charged with or convicted of violating any NON-marijuana related offense or violation of the D.C. Code, the D.C. Municipal Regulations, or the U.S. Code?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "eligibleDOa"
+        },
+        {
+          "answerText": "No",
+          "next": "eligibleDOb"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "comment500": "*****************START OF Non-Conviction QUESTIONS *********************",
+    "500": {
+      "questionText": "Do you have a pending criminal case in ANY state (i.e. D.C. or another state)?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "501"
+        },
+        {
+          "answerText": "No",
+          "next": "531"
+        }
+      ],
+      "helperText": [
+        "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
+      ]
+    },
+    "501": {
+      "questionText": "Is your pending case for a \"minor offense\"",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "531"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligiblePC"
+        }
+      ],
+      "helperText": [
+        "Under DC's sealing statutes, a \"minor offense\" is a traffic offense, disorderly conduct, or an offense that is punishable by a fine only."
+      ]
+    },
+    
+    "531": {
+      "questionText": "Were you arrested or charged with a misdemeanor listed below or a felony(other than Felony BRA--failure to appear in court)?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "560"
+        },
+        {
+          "answerText": "No",
+          "next": "532"
+        }
+      ],
+      "helperText": [
+        "If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."
+      ],
+      "showIneligibleMisdemeanors": true
+    },
+    "532": {
+      "questionText": "Is your misdemeanor or Felony BRA (failure to appear in court) a result of a successful completion of a deferred sentencing agreement?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "540"
+        },
+        {
+          "answerText": "No",
+          "next": "550"
+        }
+      ],
+      "helperText": ""
+    },
+    "540": {
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligiblePDNC"
+        },
+        {
+          "answerText": "No",
+          "next": "554"
+        }
+      ],
+      "helperText": [
+        "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
+      ]
+    },
+    "550": {
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "551"
+        },
+        {
+          "answerText": "No",
+          "next": "554"
+        }
+      ],
+      "helperText": [
+        "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
+      ]
+    },
+    "551": {
+      "questionText": "Based on your previous answer, you have a conviction on your record in addition to the misdemeanor non-conviction you are trying to seal. Is your MOST RECENT conviction a felony or a misdemeanor?",
+      "answers": [
+        {
+          "answerText": "Felony",
+          "next": "552"
+        },
+        {
+          "answerText": "Misdemeanor",
+          "next": "553"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "552": {
+      "questionText": "Has it been at least 10 years since you were off papers for the felony conviction?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "554"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleFC10"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
+    },
+    "553": {
+      "questionText": "Has it been 5 years since you were off papers for the misdemeanor conviction?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "554"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleMC5"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
+    },
+    "554": {
+      "questionText": "Has it been 2 years since you were off papers for the misdemeanor or Felony BRA (failure to appear in court) non-conviction you are trying to seal?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "EligibleNC2"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleNC2"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
+    },
+    "560": {
+      "questionText": "Is your misdemeanor or felony non-conviction a result of a successful completion of a deferred sentencing agreement?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "570"
+        },
+        {
+          "answerText": "No",
+          "next": "580"
+        }
+      ],
+      "helperText": ""
+    },
+    "570": {
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligiblePDNC"
+        },
+        {
+          "answerText": "No",
+          "next": "584"
+        }
+      ],
+      "helperText": [
+        "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
+      ]
+    },
+    "580": {
+      "questionText": "Does any of the following apply to your criminal record in DC and/or any other state?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "581"
+        },
+        {
+          "answerText": "No",
+          "next": "584"
+        }
+      ],
+      "helperText": [
+        "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
+      ]
+    },
+    "581": {
+      "questionText": "Based on your previous answer, you have a conviction on your record in addition to the misdemeanor non-conviction you are trying to seal. Is your MOST RECENT conviction a felony or a misdemeanor?",
+      "answers": [
+        {
+          "answerText": "Felony",
+          "next": "582"
+        },
+        {
+          "answerText": "Misdemeanor",
+          "next": "583"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "582": {
+      "questionText": "Has it been at least 10 years since you were off papers for the felony conviction?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "584"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleFNC10"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
+    },
+    "583": {
+      "questionText": "Has it been 5 years since you were off papers for the misdemeanor conviction?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "584"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleMNC5"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
+    },
+    "584": {
+      "questionText": "Was your misdemeanor or felony non-conviction case that you are trying to seal terminated before you were charged by the prosecutor (otherwise known as \"not papered\") ? ",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "585"
+        },
+        {
+          "answerText": "No",
+          "next": "586"
+        }
+      ],
+      "helperText": []
+    },
+    "585": {
+      "questionText": "Has it been at least 3 years since the day the case was terminated?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "EligibleNCT3"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleNCT3"
+        }
+      ],
+      "helperText": []
+    },
+    "586": {
+      "questionText": "Has it been at least 4 years since the day the case was terminated?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "EligibleNCT4"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleNCT4"
+        }
+      ],
+      "helperText": []
+    },
+    
+        "comment600": "*****************START OF Conviction QUESTIONS *********************",
+
+    "600": {
+      "questionText": "Do you have a pending criminal case in ANY state (i.e. D.C. or another state)?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "601"
+        },
+        {
+          "answerText": "No",
+          "next": "602"
+        }
+      ],
+      "helperText": [
+        "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
+      ]
+    },
+    "601": {
+      "questionText": "Is your pending case for a \"minor offense\"",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "602"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligiblePC"
+        }
+      ],
+      "helperText": [
+        "Under DC's sealing statutes, a \"minor offense\" is a traffic offense, disorderly conduct, or an offense that is punishable by a fine only."
+      ]
+    },
+    "602": {
+      "questionText": "Select the type of conviction you would like to seal on your D.C. record.",
+      "answers": [
+        {
+          "answerText": "Felony conviction",
+          "next": "612"
+        },
+        {
+          "answerText": "Misdemeanor conviction",
+          "next": "621"
+        }
+      ],
+      "helperText": ["Please answer questions for only one arrest at a time."]
+    },
+    "612": {
+      "questionText": "Is your DC felony conviction for Felony BRA (failure to appear in court)?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "613"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleFC"
+        }
+      ],
+      "helperText": []
+    },
+    "613": {
+      "questionText": "Have you subsequently been convicted of another crime in ANY state?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleFBRA"
+        },
+        {
+          "answerText": "No",
+          "next": "614"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "614": {
+      "questionText": "You can also look at your criminal record and search for the charge disposition date. If it has been 8 years since your charge disposition date, then choose Yes.",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "EligibleFC8"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleFC8"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest. You can also look at your criminal record and search for the \"charge disp date\". If it has been 8 years since your \"charge disp date\", then choose yes."
+      ]
+    },
+    "621": {
+      "questionText": "This is a list of crimes that, if you have them, may result in a judge denying your request to seal your record. Were you convicted in DC for any of the crimes listed below?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleMC"
+        },
+        {
+          "answerText": "No",
+          "next": "621a"
+        }
+      ],
+      "helperText": ["If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."],
+      "showIneligibleMisdemeanors": "true"
+    },
+    
+        "621a": {
+      "questionText": "Were you arrested or charged with a misdemeanor of felony that involved assualting someone you are related to by blood or marriage?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleMC"
+        },
+        {
+          "answerText": "No",
+          "next": "622"
+        }
+      ],
+      "helperText": ["Examples of someone related by blood or marriage are: wife/husband, daughter/son, nephew/neice, aunt/uncle, and an other step family members."]
+    },
+    
+    "622": {
+      "questionText": "Have you subsequently been convicted of another crime in ANY state?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "IneligibleEMC2"
+        },
+        {
+          "answerText": "No",
+          "next": "623"
+        }
+      ],
+      "helperText": [
+      ]
+    },
+    "623": {
+      "questionText": "Has it been 8 years since you were off papers?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "EligibleMC8"
+        },
+        {
+          "answerText": "No",
+          "next": "IneligibleMC8"
+        }
+      ],
+      "helperText": [
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest."
+      ]
+    }
+    
+    
+  }
+}
