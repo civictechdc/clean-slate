@@ -1,0 +1,46 @@
+{
+    "conformsTo": "http://codefordc.org/resources/specification.html",
+    "status": "Alpha",
+    "thumbnailUrl": "",
+    "contact": {
+        "name": "Briane",
+        "email": "Brianecknight@gmail.com",
+        "twitter": "bchanellek"
+    },
+    "bornAt": "Reentry Hackathon",
+    "geography": "Washington DC",
+    "politicalEntity": {},
+    "governmentPartner": {},
+    "communityPartner": {
+        "Public Defender Service": "http://www.pdsdc.org/",
+        "Mission Launch": "http://www.mission-launch.org/"
+    },
+    "type": "Web app",
+    "data": {},
+    "needs": [
+        {
+            "need": "document assembly; the ability to take data and insert into pdf or fillable pdf on site"
+        },
+        {
+            "need": "ability to email results of the wizard to oneself"
+        },
+        {
+            "need": "ability to log-in to save a query and then be able to see previous queries all in one page. "
+        }
+    ],
+    "categories": [
+        {
+            "category": "Re-Entry"
+        },
+        {
+            "category": "Expungement"
+        },
+        {
+            "category": "Access to Justice"
+        },
+        {
+            "category": ""
+        }
+    ],
+    "moreInfo": "https://codefordc.slack.com/messages/clean_slate/"
+}
