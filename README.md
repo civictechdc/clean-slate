@@ -1,40 +1,57 @@
 #[clean-slate](https://codefordc.github.io/clean-slate/)
 
-A simple website for people trying to navigate [the process of having records sealed](https://en.wikipedia.org/wiki/Expungement)
+A simple website for Legal Clinics who are trying to help DC residents navigate [the process of having records sealed](https://en.wikipedia.org/wiki/Expungement)
 in DC.
+Their needs:
+* easily and quickly find out if client's criminal records are eligible for sealing.
+* Get intake referrals from site for new clients from job placement sites.
+* train new attorney on process of sealing.
 
-* As a returning citizen I want to easily and quickly find out if my records are eligible for sealing.
-* As a returning citizen, I want step by step information on how to obtain my criminal records in DC.
-* As a returning citizen I want to understand my rights in the records sealing process.
-* As a returning citizen I want help connecting to legal services for help sealing my record.
-* As a returning citizen I want help connecting to other services for returning citizens such as job placement and training.
-* As a returning citizen I want to advocate for progress on issues facing people like me.
+Additional features the works:
+*step by step information on how to obtain my criminal records in DC.
 * As a legal services provider, I want to have access to forms to assist my client in filing a motion for sealing.
 * As an attorney, I want to look up whether an offense is eligible for sealing in DC.
-* As an attorney, I want to be able to help a returning citizen breakdown the timeline for sealing eligibility using a chart
+* As an attorney, I want to be able to help a client breakdown the timeline for sealing eligibility using a virtual/visualized chart
 
 ---
 
 ## Development
 
-Contribution instructions are being (slowly) moved to [this page](CONTRIBUTION.MD)
-First, make sure that you have [`git`](http://git-scm.com/downloads) on your computer.
-Create your own [fork](https://guides.github.com/activities/forking/) of the repository, then clone it to your computer:
+If you have any questions, please contact us at CleanSlateDC@gmail.com.
+#How to Contribute
 
-```sh
-$ git clone git@github.com:[YOUR GITHUB NAME]/clean-slate.git
-```
+To get started contributing to clean-slate you only need two things:
 
-You can work on the `master` branch (which is the default), but it's preferable
-to set up a new branch if you're working on a specific feature:
+1. A github account
+2. Some free time
 
-```sh
-$ git checkout -b [NEW BRANCH NAME]
-```
+You can edit files either directly on github, or locally on your computer. The GitHub method is faster,
+ but if you're a seasoned git/GitHub user you may prefer the local method. See the instructions below
+ for your preferred method.
 
----
+##Editing on GitHub
 
-### combined-flow.json
+1. Sign in to your GitHub account (or [create one](https://github.com/join))
+2. Go to the [Code for DC Clean Slate](https://github.com/codefordc/clean-slate) repository.
+3. [Fork the repository](https://guides.github.com/activities/forking/)
+4. In order for GitHub pages to build on your repository, you need to commit one code change on any
+ file. Any change will work, so for now try just adding a space to the end of one of the markdown files
+ (files whose names end in `.MD`)
+5. Now you're all set! To see your changes go to `<yourusername>.github.io/clean-slate` for example: if
+ your username is "Crazycodingwombat" then your version of the site will show up at
+ `crazycodingwombat.github.io/clean-slate`.
+6. When you're happy with your changes and want to contribute them to the main project, just
+ [issue a pull request](https://guides.github.com/introduction/flow/)
+
+
+##Editing Locally on Your Computer
+
+1. Clone this repository on your machine.
+2. Make your changes locally
+3. Test your changes locally. -- `File://` protocol will break some parts of the site, so you are better off running a tiny local server to view the site. One way is to run `python -m SimpleHTTPServer` from the root directory of the project and then point your browser to [`localhost:8000`](http://localhost:8000)
+4. When you are satisfied with the result, push your changes to your github repository and [issue a pull request](https://guides.github.com/introduction/flow/)
+
+### Understanding the Logic of our site: combined-flow.json
 
 [combined-flow.json](data/combined-flow.json) contains the questions, answers, and flow logic
 for the wizard which guides users through an eligibility check.
@@ -42,38 +59,31 @@ for the wizard which guides users through an eligibility check.
 The file is made up of three special categories: `"start"`, `"endStates"`, and `"questions"`:
 
 1. `"start":"0"` string indicating what the initial question should be (must match a question name)
-
 2. `"endStates":{}` endStates is a dictionary of endState objects
-
 3. `"questions":{}` questions is a dictionary of question objects
 
 This is an **endState object**:
 ```
 "eligible":{
         "eligiblityText":"This offense is likely eligible for expungement.",
-        "icon":"glyphicon glyphicon-ok-circle",
         "helperText":"...this is what you should do next in this case..."
         }
 ```
-`"eligiblityText"` = text that will be displayed for the user as a header when they reach this state
-
-`"icon"` = name of a [Bootstrap glyphicon](http://getbootstrap.com/components/#glyphicons) to be displayed on results page.  If no icon is desired, this can be an empty string `"icon":""`
-
+`"eligiblityText"` = text that will be displayed for the user as a header when they reach this state`
 `"helperText"` = extra text with suggestions for what to do next
 
 This is a **question object**:
 ```
-"0":{
-    "questionText":"Do you have a case pending?",
-    "answers":[
-       {
-          "answerText":"Yes",
-          "next":"ineligible-at-this-time"
-       },
-       {
-          "answerText":"No",
-          "next":"1"
-       }
+   "600": {
+      "questionText": "Do you have a pending criminal case in ANY state (i.e. D.C. or another state)?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "601"
+        },
+        {
+          "answerText": "No",
+          "next": "602"
     ],
     "helperText":[
        "\"Pending\" refers to any case that is pending or has not been fully resolved. For example, if a case does not have a case disposition, it is likely a case pending."
@@ -83,14 +93,10 @@ This is a **question object**:
 
 `"questionText"` = question that will be displayed for the user
 
-`"answers"` = an array of answer objects.  Each answer object should have `"answerText"` and `"next"`. This example has two possible answers to the question, but there can be as many as needed.
-
+    "next": = what the next question should be. Each quesetion is referenced by a number (i.e. 600) 
 `"answerText"` = words that will be displayed on the buttons
 
-`"next"` = what should the user see next if they click this answer? must EXACTLY match the name of a question OR the name of an endState object (see 2. above). **Capitalization matters!**
 
 `"helperText"` = definitions or explanations of legalese (this can be an empty: `"helperText":[]`)
 
-note: If you need to use quotation marks, the character must be 'escaped' with a backslash.  For example, the quotation marks around "Pending" in `helperText` are escaped like this: `\"Pending\"`
-
-If you edit `combined-flow.json`, please check for errors before submitting a pull request. If there is an error, it will be reported in the JavaScript Console in your browser. The most common mistake is using `"next"` to link to a question/endState that does not exist (always check that your capitalization is consistent). 
+If you edit `combined-flow.json`, please check for errors before submitting a pull request. If there is an error, it will be reported in the JavaScript Console in your browser. 
