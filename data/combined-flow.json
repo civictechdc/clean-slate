@@ -11,25 +11,28 @@
     "comment100": "*****************START OF FUGITIVE JUSTICE END STATES *********************",
     "ineligibleFJ": {
       "eligibilityText": "Your client may be eligible, read below. ",
-      "icon": "",
+      "icon": "glyphicon glyphicon-flag",
       "level": "warning",
       "helperText": "Your client may be eligible if they have appeared before the proper authority in the state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
+       "showAttorneyInfo": "false"
     },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
-      "icon": "",
+      "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": 
           "Your client is likely eligible for sealing under \"Fugitive from justice arrest 16-803.01\")" 
+      "showAttorneyInfo": "true"
           ,
     },
     "eligibleFJ2": {
       "eligibilityText": "Your client may be eligible once they have documentation showing they have already appeared before the proper authority in the demanding state.",
-      "icon": "",
+      "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "",
+      "showAttorneyInfo": "true"
     },
-    "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
+      "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
     "eligibleIC": {
       "eligibilityText": "You may be eligible to file. See directions below.",
       "icon": "glyphicon glyphicon-ok-circle",
