@@ -14,7 +14,6 @@
       "icon": "",
       "level": "warning",
       "helperText": "Your client may be eligible if they have appeared before the proper authority in the state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
-      "showAttorneyInfo": "false"
     },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
@@ -23,14 +22,12 @@
       "helperText": 
           "Your client is likely eligible for sealing under \"Fugitive from justice arrest 16-803.01\")" 
           ,
-      "showAttorneyInfo": "false"
     },
     "eligibleFJ2": {
       "eligibilityText": "Your client may be eligible once they have documentation showing they have already appeared before the proper authority in the demanding state.",
       "icon": "",
       "level": "success",
       "helperText": "",
-      "showAttorneyInfo": "false"
     },
     "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
     "eligibleIC": {
@@ -38,21 +35,18 @@
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "",
-      "showAttorneyInfo": "true"
     },
     "eligibleIC2": {
       "eligibilityText": "You may be eligible to file. ",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "You may file a motion to seal if there are no fingerprints to compare and if you swear under penalty of perjury that the record you are trying to seal is not yours.",
-      "showAttorneyInfo": "true"
     },
     "eligibleIC3": {
       "eligibilityText": "You may be eligible to file. ",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "If you are unsure whether the record is yours you can be eligible for getting a fingerprint comparison.",
-      "showAttorneyInfo": "true"
     },
     "comment300": "*****************START OF ACTUAL INNOCENCE END STATES *********************",
     "ineligibleAI": {
@@ -357,7 +351,7 @@
     },
     "comment100": "*****************START OF FUGITIVE JUSTICE QUESTIONS *********************",
     "101": {
-      "questionText": "Have you appeared before the proper authority in the state that issued the warrant?",
+      "questionText": "Has your client appeared before the proper authority in the state that issued the warrant?",
       "answers": [
         {
           "answerText": "Yes",
@@ -373,7 +367,7 @@
       ]
     },
     "102": {
-      "questionText": "Can you prove that you appeared before the proper authority in the state that issued the warrant?",
+      "questionText": "Can your client prove that they appeared before the proper authority in the state that issued the warrant?",
       "answers": [
         {
           "answerText": "Yes",
