@@ -1,46 +1,46 @@
 {
-    "conformsTo": "http://codefordc.org/resources/specification.html",
-    "status": "Alpha",
-    "thumbnailUrl": "",
+    "name": "Conviction Expungement", 
+    "description": "A simple website for people trying to navigate the process of having records sealed in DC", 
+    "license": "MIT", 
+    "status": "Alpha", 
+    "type": "Web app", 
+    "homepage": "https://codefordc.github.io/clean-slate", 
+    "repository": "https://github.com/codefordc/clean-slate", 
+    "thumbnail": "", 
+    "geography": [
+        "Washington DC"
+    ], 
     "contact": {
-        "name": "Briane",
-        "email": "Brianecknight@gmail.com",
-        "twitter": "bchanellek"
-    },
-    "bornAt": "Reentry Hackathon",
-    "geography": "Washington DC",
-    "politicalEntity": {},
-    "governmentPartner": {},
-    "communityPartner": {
-        "Public Defender Service": "http://www.pdsdc.org/",
-        "Mission Launch": "http://www.mission-launch.org/"
-    },
-    "type": "Web app",
-    "data": {},
-    "needs": [
+        "name": "Briane", 
+        "email": "Brianecknight@gmail.com", 
+        "url": "https://twitter.com/bchanellek"
+    }, 
+    "partners": [
         {
-            "need": "document assembly; the ability to take data and insert into pdf or fillable pdf on site"
-        },
+            "url": "http://www.mission-launch.org/", 
+            "name": "Mission Launch", 
+            "email": ""
+        }, 
         {
-            "need": "ability to email results of the wizard to oneself"
-        },
+            "url": "http://www.pdsdc.org/", 
+            "name": "Public Defender Service", 
+            "email": ""
+        }, 
         {
-            "need": "ability to log-in to save a query and then be able to see previous queries all in one page. "
+            "url": "http://codefordc.org", 
+            "name": "Code for DC", 
+            "email": ""
         }
-    ],
-    "categories": [
-        {
-            "category": "Re-Entry"
-        },
-        {
-            "category": "Expungement"
-        },
-        {
-            "category": "Access to Justice"
-        },
-        {
-            "category": ""
-        }
-    ],
-    "moreInfo": "https://codefordc.slack.com/messages/clean_slate/"
+    ], 
+    "data": [], 
+    "tags": [
+        "Re-Entry", 
+        "Expungement", 
+        "Access to Justice", 
+        ""
+    ], 
+    "links": [
+        "https://codefordc.slack.com/messages/clean_slate/"
+    ], 
+    "id": "https://raw.githubusercontent.com/DCgov/civic.json/master/schemas/schema-v1.json"
 }
