@@ -118,9 +118,9 @@ var endstateEditor = new JSONEditor(element, {
                  },
                  showBanTheBox :{
                      type: 'boolean'
-                 },
-                 showAttorneyInfo :{
-                     type: 'boolean'
+                 //},
+                 //showAttorneyInfo :{
+                     //type: 'boolean'
                  }
                
             }
