@@ -150,19 +150,19 @@ angular.module("app", ["ui.router"])
             throw new Error("There is no question or endState \'" + next + "\' in $scope.eligibilityFlow.");
         };
 
-        //$scope.progressBar = function progressBar() {
-            //var progressPercent = '';
+        $scope.progressBar = function progressBar() {
+            var progressPercent = '';
             //If the current question is an EndState, then set the progess bar to 100
-            //if($scope.stateName in $scope.eligibilityFlow.endStates){
-                //progressPercent = 100;
-            //} else {
+            if($scope.stateName in $scope.eligibilityFlow.endStates){
+                progressPercent = 100;
+            } else {
                 // Otherwise, divide the number of questions answered by the tree height at this state
                 // multiply by 100, and round
-               // var answered = eligibilityService.answeredQuestions.length;
-                //progressPercent = Math.round((answered/(answered + $scope.currentState.treeHeight - 1)) * 100);
-           // }
-            //return progressPercent;
-       // };
+                var answered = eligibilityService.answeredQuestions.length;
+                progressPercent = Math.round((answered/(answered + $scope.currentState.treeHeight - 1)) * 100);
+            }
+            return progressPercent;
+        };
         $scope.readClearly = function readClearly(){
             console.log('readClearly Ran')
             $('#oarc-activate').each(function(i){
@@ -170,12 +170,12 @@ angular.module("app", ["ui.router"])
             });
             OARC.init(true, 'bottom-right', 'neutral');
         };
-        //$scope.progressBarStyle = function progressBarStyle() {
-            //return {
+        $scope.progressBarStyle = function progressBarStyle() {
+            return {
                 "min-width": "2em",
                 width: $scope.progressBar() + "%"
-          //  };
-       // };
+            };
+        };
         
         $scope.renderHtml = function(html_code)
         {
