@@ -110,8 +110,7 @@ var endStateItemArray = [
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your non-conviction is not eligible for sealing until after the 3 year waiting period after your case was terminated.",
-      "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+      "showBanTheBox": "true"
      }, 
      {
       "endStateID" :   "EligibleNCT4",
@@ -119,8 +118,7 @@ var endStateItemArray = [
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+         "showBanTheBox": "true"
       
     },
      {
@@ -129,8 +127,7 @@ var endStateItemArray = [
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your non-conviction is not eligible for sealing until after the 4 year waiting period after your case was terminated.",
-      "showBanTheBox": true,
-      "showAttorneyInfo": true
+      "showBanTheBox": true
     }  
 ];
 
