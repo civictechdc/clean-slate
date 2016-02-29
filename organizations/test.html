@@ -1,0 +1,376 @@
+﻿<!doctype html>
+<html ng-app>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.1.js"></script>
+
+    <script type="text/javascript">
+        function RecordsController($scope) 
+        
+        {
+            
+            //Initialize form with basic data for person
+        $scope.person = {};
+        $scope.person.first = "John";
+        $scope.person.middle = "Jay";
+        $scope.person.last = "Smith";
+
+        $scope.person.phone = "2022225555";
+        $scope.person.email = "test@email.com";
+        $scope.person.address1 = "1600 pennsylvania ave NW";
+        $scope.person.address2 = "Washington, DC, 20002";
+
+        $scope.person.dobMonth = "10";
+        $scope.person.dobDay = "05";
+        $scope.person.dobYear = "2015";
+
+        $scope.person.pendingCase = false;    
+
+        $scope.records = [];
+     
+        $scope.addRecordItem = function () {
+        
+        /*          
+            if(!($scope.newRecord.itemDate.month == null) && !($scope.newRecord.itemDate.day == null) && !($scope.newRecord.itemDate.year == null))
+                $scope.newRecord.itemDate.full = $scope.newRecord.itemDate.month + "/" + $scope.newRecord.itemDate.day + "/" + $scope.newRecord.itemDate.year;
+          */
+            if(!($scope.newRecord.dispDate.month == null) && !($scope.newRecord.dispDate.day == null) && !($scope.newRecord.dispDate.year == null))
+                $scope.newRecord.dispDate.full = $scope.newRecord.dispDate.month + "/" + $scope.newRecord.dispDate.day + "/" + $scope.newRecord.dispDate.year;
+                            
+            $scope.newRecord.eligibility = $scope.checkEligibility();
+            $scope.records.push($scope.newRecord);
+            console.log($scope.newRecord);
+            $scope.newRecord = {};
+        }
+     
+        $scope.checkEligibility = function () {
+            console.log('validating elgibility');
+            return 'Eligible';
+        }
+     
+        $scope.dispositionOptions = [
+
+            { title: 'No Papered', description: 'After an arrest, but before presentment (for felonies) or arraignment on the information (for misdemeanors), the United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia has declined to proceed with the prosecution. This means that your a1Test has been NO PAPERED. However, the Government can proceed with prosecution at a later date.","There is no PUBLIC record of your arrest in the Court\'s database, although there is an arrest record. An arrest record is a record in the law enforcement database that contains your name, date of your arrest, the charges for which you were arrested, and other personal information such as your date of birth. An arrest record is not a conviction. However, if you apply for a job the arrest information may be disclosed to potential employees.'},
+            { title: 'Acquitted', description: 'The legal and formal certification of the innocence of a person who has been charged with a crime. A finding of not guilty.' },
+            { title: 'Dismissed for Want of Prosecution', description: 'An order or judgment disposing of the charge(s) without a trial. An involuntary dismissal accomplished on the Court\'s own motion for lack of prosecution or on motion from the defendant for Jack of prosecution or fai lure to introduce evidence of facts on which relief may be granted. The dismissal is without prejudice which allows the prosecutor the right to rebring the charge(s) at a later date.' },
+            { title: 'Dismissal', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia filed a Dismissal for the incident that lead to the arrest. This means that after an indictment was returned, the court entered a dismissal at the request of the Government prior to commencement of the trial, or the court entered a dismissal after making its own finding that there was an unnecessary delay by the Government in presenting the case. Dismissals are without prejudice unless  otherwise stated.' },
+            { title: 'Found Guilty - Plea', description: 'Formal admission in court as to guilt of having committed the criminal act(s) charged, which a defendant may make if he or she does so intell igently and voluntarily. It is binding and is equivalent to a conviction after trial. A guilty plea has the same effect as a verdict of guilty and authorizes imposition of the punishment prescribed by law.' },
+            { title: 'Non Jury Trial Guilty', description: 'Trial was held before a Judge, without a jury. At the conclusion of trial, the Judge found that the Government has met its burden of proof and it is beyond a reasonable doubt that the defendant is guilty of the offense(s) charged.' },
+            { title: 'Non Jury Trial Not Guilty', description: 'Trial was held before a Judge, without a jury. At the conclusion of trial, the Judge found that the Government has failed to meet its burden of proof to show that the defendant was guilty of the offense(s) charged beyond a reasonable doubt.' },
+            { title: 'Jury Trial Not Guilty', description: 'Formal pronouncement by a jury that they find the defendant not guilty of the offense(s) charged.' },
+            { title: 'Jury Trial Guilty', description: 'Formal pronouncement by a jury that they find the defendant guilty of the offense(s) charged. ' },
+            { title: 'Post and Forfeit', description: 'The Metropolitan Police Department (MPD) or the Office of the Attorney General for the District of Columbia has resolved the incident that leads to your arrest using the Post and Forfeit procedure.,The Post and Forfeit procedure allows a person charged with certain offenses to post and forfeit an amount as collateral (which otherwise would serve as security upon release to ensure the arrestee\'s appearance at trial) and thereby obtain a full and final resolution of the offense. The agreement to resolve the offense using the Post and Forfeit procedure is final.' },
+            { title: 'Nolle Diversion', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia has agreed that it will no longer pursue prosecution in this case because the defendant has complied with the conditions of his/her release as ordered by the Court' },
+            { title: 'Nolle Prosequi', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia filed a Nolle Prosequi for the incident that lead to the arrest. This means that the Government has decided that it will no longer pursue prosecution in this case. ' }
+
+        ];
+
+    }
+    </script>
+</head>
+<body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <div class="container-fluid" ng-controller="RecordsController" style="max-width: 900px;">
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Client Intake Form
+            </div>
+            <div class="panel-body">
+                <div style="padding: 2em 2em 2em 2em; max-width: 750px">
+
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p>
+                                First name:<br>
+                                <input type="text" name="user" ng-model="person.first" required>
+                            </p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>
+                                Middle name:<br>
+                                <input type="text" name="user" ng-model="person.middle" required>
+                            </p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p>
+                                Last name:<br>
+                                <input type="text" name="user" ng-model="person.last" required>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>
+                                Email:<br>
+                                <input type="email" name="email" ng-model="person.email" required>
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                Phone:<br>
+                                <input type="text" name="email" ng-model="person.phone" required>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>
+                                Address:<br>
+                                <input type="text" name="email" ng-model="person.address1" required>
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                City, State, Zip:<br>
+                                <input type="text" name="email" ng-model="person.address2" required>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>
+                                DOB
+                                <input type="text" name="dobMonth" placeholder="mm" ng-model="person.dobMonth" required style="max-width: 30px">
+                                <input type="text" name="dobDay" placeholder="dd" ng-model="person.dobDay" required style="max-width: 30px">
+                                <input type="text" name="dobYear" placeholder="yyyy" ng-model="person.dobYear" required style="max-width: 50px">
+
+                            </p>
+
+
+                        </div>
+                        <div class="col-sm-6"></div>
+                    </div>
+                     <div class="row">
+                          Do you have any pending cases?
+                            <input type="checkbox" ng-model="person.pendingCase">
+
+                     </div>
+
+                </div>
+            </div>
+        </div>
+            
+          
+                <div >
+
+                    <h3>Criminal and Arrest Records</h3>
+
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="panel panel-default" style="max-width: 380px">
+                                <div class="panel-heading">
+                                    Add Item from Record
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label >Charge Type </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="itradio" value="Felony" ng-model="newRecord.itemType">Felony 
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="itradio" value="Misdemeanor" ng-model="newRecord.itemType">Misdemeanor
+                                        </label>                                                                               
+                                    </div>
+                                    
+                                    <div class="form-group" ng-show="newRecord.itemType == 'Misdemeanor'">
+                                        <label  data-toggle="modal" data-target="#mdTypes" >Misdemeanor Type: </label>                                    
+
+                                        <label class="radio-inline">
+                                            <input type="radio" name="mtradio" value="Ineligible" ng-model="newRecord.MisdemeanorType">Ineligible 
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="mtradio" value="Eligible" ng-model="newRecord.MisdemeanorType">Eligible
+                                        </label>                                                                               
+                                    </div>
+                                    
+                                    
+
+                                    <div class="form-group">
+                                        <label >Result </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="conradio" value="Non-Conviction" ng-model="newRecord.convictionStatus">Non-Conviction 
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="conradio" value="Conviction" ng-model="newRecord.convictionStatus">Conviction
+                                        </label>                                                                                          
+                                    </div>                             
+                                    <div class="form-group">                                        
+                                        <label >Papered </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="paperradio" value="No" ng-model="newRecord.papered">No 
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="paperradio" value="Yes" ng-model="newRecord.papered">Yes
+                                        </label>
+                                        
+                                    </div>
+                                    <div class="form-group" ng-hide="true">
+                                        Arrest/Charge Date
+                                        <input type="text" name="chargeMonth" ng-model="newRecord.itemDate.month" required style="width: 25px">
+                                        <input type="text" name="chargeDay" ng-model="newRecord.itemDate.day" required style="width: 25px">
+                                        <input type="text" name="chargeYear" ng-model="newRecord.itemDate.year" required style="width: 40px">
+
+                                    </div>
+                                    <div class="form-group" ng-hide="true">
+                                        Disposition
+                                        <select name="disposition" ng-options="disp.title for disp in dispositionOptions " ng-model="newRecord.disposition"></select>
+                                    </div>
+                                    <div class="form-group">
+                                        Date Off Papers
+                                        <input type="text" name="dispMonth" ng-model="newRecord.dispDate.month" required style="width: 25px">
+                                        <input type="text" name="dispDay" ng-model="newRecord.dispDate.day" required style="width: 25px">
+                                        <input type="text" name="dispYear" ng-model="newRecord.dispDate.year" required style="width: 40px">
+
+                                    </div>
+                                </div>
+
+                                <div class="panel-footer">
+                                    <button ng-click="addRecordItem()">Add</button>
+                                </div>
+
+                            </div></div>        
+                        <div class="col-sm-7">
+                            
+                            <table class="table table-responsive table-condensed" style="max-width: 800px ">
+    <thead>
+        <tr>
+            <th>Charge Type</th>
+            <th>Papered</th>
+            <th>Date Off-Papers</th>
+            <th>Eligibility</th>
+        </tr>
+    </thead>
+    <tr ng-repeat="record in records">
+        <td>{{ record.itemType }} - {{ record.convictionStatus }} </td>
+        <td>{{ record.papered }}</td>
+        <td>{{ record.dispDate.full }}</td>
+        <td>{{ record.eligibility }}</td>
+    </tr>
+</table>
+                        </div>
+                    </div>
+                </div>
+
+
+        <div class="container">
+            <h3>Misdemeanor Types</h3>
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mdTypes">Misdemeanor Type</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="mdTypes" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Eligible Misdemeanors</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                A list of common Misdemeanors in sealing:
+                            </p>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">Did you inquire as to whether or not a person has an assault charge for harming
+                                    someone dating their ex-girlfriend or boyfriend? Assaulting someone dating your ex-girlfriend or boyfriend is a charge,
+                                    either a felony or misdemeanor, that is not eligible for sealing under the current law.
+                                </label>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+            <h3>Before you finish</h3>
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Checklist</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Common Sealing Issues</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                A list of common mistakes in sealing:
+                            </p>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">Did you inquire as to whether or not a person has an assault charge for harming
+                                    someone dating their ex-girlfriend or boyfriend? Assaulting someone dating your ex-girlfriend or boyfriend is a charge,
+                                    either a felony or misdemeanor, that is not eligible for sealing under the current law.
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">Did you check with the client as to whether they were required to make a contribution
+                                    to the victims fund and successfully made said contribution? If an individual was required to make a contribution & did not do so,
+                                    then they cannot be considered "off-papers" at all. To start the clock on "off papers" they must make a contribution to the victim's fund.
+                                </label>
+                            </div>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">For a client trying to seal a non-conviction, did you make sure to check if they had any other convictions?
+                                    If they have convictions, 5 years or 10 year, for a misdemeanor and felony, respectively) had to have passed for them to be
+                                    eligible to seal that non-conviction.
+                                </label>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+            CLient Status
+            <select name="clientStatus" ng-model="newRecord.status">
+                <option value=""></option>
+                <option value="Needs copies of record">Needs copies of record</option>
+                <option value="Currently Being Reviewed">Currently Being Reviewed</option>
+                <option value="Needs to file Motion">Needs to file Motion</option>                
+                <option value="Motion filed">Motion has been filed</option>
+                <option value="Waiting for Eligibilty window">Waiting for Eligibilty window</option>
+            </select>
+        </div>
+        </div>
+</body>
+</html>
+
