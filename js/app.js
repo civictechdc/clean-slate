@@ -172,8 +172,8 @@ angular.module("app", ["ui.router"])
         };
         //$scope.progressBarStyle = function progressBarStyle() {
             //return {
-                "min-width": "2em",
-                width: $scope.progressBar() + "%"
+                //"min-width": "2em",
+               // width: $scope.progressBar() + "%"
           //  };
        // };
         
