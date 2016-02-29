@@ -11,15 +11,19 @@
     "comment100": "*****************START OF FUGITIVE JUSTICE END STATES *********************",
     "ineligibleFJ": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "eligibilityText": "Your client may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
       "helperText": "Your client may be eligible if they have appeared before the proper authority in the state that issued the warrant under \"Fugitive from justice arrest 16-803.01\")."
+=======
+>>>>>>> parent of 6b064db... change frame to lawyer perspective. Removed icon
       "eligibilityText": "You may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
       "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
       "showAttorneyInfo": "true"
+<<<<<<< HEAD
  },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
@@ -36,10 +40,15 @@
       "level": "warning",
       "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
       "showAttorneyInfo": "true"
+=======
+>>>>>>> parent of 6b064db... change frame to lawyer perspective. Removed icon
     },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
+<<<<<<< HEAD
+>>>>>>> parent of 6b064db... change frame to lawyer perspective. Removed icon
+=======
 >>>>>>> parent of 6b064db... change frame to lawyer perspective. Removed icon
       "level": "success",
       "helperText": 
@@ -54,9 +63,12 @@
       "helperText": "",
       "showAttorneyInfo": "true"
 <<<<<<< HEAD
+<<<<<<< HEAD
       },
       "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
 =======
+=======
+>>>>>>> parent of 6b064db... change frame to lawyer perspective. Removed icon
     },
     "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
 >>>>>>> parent of 6b064db... change frame to lawyer perspective. Removed icon
