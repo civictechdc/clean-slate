@@ -13,24 +13,19 @@
       "eligibilityText": "Your client may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "Your client may be eligible if they have appeared before the proper authority in the state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
-       "showAttorneyInfo": "false"
+      "helperText": "Your client may be eligible if they have appeared before the proper authority in the state that issued the warrant under \"Fugitive from justice arrest 16-803.01\")."
     },
     "eligibleFJ": {
       "eligibilityText": "This fugitive from justice arrest may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": 
-          "Your client is likely eligible for sealing under \"Fugitive from justice arrest 16-803.01\")" 
-      "showAttorneyInfo": "true"
-          ,
+      "helperText": "Your client is likely eligible for sealing under \"Fugitive from justice arrest 16-803.01\")."
     },
     "eligibleFJ2": {
       "eligibilityText": "Your client may be eligible once they have documentation showing they have already appeared before the proper authority in the demanding state.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "",
-      "showAttorneyInfo": "true"
     },
       "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
     "eligibleIC": {
@@ -68,23 +63,20 @@
       "eligibilityText": "You may be eligible for sealing with no waiting period.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. ",
-      "showAttorneyInfo": "true"
+      "helperText": "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. "
     },
     "comment400": "*****************START OF DECRIMINALIZED OFFENSE END STATES *********************",
     "eligibleDOa": {
       "eligibilityText": "You may be eligible to file to seal the records of this arrest and may be able to file at any time.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ",
-      "showAttorneyInfo": "true"
+      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. "
     },
     "eligibleDOb": {
       "eligibilityText": "If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ",
-    "showAttorneyInfo": "true"
+      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ".
     },
     "comment500": "*****************START OF Non-Convictions and Convictions END STATES *********************",
     "ineligiblePC": {
@@ -121,16 +113,14 @@
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "You will have to wait at least 8 years after you go \"off papers\" before filing the motion to seal your record.",
-      "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+      "showBanTheBox": "true"
   },
     "IneligibleMC": {
       "eligibilityText": "This offense is not eligible for sealing.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "You have been convicted of an ineligible misdemeanor and it is not eligible for sealing.  Also, you can NEVER seal any other conviction on your DC criminal record. Even though you are not eligible for sealing your criminal record, In 2014 The District of Columbia passed a law that prohibits employers (with 11 or more employees) from having a criminal background questions on a job application form, and ALSO prohibits an employer from asking about criminal convictions, arrests or accusations until after a conditional offer of employment has been made. We encourage you to learn more about how to submit a complaint about violations of the law to the DC Office of Human Rights (OHR) at http://ohr.dc.gov/page/returningcitizens . Compensation may be available to you if it is found that an employer you applied for a job with asked about your criminal history before making a condition offer of employment OR if they have a question on their employment application that asks if you have every committed a crime or been arrested.",
-      "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+      "showBanTheBox": "true"
   },
     "IneligibleEMC2": {
       "eligibilityText": "This offense is not eligible for sealing.",
@@ -165,8 +155,7 @@
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed.  ",
-          "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+          "showBanTheBox": "true"
       
     },
     "IneligibleMC5": {
@@ -174,34 +163,29 @@
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
-      
+         "showBanTheBox": "true"
     },
     "IneligibleNC2": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after a 2 year waiting period has passed. ",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
-      
+         "showBanTheBox": "true"
+    
     },
     "EligibleNC2": {
       "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "If you have any other arrests or charges for additional offenses that resulted in non-convictions on your D.C. Criminal Record that you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge.",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+         "showBanTheBox": "true"
         },
     "IneligibleFNC10": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 10 year waiting period associated with your felony conviction has passed. ",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+         "showBanTheBox": "true"
       
     },
     "IneligibleMNC5": {
@@ -209,26 +193,21 @@
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your misdemeanor or Felony BRA (failure to appear in court) non-conviction is not eligible for sealing until after the 5 year waiting period associated with your misdemeanor conviction has passed.",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
-      
+         "showBanTheBox": "true"
     },
     "EligibleNCT3": {
       "eligibilityText": "This offense may be eligible for sealing.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
-      
+         "showBanTheBox": "true"
     },
     "IneligibleNCT3": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your non-conviction is not eligible for sealing until after the 3 year waiting period after your case was terminated.",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+         "showBanTheBox": "true"
       
     },
     "EligibleNCT4": {
@@ -236,17 +215,14 @@
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "If you have any other arrests or charges for additional offenses on your D.C. Criminal Record that resulted in non-convictions you are trying to seal, you may have a longer waiting period before you will become eligible to file a motion to seal this arrest or charge",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
-      
+         "showBanTheBox": "true"
     },
     "IneligibleNCT4": {
       "eligibilityText": "This offense is not eligible for sealing at this time.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
       "helperText": "Your non-conviction is not eligible for sealing until after the 4 year waiting period after your case was terminated.",
-         "showBanTheBox": "true",
-      "showAttorneyInfo": "true"
+         "showBanTheBox": "true"
     }
   },
   "comment": "*****************START OF QUESTIONS *********************",
@@ -255,11 +231,11 @@
         "questionText": "Do you identify with any of these categories?",
         "answers": [
           {
-            "answerText": "I was previously incarcerated, charged or arrested",
+            "answerText": "I was charged or arrested",
             "next": "25"
           },
           {
-            "answerText": "I am a lawyer or law student",
+            "answerText": "I am a lawyer",
             "next": "25"
           }
         ],
