@@ -288,6 +288,7 @@ sampleApp.controller('questionController', function ($scope, $http, $location, s
 
 });
 
+
 sampleApp.controller('RecordsController', function ($scope, $routeParams, sharedService) {
     
             //Initialize form with basic data for person
@@ -340,7 +341,7 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
             { title: 'Nolle Prosequi', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia filed a Nolle Prosequi for the incident that lead to the arrest. This means that the Government has decided that it will no longer pursue prosecution in this case. ' }
         ];
     });
-
+  
 sampleApp.controller('showQuestionController', function ($scope, $routeParams, sharedService) {
     
     $scope.message = 'Edit Questions';    
