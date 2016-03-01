@@ -288,6 +288,61 @@ sampleApp.controller('questionController', function ($scope, $http, $location, s
 
 });
 
+sampleApp.controller('RecordsController', function ($scope, $routeParams, sharedService) {
+    
+            //Initialize form with basic data for person
+        $scope.person = {};
+        $scope.person.first = "John";
+        $scope.person.middle = "Jay";
+        $scope.person.last = "Smith";
+        $scope.person.phone = "2022225555";
+        $scope.person.email = "test@email.com";
+        $scope.person.address1 = "1600 pennsylvania ave NW";
+        $scope.person.address2 = "Washington, DC, 20002";
+        $scope.person.dobMonth = "10";
+        $scope.person.dobDay = "05";
+        $scope.person.dobYear = "2015";
+        $scope.person.pendingCase = false;    
+        $scope.records = [];
+     
+        $scope.addRecordItem = function () {
+        
+        /*          
+            if(!($scope.newRecord.itemDate.month == null) && !($scope.newRecord.itemDate.day == null) && !($scope.newRecord.itemDate.year == null))
+                $scope.newRecord.itemDate.full = $scope.newRecord.itemDate.month + "/" + $scope.newRecord.itemDate.day + "/" + $scope.newRecord.itemDate.year;
+          */
+            if(!($scope.newRecord.dispDate.month == null) && !($scope.newRecord.dispDate.day == null) && !($scope.newRecord.dispDate.year == null))
+                $scope.newRecord.dispDate.full = $scope.newRecord.dispDate.month + "/" + $scope.newRecord.dispDate.day + "/" + $scope.newRecord.dispDate.year;
+                            
+            $scope.newRecord.eligibility = $scope.checkEligibility();
+            $scope.records.push($scope.newRecord);
+            console.log($scope.newRecord);
+            $scope.newRecord = {};
+        }
+     
+        $scope.checkEligibility = function () {
+            console.log('validating elgibility');
+            return 'Eligible';
+        }
+     
+        $scope.dispositionOptions = [
+            { title: 'No Papered', description: 'After an arrest, but before presentment (for felonies) or arraignment on the information (for misdemeanors), the United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia has declined to proceed with the prosecution. This means that your a1Test has been NO PAPERED. However, the Government can proceed with prosecution at a later date.","There is no PUBLIC record of your arrest in the Court\'s database, although there is an arrest record. An arrest record is a record in the law enforcement database that contains your name, date of your arrest, the charges for which you were arrested, and other personal information such as your date of birth. An arrest record is not a conviction. However, if you apply for a job the arrest information may be disclosed to potential employees.'},
+            { title: 'Acquitted', description: 'The legal and formal certification of the innocence of a person who has been charged with a crime. A finding of not guilty.' },
+            { title: 'Dismissed for Want of Prosecution', description: 'An order or judgment disposing of the charge(s) without a trial. An involuntary dismissal accomplished on the Court\'s own motion for lack of prosecution or on motion from the defendant for Jack of prosecution or fai lure to introduce evidence of facts on which relief may be granted. The dismissal is without prejudice which allows the prosecutor the right to rebring the charge(s) at a later date.' },
+            { title: 'Dismissal', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia filed a Dismissal for the incident that lead to the arrest. This means that after an indictment was returned, the court entered a dismissal at the request of the Government prior to commencement of the trial, or the court entered a dismissal after making its own finding that there was an unnecessary delay by the Government in presenting the case. Dismissals are without prejudice unless  otherwise stated.' },
+            { title: 'Found Guilty - Plea', description: 'Formal admission in court as to guilt of having committed the criminal act(s) charged, which a defendant may make if he or she does so intell igently and voluntarily. It is binding and is equivalent to a conviction after trial. A guilty plea has the same effect as a verdict of guilty and authorizes imposition of the punishment prescribed by law.' },
+            { title: 'Non Jury Trial Guilty', description: 'Trial was held before a Judge, without a jury. At the conclusion of trial, the Judge found that the Government has met its burden of proof and it is beyond a reasonable doubt that the defendant is guilty of the offense(s) charged.' },
+            { title: 'Non Jury Trial Not Guilty', description: 'Trial was held before a Judge, without a jury. At the conclusion of trial, the Judge found that the Government has failed to meet its burden of proof to show that the defendant was guilty of the offense(s) charged beyond a reasonable doubt.' },
+            { title: 'Jury Trial Not Guilty', description: 'Formal pronouncement by a jury that they find the defendant not guilty of the offense(s) charged.' },
+            { title: 'Jury Trial Guilty', description: 'Formal pronouncement by a jury that they find the defendant guilty of the offense(s) charged. ' },
+            { title: 'Post and Forfeit', description: 'The Metropolitan Police Department (MPD) or the Office of the Attorney General for the District of Columbia has resolved the incident that leads to your arrest using the Post and Forfeit procedure.,The Post and Forfeit procedure allows a person charged with certain offenses to post and forfeit an amount as collateral (which otherwise would serve as security upon release to ensure the arrestee\'s appearance at trial) and thereby obtain a full and final resolution of the offense. The agreement to resolve the offense using the Post and Forfeit procedure is final.' },
+            { title: 'Nolle Diversion', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia has agreed that it will no longer pursue prosecution in this case because the defendant has complied with the conditions of his/her release as ordered by the Court' },
+            { title: 'Nolle Prosequi', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia filed a Nolle Prosequi for the incident that lead to the arrest. This means that the Government has decided that it will no longer pursue prosecution in this case. ' }
+        ];
+    }
+  
+}
+
 sampleApp.controller('showQuestionController', function ($scope, $routeParams, sharedService) {
     
     $scope.message = 'Edit Questions';    
