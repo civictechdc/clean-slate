@@ -341,7 +341,7 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
         ];
     }
   
-}
+});
 
 sampleApp.controller('showQuestionController', function ($scope, $routeParams, sharedService) {
     
