@@ -339,9 +339,7 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
             { title: 'Nolle Diversion', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia has agreed that it will no longer pursue prosecution in this case because the defendant has complied with the conditions of his/her release as ordered by the Court' },
             { title: 'Nolle Prosequi', description: 'The United States Attorney\'s Office of the District of Columbia or the Office of the Attorney General for the District of Columbia filed a Nolle Prosequi for the incident that lead to the arrest. This means that the Government has decided that it will no longer pursue prosecution in this case. ' }
         ];
-    }
-  
-});
+    });
 
 sampleApp.controller('showQuestionController', function ($scope, $routeParams, sharedService) {
     
