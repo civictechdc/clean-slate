@@ -66,7 +66,7 @@ sampleApp.config(['$routeProvider',
         }).
         when('/Clients', {
             templateUrl: 'views/NewClient.html',
-            controller: 'showQuestionController'
+            controller: 'RecordsController'
         }).
         when('/Clients/:clientId', {
             templateUrl: 'views/viewClientDetails.html',
