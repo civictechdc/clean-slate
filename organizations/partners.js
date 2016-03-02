@@ -311,8 +311,11 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
                 $scope.newRecord.itemDate.full = $scope.newRecord.itemDate.month + "/" + $scope.newRecord.itemDate.day + "/" + $scope.newRecord.itemDate.year;
           */
             if(!($scope.newRecord.dispDate.month == null) && !($scope.newRecord.dispDate.day == null) && !($scope.newRecord.dispDate.year == null))
-                $scope.newRecord.dispDate.full = $scope.newRecord.dispDate.month + "/" + $scope.newRecord.dispDate.day + "/" + $scope.newRecord.dispDate.year;
-                            
+            {   
+            $scope.newRecord.dispDate.full = $scope.newRecord.dispDate.month + "/" + $scope.newRecord.dispDate.day + "/" + $scope.newRecord.dispDate.year;
+            $scope.newRecord.fullDate = new Date($scope.newRecord.dispDate.full);
+            }
+            
             $scope.newRecord.eligibility = $scope.checkEligibility();
             $scope.records.push($scope.newRecord);
             console.log($scope.newRecord);
@@ -320,6 +323,14 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
         }
      
         $scope.checkEligibility = function () {
+            
+            if($scope.person.pendingCase === true)
+                return 'Ineligible - Pending Case';
+            
+            if($scope.records.length <= 1)
+                return 'Eligible (0)';
+            
+            
             console.log('validating elgibility');
             return 'Eligible';
         }
