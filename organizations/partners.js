@@ -316,14 +316,55 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
             $scope.newRecord.fullDate = new Date($scope.newRecord.dispDate.full);
             }
             
-            $scope.newRecord.eligibility = $scope.checkEligibility();
+            //$scope.newRecord.eligibility = $scope.checkEligibility();
             $scope.records.push($scope.newRecord);
+            $scope.checkEligibility();
+           
             console.log($scope.newRecord);
             $scope.newRecord = {};
         }
      
         $scope.checkEligibility = function () {
             
+         var keepGoing = true;
+         
+                
+        angular.forEach($scope.records, function(item)
+        {
+            console.log(item);
+            
+            if($scope.person.pendingCase === true)
+            {
+                item.eligibility = 'Ineligible - Pending Case';
+            }
+            else if(item.convictionStatus === 'Conviction' &&  item.itemType === 'Felony')
+            {
+                 item.eligibility = 'Ineligible - Felony Conviction';
+            }
+            else if(item.convictionStatus === 'Non-Conviction' &&  item.itemType === 'Felony')
+            {
+                if($scope.records.length < 1 && item.papered === 'No')
+                {
+                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 3;
+                }
+                else if($scope.records.length < 1 && item.papered === 'Yes')
+                {
+                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 4;
+                }
+                
+                /*else if($scope.records.length >= 1 && item.papered === 'No')
+                {
+                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 4;
+                }
+                else if($scope.records.length >= 1 && item.papered === 'Yes')
+                {
+                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 4;
+                }*/
+            }
+            
+        });
+         
+         /*
             if($scope.person.pendingCase === true)
                 return 'Ineligible - Pending Case';
             
@@ -333,6 +374,7 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
             
             console.log('validating elgibility');
             return 'Eligible';
+        */
         }
      
         $scope.dispositionOptions = [
