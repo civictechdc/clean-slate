@@ -66,7 +66,7 @@ sampleApp.config(['$routeProvider',
         }).
         when('/Clients', {
             templateUrl: 'views/NewClient.html',
-            controller: 'showQuestionController'
+            controller: 'RecordsController'
         }).
         when('/Clients/:clientId', {
             templateUrl: 'views/viewClientDetails.html',
@@ -81,7 +81,6 @@ sampleApp.config(['$routeProvider',
             redirectTo: '/Home'
         });
   }]);
-
 
 sampleApp.controller('AddOrderController', function ($scope) {
 
@@ -142,7 +141,6 @@ sampleApp.controller('AddOrderController', function ($scope) {
     }
 
 });
-
 
 sampleApp.controller('ShowOrdersController', function ($scope, $routeParams) {
 
@@ -305,6 +303,8 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
         $scope.person.dobYear = "2015";
         $scope.person.pendingCase = false;    
         $scope.records = [];
+        $scope.convictions = [];
+        $scope.hasMDQconvictions = false;
      
         $scope.addRecordItem = function () {
         
@@ -313,17 +313,174 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
                 $scope.newRecord.itemDate.full = $scope.newRecord.itemDate.month + "/" + $scope.newRecord.itemDate.day + "/" + $scope.newRecord.itemDate.year;
           */
             if(!($scope.newRecord.dispDate.month == null) && !($scope.newRecord.dispDate.day == null) && !($scope.newRecord.dispDate.year == null))
-                $scope.newRecord.dispDate.full = $scope.newRecord.dispDate.month + "/" + $scope.newRecord.dispDate.day + "/" + $scope.newRecord.dispDate.year;
-                            
-            $scope.newRecord.eligibility = $scope.checkEligibility();
+            {   
+            $scope.newRecord.dispDate.full = $scope.newRecord.dispDate.month + "/" + $scope.newRecord.dispDate.day + "/" + $scope.newRecord.dispDate.year;
+            $scope.newRecord.fullDate = new Date($scope.newRecord.dispDate.full);
+            }
+            
+             if($scope.newRecord.convictionStatus === 'Conviction')
+             {
+                 //Maintain list of convictions
+                 var newConviction = {};
+                 newConviction.itemType = $scope.newRecord.itemType;
+                 newConviction.convictionStatus = $scope.newRecord.convictionStatus;
+                 newConviction.offDate = $scope.newRecord.dispDate;
+                 newConviction.eligibilityDate = $scope.newRecord.dispDate;
+                 
+                 if($scope.newRecord.itemType === 'Felony')
+                 {
+                    newConviction.eligibilityDate.year = (parseInt($scope.newRecord.dispDate.year) + 10).toString();
+                    $scope.hasMDQconvictions = true;
+                 }
+                 else if($scope.newRecord.itemType === 'Misdemeanor')
+                 {
+                    newConviction.eligibilityDate.year = (parseInt($scope.newRecord.dispDate.year) + 5).toString();
+                    
+                    if($scope.newRecord.MisdemeanorType === 'Ineligible')
+                        $scope.hasMDQconvictions = true;
+                 }
+                 
+                 console.log(newConviction);
+                 $scope.convictions.push(newConviction);
+            }
+            
+            
             $scope.records.push($scope.newRecord);
+            $scope.checkEligibility();
+           
             console.log($scope.newRecord);
             $scope.newRecord = {};
         }
      
+      $scope.findDConvictions = function (startDate) {
+     //This function will search the convictions array looking for a disquailifying convictions for 16-803c2
+       var disqualified = false;
+      
+      angular.forEach($scope.convictions, function(item)
+        {
+            if(parseInt(item.offDate.year) > parseInt(startDate.year))
+                disqualified = true;  
+            else if(parseInt(item.offDate.year) === parseInt(startDate.year) 
+            && parseInt(item.offDate.month) > parseInt(startDate.month))
+              disqualified = true;  
+        });
+        
+        return disqualified;
+     }
+     
+     $scope.findConvictionDate = function () {
+     //This function will search the convictions array looking for the most recent expiration date
+        var expirationDate = {};
+      
+      angular.forEach($scope.convictions, function(item)
+        {
+            if(expirationDate === {})
+            {
+                expirationDate = item.eligibilityDate;
+            }
+            else if(parseInt(expirationDate.year) > parseInt(item.eligibilityDate.year))
+            {
+                expirationDate = item.eligibilityDate;
+            }
+            else if(parseInt(expirationDate.year) === parseInt(item.eligibilityDate.year)
+            && parseInt(expirationDate.month) < parseInt(item.eligibilityDate.year))
+            {
+                expirationDate = item.eligibilityDate;
+            }
+        });
+        
+        return expirationDate;
+     }
+     
         $scope.checkEligibility = function () {
-            console.log('validating elgibility');
-            return 'Eligible';
+         
+         var convictionEligibilityDate = {};
+            
+         if($scope.convictions.length > 0);
+            convictionEligibilityDate = $scope.findConvictionDate();
+         
+        angular.forEach($scope.records, function(item)
+        {
+            var eligibilityDate = item.dispDate;
+            item.eligibility = '';
+            
+            if($scope.person.pendingCase === true)
+            {
+                item.eligibility = 'Ineligible - Due to Pending Case';
+                eligibilityDate.year = 0;
+            }
+            else if(item.convictionStatus === 'Conviction' &&  item.itemType === 'Felony')
+            {
+                 item.eligibility = 'Ineligible - Felony Conviction';
+                 eligibilityDate.year = 0;
+            }
+            else if(item.convictionStatus === 'Non-Conviction' &&  item.itemType === 'Felony')
+            {
+                if(item.papered === 'No')
+                {
+                    eligibilityDate.year = (parseInt(item.dispDate.year) + 3);
+                  
+                    if($scope.convictions.length > 0 && parseInt(convictionEligibilityDate.year) > parseInt(eligibilityDate.year))
+                    	    eligibilityDate = convictionEligibilityDate;            
+                }
+                else if(item.papered === 'Yes')
+                {
+                    eligibilityDate.year = (parseInt(item.dispDate.year) + 4);
+                    
+                    if($scope.convictions.length > 0 && parseInt(convictionEligibilityDate.year) > parseInt(eligibilityDate.year))
+                    	    eligibilityDate = convictionEligibilityDate;       
+                }
+            }
+            else if(item.convictionStatus === 'Conviction' &&  item.itemType === 'Misdemeanor' && item.MisdemeanorType === 'Ineligible')
+            {
+                 item.eligibility = 'Ineligible - Misemeanor Conviction';
+                 eligibilityDate.year = 0;
+            }
+            else if(item.convictionStatus === 'Conviction' &&  item.itemType === 'Misdemeanor' && item.MisdemeanorType === 'Eligible')
+            {
+               eligibilityDate.year = (parseInt(item.dispDate.year) + 8);
+                
+                if(($scope.hasMDQconvictions) || $scope.findDConvictions(item.dispDate))
+                {  
+                    item.eligibility = 'Ineligible due to another Conviction';
+                    eligibilityDate.year = 0;
+                }
+            }
+            else if(item.convictionStatus === 'Non-Conviction' &&  item.itemType === 'Misdemeanor' &&  item.MisdemeanorType === 'Eligible')
+            {
+                eligibilityDate.year = (parseInt(item.dispDate.year) + 2);
+                
+                if($scope.convictions.length > 0 && parseInt(convictionEligibilityDate.year) > parseInt(eligibilityDate.year))
+                        eligibilityDate = convictionEligibilityDate;            
+            }
+            
+            else if(item.convictionStatus === 'Non-Conviction' &&  item.itemType === 'Misdemeanor' &&  item.MisdemeanorType === 'Ineligible')
+            {
+                if(item.papered === 'No')
+                {
+                    eligibilityDate.year = (parseInt(item.dispDate.year) + 3);
+                  
+                    if($scope.convictions.length > 0 && parseInt(convictionEligibilityDate.year) > parseInt(eligibilityDate.year))
+                    	    eligibilityDate = convictionEligibilityDate;            
+                }
+                else if(item.papered === 'Yes')
+                {
+                    eligibilityDate.year = (parseInt(item.dispDate.year) + 4);
+                    
+                    if($scope.convictions.length > 0 && parseInt(convictionEligibilityDate.year) > parseInt(eligibilityDate.year))
+                    	    eligibilityDate = convictionEligibilityDate;       
+                }
+            }
+            else
+            {
+                item.eligibility = 'Pending';
+            }
+            
+            if(item.eligibility === '' && parseInt(eligibilityDate.year) > 0)
+                item.eligibility = 'Eligible for sealing in ' + eligibilityDate.year;
+            
+        });
+         
         }
      
         $scope.dispositionOptions = [
@@ -469,5 +626,11 @@ sampleApp.controller('showQuestionController', function ($scope, $routeParams, s
     }
   
 });
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 
