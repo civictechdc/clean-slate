@@ -343,23 +343,27 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
             }
             else if(item.convictionStatus === 'Non-Conviction' &&  item.itemType === 'Felony')
             {
-                if($scope.records.length < 1 && item.papered === 'No')
+                if($scope.records.length === 1 && item.papered === 'No')
                 {
                     item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 3;
                 }
-                else if($scope.records.length < 1 && item.papered === 'Yes')
+                else if($scope.records.length === 1 && item.papered === 'Yes')
                 {
                     item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 4;
                 }
                 
-                /*else if($scope.records.length >= 1 && item.papered === 'No')
+                else if($scope.records.length > 1 && item.papered === 'No')
                 {
-                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 4;
+                    item.eligibility = '** Eligible ' + parseInt(item.dispDate.year) + 4;
                 }
-                else if($scope.records.length >= 1 && item.papered === 'Yes')
+                else if($scope.records.length > 1 && item.papered === 'Yes')
                 {
-                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 4;
-                }*/
+                    item.eligibility = '** Eligible ' + parseInt(item.dispDate.year) + 4;
+                }
+            }
+            else
+            {
+                item.eligibility = 'Pending';
             }
             
         });
