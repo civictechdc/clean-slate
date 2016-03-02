@@ -166,7 +166,7 @@
                                 </div>
 
                                 <div class="panel-footer">
-                                    <button ng-click="addRecordItem()">Add</button>
+                                    <button ng-click="addRecordItem()" class="btn btn-success">Add</button>
                                 </div>
 
                             </div></div>        
@@ -181,12 +181,10 @@
             <th>Eligibility</th>
         </tr>
     </thead>
-    <tr ng-repeat="record in records | orderBy: -fullDate">
+    <tr ng-repeat="record in records | orderBy: '-fullDate' ">
         <td>{{ record.itemType }} - {{ record.convictionStatus }} </td>
         <td>{{ record.papered }}</td>
         <td>{{ record.fullDate | date:'MM/dd/yyyy' }}</td>
-        
-        
         <td>{{ record.eligibility }}</td>
     </tr>
 </table>
