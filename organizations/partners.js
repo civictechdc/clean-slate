@@ -440,7 +440,7 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
             {
                eligibilityDate.year = (parseInt(item.dispDate.year) + 8);
                 
-                if(($scope.hasMDQconvictions) || $scope.findDConvictions(item.chargeDate))
+                if(($scope.hasMDQconvictions) || $scope.findDConvictions(item.dispDate))
                 {  
                     item.eligibility = 'Ineligible due to another Conviction';
                     eligibilityDate.year = 0;
