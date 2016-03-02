@@ -184,7 +184,9 @@
     <tr ng-repeat="record in records | orderBy: -fullDate">
         <td>{{ record.itemType }} - {{ record.convictionStatus }} </td>
         <td>{{ record.papered }}</td>
-        <td>{{ record.fullDate }}</td>
+        <td>{{ record.fullDate | date:'MM/dd/yyyy' }}</td>
+        
+        
         <td>{{ record.eligibility }}</td>
     </tr>
 </table>
