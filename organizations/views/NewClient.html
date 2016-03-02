@@ -182,7 +182,11 @@
         </tr>
     </thead>
     <tr ng-repeat="record in records | orderBy: '-fullDate' ">
-        <td>{{ record.itemType }} - {{ record.convictionStatus }} </td>
+        <td>
+            <span ng-show="newRecord.MisdemeanorType == 'Misdemeanor'">
+            {{ record.itemType }}    
+            </span>
+            {{ record.itemType }} - {{ record.convictionStatus }} </td>
         <td>{{ record.papered }}</td>
         <td>{{ record.fullDate | date:'MM/dd/yyyy' }}</td>
         <td>{{ record.eligibility }}</td>
