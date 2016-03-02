@@ -345,20 +345,20 @@ sampleApp.controller('RecordsController', function ($scope, $routeParams, shared
             {
                 if($scope.records.length === 1 && item.papered === 'No')
                 {
-                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 3;
+                    item.eligibility = 'Eligible ' + (parseInt(item.dispDate.year) + 3);
                 }
                 else if($scope.records.length === 1 && item.papered === 'Yes')
                 {
-                    item.eligibility = 'Eligible ' + parseInt(item.dispDate.year) + 4;
+                    item.eligibility = 'Eligible ' + (parseInt(item.dispDate.year) + 4);
                 }
                 
                 else if($scope.records.length > 1 && item.papered === 'No')
                 {
-                    item.eligibility = '** Eligible ' + parseInt(item.dispDate.year) + 4;
+                    item.eligibility = '** Eligible ' + (parseInt(item.dispDate.year) + 3);
                 }
                 else if($scope.records.length > 1 && item.papered === 'Yes')
                 {
-                    item.eligibility = '** Eligible ' + parseInt(item.dispDate.year) + 4;
+                    item.eligibility = '** Eligible ' + (parseInt(item.dispDate.year) + 4);
                 }
             }
             else
