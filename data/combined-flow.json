@@ -451,7 +451,10 @@
       ],
       "helperText": [
         "You have the burden of proving to the Court that you are actually innocent through factual circumstances and/or relevant post offense occurrences that support a conclusion that you were innocent. The easiest way to prove actual innocence is by presenting facts that can be proven by reliable documents.",
-        "Example : You were found guilty of driving without a permit. You really did have a valid permit at the time but a computer glitch indicated that you did not have one when you were arrested. You can now provide information showing that you had a valid permit at the time of the offense."
+        "Example 1: You were found guilty of driving without a permit. You really did have a valid permit at the time but a computer glitch indicated that you did not have one when you were arrested. You can now provide information showing that you had a valid permit at the time of the offense.",
+        "Example 2: You were arrested for having a dog off leash but it is not your dog and you can show that it is not your dog.",
+        "Example 3: You were arrested for theft but you have a receipt showing you actually own the property you were accused of stealing.",
+        "Example 4: You have an assault-type charge but you acted in self-defense. You have to show the Judge you believed you were in imminent harm and acted in self-defense. You could provide affidavits from witnesses who saw the fight and who swear that the \"victim\" was really the initial aggressor and you, the arrestee, were just defending yourself. However, affidavits saying \"the other guy started it\" will not be enough to show actual innocence. The judge is still going to have to make credibility findings based on the evidence provided.",
         "Note: Being found \"not guilty\" is NOT proof of your INNOCENCE."
       ]
     },
@@ -658,7 +661,7 @@
         }
       ],
       "helperText": [
-        "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense. OR I am currently trying to have sealed \n. OR I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state. \n  OR  I have a misdemeanor conviction for one of the offenses listed below in at least one state"
+        "I have a conviction for an offense other than a \"minor offense\" in ANY state that occurred AFTER the D.C. non conviction offense I am currently trying to have sealed \n I have a felony conviction (other than a Felony BRA for failure to appear in court) in at least one state \n I have a misdemeanor conviction for one of the offenses listed below in at least one state"
       ]
     },
     "580": {
@@ -877,7 +880,7 @@
     },
     
         "621a": {
-      "questionText": "Were you arrested or charged with a misdemeanor of felony that involved assualting someone you are related to by blood or marriage Or for assualting someone who dated your ex-girlfriend or ex-boyfriend?",
+      "questionText": "Were you arrested or charged with a misdemeanor of felony that involved assualting someone you are related to by blood or marriage?",
       "answers": [
         {
           "answerText": "Yes",
