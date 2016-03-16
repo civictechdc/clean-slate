@@ -1,3 +1,6 @@
+**Please note that the v.1 code for Clean-Slate rests with CodeforDC, where it was originally developed and deployed by a truly, truly amazing team. As of March 16, 2016, all further development and deployment will happen from this repo, housed at MissionLaunch.
+
+
 #[clean-slate](https://codefordc.github.io/clean-slate/)
 
 A simple website for Legal Clinics who are trying to help DC residents navigate [the process of having records sealed](https://en.wikipedia.org/wiki/Expungement)
