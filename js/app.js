@@ -1,4 +1,4 @@
-angular.module("app", ["ngSanitize", "ui.router"])
+angular.module("app", ["ui.router"])
     //Config
     .config(function($stateProvider, $urlRouterProvider) {
         "use strict";
@@ -35,8 +35,11 @@ angular.module("app", ["ngSanitize", "ui.router"])
             })
             .state("definitions", {
                 url: "/definitions",
-                templateUrl: "views/definitions.html",
-              controller: "DefinitionsController"
+                templateUrl: "views/definitions.html"
+            })
+            .state("screener", {
+                url: "/screener",
+                templateUrl: "views/screener.html"
             })
             .state("contact", {
                 url: "/contact",
@@ -299,50 +302,4 @@ angular.module("app", ["ngSanitize", "ui.router"])
         ga.apply(ga, args);
       };
 
-    })
-  .service("definitionsService", ["$http", function definitionsService($http) {
-      var service = {
-          list: function list() {
-              return $http.get("data/definitions.json");
-          }
-      };
-
-      return service;
-  }])
-  .controller("DefinitionsController", ["$scope", "definitionsService", function DefinitionsController($scope, definitionsService) {
-    $scope.models = {
-      definitions: undefined
-    };
-
-    $scope.getDefinitions = function getDefinitions() {
-      definitionsService.list().then(onLoadSuccess, onLoadFailure);
-
-      function onLoadSuccess(response) {
-        $scope.models.definitions = response.data;
-      }
-
-      function onLoadFailure(response) {
-        console.error("Failed to load definitions!");
-      }
-    };
-
-    function init() {
-      $scope.getDefinitions();
-    }
-
-    init();
-  }])
-  .directive("definitionComponent", [function definitionComponent() {
-    return {
-      restrict: "A",
-      scope: {
-        definition: "="
-      },
-      templateUrl: "views/definition_component.html",
-          link: function (scope, element) {
-              scope.toggleCollapse = function toggleCollapse() {
-                  $(element).find(".collapse").collapse("toggle");
-              }
-          }
-    }
-  }]);
+    });

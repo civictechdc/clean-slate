@@ -54,15 +54,24 @@
                         </ul>
                     </div>
 
+                    <div class="alert alert-info"
+                        ng-if="currentState.helperText.length"
+                        ng-repeat="text in currentState.helperText track by $index">
+                        <i class="glyphicon glyphicon glyphicon-info-sign"></i> {{ text }}
+                    </div>
+                    
+                    
                 </div>
 
+              
+                
                 <!-- Unlocked state -->
                 <div ng-if="eligibilityKnown">
                     <div class="alert" ng-class="getLevelClass()">
                         <i ng-class="currentState.icon" ng-show="currentState.icon"></i>
                         {{ currentState.eligibilityText }}
                     </div>
-                    <div class="alert alert-info" ng-show="currentState.helperText.length">
+                    <div class="alert alert-info"  >
                         <i class="glyphicon glyphicon-info-sign"></i> 
                         {{ currentState.helperText }}
                     </div>
@@ -90,14 +99,10 @@
                     
                     <div ng-if="currentState.showAttorneyInfo">
                         <div class="alert alert-info" ng-show="true">
-                        CONNECT WITH AN ATTORNEY ABOUT GETTING YOUR RECORD EXPUNGED.<br />
-No appointment needed. Intake EVERY MONDAY, from 12-7 PM <br />
-510 4th Street, NW, Room 113, Building B (Landlord Tenant Court) <br />
-LAW STUDENTS<br />
-IN COURT<br />
-Questions? Contact Lora Silberman<br />
-202.638.4798 ext. 215, or email here at lsilberman@dclawstudents.org<br />
-                    </div>
+                     CONNECT WITH AN LAWYER ABOUT GETTING YOUR RECORD (FOR FREE).<br />
+        You can email Lora Silberman at lsilberman@dclawstudents.org.<br /> 
+        Make sure to provide your full name, date of birth and all states you have been arrested in.<br />
+        Additionally, if you want are able to, please include your cell phone number!<br /> </div>
                     </div>
                     
                 </div>
