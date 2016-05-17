@@ -170,10 +170,6 @@ angular.module("app", ["ui.router"])
             });
             OARC.init(true, 'bottom-right', 'neutral');
         };
-        $scope.status = {
-            isFirstOpen: true,
-    isFirstDisabled: false
-  };
         $scope.progressBarStyle = function progressBarStyle() {
             return {
                 "min-width": "2em",
