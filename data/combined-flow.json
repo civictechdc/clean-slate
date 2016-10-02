@@ -317,17 +317,17 @@
         {
           "controls":"collapseFive",
           "labelledby":"headingFive",
-          "shortAnswerText": "Had a Deferred Sentencing Agreement...",
-          "answerText": "Client has a deferred sentencing agreement and may be able to seal that arrests for which they recieved a deferred sentencing agreement.",
+          "shortAnswerText": "Seal a conviction...",
+          "answerText": " I have a conviction that I would like to seal that does not fit into any of the categories above.",
           "next": "600"
-        }<!--,
+        },
         {
-        "controls":"collapseSix",
+          "controls":"collapseSix",
           "labelledby":"headingSix",
           "shortAnswerText": "Seal a non-conviction...",
           "answerText": "I have an arrest or charge that resulted in a non-conviction that I would like to seal that does not fit into any of the categories above.",
           "next": "500"
-        }-->
+        }
       ],
       "helperText": [
       ]
