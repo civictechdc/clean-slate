@@ -317,19 +317,10 @@
         {
           "controls":"collapseFive",
           "labelledby":"headingFive",
-          "shortAnswerText": "Seal a conviction...",
-          "answerText": " I have a conviction that I would like to seal that does not fit into any of the categories above.",
+          "shortAnswerText": "Expunge an arrests because client had a deferred sentencing agreement...",
+          "answerText": " Unlike the other categories here, sucessful completion of a deferred sentencing agreement will allow for expungement of that record upon request from the court.",
           "next": "600"
-        },
-        {
-          "controls":"collapseSix",
-          "labelledby":"headingSix",
-          "shortAnswerText": "Seal a non-conviction...",
-          "answerText": "I have an arrest or charge that resulted in a non-conviction that I would like to seal that does not fit into any of the categories above.",
-          "next": "500"
         }
-      ],
-      "helperText": [
       ]
     },
     "50_HOLDER_FOR_LATER": {
