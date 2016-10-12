@@ -10,10 +10,10 @@
     },
     "comment100": "*****************START OF FUGITIVE JUSTICE END STATES *********************",
     "ineligibleFJ": {
-      "eligibilityText": "You may be eligible, read below. ",
+      "eligibilityText": "Your client may be eligible, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "You may be eligible after you appear before the proper authority in state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
+      "helperText": "Your client may be eligible after they appear before the proper authority in state that issued the warrant under \"Fugitive from justice arrest 16-803.01\") ",
       "showAttorneyInfo": "true"
     },
     "eligibleFJ": {
@@ -21,12 +21,12 @@
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": 
-          "You may be eligible for sealing under \"Fugitive from justice arrest 16-803.01\")" 
+          "They may be eligible for sealing under \"Fugitive from justice arrest 16-803.01\")" 
           ,
       "showAttorneyInfo": "true"
     },
     "eligibleFJ2": {
-      "eligibilityText": "You may be eligible once you have documentation showing you have appeared before the proper authority in the demanding state.",
+      "eligibilityText": "Your client may be eligible once you have documentation showing you have appeared before the proper authority in the demanding state.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "",
@@ -34,59 +34,59 @@
     },
     "comment200": "*****************START OF INCORRECT CRIMINAL RECORD END STATES *********************",
     "eligibleIC": {
-      "eligibilityText": "You may be eligible to file. See directions below.",
+      "eligibilityText": "Your client may be eligible to file. See directions below.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "",
       "showAttorneyInfo": "true"
     },
     "eligibleIC2": {
-      "eligibilityText": "You may be eligible to file. ",
+      "eligibilityText": "Your client may be eligible to file. ",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": "You may file a motion to seal if there are no fingerprints to compare and if you swear under penalty of perjury that the record you are trying to seal is not yours.",
       "showAttorneyInfo": "true"
     },
     "eligibleIC3": {
-      "eligibilityText": "You may be eligible to file. ",
+      "eligibilityText": "Your client may be eligible to file. ",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "If you are unsure whether the record is yours you can be eligible for getting a fingerprint comparison.",
+      "helperText": "If your client is unsure whether the record is their, they can be eligible for getting a fingerprint comparison.",
       "showAttorneyInfo": "true"
     },
     "comment300": "*****************START OF ACTUAL INNOCENCE END STATES *********************",
     "ineligibleAI": {
-      "eligibilityText": "Convictions are not eligible for sealing under actual innocence.",
+      "eligibilityText": "Your client's convictions are not eligible for sealing under actual innocence.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "You may be eligible to seal under a different statute.  Hit \"restart\" and try to seal the crime under another category (i.e. conviction or non-conviction).   Also, if you were convicted and can now prove you are innocent, you may be eligible to challenge that conviction. "
+      "helperText": "They may be eligible to seal under a different statute.   Also, if they were convicted and can now prove they are innocent, they may be eligible to challenge that conviction. "
     },
     "ineligibleAI2": {
-      "eligibilityText": "You are likely not eligible.",
+      "eligibilityText": "Your client is likely not eligible.",
       "icon": "glyphicon glyphicon-remove-circle",
       "level": "danger",
-      "helperText": "Please hit the \"start over\" button in the upper left hand corner to check your eligibility under another option."
+      "helperText": "Try another statute."
     },
     "eligibleAI": {
-      "eligibilityText": "You may be eligible for sealing with no waiting period.",
+      "eligibilityText": "Your client may be eligible for sealing with no waiting period.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "However, please note, that if it has been more than four years after the prosecution was terminated, then you will have to provide more convincing evidence of your innocence. ",
+      "helperText": "However, please note, that if it has been more than four years after the prosecution was terminated, then your client will have to provide more convincing evidence of their innocence. ",
       "showAttorneyInfo": "true"
     },
     "comment400": "*****************START OF DECRIMINALIZED OFFENSE END STATES *********************",
     "eligibleDOa": {
-      "eligibilityText": "You may be eligible to file to seal the records of this arrest and may be able to file at any time.",
+      "eligibilityText": "Your client may be eligible to file to seal the records of this arrest and may be able to file at any time.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ",
+      "helperText": "The Next step is to figure out is whether your client's alleged conduct is now decriminalized or legalized. ",
       "showAttorneyInfo": "true"
     },
     "eligibleDOb": {
-      "eligibilityText": "If in this particular arrest, you were only arrested and charged for a marijuana-related offense, then you may be eligible to file to seal the records of this arrest.",
+      "eligibilityText": "If in this particular arrest, your client was only arrested and charged for a marijuana-related offense, then they may be eligible to file to seal the records of this arrest.",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
-      "helperText": "A lawyer will be able to advise you about whether your alleged conduct is now decriminalized or legalized. ",
+      "helperText": "Your next step is to confirm whether your client's action is now decriminalized or legalized. ",
     "showAttorneyInfo": "true"
     },
     "comment500": "*****************START OF Non-Convictions and Convictions END STATES *********************",
@@ -347,8 +347,8 @@
       ]
     },
     "comment100": "*****************START OF FUGITIVE JUSTICE QUESTIONS *********************",
-    "101": {
-      "questionText": "Have you appeared before the proper authority in the state that issued the warrant?",
+     "101": {
+      "questionText": "Was your client arrested in D.C. because they had a warrant in another state?",
       "answers": [
         {
           "answerText": "Yes",
@@ -364,7 +364,23 @@
       ]
     },
     "102": {
-      "questionText": "Can you prove that you appeared before the proper authority in the state that issued the warrant?",
+      "questionText": "Did your client appear before the proper authority in the state that issued the warrant?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "103"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligibleFJ"
+        }
+      ],
+      "helperText": [
+        "The proper authority is the court that issued the warrant."
+      ]
+    },
+    "103": {
+      "questionText": "Can your client prove that they appeared before the proper authority in the state that issued the warrant and thus that the D.C. court would have grounds to seal the arrest?",
       "answers": [
         {
           "answerText": "Yes",
@@ -413,7 +429,7 @@
     },
     "comment300": "*****************START OF ACTUAL INNOCENCE QUESTIONS *********************",
     "300": {
-      "questionText": "Were you arrested for or charged with crime but \"not convicted\" of that crime as defined below?",
+      "questionText": "Your client was arrested for or charged with crime but \"not convicted\" of that crime as defined below?",
       "answers": [
         {
           "answerText": "Yes",
@@ -425,11 +441,11 @@
         }
       ],
       "helperText": [
-        " \"Not convicted\" means (a) the prosecutor did not paper or did not charge the case; OR (b) the prosecutor dropped the charges against the you before trial; OR  (c) the court dismissed the charges against the you; OR (d) you were acquitted (found “not guilty”) of the crime after a trial. "
+        " \"Not convicted\" means (a) the prosecutor did not paper or did not charge the case; OR (b) the prosecutor dropped the charges against your client before trial; OR  (c) the court dismissed the charges against your client; OR (d) yyour client was acquitted (found “not guilty”) of the crime after a trial. "
       ]
     },
     "301": {
-      "questionText": "Can you prove that the offense for which you were arrested or charged did not occur OR that you did not commit the offense for which you were arrested or charged?",
+      "questionText": "Can your client prove that the offense for which they were arrested or charged did not occur OR that they did not commit the offense for which they were arrested or charged?",
       "answers": [
         {
           "answerText": "Yes",
@@ -441,17 +457,17 @@
         }
       ],
       "helperText": [
-        "You have the burden of proving to the Court that you are actually innocent through factual circumstances and/or relevant post offense occurrences that support a conclusion that you were innocent. The easiest way to prove actual innocence is by presenting facts that can be proven by reliable documents.",
-        "Example 1: You were found guilty of driving without a permit. You really did have a valid permit at the time but a computer glitch indicated that you did not have one when you were arrested. You can now provide information showing that you had a valid permit at the time of the offense.",
-        "Example 2: You were arrested for having a dog off leash but it is not your dog and you can show that it is not your dog.",
-        "Example 3: You were arrested for theft but you have a receipt showing you actually own the property you were accused of stealing.",
-        "Example 4: You have an assault-type charge but you acted in self-defense. You have to show the Judge you believed you were in imminent harm and acted in self-defense. You could provide affidavits from witnesses who saw the fight and who swear that the \"victim\" was really the initial aggressor and you, the arrestee, were just defending yourself. However, affidavits saying \"the other guy started it\" will not be enough to show actual innocence. The judge is still going to have to make credibility findings based on the evidence provided.",
-        "Note: Being found \"not guilty\" is NOT proof of your INNOCENCE."
+        "Your client has the burden of proving to the Court that they are actually innocent through factual circumstances and/or relevant post offense occurrences that support a conclusion that they were innocent. The easiest way to prove actual innocence is by presenting facts that can be proven by reliable documents.",
+        "Example 1: They were found guilty of driving without a permit. They really did have a valid permit at the time but a computer glitch indicated that they did not have one when they were arrested. They can now provide information showing that they had a valid permit at the time of the offense.",
+        "Example 2:  Your client was arrested for having a dog off leash but it is not their dog and they can show that it was not their dog.",
+        "Example 3: Your client was arrested for theft but they have a receipt showing they actually own the property they were accused of stealing.",
+        "Example 4: Your client has an assault-type charge but they acted in self-defense. They will have to show the Judge they believed they were in imminent harm and acted in self-defense. They could provide affidavits from witnesses who saw the fight and who swear that the \"victim\" was really the initial aggressor and they, the arrestee, were just defending themselves. However, affidavits saying \"the other guy started it\" will not be enough to show actual innocence. The judge is still going to have to make credibility findings based on the evidence provided.",
+        "Note: Being found \"not guilty\" is NOT proof of INNOCENCE."
       ]
     },
     "comment400": "*****************START OF DECRIMINALIZED OFFENSE QUESTIONS *********************",
     "401": {
-      "questionText": "When you were arrested for, charged with or convicted of a marijuana-related offense, were you ALSO arrested for, charged with or convicted of violating any NON-marijuana related offense or violation of the D.C. Code, the D.C. Municipal Regulations, or the U.S. Code?",
+      "questionText": "When your client was arrested for, charged with or convicted of a marijuana-related offense, were they ALSO arrested for, charged with or convicted of violating any NON-marijuana related offense or violation of the D.C. Code, the D.C. Municipal Regulations, or the U.S. Code?",
       "answers": [
         {
           "answerText": "Yes",
@@ -796,7 +812,7 @@
       ]
     },
     "602": {
-      "questionText": "Select the type of conviction you would like to seal on your D.C. record.",
+      "questionText": "Select the type of conviction your client would like to seal on their D.C. record.",
       "answers": [
         {
           "answerText": "Felony conviction",
@@ -824,7 +840,7 @@
       "helperText": []
     },
     "613": {
-      "questionText": "Have you subsequently been convicted of another crime in ANY state?",
+      "questionText": "Have your client subsequently been convicted of another crime in ANY state?",
       "answers": [
         {
           "answerText": "Yes",
@@ -839,7 +855,7 @@
       ]
     },
     "614": {
-      "questionText": "You can also look at your criminal record and search for the charge disposition date. If it has been 8 years since your charge disposition date, then choose Yes.",
+      "questionText": "You can also look at your client's criminal record and search for the charge disposition date. If it has been 8 years since the charge disposition date, then choose Yes.",
       "answers": [
         {
           "answerText": "Yes",
@@ -851,11 +867,11 @@
         }
       ],
       "helperText": [
-        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest. You can also look at your criminal record and search for the \"charge disp date\". If it has been 8 years since your \"charge disp date\", then choose yes."
+        "\"Off papers\" means when a person has been unconditionally discharged from incarceration, commitment, probation, parole or supervised release – whichever is the latest. You can also look at their criminal record and search for the \"charge disp date\". If it has been 8 years since your client's \"charge disp date\", then choose yes."
       ]
     },
     "621": {
-      "questionText": "This is a list of crimes that, if you have them, may result in a judge denying your request to seal your record. Were you convicted in DC for any of the crimes listed below?",
+      "questionText": "This is a list of crimes that, if your client has been arrested for this crime, may result in a judge denying your client's request to seal their record. Was your client convicted in DC for any of the crimes listed below?",
       "answers": [
         {
           "answerText": "Yes",
@@ -866,12 +882,12 @@
           "next": "621a"
         }
       ],
-      "helperText": ["If the conviction is from somewhere other than DC, have you been convicted of a misdemeanor that is like one of the misdemeanors on the list."],
+      "helperText": ["If the conviction is from somewhere other than DC, has your client been convicted of a misdemeanor that is like one of the misdemeanors on the list."],
       "showIneligibleMisdemeanors": "true"
     },
     
         "621a": {
-      "questionText": "Were you arrested or charged with a misdemeanor of felony that involved assualting someone you are related to by blood or marriage?",
+      "questionText": "Was your client arrested or charged with a misdemeanor of felony that involved assualting someone they were are related to by blood or marriage?",
       "answers": [
         {
           "answerText": "Yes",
@@ -886,7 +902,7 @@
     },
     
     "622": {
-      "questionText": "Have you subsequently been convicted of another crime in ANY state?",
+      "questionText": "Has your client subsequently been convicted of another crime in ANY state?",
       "answers": [
         {
           "answerText": "Yes",
