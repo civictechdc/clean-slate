@@ -91,43 +91,43 @@
     },
     "comment700": "*****************START OF FIRST TIME DRUG OFFENSES END STATES *********************",
 "ineligiblePC1": {
-      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "eligibilityText": "Your client is not eligible under § 48-904.01, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "Probation as a result of a charge of possession of a controlled substance with intent to distribute or a felony charge related to possession of a controlled sbustance are not charges that can be sealed under § 48-904.08",
+      "helperText": "Probation as a result of a charge of possession of a controlled substance with intent to distribute or a felony charge related to possession of a controlled sbustance are not charges that can be sealed under § 48-904.01",
       "showAttorneyInfo": "true"
     },
   "ineligiblePC2": {
-      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "eligibilityText": "Your client is not eligible under § 48-904.01, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "To seal under § 48-904.08, the charge must have been a first-time offense",
+      "helperText": "To seal under § 48-904.01, the charge must have been a first-time offense",
       "showAttorneyInfo": "true"
     },
   "ineligiblePC3": {
-      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "eligibilityText": "Your client is not eligible under § 48-904.01, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "To seal under § 48-904.08, your client must have been given a probation period of less than 12 months",
+      "helperText": "To seal under § 48-904.01, your client must have been given a probation period of less than 12 months",
       "showAttorneyInfo": "true"
     },
   "ineligiblePC4": {
-      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "eligibilityText": "Your client may not be eligible under § 48-904.01, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "To seal under § 48-904.08, your client must have fully completed their term of probation",
+      "helperText": "To seal under § 48-904.01, your client usually would have to wait till probation is over. Upon expiration of such period of probation, the court “shall” discharge and dismiss the proceedings against your client. HOWEVER, the court could have, in its discretion, dismissed the proceedings against such person and discharged him or her from probation before the expiration of the maximum period prescribed for such person's probation. IF this happened to your client, they are likely still eligible under § 48-904.01.",
       "showAttorneyInfo": "true"
     },
    "ineligiblePC5": {
-      "eligibilityText": "Your client may not be eligible under § 48-904.08, read below. ",
+      "eligibilityText": "Your client may not be eligible under § 48-904.01, read below. ",
       "icon": "glyphicon glyphicon-flag",
       "level": "warning",
-      "helperText": "To seal under § 48-904.08, your client usually would have to wait till probation is over. Upon expiration of such period of probation, the court “shall” discharge and dismiss the proceedings against your client. HOWEVER, the court could have, in its discretion, dismissed the proceedings against such person and discharged him or her from probation before the expiration of the maximum period prescribed for such person's probation. IF this happened to your client, they are likely still eligible under § 48-904.08 ",
+      "helperText": "To seal under § 48-904.01, your client usually would have to wait till probation is over. Upon expiration of such period of probation, the court “shall” discharge and dismiss the proceedings against your client. HOWEVER, the court could have, in its discretion, dismissed the proceedings against such person and discharged him or her from probation before the expiration of the maximum period prescribed for such person's probation. IF this happened to your client, they are likely still eligible under § 48-904.01.",
       "showAttorneyInfo": "true"
     },
   
     "eligiblePC6": {
-      "eligibilityText": "Client's first-time drug offense charge and probation are likely eligible for sealing under § 48-904.08. Likely the court has automatically expunged this record. If not, you can argue that they should, .",
+      "eligibilityText": "Client's first-time drug offense charge and probation are likely eligible for sealing under § 48-904.01. Likely the court has automatically expunged this record. If not, you can argue that they should, .",
       "icon": "glyphicon glyphicon-ok-circle",
       "level": "success",
       "helperText": 
