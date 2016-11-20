@@ -89,6 +89,50 @@
       "helperText": "Your next step is to confirm whether your client's action is now decriminalized or legalized. ",
     "showAttorneyInfo": "true"
     },
+    "comment700": "*****************START OF FIRST TIME DRUG OFFENSES END STATES *********************",
+"ineligiblePC1": {
+      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "icon": "glyphicon glyphicon-flag",
+      "level": "warning",
+      "helperText": "Probation as a result of a charge of possession of a controlled substance with intent to distribute or a felony charge related to possession of a controlled sbustance are not charges that can be sealed under § 48-904.08",
+      "showAttorneyInfo": "true"
+    },
+  "ineligiblePC2": {
+      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "icon": "glyphicon glyphicon-flag",
+      "level": "warning",
+      "helperText": "To seal under § 48-904.08, the charge must have been a first-time offense",
+      "showAttorneyInfo": "true"
+    },
+  "ineligiblePC3": {
+      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "icon": "glyphicon glyphicon-flag",
+      "level": "warning",
+      "helperText": "To seal under § 48-904.08, your client must have been given a probation period of less than 12 months",
+      "showAttorneyInfo": "true"
+    },
+  "ineligiblePC4": {
+      "eligibilityText": "Your client is not eligible under § 48-904.08, read below. ",
+      "icon": "glyphicon glyphicon-flag",
+      "level": "warning",
+      "helperText": "To seal under § 48-904.08, your client must have fully completed their term of probation",
+      "showAttorneyInfo": "true"
+    },
+   "ineligiblePC5": {
+      "eligibilityText": "Your client may not be eligible under § 48-904.08, read below. ",
+      "icon": "glyphicon glyphicon-flag",
+      "level": "warning",
+      "helperText": "To seal under § 48-904.08, your client usually would have to wait till probation is over. Upon expiration of such period of probation, the court “shall” discharge and dismiss the proceedings against your client. HOWEVER, the court could have, in its discretion, dismissed the proceedings against such person and discharged him or her from probation before the expiration of the maximum period prescribed for such person's probation. IF this happened to your client, they are likely still eligible under § 48-904.08 ",
+      "showAttorneyInfo": "true"
+    },
+  
+    "eligiblePC6": {
+      "eligibilityText": "Client's first-time drug offense charge and probation are likely eligible for sealing under § 48-904.08. Likely the court has automatically expunged this record. If not, you can argue that they should, .",
+      "icon": "glyphicon glyphicon-ok-circle",
+      "level": "success",
+      "helperText": 
+          "If automatically expunged, a nonpublic record thereof shall be retained solely for the purpose of use by the courts in determining whether or not, in subsequent proceedings, such person qualifies under this subsection. " 
+  },
     "comment500": "*****************START OF Non-Convictions and Convictions END STATES *********************",
     "ineligiblePC": {
       "eligibilityText": "If you have a pending case, you must wait until the case is over. ",
@@ -314,11 +358,18 @@
           "answerText": "I was arrested, charged or convicted of a marijuana-related offense before February 26, 2015.",
           "next": "401"
         },
-        {
+         {
           "controls":"collapseFive",
           "labelledby":"headingFive",
+          "shortAnswerText": "Expunge arrest for First-Time Drug Offense under 48-904.01(e)",
+          "answerText": "People charged with drug possession for the first time are eligible for treatment under Section 48-904.01(e). Specifically, for people who either plead guilty or who are found guilty after challenging the charge at trial, the court can in its discretion defer entering a judgment of guilty into the record to allow the defendant to complete a period of probation not to exceed 12 months.  The charge is automatically dismissed if the defendant successfully completes the probation.",
+          "next": "700"
+        },
+        {
+          "controls":"collapseSix",
+          "labelledby":"headingSix",
           "shortAnswerText": "Expunge an arrests because client had a deferred sentencing agreement...",
-          "answerText": " Unlike the other categories here, sucessful completion of a deferred sentencing agreement will allow for expungement of that record upon request from the court.",
+          "answerText": "Unlike the other categories here, sucessful completion of a deferred sentencing agreement will allow for expungement of that record upon request from the court.",
           "next": "600"
         }
       ]
@@ -776,7 +827,83 @@
       ],
       "helperText": []
     },
-    
+    "comment 700": "*****************START OF FIRST TIME DRUG OFFENSE QUESTIONS *********************",
+
+    "700": {
+      "questionText": "Was the client charged with knowingly or intentionally  possessing a controlled substance?",
+      "answers": [
+        {
+          "answerText": "Yes, the client was charged with a misdemeanor-simple possesion of a controlled substance charge",
+          "next": "701"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligiblePC1"
+        }
+      ],
+      "helperText": [
+   "Important: a charge of possession coupled with intent to distribute is not an example of a simple charge of possession. "
+      ]
+    },
+    "701": {
+      "questionText": "Does the client have any prior convictions of a simple possession in D.C., any other state or jurisdiction?",
+      "answers": [
+        {
+          "answerText": "No, this charge was the client's first time being charged with simple possession",
+          "next": "702"
+        },
+        {
+          "answerText": "Yes, it was not their first time. They have previously been charged and convicted in D.C. or in another jurisidiction",
+          "next": "ineligiblePC2"
+        }
+      ],
+      "helperText": [
+        "Reminder:Simple possession of a controlled substance in D.C. is a misdemeanor, with a maximum penalty for a first conviction of 180 days of incarceration and a $1000 fine. ."
+      ]
+    },
+    "702": {
+      "questionText": "Did a judge give the client a period of probation of 12 months or less",
+      "answers": [
+        {
+          "answerText": "Yes, client was sentenced to probation and it was 12 months or less",
+          "next": "703"
+        },
+        {
+          "answerText": "No,",
+          "next": "ineligiblePC3"
+        }
+      ],
+      "helperText": []
+    },
+    "703": {
+      "questionText": "Has the client successfully complete the entire period of probation?",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "704"
+        },
+        {
+          "answerText": "No, client has not yet completed probation term provided by the judge",
+          "next": "ineligiblePC4"
+        }
+      ],
+      "helperText": []
+    },
+    "704": {
+      "questionText": "Did the client complete probation without violating any conditions of the probation they received due to the charge of simple possession",
+      "answers": [
+        {
+          "answerText": "Yes",
+          "next": "eligiblePC6"
+        },
+        {
+          "answerText": "No",
+          "next": "ineligiblePC5"
+        }
+      ],
+      "helperText": [
+      ]
+    },
         "comment600": "*****************START OF Conviction QUESTIONS *********************",
 
     "600": {
