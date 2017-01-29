@@ -170,12 +170,21 @@ angular.module("app", ["ui.router"])
             });
             OARC.init(true, 'bottom-right', 'neutral');
         };
+<<<<<<< HEAD
         $scope.progressBarStyle = function progressBarStyle() {
             return {
                 "min-width": "2em",
                 width: $scope.progressBar() + "%"
             };
         };
+=======
+        //$scope.progressBarStyle = function progressBarStyle() {
+            //return {
+                "min-width": "2em",
+                width: $scope.progressBar() + "%"
+          //  };
+       // };
+>>>>>>> parent of a71832a... Merge pull request #212 from codefordc/brianek-patch-13
         
         $scope.renderHtml = function(html_code)
         {
